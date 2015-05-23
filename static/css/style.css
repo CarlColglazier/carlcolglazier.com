@@ -11,10 +11,6 @@ html {
   padding: 0;
 }
 
-ul {
-  line-height: 0.4em;
-}
-
 .video {
     position: relative;
     padding-bottom: 56.25%;
@@ -41,9 +37,27 @@ ul {
   padding: 1.5em 5% 1.5em 5%;
 }
 
+/* FOOTER */
+
 .footer {
   background-color: #111111;
   color: #EEEEEE;
+}
+
+.footer h2 {
+  width: 100%;
+}
+
+.inner-footer {
+  display: flex;
+  flex-flow: row;
+  flex-flow: row wrap;
+  align-content: flex-end;
+}
+
+.footer-content {
+  flex: 1 1 auto;
+  width: 50%;
 }
 
 .footer a {
@@ -52,4 +66,11 @@ ul {
 
 a.title {
   text-decoration: none;
+  padding-bottom: 1.5em;
+}
+
+@media (max-width: 680px) {
+  .footer-content {
+    width: 100%;
+  }
 }
