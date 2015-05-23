@@ -11,6 +11,14 @@ html {
   padding: 0;
 }
 
+a {
+  color: #111;
+}
+
+a:visited {
+  color: #444;
+}
+
 .video {
     position: relative;
     padding-bottom: 56.25%;
