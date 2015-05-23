@@ -1,5 +1,6 @@
 @black: #111;
 @dark-gray: #444;
+@light-gray: #AAA;
 @white: #EEE;
 
 body {
@@ -50,11 +51,17 @@ article h1 {
   background-color: @white;
 }
 
+::selection {
+    color: @white;
+    background-color: @dark-gray;
+}
+
 .content, .inner-footer {
   margin: 0 auto 0 auto;
   width: 36em;
   max-width: 90%;
   padding: 2.5% 5% 2.5% 5%;
+  position: relative;
 }
 
 /* FOOTER */
@@ -62,6 +69,9 @@ article h1 {
 .footer {
   background-color: @black;
   color: @white;
+  ::selection {
+      background-color: @light-gray;
+  }
 }
 
 .footer h2 {
