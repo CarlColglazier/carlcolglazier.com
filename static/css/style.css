@@ -82,3 +82,9 @@ a.title {
     width: 100%;
   }
 }
+
+.inline-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
