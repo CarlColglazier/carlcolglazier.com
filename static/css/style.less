@@ -1,8 +1,12 @@
+@black: #111;
+@dark-gray: #444;
+@white: #EEE;
+
 body {
   line-height: 1.5em;
   margin: 0;
-  color: #111111;
-  background-color: #111111;
+  color: @black;
+  background-color: @black;
   font-family: 'Trebuchet MS', 'Lucida Grande',
       'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
 }
@@ -12,11 +16,19 @@ html {
 }
 
 a {
-  color: #111;
+  color: @black;
 }
 
 a:visited {
-  color: #444;
+  color: @dark-gray;
+}
+
+header {
+    font-size: 1.25em;
+}
+
+article h1 {
+    font-size: 1.75em;
 }
 
 .video {
@@ -35,7 +47,7 @@ a:visited {
 }
 
 .main {
-  background-color: #EEEEEE;
+  background-color: @white;
 }
 
 .content, .inner-footer {
@@ -48,8 +60,8 @@ a:visited {
 /* FOOTER */
 
 .footer {
-  background-color: #111111;
-  color: #EEEEEE;
+  background-color: @black;
+  color: @white;
 }
 
 .footer h2 {
@@ -69,7 +81,7 @@ a:visited {
 }
 
 .footer a {
-  color: #EEEEEE;
+  color: @white;
 }
 
 a.title {

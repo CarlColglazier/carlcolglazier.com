@@ -3,3 +3,6 @@ languageCode: "en-us"
 title: "Carl Colglazier"
 config: "config.yaml"
 metaDataFormat: "yaml"
+
+blackfriday:
+    plainIdAnchors: true
