@@ -3,7 +3,7 @@ date: 2015-05-23T10:18:23-04:00
 title: Tools & Equipment
 ---
 
-Many of the questions that I recieve relate to what equipment I use. While I
+Many of the questions that I receive relate to what equipment I use. While I
 believe that *how* something is used is often far more important than *what*
 is being used, I offer this page to help answer some of those questions.
 
