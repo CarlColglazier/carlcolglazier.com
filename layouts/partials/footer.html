@@ -1,0 +1,16 @@
+    </section>
+    <footer class="footer">
+      <section class="inner-footer">
+        <h2><a href="/" class="title">Carl Colglazier</a></h2>
+        <section class="footer-content">
+          <h3>Notes</h3>
+          <ul>
+            {{ range where .Site.Recent "Section" "notes" }}
+              {{ .Render "li"}}
+            {{ end }}
+          </ul>
+        </section>
+      </section>
+    </footer>
+  </body>
+</html>

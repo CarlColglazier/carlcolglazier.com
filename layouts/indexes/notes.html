@@ -1,0 +1,10 @@
+{{ partial "head.html" . }}
+    <article class="content">
+      <h1>Notes.</h1>
+      <ul>
+        {{ range where .Site.Recent "Section" "notes" }}
+          {{ .Render "li"}}
+        {{ end }}
+      </ul>
+    </article>
+{{ partial "footer.html" . }}
