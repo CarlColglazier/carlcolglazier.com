@@ -1,16 +1,12 @@
     </section>
     <footer class="footer">
       <section class="inner-footer">
-        <header>
-          <h2><a href="/" class="title">Carl Colglazier</a></h2>
-        </header>
+        <h2><a href="/" class="title">Carl Colglazier</a></h2>
         <ul class="inline-list">
           <li><a href="/faqs">FAQs</a></li>
         </ul>
         <section class="footer-content">
-        <header>
-            <h3>Notes</h3>
-        </header>
+          <h3>Notes</h3>
           <ul>
             {{ range where .Site.Recent "Section" "notes" }}
               {{ .Render "li"}}
@@ -18,9 +14,7 @@
           </ul>
         </section>
         <section class="footer-content">
-          <header>
-            <h3>Links</h3>
-          </header>
+          <h3>Links</h3>
           <ul>
             <li>
               <a href="https://twitter.com/carlcolglazier">
