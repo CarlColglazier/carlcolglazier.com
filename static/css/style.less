@@ -10,6 +10,11 @@ body {
   background-color: @black;
   font-family: 'Trebuchet MS', 'Lucida Grande',
       'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+  font-size:18px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 0.75em;
 }
 
 html {
@@ -78,18 +83,6 @@ article h1 {
   width: 100%;
 }
 
-.inner-footer {
-  display: flex;
-  flex-flow: row;
-  flex-flow: row wrap;
-  align-content: flex-end;
-}
-
-.footer-content {
-  flex: 1 1 auto;
-  width: 50%;
-}
-
 .footer a {
   color: @white;
 }
@@ -97,12 +90,6 @@ article h1 {
 a.title {
   text-decoration: none;
   padding-bottom: 1.5em;
-}
-
-@media (max-width: 680px) {
-  .footer-content {
-    width: 100%;
-  }
 }
 
 .inline-list {
