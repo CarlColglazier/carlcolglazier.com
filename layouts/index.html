@@ -9,7 +9,7 @@
       <li><a href="/filmmaking">Filmmaking</a></li>
       <li><a href="/faqs">FAQs</a></li>
     </ul>
-    <h2>Some other notes.</h2>
+    <h2>Some other <a href="/notes">notes</a>.</h2>
     {{ range where .Site.Recent "Section" "notes" }}
       {{ .Render "li"}}
     {{ end }}
