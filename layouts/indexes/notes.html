@@ -2,9 +2,16 @@
     <article class="content">
       <h1>Notes.</h1>
       <ul>
-        {{ range where .Site.Recent "Section" "notes" }}
+        {{ $paginator := .Paginate (where .Data.Pages "Section" "notes") }}
+        {{ range $paginator.Pages }}
           {{ .Render "li"}}
         {{ end }}
       </ul>
+      {{ if $paginator.HasPrev }}
+          <a href="{{ $paginator.Prev.Url }}">Previous</a>
+      {{ end }}
+      {{ if $paginator.HasNext }}
+          <a href="{{ $paginator.Next.Url }}">Next</a>
+      {{ end }}
     </article>
 {{ partial "footer.html" . }}
