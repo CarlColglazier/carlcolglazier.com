@@ -1,20 +1,40 @@
+/**** VARIABLES ****/
+
 @black: #111;
 @dark-gray: #444;
 @light-gray: #AAA;
 @white: #EEE;
+
+/**** FONTS ****/
+
+@font-face {
+    font-family: 'Glacial Indifference';
+    src: url('/fonts/GlacialIndifference-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Glacial Indifference Bold';
+    src: url('/fonts/GlacialIndifference-Bold.woff') format('woff');
+}
+
+/**** STYLE ****/
 
 body {
   line-height: 1.5em;
   margin: 0;
   color: @black;
   background-color: @black;
-  font-family: 'Trebuchet MS', 'Lucida Grande',
-      'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+  font-family: 'Glacial Indifference', 'Trebuchet MS', sans-serif;
   font-size:18px;
 }
 
+h1, h2, h3, h4, h5, h6, b, strong {
+    font-family: 'Glacial Indifference Bold', 'Trebuchet MS', sans-serif;
+}
+
 h1, h2, h3, h4, h5, h6 {
-    line-height: 0.75em;
+    list-style: 0.8em;
+    padding: 0;
 }
 
 html {
@@ -98,5 +118,6 @@ a.title {
   width: 100%;
   li {
       display: inline;
+      padding-right: 0.5em;
   }
 }
