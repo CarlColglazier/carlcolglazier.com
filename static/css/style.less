@@ -12,24 +12,37 @@
     src: url('/fonts/GlacialIndifference-Regular.woff') format('woff');
 }
 
-@font-face {
-    font-family: 'Glacial Indifference Bold';
-    src: url('/fonts/GlacialIndifference-Bold.woff') format('woff');
+/***** REUSABLE STYLES ****/
+
+.center {
+    text-align: center;
+}
+
+.black {
+    color: @black;
+    background-color: @white;
+}
+
+.white {
+    color: @white;
+    background-color: @black;
 }
 
 /**** STYLE ****/
 
 body {
-  line-height: 1.5em;
+  line-height: 1.6em;
   margin: 0;
   color: @black;
   background-color: @black;
   font-family: 'Glacial Indifference', 'Trebuchet MS', sans-serif;
-  font-size:18px;
+  font-size: 24px;
 }
 
-h1, h2, h3, h4, h5, h6, b, strong {
-    font-family: 'Glacial Indifference Bold', 'Trebuchet MS', sans-serif;
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -50,11 +63,12 @@ a:visited {
 }
 
 header {
-    font-size: 1.25em;
-}
-
-article h1 {
+    position: relative;
     font-size: 1.75em;
+    line-height: 1.75em;
+    .center;
+    .white;
+    padding: 2em 0;
 }
 
 .video {
@@ -73,7 +87,7 @@ article h1 {
 }
 
 .main {
-  background-color: @white;
+    .black;
 }
 
 ::selection {
@@ -83,17 +97,32 @@ article h1 {
 
 .content, .inner-footer {
   margin: 0 auto 0 auto;
-  width: 36em;
+  width: 32em;
   max-width: 90%;
   padding: 2.5% 5% 2.5% 5%;
   position: relative;
 }
 
+.logo {
+  position: relative;
+  height: 3em;
+  width: 3em;
+  margin: auto;
+  padding: 1em 0 0;
+  a {
+    .white;
+    position: absolute;
+    left: 0;
+    padding: 0.75em;
+    border-radius: 1.5em;
+    text-decoration: none;
+  }
+}
+
 /* FOOTER */
 
 .footer {
-  background-color: @black;
-  color: @white;
+  .white;
   ::selection {
       background-color: @light-gray;
   }
@@ -104,7 +133,7 @@ article h1 {
 }
 
 .footer a {
-  color: @white;
+  .white;
 }
 
 a.title {
@@ -118,6 +147,6 @@ a.title {
   width: 100%;
   li {
       display: inline;
-      padding-right: 0.5em;
+      padding: 0 0.25em;
   }
 }

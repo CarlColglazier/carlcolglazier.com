@@ -7,7 +7,7 @@ I have more than a lustrum (half-decade) of experience in documentary filmmaking
 and online video.
 
 Filmography
-===========
+-----------
 
 + *Wasting Waste* (2010)
 + *The Great Compromise* (2011)
@@ -19,7 +19,7 @@ Filmography
 + *The People's House* (2015)
 
 Awards and Honors
-=================
+-----------------
 
 + Won each level of the [C-SPAN StudentCam](http://www.studentcam.org/)
 documentary competition from an Honorable Mention to the Grand Prize.

@@ -4,10 +4,18 @@
     <meta charset="utf-8">
     <meta name=viewport content="width=device-width, initial-scale=1">
 
-    <base href="{{ .Site.BaseUrl }}">
+    <base href="{{ .Site.BaseURL }}">
     <title>{{ .Title }}</title>
     <link rel="canonical" href="{{ .Permalink }}">
     <link href="/css/style.css" rel="stylesheet">
   </head>
   <body>
-    <section class="main">
+    <div class="main black">
+<navigation>
+  <div class="logo">
+    <a href="/">CC</a>
+  </div>
+  <ul class="inline-list center">
+    <li><a href="/notes">Notes</a></li>
+  </ul>
+</navigation>

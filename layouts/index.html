@@ -1,17 +1,16 @@
 {{ partial "head.html" . }}
 <article class="content">
-    <header>
-      <h1 id="title">{{ .Title }}</h1>
-    </header>
-    <hr />
+    {{ partial "title.html" . }}
     <h2>Pages of note.</h2>
     <ul class="inline-list">
       <li><a href="/filmmaking">Filmmaking</a></li>
       <li><a href="/faqs">FAQs</a></li>
     </ul>
     <h2>Some other <a href="/notes">notes</a>.</h2>
-    {{ range where .Site.Recent "Section" "notes" }}
+    <ul>
+    {{ range where .Site.Pages "Section" "notes" }}
       {{ .Render "li"}}
     {{ end }}
+    </ul>
   </article>
 {{ partial "footer.html" . }}

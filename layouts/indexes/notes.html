@@ -1,6 +1,6 @@
 {{ partial "head.html" . }}
     <article class="content">
-      <h1>Notes.</h1>
+      {{ partial "title.html" . }}
       <ul>
         {{ $paginator := .Paginate (where .Data.Pages "Section" "notes") }}
         {{ range $paginator.Pages }}
