@@ -1,12 +1,10 @@
 {{ partial "head.html" . }}
     <article class="content">
       {{ partial "title.html" . }}
-      <ul>
         {{ $paginator := .Paginate (where .Data.Pages "Section" "notes") }}
         {{ range $paginator.Pages }}
           {{ .Render "li"}}
         {{ end }}
-      </ul>
       {{ if $paginator.HasPrev }}
           <a href="{{ $paginator.Prev.Url }}">Previous</a>
       {{ end }}
