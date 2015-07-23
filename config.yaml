@@ -4,5 +4,13 @@ title: "Carl Colglazier"
 config: "config.yaml"
 metaDataFormat: "yaml"
 paginate: 25
+menu:
+  main:
+    - Name: "Notes"
+      URL: "/notes"
+      Weight: 0
+    - Name: "FAQs"
+      URL: "/faqs"
+      Weight: 1
 blackfriday:
     plainIdAnchors: true

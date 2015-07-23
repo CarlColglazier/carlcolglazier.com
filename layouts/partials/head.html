@@ -16,6 +16,8 @@
     <a href="/">CC</a>
   </div>
   <ul class="inline-list center">
-    <li><a href="/notes">Notes</a></li>
+    {{ range .Site.Menus.main }}
+    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+    {{ end }}
   </ul>
 </navigation>
