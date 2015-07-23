@@ -58,17 +58,31 @@ a {
   color: @black;
 }
 
-a:visited {
+blockquote, a:visited {
   color: @dark-gray;
 }
 
 header {
     position: relative;
-    font-size: 1.75em;
-    line-height: 1.75em;
     .center;
     .white;
     padding: 2em 0;
+    h1 {
+      font-size: 1.75em;
+      line-height: 1.75em;
+      padding: 0 0.75em;
+    }
+}
+
+article {
+  p, blockquote {
+    margin: 1em auto;
+    width: 85%;
+  }
+  ol, ul {
+    width: 85%;
+    margin: auto;
+  }
 }
 
 .video {
