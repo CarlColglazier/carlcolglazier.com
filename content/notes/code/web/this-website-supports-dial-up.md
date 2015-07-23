@@ -1,6 +1,7 @@
 ---
 date: 2015-07-23T16:14:53-04:00
 title: This Website Supports Dial-up.
+description: Benefits of a leaner web infrastructure.
 ---
  
 Throughout the past decade, the internet has become much larger (in multiple
