@@ -4,6 +4,17 @@
     <meta charset="utf-8">
     <meta name=viewport content="width=device-width, initial-scale=1">
 
+    <!-- Twitter cards. -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@CarlColglazier" />
+
+    <!-- OpenGraph -->
+    <meta name="og:title" content="{{ .Title }}">
+    <meta name="og:description" content="{{ .Description }}" />
+
+    <!-- Other metadata -->
+    <meta name="description" content="{{ .Description }}" />
+
     <base href="{{ .Site.BaseURL }}">
     <title>{{ .Title }}</title>
     <link rel="canonical" href="{{ .Permalink }}">
