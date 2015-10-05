@@ -1,6 +1,5 @@
 ---
 date: 2015-10-05T09:39:44-04:00
-draft: true
 title: Technology and the Point of No Return.
 ---
 
