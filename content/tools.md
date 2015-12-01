@@ -34,13 +34,11 @@ Filmmaking
 Music
 -----
 
-+ [Reaper](http://reaper.fm/)
++ Reaper
 + Sony MDR-7506 Headphones
 + Akai Professional AKAI MPK49 Keyboard
 
 Other
 -----
 
-+ [Atom](https://atom.io/)
-+ [Rust](https://rust-lang.org/)
-+ [Git BASH](https://msysgit.github.io/)
++ GNU Emacs
