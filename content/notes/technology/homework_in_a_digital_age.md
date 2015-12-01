@@ -1,6 +1,5 @@
 ---
 date: 2015-11-30T08:32:49-05:00
-draft: true
 title: An Ode to Homework in a Digital Age 
 ---
 
