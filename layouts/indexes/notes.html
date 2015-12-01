@@ -1,6 +1,9 @@
 {{ partial "head.html" . }}
     <article class="content">
-      {{ partial "title.html" . }}
+      <header>
+	<h1 id="title">Notes</h1>
+      <i>Thoughts on art, technology, and other topics.</i>
+      </header>
         {{ $paginator := .Paginate (where .Data.Pages "Section" "notes") }}
         {{ range $paginator.Pages }}
           {{ .Render "li"}}

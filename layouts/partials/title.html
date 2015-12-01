@@ -1,6 +1,8 @@
 <header>
   <h1 id="title">{{ .Title }}</h1>
-  {{ if eq .Section "notes" }}
+  {{ if isset .Params "notes" }}
+    <p>Notes, Volume {{ index .Params "notes" }}</p>
+  {{ else if eq .Section "notes" }}
     <time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time>
   {{ end }}
 </header>
