@@ -1,6 +1,5 @@
 ---
 date: 2015-12-27T17:28:10-05:00
-draft: true
 title: Goals
 ---
 
