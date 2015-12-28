@@ -9,8 +9,10 @@ menu:
     - Name: "Notes"
       URL: "/notes"
       Weight: 0
-    - Name: "FAQs"
-      URL: "/faqs"
-      Weight: 1
+  featured:
+    - Name: "Goals"
+      URL: "/goals"
+    - Name: "Tools"
+      URL: "/tools"
 blackfriday:
     plainIdAnchors: true
