@@ -9,7 +9,7 @@ after_success: gulp deploy
 cache:
   directories:
     - $GOPATH/src
-- $GOPATH/pkg
+    - $GOPATH/pkg
 branches:
   only:
   - master
