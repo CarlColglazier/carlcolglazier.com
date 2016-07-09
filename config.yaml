@@ -1,4 +1,4 @@
-baseurl: "http://carlcolglazier.com"
+baseurl: "https://carlcolglazier.com"
 languageCode: "en-us"
 title: "Carl Colglazier"
 config: "config.yaml"
