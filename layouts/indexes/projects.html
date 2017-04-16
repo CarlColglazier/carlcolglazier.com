@@ -1,0 +1,18 @@
+{{ partial "head.html" . }}
+    <article class="content">
+      <header>
+	<h1 id="title">Projects</h1>
+      <i>Various open source projects to which I have contributed.</i>
+      </header>
+        {{ $paginator := .Paginate (where .Data.Pages "Section" "projects") }}
+        {{ range $paginator.Pages }}
+          {{ .Render "project"}}
+        {{ end }}
+      {{ if $paginator.HasPrev }}
+          <a href="{{ $paginator.Prev.Url }}">Previous</a>
+      {{ end }}
+      {{ if $paginator.HasNext }}
+          <a href="{{ $paginator.Next.Url }}">Next</a>
+      {{ end }}
+    </article>
+{{ partial "footer.html" . }}

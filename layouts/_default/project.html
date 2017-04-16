@@ -1,0 +1,9 @@
+<h2><a href="{{ .Permalink }}" title="{{ .Title}}">{{ .Title}}</a></h2>
+{{ if isset .Params "source" }}
+<p><a href="{{ index .Params "source" }}" title="{{ .Title }}">Source</a></li>:
+{{ range .Params.languages }}
+{{ . }}
+{{ end }}
+{{ end }}
+</p>
+<p>{{ .Content }} </p>
