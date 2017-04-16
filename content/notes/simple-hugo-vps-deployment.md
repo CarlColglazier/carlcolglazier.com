@@ -3,9 +3,9 @@ date: 2017-04-16T14:46:28-04:00
 title: "Simple Hugo VPS Deployment"
 ---
 
-I recently moved hosting to virtual private server and NGINX. Since I use git
-and Hugo to update my website, I wanted to be able to have the website build
-simply by pushing to the server.
+I recently moved hosting to a virtual private server and NGINX. Since
+I use git and Hugo to update my website, I wanted to be able to have
+the website build simply by pushing to the server.
 
 I had previously used Gulp and FTP for this, but I wanted a simpler system
 which requires less dependencies.
@@ -62,11 +62,10 @@ For all installed `npm` packages, I chose to use local installs.
 My first step in building the website is removing the previous
 build. This ensures that deleted files do not stick around by
 mistake. To do this, I use `rimraf`, which is supported on multiple
-operating systems. I then ran the command line script to process the
-LESS files. After this, I ran the `hugo` command to build the website
-in the `public` directory. I ran `html-minifier` on each of the HTML
-files and finally removed the LESS file from the public-facing
-website.
+operating systems. I then run the command line script to process the
+LESS files. After this, I run the `hugo` command to build the website
+in the `public` directory. I run `html-minifier` on each of the HTML
+files and finally remove the LESS file from the public-facing website.
 
 With the build script written, I then added the following script to
 `.git/hooks/post-receive`:
@@ -81,3 +80,7 @@ Now I could update my website by committing and running
 ```
 git push <remote> <branch>
 ```
+
+I can then push directly to the repository on the server and receive
+the output from `npm` on my computer while the website builds. On
+average, the entire build process takes a little more than a second.
