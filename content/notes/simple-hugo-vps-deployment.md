@@ -1,6 +1,5 @@
 ---
 date: 2017-04-16T14:46:28-04:00
-draft: true
 title: "Simple Hugo VPS Deployment"
 ---
 
