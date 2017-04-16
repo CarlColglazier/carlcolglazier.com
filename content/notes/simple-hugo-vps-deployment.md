@@ -70,7 +70,7 @@ files and finally removed the LESS file from the public-facing
 website.
 
 With the build script written, I then added the following script to
-`.git/hooks/pre-receive`:
+`.git/hooks/post-receive`:
 
 ```sh
 #!/bin/sh
