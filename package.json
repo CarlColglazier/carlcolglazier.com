@@ -5,11 +5,11 @@
   "private": true,
   "scripts": {
     "prebuild": "echo Building...",
-    "build": "npm run-script prepare && npm run-script less && npm run-script minify",
-    "prepare": "./node_modules/.bin/rimraf public && hugo",
-    "less": "./node_modules/.bin/lessc --clean-css ./public/static/style.less ./public/static/style.css",
+    "build": "npm run-script prepare && hugo && npm run-script minify",
+    "prepare": "./node_modules/.bin/rimraf public && npm run-scrip less",
+    "less": "./node_modules/.bin/lessc --clean-css ./static/css/style.less ./static/css/style.css",
     "minify": "./node_modules/.bin/html-minifier --input-dir public --output-dir public -c html-minify.conf --file-ext html",
-    "postbuild": "./node_modules/.bin/rimraf public/static/*.less",
+    "postbuild": "./node_modules/.bin/rimraf ./public/css/style.less",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
