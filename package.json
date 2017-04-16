@@ -4,7 +4,12 @@
   "description": "A website.",
   "private": true,
   "scripts": {
-    "start": "hugo && gulp",
+    "prebuild": "echo Building...",
+    "build": "npm run-script prepare && npm run-script less && npm run-script minify",
+    "prepare": "./node_modules/.bin/rimraf public && hugo",
+    "less": "./node_modules/.bin/lessc --clean-css ./public/css/style.less ./public/css/style.css",
+    "minify": "./node_modules/.bin/html-minifier --input-dir public --output-dir public -c html-minify.conf --file-ext html",
+    "postbuild": "./node_modules/.bin/rimraf public/css/*.less",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,13 +23,9 @@
   },
   "homepage": "http://carlcolglazier.com/",
   "devDependencies": {
-    "gulp": "^3.8.11",
-    "gulp-clean": "^0.3.1",
-    "gulp-less": "^3.0.3",
-    "gulp-minify-html": "^1.0.2",
-    "gulp-util": "^3.0.5",
-    "less-plugin-clean-css": "^1.5.0",
-    "run-sequence": "^1.1.0",
-    "vinyl-ftp": "^0.4.1"
+    "html-minifier": "^3.4.3",
+    "less": "^2.7.2",
+    "less-plugin-clean-css": "^1.5.1",
+    "rimraf": "^2.6.1"
   }
 }
