@@ -5,6 +5,7 @@ languages:
 - CSS
 source: "https://github.com/CarlColglazier/carlcolglazier.com"
 title: Website
+summary: "My personal website (seen here) is built using hugo."
 ---
 
-My personal website (seen here) is built using hugo.
+

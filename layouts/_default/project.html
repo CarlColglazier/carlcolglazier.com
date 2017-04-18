@@ -6,4 +6,6 @@
 {{ end }}
 {{ end }}
 </p>
-<p>{{ .Content }} </p>
+{{ if isset .Params "summary" }}
+<p>{{ index .Params "summary" }} </p>
+{{ end }}
