@@ -13,6 +13,10 @@ summary: "An Elo ranking system for FIRST Robotics."
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
+## Mathematics
+
+### Rating System
+
 An [Elo rating](https://en.wikipedia.org/wiki/Elo_rating_system) is an
 estimate of a player's skill. The FRC Elo rating system makes the following
 major changes from the original Elo system:
@@ -20,6 +24,9 @@ major changes from the original Elo system:
 1. Using score margins instead of wins and losses for adjustments.
 2. Accounting for multiple players (alliances).
 3. Changing the weight based on context.
+4. New teams start with a rating of `$0$` and each team is reverted to a
+   mean of `$150$` while retaining `$80%$` of their rating from the last
+   season.
 
 The system works as follows.
 
@@ -42,7 +49,14 @@ match according to the formula `$$\text{rating} = \text{rating} + K
 and `$K = 15$`. The adjustment is subtracted for members of the blue
 alliance.
 
-With this system, teams are rewarded for 
+With this system, teams are rewarded for performing above expectations
+and punished for performing below expectations.
+
+### Credits
+
+Various model adjustments and optimizations are based on the
+[work](https://www.chiefdelphi.com/forums/showthread.php?t=152796) of
+[Caleb Sykes](calebsyk@gmail.com).
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -69,3 +83,4 @@ MathJax.Hub.Config({
     }
 });
 </script>
+
