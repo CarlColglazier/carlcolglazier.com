@@ -1,4 +1,62 @@
-* CarlColglazier.com
+#+TITLE: CarlColglazier.com
+#+AUTHOR: Carl Colglazier
+#+DATE: <2017-04-28 Fri>
 
 This repository contains the source code and files that are used to build
-[[http://carlcolglazier.com/][CarlColglazier.com]].
+[[http://carlcolglazier.com/][CarlColglazier.com]]. The website is build using Hugo and maintained on
+GitHub. When changes are made, the entire website is rebuilt using a
+[[the repository][git post-receive hook]].
+
+** Installation
+*** Prerequisites
+The build process for this website requires that the following be installed:
++ [[http://gohugo.io/][Hugo]], a static website engine.
++ [[https://www.npmjs.com/][npm]] and [[https://nodejs.org/en/][node.js]].
++ [[http://pygments.org/][Pygments]] for syntax highlighting.
+
+*** Getting Started
+To modify this repository, use ~git~ to clone a local copy.
+
+#+BEGIN_SRC sh
+git clone git@github.com:CarlColglazier/carlcolglazier.com.git
+#+END_SRC
+
+If you prefer to use HTTPS, you may also use the HTTPS link.
+If you choose to use HTTPS instead of SSH, substitute the HTTPS
+link for the SSH link for all subsequent examples.
+
+#+BEGIN_SRC sh
+git clone https://github.com/CarlColglazier/carlcolglazier.com.git
+#+END_SRC
+
+If you are interested in creating a pull request, I would suggest
+using a fork. To create a fork on GitHub, visit the [[https://github.com/CarlColglazier/carlcolglazier.com][repository]] and
+click the fork button at the top of the page. You can now clone
+your fork of the repository.
+
+#+BEGIN_SRC sh
+git clone git@github.com:<YOUR_USERNAME>/carlcolglazier.com.git
+#+END_SRC
+
+I would suggest setting the original repository as the upstream
+repository.
+
+#+BEGIN_SRC sh
+git remote set-url upstream git@github.com:CarlColglazier/carlcolglazier.com.git
+#+END_SRC
+
+Now you can ensure that your fork is up to date.
+
+#+BEGIN_SRC sh
+git pull upstream master
+git push origin master
+#+END_SRC
+
+If you would like to make a change, feel free to [[https://help.github.com/articles/creating-a-pull-request/][create]] a [[https://help.github.com/articles/about-pull-requests/][pull
+request]].
+** License
+
+The written contents of the website and this repository may be used
+under the terms of [[https://creativecommons.org/licenses/by-nc/4.0/][CC BY-NC 4.0]]. The layout and code used to build
+the website may be used and reproduced under the terms of the
+[[./LICENSE][ISC License]].
