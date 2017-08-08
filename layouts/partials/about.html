@@ -5,9 +5,24 @@
 </p></center>
 
 <p>
-  I am an engineering student at North Carolina State University, working toward
-  degrees in computer science and communication.
+  I am an undergraduate student at North Carolina State University
+  working toward degrees in computer science and communication; I want
+  to use what I learn to <em>make meaningful information useful and
+  accessible</em>.
 </p>
 <p>
-  
+  Some of my academic interests include concurrency, quantitative
+  research, media studies, and computational social science. I also
+  enjoy exploring the creative process through music, photography, and
+  film. Thoughts on these and other subjects can be found on this
+  website.
 </p>
+
+<hr />
+
+<h2>Latest Notes</h2>
+
+{{ $paginator := .Paginate (where .Data.Pages "Section" "notes") }}
+{{ range first 5 $paginator.Pages }}
+  {{ .Render "li"}}
+{{ end }}
