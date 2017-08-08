@@ -7,6 +7,7 @@ languages:
 - PHP
 source: https://github.com/team2059/website
 title: Hitchhikers Robotics Group - Website
+image: hhweb.png
 ---
 
 A static website for the robotics team for which I was co-captain for

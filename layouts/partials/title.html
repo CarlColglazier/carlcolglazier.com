@@ -1,4 +1,18 @@
+<style>
+  .gradient {
+  display: table;
+  width: 100%;
+  background: linear-gradient(rgba(51, 51, 51, 0.5), rgba(51, 51, 51, 0.75)), url('/images/{{ index .Params "image" }}');
+  background-position: center top;
+  color: white;
+}
+</style>
+{{ if isset .Params "image" }}
+<header id="landing-wrapper" class="gradient">
+{{ else }}
 <header>
+{{ end }}
+
   <h1 id="title">{{ .Title }}</h1>
   {{ if isset .Params "notes" }}
     <p>Notes, Volume {{ index .Params "notes" }}</p>
