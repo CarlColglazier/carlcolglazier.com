@@ -4,15 +4,15 @@
 	<h1 id="title">Notes</h1>
       <i>Thoughts on art, technology, and other topics.</i>
       </header>
-        {{ $paginator := .Paginate (where .Data.Pages "Section" "notes") }}
-        {{ range $paginator.Pages }}
-          {{ .Render "li"}}
-        {{ end }}
+      {{ $paginator := .Paginate (where .Data.Pages "Section" "notes") }}
+      {{ range $paginator.Pages }}
+        {{ .Render "li"}}
+      {{ end }}
       {{ if $paginator.HasPrev }}
-          <a href="{{ $paginator.Prev.Url }}">Previous</a>
+        <a href="{{ $paginator.Prev.URL }}">Previous</a>
       {{ end }}
       {{ if $paginator.HasNext }}
-          <a href="{{ $paginator.Next.Url }}">Next</a>
+        <a href="{{ $paginator.Next.URL }}" class="right">Next</a>
       {{ end }}
     </article>
 {{ partial "footer.html" . }}

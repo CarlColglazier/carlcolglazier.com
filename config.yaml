@@ -4,7 +4,7 @@ title: "Carl Colglazier"
 config: "config.yaml"
 metaDataFormat: "yaml"
 PygmentsCodeFences: true
-paginate: 25
+paginate: 10
 menu:
   main:
     - Name: "Notes"

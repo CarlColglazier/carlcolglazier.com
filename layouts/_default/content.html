@@ -1,2 +1,9 @@
 {{ partial "title.html" . }}
+{{ if or (eq (relURL .URL) ("/index/" | safeHTML)) (eq (relURL .URL) ("/" | safeHTML)) }}
+<center><p>|
+{{ range .Site.Menus.featured }}
+<a href="{{ .URL }}">{{ .Name }}</a> |
+{{ end }}
+</p></center>
+{{ end }}
 {{ .Content }}
