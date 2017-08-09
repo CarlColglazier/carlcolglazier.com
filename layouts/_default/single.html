@@ -1,6 +1,5 @@
 {{ partial "head.html" . }}
   <article class="content">
-    {{ partial "title.html" . }}
-    {{ .Content }}
+    {{ .Render "content" }}
     </article>
 {{ partial "footer.html" . }}

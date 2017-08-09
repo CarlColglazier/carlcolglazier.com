@@ -1,5 +1,14 @@
 {{ partial "head.html" . }}
 <article class="content">
-  {{ partial "about.html" . }}
+  {{ range .Data.Pages }}
+    {{ if isset .Params "homepage" }}
+      {{ .Render "content" }}
+    {{ end }}
+  {{ end }}
+  <h2>Latest Notes</h2>
+  {{ $paginator := .Paginate (where .Data.Pages "Section" "notes") }}
+  {{ range first 5 $paginator.Pages }}
+    {{ .Render "li"}}
+  {{ end }}
 </article>
 {{ partial "footer.html" . }}

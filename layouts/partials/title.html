@@ -13,10 +13,9 @@
   {{ if isset .Params "notes" }}
     <p>Notes, Volume {{ index .Params "notes" }}</p>
   {{ else if eq .Section "notes" }}
-    {{ if isset .Params "subtitle" }}
-      <p>{{ index .Params "subtitle" }}</p>
-    {{ end }}
     <time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time>
   {{ end }}
+  {{ if isset .Params "subtitle" }}
+    <p><em>{{ index .Params "subtitle" }}</em></p>
+  {{ end }}
 </header>
-
