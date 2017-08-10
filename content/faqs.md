@@ -27,7 +27,7 @@ Marshall McLuhan coined the phrase "the medium is the message" to
 describe how new forms of media (such as the printed word, television,
 or the internet) have such a great effect on the human experience that
 the medium itself embeds itself into any message it conveys. Currently
-emerging forms of media are rooted increasingly in computer and our
+emerging forms of media are rooted increasingly in computers and our
 access to them, which embeds itself into any message sent over digital
 communication systems.
 
