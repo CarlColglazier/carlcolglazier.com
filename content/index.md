@@ -11,10 +11,10 @@ working toward degrees in computer science and communication; I want
 to use what I learn to *make meaningful information useful and
 accessible*.
 
-Some of my academic interests include concurrency, quantitative
-research, media studies, and computational social science. I also
-enjoy exploring the creative process through music, photography, and
-film. Thoughts on these and other subjects can be found on this
-website.
+
+My primary academic interests are new media studies, computational
+social science, and computer performance. I also enjoy exploring the
+creative process through music, photography, and film. Thoughts on
+these and other subjects can be found on this website.
 
 - - -
