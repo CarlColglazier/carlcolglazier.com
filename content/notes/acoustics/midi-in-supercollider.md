@@ -1,7 +1,6 @@
 ---
 title: "Making Connections: MIDI in SuperCollider"
 date: 2017-09-19T19:45:49-04:00
-draft: true
 notes:
   - acoustics
 ---
