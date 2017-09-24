@@ -7,3 +7,15 @@
 </p></center>
 {{ end }}
 {{ .Content }}
+{{ if eq .Section "notes" }}
+{{ if .PrevInSection }}
+<div class="card">
+  <p><a href="{{.PrevInSection.Permalink}}">Previous: {{.PrevInSection.Title}}</a></p>
+</div>
+{{ end }}
+{{ if .NextInSection }}
+<div class="card">
+  <p><a href="{{.NextInSection.Permalink}}" class="right">Next: {{.NextInSection.Title}}</a></p>
+</div>
+{{ end }}
+{{end}}
