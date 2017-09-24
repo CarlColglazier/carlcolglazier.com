@@ -5,6 +5,8 @@ config: "config.yaml"
 metaDataFormat: "yaml"
 PygmentsCodeFences: true
 paginate: 10
+taxonomies:
+  notes: "notes"
 menu:
   main:
     - Name: "Notes"

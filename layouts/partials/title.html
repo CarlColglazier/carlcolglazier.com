@@ -11,7 +11,8 @@
 {{ end }}
   <h1 id="title">{{ .Title }}</h1>
   {{ if isset .Params "notes" }}
-    <p>Notes, Volume {{ index .Params "notes" }}</p>
+    <time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time>
+    <p><em><small>Notes on {{ range .Params.notes }}<a href="/notes/{{.}}">{{.}}</a>{{end}}</small></em></p>
   {{ else if eq .Section "notes" }}
     <time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time>
   {{ end }}
