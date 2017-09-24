@@ -7,7 +7,9 @@
       {{.Content}}
       {{ $paginator := .Paginate (where .Site.Pages "Type" "notes") }}
       {{ range $paginator.Pages }}
-        {{ .Render "li"}}
+        {{ if not (eq .File.BaseFileName "_index") }}
+          {{ .Render "li"}}
+        {{ end }}
       {{ end }}
       {{ if $paginator.HasPrev }}
         <a href="{{ $paginator.Prev.URL }}">Previous</a>
