@@ -1,1 +1,6 @@
-<p><a href="{{ .Permalink }}" title="{{ .Title}}">{{ .Title}}</a></p>
+<a href="{{ .Permalink }}" class="card">
+  <h3>{{ .Title}}</h3>
+  {{ if isset .Params "subtitle" }}
+    <p><em>{{ index .Params "subtitle" }}</em></p>
+  {{ end }}
+</a>

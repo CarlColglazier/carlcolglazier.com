@@ -1,14 +1,13 @@
-{{ partial "head.html" . }}
+{{ define "main" }}
 <article class="content">
-  {{ range .Data.Pages }}
-    {{ if isset .Params "homepage" }}
-      {{ .Render "content" }}
-    {{ end }}
-  {{ end }}
+  {{ partial "title.html" . }}
+  {{.Content}}
   <h2>Latest Notes</h2>
-  {{ $paginator := .Paginate (where .Data.Pages "Section" "notes") }}
-  {{ range first 5 $paginator.Pages }}
-    {{ .Render "li"}}
-  {{ end }}
+  <div class="grid">
+    {{ $paginator := .Paginate (where .Data.Pages "Section" "notes") }}
+    {{ range first 4 $paginator.Pages }}
+      {{ .Render "li"}}
+    {{ end }}
+  </div>
 </article>
-{{ partial "footer.html" . }}
+{{ end }}

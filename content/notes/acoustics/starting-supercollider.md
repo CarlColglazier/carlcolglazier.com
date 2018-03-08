@@ -1,7 +1,6 @@
 ---
 date: 2017-09-18T18:51:29-04:00
 title: Starting SuperCollider
-image: emacs-sc.jpg
 notes: 
   - "acoustics"
 ---
@@ -44,7 +43,7 @@ into and expand upon that legacy.
 Development Tools
 -----------------
 
-![Emacs interfacing with SuperCollider](/images/emacs-sc.jpg)
+{{< figure src="images/emacs-sc.jpg" title="Emacs interfacing with SuperCollider" >}}
 
 SuperCollider has its own IDE called `scide`, but I will be working in
 the Emacs development environment. Emacs is a general purpose text
@@ -57,7 +56,7 @@ loop). This encourages a workflow of writing small chucks of code,
 sending them to the server to be evaluated, and then analyzing the
 results.
 
-![JACK server connections](/images/jack-cadence.jpg)
+{{< figure src="/images/jack-cadence.jpg" title="JACK server connections." >}}
 
 SuperCollider works by interfacing with
 the [JACK Audio Connection Kit](http://jackaudio.org/). Like

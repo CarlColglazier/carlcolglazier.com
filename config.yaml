@@ -5,6 +5,8 @@ config: "config.yaml"
 metaDataFormat: "yaml"
 PygmentsCodeFences: true
 paginate: 10
+title: "Carl Colglazier"
+languageCode: "en-us"
 taxonomies:
   notes: "notes"
 menu:

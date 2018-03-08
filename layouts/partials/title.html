@@ -1,3 +1,30 @@
+<header>
+  <h1 id="title">{{ .Title }}</h1>
+  {{ if isset .Params "subtitle" }}
+    <p><em>{{ index .Params "subtitle" }}</em></p>
+  {{ end }}
+  {{ if eq .Section "notes" }}
+    <time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time>
+  {{ end }}
+  {{ if isset .Params "notes" }}
+  | <em class="right-text"><small>Notes on {{ range .Params.notes }}<a href="/notes/{{.}}">{{.}}</a>{{end}}.</small></em>
+  {{ end }}
+</header>
+{{ if isset .Params "image" }}
+<img src="/images/{{ index .Params "image" }}" />
+{{ else }}
+{{ if isset .Params "video" }}
+  <section class="video">
+    <iframe src="https://www.youtube-nocookie.com/embed/{{ index .Params "video" }}?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen>
+    </iframe>
+  </section>
+  {{ end }}
+  {{ end }}
+
+  
+
+<!--
+
 {{ if isset .Params "image" }}
 <header id="landing-wrapper" class="gradient" style="background: linear-gradient(rgba(51, 51, 51, 0.5), rgba(51, 51, 51, 0.75)), url('/images/{{ index .Params "image" }}');">
 {{ else }}
@@ -9,14 +36,15 @@
 {{ end }}
 <header>
 {{ end }}
-  <h1 id="title">{{ .Title }}</h1>
+<h1 id="title">{{ .Title }}</h1>
   {{ if isset .Params "notes" }}
-    <time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time>
-    <p><em><small>Notes on {{ range .Params.notes }}<a href="/notes/{{.}}">{{.}}</a>{{end}}</small></em></p>
+    <p><time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time></p>
+    <p class="right-text"><em><small>Notes on {{ range .Params.notes }}<a href="/notes/{{.}}">{{.}}</a>{{end}}</small></em></p>
   {{ else if eq .Section "notes" }}
-    <time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time>
+     <p><time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time></p>
   {{ end }}
   {{ if isset .Params "subtitle" }}
     <p><em>{{ index .Params "subtitle" }}</em></p>
   {{ end }}
 </header>
+-->

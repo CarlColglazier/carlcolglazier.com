@@ -1,21 +1,38 @@
 /**** VARIABLES ****/
 
-@black: #111;
+@black: #101010;
 @dark-gray: #444;
 @light-gray: #AAA;
-@white: #EEE;
+@white: #EFEFEF;
 
 /**** FONTS ****/
 
 @font-face {
     font-family: 'Glacial Indifference';
-    src: url('/fonts/GlacialIndifference-Regular.woff') format('woff');
+    src: url('/fonts/GlacialIndifference-Regular.otf') format('opentype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Glacial Indifference';
+    src: url('/fonts/GlacialIndifference-Bold.otf') format('opentype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Glacial Indifference';
+    src: url('/fonts/GlacialIndifference-Italic.otf') format('opentype');
+    font-style: italic;
 }
 
 /***** REUSABLE STYLES ****/
 
 .center {
     text-align: center;
+}
+
+.gray {
+    color: @dark-gray;
 }
 
 .black {
@@ -35,12 +52,13 @@
 /**** STYLE ****/
 
 body {
-  line-height: 1.6em;
+  line-height: 1.45;
   margin: 0;
   color: @black;
   background-color: @black;
   font-family: 'Glacial Indifference', 'Trebuchet MS', sans-serif;
-  font-size: 24px;
+  font-size: 20px;
+  min-width: 300px;
 }
 
 @media (max-width: 768px) {
@@ -54,42 +72,73 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0;
 }
 
+h2 {
+   color: @dark-gray;
+   margin: 5em 0 0.4rem 0;
+   font-size: 1rem;
+   font-weight: 700;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+}
+
+h3 {
+  font-size: 1.25rem;
+  color: @dark-gray;
+  a, a:visited {
+    color: @dark-gray;
+  }
+}
+
+
+
 html {
   padding: 0;
 }
 
-a {
+a, a:visited {
   color: @black;
 }
 
-blockquote, a:visited {
+blockquote {
   color: @dark-gray;
 }
 
 header {
     position: relative;
-    .center;
-    .white;
+    //.center;
+    //.white;
     padding: 2em 0;
     h1 {
       font-size: 1.75em;
       line-height: 1.75em;
-      padding: 0 0.75em;
+      //width: 85%;
+      //margin: 0 auto;
+      //padding: 0 0.75em;
+      margin: 2rem 0 0.5rem 0;
     }
-    a, a:visited{
-      color: @white;
+    time {
+      display: inline-block;
     }
 }
 
 article {
-  p, blockquote {
-    margin: 1em auto;
-    width: 85%;
+  p {
+    margin: 1em 0;
+    width: 32em;
+    max-width: 100%;
+    //width: 85%;
+  }
+  blockquote {
+    margin: 1em 2em;
+    width: 30em;
+    max-width: 90%;
   }
   ol, ul {
-    width: 75%;
-    margin: auto;
-    padding-left: 10%;
+    //width: 75%;
+    width: 30em;
+    max-width: 100%;
+    margin: 1em 0;
+    padding-left: 2em;
   }
 }
 
@@ -147,9 +196,9 @@ canvas {
 
 .content, .inner-footer {
   margin: 0 auto 0 auto;
-  width: 32em;
-  max-width: 90%;
-  padding: 2.5% 5% 2.5% 5%;
+  //width: 32em;
+  max-width: 64rem;
+  padding: 2.5% 5%;
   position: relative;
 }
 
@@ -176,19 +225,26 @@ canvas {
   background-size: cover!important;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 1em;
+}
+
 .card {
-  width: 85%;
   border: 2px black solid;
-  margin: 2em auto;
-  padding: 1em 0;
-
-  h2 {
-    text-align: center;
-    padding: 0 1em;  
-  }
-
+  padding: 1em;
   hr {
     margin: 2em 0 0 0;
+  }
+  a, a h3 {
+    text-decoration: none;
+  }
+  &:hover {
+    a, h3 {
+      color: @white;
+    }
+    background-color: @black;
   }
 }
 

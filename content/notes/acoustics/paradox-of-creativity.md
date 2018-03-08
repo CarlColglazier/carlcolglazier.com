@@ -1,14 +1,11 @@
 ---
 date: 2017-09-15T15:01:27-04:00
 title: The Paradox of Creativity
-image: "ouroboros.jpg"
 notes:
   - acoustics
 ---
 
-{{< bandcamp 1997009512 >}}
-
-**Creativity is mythologized.**
+## Creativity is mythologized.
 
 Many times we think of creativity like the ouroboros, an ancient
 symbol of a snake eating its own tail. We think of creative people as
@@ -25,7 +22,7 @@ harsh case of cognitive dissonance; it is easier to believe that a
 successful pursuit of creativity is beyond our grasps than to take
 action to bring it within our reach.
 
-**Creativity is intimidating.**
+## Creativity is intimidating.
 
 When engaging in a creative pursuit, we are setting ourselves up for
 failure. After all, creativity is a process of constant
@@ -47,7 +44,7 @@ beginning of a project. I have an idea or a concept that I want to
 see reach its potential. Soon, however, I realize that my initial
 idea was incomplete or too fuzzy to know what to do next.
 
-**Creativity is hard work.**
+## Creativity is hard work.
 
 This summer, I worked on creating a series of folktronica songs using
 primarily my mandolin and an analogue synthesizer. The synthesizer
@@ -74,7 +71,7 @@ outside of that space. This helped me to deal with my biggest creative
 struggle: time. Creativity demands our time--the type of time that
 requires our energy.
 
-**Creativity is worth it.**
+## Creativity is worth it.
 
 Creativity does not exist in a vacuum. No person is simply a creative
 person; in contrast, we all have the ability to create, but it is not

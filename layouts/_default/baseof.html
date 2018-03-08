@@ -16,7 +16,9 @@
     <meta name="description" content="{{ .Description }}" />
 
     <base href="{{ .Site.BaseURL }}">
-    <title>{{ .Title }}</title>
+    <title>{{ block "title" . }}
+      {{ .Site.Title }}
+    {{ end }}</title>
     <link rel="canonical" href="{{ .Permalink }}">
     <link href="/css/style.css" rel="stylesheet">
 
@@ -26,12 +28,11 @@
     {{ end }}
   </head>
   <body>
-    <div class="main black">
-<navigation>
-  <div class="logo">
-    <a href="/">CC</a>
-  </div>
-  <ul class="inline-list center">
-    {{ range .Site.Menus.main }}<li><a href="{{ .URL }}">{{ .Name }}</a></li>{{ end }}
-  </ul>
-</navigation>
+    <div class="black main">
+      {{ partial "header.html" . }}
+      {{ block "main" . }}
+      {{ end }}
+      {{ partial "footer.html" . }}
+    </div>
+  </body>
+</html>
