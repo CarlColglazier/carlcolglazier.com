@@ -4,7 +4,9 @@
     <p><em>{{ index .Params "subtitle" }}</em></p>
   {{ end }}
   {{ if eq .Section "notes" }}
-    <time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time>
+    {{ if .IsPage }}
+      <time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time>
+    {{ end }}
   {{ end }}
   {{ if isset .Params "notes" }}
   | <em class="right-text"><small>Notes on {{ range .Params.notes }}<a href="/notes/{{.}}">{{.}}</a>{{end}}.</small></em>
