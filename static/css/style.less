@@ -65,10 +65,12 @@ body {
   body {
     font-size: 16px;
   }
+  .grid {
+    grid-template-columns: 100%!important;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
-    list-style: 0.8em;
     padding: 0;
 }
 
@@ -82,14 +84,12 @@ h2 {
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: @dark-gray;
   a, a:visited {
     color: @dark-gray;
   }
 }
-
-
 
 html {
   padding: 0;
@@ -105,15 +105,10 @@ blockquote {
 
 header {
     position: relative;
-    //.center;
-    //.white;
     padding: 2em 0;
     h1 {
       font-size: 1.75em;
       line-height: 1.75em;
-      //width: 85%;
-      //margin: 0 auto;
-      //padding: 0 0.75em;
       margin: 2rem 0 0.5rem 0;
     }
     time {
@@ -126,7 +121,6 @@ article {
     margin: 1em 0;
     width: 32em;
     max-width: 100%;
-    //width: 85%;
   }
   blockquote {
     margin: 1em 2em;
@@ -134,7 +128,6 @@ article {
     max-width: 90%;
   }
   ol, ul {
-    //width: 75%;
     width: 30em;
     max-width: 100%;
     margin: 1em 0;
@@ -196,7 +189,6 @@ canvas {
 
 .content, .inner-footer {
   margin: 0 auto 0 auto;
-  //width: 32em;
   max-width: 64rem;
   padding: 2.5% 5%;
   position: relative;
@@ -232,19 +224,20 @@ canvas {
 }
 
 .card {
-  border: 2px black solid;
+  border: 2px @dark-gray solid;
   padding: 1em;
   hr {
     margin: 2em 0 0 0;
   }
-  a, a h3 {
+  a, h3 {
     text-decoration: none;
   }
   &:hover {
+    border: 2px @black solid;
+    background-color: @black;
     a, h3 {
       color: @white;
     }
-    background-color: @black;
   }
 }
 
