@@ -32,7 +32,9 @@
       {{ partial "header.html" . }}
       {{ block "main" . }}
       {{ end }}
-      {{ partial "footer.html" . }}
+      {{ if .IsPage }}
+        {{ partial "footer.html" . }}
+      {{ end }}
     </div>
   </body>
 </html>
