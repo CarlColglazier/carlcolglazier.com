@@ -13,12 +13,11 @@
   {{ end }}
 </header>
 {{ if isset .Params "image" }}
-<img src="/images/{{ index .Params "image" }}" />
-{{ else }}
+  <img class="featured" src="/images/{{ index .Params "image" }}" />
+{{ end }}
 {{ if isset .Params "video" }}
   <section class="video">
     <iframe src="https://www.youtube-nocookie.com/embed/{{ index .Params "video" }}?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen>
     </iframe>
   </section>
-  {{ end }}
-  {{ end }}
+{{ end }}

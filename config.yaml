@@ -11,6 +11,8 @@ taxonomies:
   notes: "notes"
 menu:
   main:
+    - Name: "About"
+      URL: "/about"
     - Name: "Notes"
       URL: "/notes"
       Weight: 0

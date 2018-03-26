@@ -57,16 +57,30 @@ body {
   color: @black;
   background-color: @white;
   font-family: 'Glacial Indifference', 'Trebuchet MS', sans-serif;
-  font-size: 20px;
+  font-size: 125%;
   min-width: 300px;
+}
+
+@media (max-width: 1150px) {
+  .featured {
+    width: 100%!important;
+    max-width: 40rem;
+    float: none!important;
+    margin: 0;
+    padding: 0!important;
+  }
 }
 
 @media (max-width: 768px) {
   body {
-    font-size: 16px;
+    font-size: 100%;
   }
   .grid {
     grid-template-columns: 100%!important;
+  }
+  .inline-list {
+    margin-top: 1.75rem!important;
+    width: 100%;
   }
 }
 
@@ -76,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h2 {
    color: @dark-gray;
-   margin: 5em 0 0.4rem 0;
+   margin: 5rem 0 0.4rem 0;
    font-size: 1rem;
    font-weight: 700;
    text-transform: uppercase;
@@ -103,12 +117,19 @@ blockquote {
   color: @dark-gray;
 }
 
+navigation {
+  max-width: 64rem;
+  padding: 0 5%;
+  margin: 0 auto 3rem auto;
+  display: inherit;
+}
+
 header {
     position: relative;
-    padding: 2em 0;
+    padding: 2rem 0;
     h1 {
-      font-size: 1.75em;
-      line-height: 1.75em;
+      font-size: 1.75rem;
+      line-height: 1.75rem;
       margin: 2rem 0 0.5rem 0;
     }
     time {
@@ -118,39 +139,39 @@ header {
 
 article {
   p {
-    margin: 1em 0;
-    width: 32em;
+    margin: 1rem 0;
+    width: 40rem;
     max-width: 100%;
   }
   blockquote {
-    margin: 1em 2em;
-    width: 30em;
+    margin: 1rem 2rem;
+    width: 30rem;
     max-width: 90%;
   }
   ol, ul {
-    width: 30em;
+    width: 30rem;
     max-width: 100%;
-    margin: 1em 0;
-    padding-left: 2em;
+    margin: 1rem 0;
+    padding-left: 2rem;
   }
 }
 
 code {
   font-family: monospace;
-  font-size: 0.7em;
+  font-size: 0.7rem;
 }
 
 pre {
   .white;
   overflow-y: hidden;
   overflow-x: auto;
-  padding: 1em;
-  font-size: 0.7em;
+  padding: 1rem;
+  font-size: 0.7rem;
   code {
     overflow-wrap: normal;
     overflow: hidden;
     white-space: pre;
-    font-size: 1.0em;
+    font-size: 1.0rem;
   }
 }
 
@@ -196,16 +217,16 @@ canvas {
 
 .logo {
   position: relative;
-  height: 3em;
-  width: 3em;
+  height: 3rem;
+  width: 3rem;
   margin: auto;
-  padding: 1em 0 0;
+  padding: 2rem 0 0;
   a {
     .white;
     position: absolute;
     left: 0;
-    padding: 0.75em;
-    border-radius: 1.5em;
+    padding: 1rem;
+    border-radius: 2rem;
     text-decoration: none;
   }
 }
@@ -220,14 +241,14 @@ canvas {
 .grid {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-gap: 1em;
+  grid-gap: 1rem;
 }
 
 .card {
   border: 2px @dark-gray solid;
-  padding: 1em;
+  padding: 1rem;
   hr {
-    margin: 2em 0 0 0;
+    margin: 2rem 0 0 0;
   }
   a, h3 {
     text-decoration: none;
@@ -244,8 +265,9 @@ canvas {
 /* FOOTER */
 
 .footer {
-  padding: 5em;
-  .black;
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 5rem;
   ::selection {
       background-color: @light-gray;
   }
@@ -261,16 +283,34 @@ canvas {
 
 a.title {
   text-decoration: none;
-  padding-bottom: 1.5em;
+  padding-bottom: 1.5rem;
 }
 
 .inline-list {
   list-style: none;
   padding: 0;
-  width: 100%;
+  margin-top: -2.75rem;
+  float: right;
   li {
       display: inline-block;
-      padding: 0 0.25em;
-      min-width: 4em;
+      min-width: 4rem;
   }
+  a {
+    width: 4rem;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    padding: 1rem;
+    &:hover {
+      .white;
+      transition:.25s;
+    }
+  }
+}
+
+.featured {
+    width: 20rem;
+    float: right;
+    //margin: 4.5rem 0 0 0;
+    padding: 0 0 2rem 2rem;
 }
