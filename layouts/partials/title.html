@@ -13,7 +13,11 @@
   {{ end }}
 </header>
 {{ if isset .Params "image" }}
-  <img class="featured" src="/images/{{ index .Params "image" }}" />
+  <img class="featured" src="/images/{{ index .Params "image" }}"
+     {{ if isset .Params "image-caption" }}
+     alt="{{index .Params "image-caption"}}"
+     {{ end }}
+  />
 {{ end }}
 {{ if isset .Params "video" }}
   <section class="video">
