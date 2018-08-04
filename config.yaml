@@ -11,17 +11,15 @@ taxonomies:
   notes: "notes"
 menu:
   main:
-    - Name: "About"
-      URL: "/about"
     - Name: "Notes"
       URL: "/notes"
       Weight: 0
-    - Name: "Projects"
-      URL: "/projects"
-  featured:
-    - Name: "Goals"
-      URL: "/goals"
-    - Name: "FAQs"
-      URL: "/faqs"
+    - Name: "Publications"
+      URL: "/publications"
+# TODO: Document my open-source projects here.
+#    - Name: "Projects"
+#      URL: "/projects"
+    - Name: "Oeuvre"
+      URL: "/works"
 blackfriday:
     plainIdAnchors: true

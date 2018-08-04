@@ -61,6 +61,3 @@ Press
 [^ww]: Third Prize, StudentCam 2010
 
 [^cary]: Paul Green Multimedia Award recipient (North Carolina Society of Historians)
-
-
-
