@@ -1,0 +1,16 @@
+{{ define "title" }}
+  {{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<article class="content">
+  {{ partial "title.html" . }}
+  {{.Content}}
+  {{ $title := .Title }}
+  {{ range .Site.Pages }}
+    {{ if in .Params.work $title }}
+      {{ .Render "li" }}
+    {{ end }} 
+  {{ end }}
+</article>
+{{ end }}

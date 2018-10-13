@@ -1,0 +1,28 @@
+{{ define "title" }}
+  {{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<article class="content">
+  {{ partial "title.html" . }}
+  {{.Content}}
+  <div>
+    {{ $pages := .Data.Pages }}
+    {{- if .Sections -}}
+      {{- range .Sections -}}
+        {{ $pages = $pages | append .Data.Pages }}
+      {{- end -}}
+    {{- end -}}
+    {{ $pag := .Paginate (sort $pages "Date" "desc") }}
+    {{ range $pag.Pages }}
+    {{ .Render "li" }}
+    {{ end }}
+  </div>
+  {{ if $pag.HasPrev }}
+    <a href="{{ $pag.Prev.URL }}">Previous</a>
+  {{ end }}
+  {{ if .Paginator.HasNext }}
+    <a href="{{ $pag.Next.URL }}" class="right">Next</a>
+  {{ end }}
+</article>
+{{ end }}
