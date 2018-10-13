@@ -4,24 +4,33 @@
     <p><em>{{ index .Params "subtitle" }}</em></p>
   {{ end }}
   {{ if eq .Section "notes" }}
+    <p>
     {{ if .IsPage }}
       <time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time>
     {{ end }}
+    {{ if isset .Params "notes" }}
+      | <em class="right-text"><small>Notes on {{ range .Params.notes }}<a href="/notes/{{.}}">{{.}}</a>{{end}}.</small></em>
+    {{ end }}
+    </p>
   {{ end }}
-  {{ if isset .Params "notes" }}
-  | <em class="right-text"><small>Notes on {{ range .Params.notes }}<a href="/notes/{{.}}">{{.}}</a>{{end}}.</small></em>
+  {{ if isset .Params "work" }}
+    <p>Notes on 
+    {{ range .Param "work" }}
+      <a href="/work/{{ . }}">{{.}}</a>.
+    {{ end }}
+    </p>
   {{ end }}
 </header>
 {{ if isset .Params "image" }}
-  <img class="featured" src="/images/{{ index .Params "image" }}"
+<img class="featured" src="/images/{{ index .Params "image" }}"
      {{ if isset .Params "image-caption" }}
      alt="{{index .Params "image-caption"}}"
      {{ end }}
-  />
+/>
 {{ end }}
 {{ if isset .Params "video" }}
-  <section class="video">
-    <iframe src="https://www.youtube-nocookie.com/embed/{{ index .Params "video" }}?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen>
-    </iframe>
-  </section>
+<section class="video">
+  <iframe src="https://www.youtube-nocookie.com/embed/{{ index .Params "video" }}?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen>
+  </iframe>
+</section>
 {{ end }}

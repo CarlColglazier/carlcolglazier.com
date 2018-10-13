@@ -1,6 +1,14 @@
-<a href="{{ .Permalink }}" class="card">
+<a href="{{ .Permalink }}" class="plain"><div class="card">
   <h3>{{ .Title}}</h3>
   {{ if isset .Params "subtitle" }}
-    <p><em>{{ index .Params "subtitle" }}</em></p>
+  <p>{{ index .Params "subtitle" }}</p>
   {{ end }}
-</a>
+  {{ if isset .Params "tools" }}
+  <small>Tools: 
+  {{ range .Param "tools" }}
+  {{.}}
+    {{end}}
+    </small>
+  {{end}}
+</div></a>
+

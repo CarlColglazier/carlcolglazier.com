@@ -248,22 +248,21 @@ canvas {
 }
 
 .card {
-  border: 2px @dark-gray solid;
   padding: 1rem;
-  hr {
-    margin: 2rem 0 0 0;
-  }
-  a, h3 {
-    text-decoration: none;
-  }
+  border-left: solid;
+  margin-bottom: 1rem;
   &:hover {
-    border: 2px @black solid;
     background-color: @black;
-    a, h3 {
+    a, h3, p {
       color: @white;
     }
   }
 }
+
+a.plain {
+  text-decoration: none;
+}
+
 
 /* FOOTER */
 
