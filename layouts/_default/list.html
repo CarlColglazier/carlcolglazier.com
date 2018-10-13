@@ -6,7 +6,7 @@
 <article class="content">
   {{ partial "title.html" . }}
   {{.Content}}
-  <div>
+  <div><!--<div class="grid">-->
   {{ range .Paginator.Pages }}
     {{ .Render "li"}}
   {{ end }}
