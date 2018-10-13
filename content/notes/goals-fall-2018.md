@@ -5,6 +5,8 @@ date: 2018-08-13T17:25:46-04:00
 
 This fall semester, I want to...
 
+<!--more-->
+
 Be a **good student** not just by doing the readings, but also by
 investing in the topics. Set myself up for success by allocating
 enough time to do things well. Remember what is important. Focus on
