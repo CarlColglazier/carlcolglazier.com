@@ -3,7 +3,8 @@ title: "Cheesecake"
 subtitle: An evidence-based approach to FRC analytics.
 types: ["Software"]
 tools: ["Python", "Flask", "React.js"]
-draft: true
+aliases:
+  - /projects/frc-elo/
 ---
 
 Cheesecake is an evidence-based scouting and statistics approach to

@@ -1,7 +1,6 @@
 ---
 title: "Kvizo"
 subtitle:  A practice and learning tool for adademic quiz bowl.
-draft: true
 ---
 
 Kvizo is a practice and learning tool for adademic quiz bowl. It
