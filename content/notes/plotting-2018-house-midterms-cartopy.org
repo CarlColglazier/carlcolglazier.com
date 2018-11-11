@@ -13,6 +13,7 @@ to creating the map.
 
 #+BEGIN_SRC python :session
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 import cartopy.crs as ccrs
@@ -53,10 +54,10 @@ map the winning party to the Federal Information Processing Standards
 #+BEGIN_SRC python :session
   def winner(fips, dist):
       try:
-          if dist == "00":
-              dist = "AL"
-          else:
+          if dist != "00":
               dist = str(int(dist))
+          else:
+              return house[(house["FIPS"] == fips)]["Party"].values[0]
           return house[(house["FIPS"] == fips) & (house["CD#"] == dist)]["Party"].values[0]
       except:
           return None
@@ -70,7 +71,7 @@ With all the pieces in place, I created the map.
   reader = shapereader.Reader(shapes)
   shapes = [ShapelyFeature(x, ccrs.PlateCarree()) for x in reader.geometries()]
   recs = list(reader.records())
-  fig, __ = plt.subplots(figsize=(20, 15))
+  fig, ax = plt.subplots(figsize=(20, 15))
   projection = ccrs.AlbersEqualArea(central_longitude=-100)
   ax = plt.subplot(111)
   ax.set_visible(False)
@@ -106,7 +107,7 @@ With all the pieces in place, I created the map.
           a = axhi
       else:
           a = ax1
-          a.add_feature(shape, color=color, linewidth=.25, edgecolor='w')
+      a.add_feature(shape, color=color, linewidth=.25, edgecolor='w')
 
   plt.savefig(filename)
   plt.clf()
