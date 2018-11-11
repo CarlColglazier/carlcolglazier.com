@@ -10,10 +10,13 @@
 
     <!-- OpenGraph -->
     <meta name="og:title" content="{{ .Title }}">
-    <meta name="og:description" content="{{ .Description }}" />
+    <meta name="og:description" content="{{ .Summary }}" />
+    {{ if isset .Params "image" }}
+      <meta property="og:image" content="{{ printf "%s/%s" "images" (index .Params "image") | absURL }}" />
+    {{ end }}
 
     <!-- Other metadata -->
-    <meta name="description" content="{{ .Description }}" />
+    <meta name="description" content="{{ .Summary }}" />
 
     <title>{{ block "title" . }}
       {{ .Site.Title }}
