@@ -18,9 +18,15 @@ maps of the 2018 midterm U.S. House election results by populations:
 total population, population of Democratic voters, and population of
 GOP voters.
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.min.js"></script><script src="//unpkg.com/cartogram-chart@1.0.6/dist/cartogram-chart.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.min.js"></script>
 
-<div id="world"></div>
+<script src="https://unpkg.com/cartogram-chart@1.0.6/dist/cartogram-chart.min.js"></script>
+
+<!-- htmlmin:ignore -->
+<div id="world">
+  <!-- This will contain the map.-->
+</div>
+<!-- htmlmin:ignore -->
 
 <select name="pop">
   <option value="HC01_EST_VC01" selected="selected">Population</option>
