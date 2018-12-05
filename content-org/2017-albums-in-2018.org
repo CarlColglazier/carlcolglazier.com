@@ -1,6 +1,6 @@
 #+title: Albums from 2017 I'm Still Listening to in 2018
 #+draft: true
-#+date: 2018-11-24T9:00:00-04:00
+#+date: 2018-11-23T9:00:00-04:00
 #+image: albums.png
 
 I listen to a /lot/ of music. Some albums I'll listen to a few
@@ -66,14 +66,9 @@ That's a lot of music! How was that listening distributed over time?
       theme(axis.text.x=element_text(angle = -90, hjust = 0)) +
       theme(panel.border = element_blank(),
             legend.key = element_blank(),
-            #axis.ticks = element_blank(),
-            #axis.text.y = element_blank(),
-            #axis.text.x = element_blank(),
-            #panel.grid = element_blank(),
-            #panel.grid.minor = element_blank(), 
-            #panel.grid.major = element_blank(),
             panel.background = element_blank(),
-            plot.background = element_rect(fill = "transparent",colour = NA))
+            plot.background = element_rect(fill = "transparent",colour = NA)
+      )
   ggsave(file="images/testggplot.png", plot=plot, width=7, height=4, dpi=300, bg="transparent")
 #+END_SRC
 

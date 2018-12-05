@@ -1,6 +1,9 @@
 #+TITLE: Cartograms of the 2018 U.S. House Vote
 #+DATE: 2018-11-16T15:34:58-04:00
-# #+IMAGE: 116-population.png
+#+IMAGE: 116th-congress.png
+#+hugo_section: notes
+#+hugo_base_dir: ../
+#+hugo_front_matter_format: yaml
 
 The divide between urban and rural voters has become an [[https://www.washingtonpost.com/graphics/politics/2016-election/urban-rural-vote-swing/][increasingly
 observable]] pattern in U.S. elections.  Many Democratic voters pack
@@ -65,7 +68,7 @@ maintained by [[https://docs.google.com/spreadsheets/d/1WxDaxD5az6kdOjJncmGph37z
 also used a table from the [[https://www2.census.gov/geo/docs/reference/state.txt][U.S. Census]] to map the [[https://www.census.gov/geo/maps-data/data/cbf/cbf_cds.html][Congressional
 District shapefiles]] to the results.
 
-#+BEGIN_SRC R :session :colnames yes :exports results
+#+BEGIN_SRC R :session :colnames yes :exports both
 library(maps)
 
 all_content = readLines("https://docs.google.com/spreadsheets/d/1WxDaxD5az6kdOjJncmGph37z0BPNhV1fNAH_g7IkpC0/gviz/tq?tqx=out:csv&sheet=Sheet1")

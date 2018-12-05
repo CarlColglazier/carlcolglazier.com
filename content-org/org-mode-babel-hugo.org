@@ -1,6 +1,8 @@
 #+TITLE: Using Org-mode and Babel with Hugo
 #+DATE: 2017-04-25T10:34:58-04:00
 #+AUTHOR: Carl Colglazier
+#+hugo_section: notes
+#+hugo_base_dir: ../
 
 I have been a consistent user of Org-mode for a couple of years. I
 like it for a few reasons. It is very versatile; I can use it for

@@ -1,6 +1,10 @@
 #+TITLE: Plotting the 2018 U.S. House Midterm Results in Python with Cartopy
 #+DATE: 2018-11-10T19:07:14-04:00
 #+IMAGE: 116th-congress.png
+#+hugo_section: notes
+#+hugo_base_dir: ../
+#+hugo_custom_front_matter: :image "116th-congress.png"
+#+hugo_front_matter_format: yaml
 
 On Tuesday, the United States elected its representatives for the next
 session of House of Representatives.  Some of the races are still too
@@ -11,7 +15,7 @@ of how to create election maps in Python. I used pandas,
 matplotlib, and Cartopy for everything from downloading the data
 to creating the map.
 
-#+BEGIN_SRC python :session
+#+BEGIN_SRC python :session :results silent
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -21,14 +25,12 @@ from cartopy.io import shapereader
 from cartopy.feature import ShapelyFeature
 #+END_SRC
 
-#+RESULTS:
-
 I pulled the House results from a spreadsheet maintained by [[https://docs.google.com/spreadsheets/d/1WxDaxD5az6kdOjJncmGph37z0BPNhV1fNAH_g7IkpC0/htmlview?sle=true][David
 Wasserman & Ally Flinn of Cook Political Report.]] I then used a table
 from the [[https://www2.census.gov/geo/docs/reference/state.txt][U.S. Census]] to map the [[https://www.census.gov/geo/maps-data/data/cbf/cbf_cds.html][Congressional District shapefiles]] to
 the results.
 
-#+BEGIN_SRC python :session
+#+BEGIN_SRC python :session :results silent
   # Download election results data.
   house = pd.read_csv(
       "https://docs.google.com/spreadsheets/d/1WxDaxD5az6kdOjJncmGph37z0BPNhV1fNAH_g7IkpC0/gviz/tq?tqx=out:csv&sheet=Sheet1",
@@ -45,13 +47,11 @@ the results.
   house["FIPS"] = [fips_dict[x]["STATE"] for x in house["State"]]
 #+END_SRC
 
-#+RESULTS:
-
 To ensure consistent results I can test, I created a small function to
 map the winning party to the Federal Information Processing Standards
 (FIPS) state codes and district numbers.
 
-#+BEGIN_SRC python :session
+#+BEGIN_SRC python :session :results silent
   def winner(fips, dist):
       try:
           if dist != "00":
@@ -63,11 +63,9 @@ map the winning party to the Federal Information Processing Standards
           return None
 #+END_SRC
 
-#+RESULTS:
-
 With all the pieces in place, I created the map.
 
-#+BEGIN_SRC python :session :var filename="images/116th-congress.png" shapes="/home/carl/Downloads/cb_2017_us_cd115_20m" :results file 
+#+BEGIN_SRC python :session :var filename="images/116th-congress.png" shapes="/home/carl/Downloads/cb_2017_us_cd115_20m" :results file :exports both
   reader = shapereader.Reader(shapes)
   shapes = [ShapelyFeature(x, ccrs.PlateCarree()) for x in reader.geometries()]
   recs = list(reader.records())
@@ -114,6 +112,7 @@ With all the pieces in place, I created the map.
   filename
 #+END_SRC
 
+#+CAPTION: The final graphic.
 #+RESULTS:
 [[file:images/116th-congress.png]]
 
@@ -121,3 +120,7 @@ Maps like these are a bit deceptive because the area maps to land
 area, not population. I probably wouldn't use this graphic to
 represent the election results, but it was still a fun activity and
 shows how to get started with mainstream Python graphic tools.
+
+-----
+
+I updated this post to show the results as of December 5, 2018.
