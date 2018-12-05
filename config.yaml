@@ -16,3 +16,20 @@ menu:
       URL: "/work"
 blackfriday:
     plainIdAnchors: true
+privacy:
+  instagram:
+    disable: false
+    simple: true
+  twitter:
+    disable: false
+    enableDNT: true
+    simple: true
+  vimeo:
+    disable: false
+    simple: true
+  youtube:
+    disable: false
+    privacyEnhanced: true
+imaging:
+  resampleFilter: "box"
+  quality: 68

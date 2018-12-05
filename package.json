@@ -23,9 +23,9 @@
   },
   "homepage": "http://carlcolglazier.com/",
   "devDependencies": {
-    "html-minifier": "^3.4.3",
-    "less": "^2.7.2",
+    "html-minifier": "^3.5.21",
+    "less": "^2.7.3",
     "less-plugin-clean-css": "^1.5.1",
-    "rimraf": "^2.6.1"
+    "rimraf": "^2.6.2"
   }
 }
