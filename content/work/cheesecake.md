@@ -1,7 +1,6 @@
 ---
 title: "Cheesecake"
 author: ["Carl Colglazier"]
-aliases: ["/projects/frc-elo/"]
 draft: false
 types: "Software"
 tools: ["Python", "Flask", "React.js"]

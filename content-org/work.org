@@ -13,7 +13,6 @@
   :EXPORT_FILE_NAME: cheesecake
   :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :types "Software"
   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :tools '("Python" "Flask" "React.js")
-  :EXPORT_HUGO_ALIASES: /projects/frc-elo/
   :END:
 Cheesecake is an evidence-based scouting and statistics approach to
 the /FIRST/ Robotics Competition. It has two main goals:
@@ -67,3 +66,21 @@ release. The following are planned future features:
   - Estimated probability of a user correctly answering a question.
   - Personalized studying insights and suggestions.
 
+* Emoj(i)dentity
+  :PROPERTIES:
+  :EXPORT_FILE_NAME: emojidentity
+  :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :types "Paper"
+  :EXPORT_AUTHOR: Carl Colglazier, Zackary Allen
+  :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :subtitle "A paper on emoji and collective identity on Twitter."
+  :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :tools '("Python")
+  :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :repository "https://github.com/CarlColglazier/emojidentity"
+  :END:
+
+We propose a measure for group identity on Twitter using emoji
+displayed by users in their names or biographies. Viewing the use of
+emoji as social phenomenon, we introduce methods for measuring how
+often emoji users follow/friend other emoji users compared to
+non-emoji users. Furthermore, we introduce methods to measure quantify
+the frequency users friend/follow users with similar emojis,
+concluding with visual analysis of what ties between certain emoji
+look like.
