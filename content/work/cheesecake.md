@@ -1,32 +1,25 @@
 ---
 title: "Cheesecake"
-subtitle: An evidence-based approach to FRC analytics.
-types: ["Software"]
+author: ["Carl Colglazier"]
+aliases: ["/projects/frc-elo/"]
+draft: false
+types: "Software"
 tools: ["Python", "Flask", "React.js"]
-aliases:
-  - /projects/frc-elo/
 ---
 
 Cheesecake is an evidence-based scouting and statistics approach to
-the *FIRST* Robotics Competition. It has two main goals:
+the _FIRST_ Robotics Competition. It has two main goals:
 
-1. To use existing data on the results of *FIRST* competitions to
-   create measurably accurate prediction metrics.
-2. To facilitate a mixed-methods (quantitative plus qualitative)
-   approach to FRC scouting specific to each game.
+1.  To use existing data on the results of _FIRST_ competitions to
+    create measurably accurate prediction metrics.
+2.  To facilitate a mixed-methods (quantitative plus qualitative)
+    approach to FRC scouting specific to each game.
 
 Cheesecake takes an empirical, evidence-based approach to how it
 handles FRC data.
 
-<!--
-Using Cheesecake, we hope to be able to answer the following questions:
 
-+ How likely are teams to qualify for championships?
-+ 
--->
-
-Motivation
-==========
+## Motivation {#motivation}
 
 Scouting is a large commitment for a team. At most competitions we
 attend, we usually allocate a significant amount of team resources to

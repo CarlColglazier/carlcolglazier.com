@@ -1,0 +1,69 @@
+#+hugo_base_dir: ../
+#+hugo_front_matter_format: yaml
+#+hugo_section: work
+
+* Work
+  :PROPERTIES:
+  :EXPORT_FILE_NAME: _index
+  :END:
+[[/files/resume.pdf][My resume]].
+** Projects
+* Cheesecake
+  :PROPERTIES:
+  :EXPORT_FILE_NAME: cheesecake
+  :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :types "Software"
+  :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :tools '("Python" "Flask" "React.js")
+  :EXPORT_HUGO_ALIASES: /projects/frc-elo/
+  :END:
+Cheesecake is an evidence-based scouting and statistics approach to
+the /FIRST/ Robotics Competition. It has two main goals:
+
+1. To use existing data on the results of /FIRST/ competitions to
+   create measurably accurate prediction metrics.
+2. To facilitate a mixed-methods (quantitative plus qualitative)
+   approach to FRC scouting specific to each game.
+
+Cheesecake takes an empirical, evidence-based approach to how it
+handles FRC data.
+
+** Motivation
+Scouting is a large commitment for a team. At most competitions we
+attend, we usually allocate a significant amount of team resources to
+ensure we have as much data as possible on each robot at the
+competition. This information typically goes into a binder and is used
+by our scouting team to determine the best robots to pick during the
+alliance selections and the optimal strategies to play against
+individual robots.
+
+The goal of Cheesecake is to ensure that scouting information is
+transformed into useful metrics. It draws inspiration (and some
+models) from other types of sports analytics, statistics, and previous
+related systems.
+* Global Oopen Simulator (GOS)
+  :PROPERTIES:
+  :EXPORT_FILE_NAME: gos
+  :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :subtitle "A parallel agent-based platform for global social modeling."
+  :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :tools '("Python" "Jupyter" "matplotlib" "pandas" "numpy")
+  :END:
+* Kvizo  
+  :PROPERTIES:
+  :EXPORT_FILE_NAME: kvizo
+  :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :subtitle "A practice and learning tool for adademic quiz bowl."
+  :END:
+Kvizo is a practice and learning tool for adademic quiz bowl. It
+currently supports the following features:
+
++ A practice interface designed to minimize eye movement.
++ A question database.
+
+Kvizo is still in active development. This is an early preview
+release. The following are planned future features:
+
++ User accounts.
++ Tracking of performance over time.
++ Exploration and searching insights for studying.
++ Generated user profiles based on past performance.
+  - Estimated tossup points per tossup heard by category.
+  - Estimated probability of a user correctly answering a question.
+  - Personalized studying insights and suggestions.
+
