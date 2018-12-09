@@ -1,14 +1,13 @@
-#+date: 2018-12-08T9:00:00-04:00
+#+startup: logdone
 #+PROPERTY: header-args:R :session *R* :exports both :colnames yes :eval never-export :results value
-#+image: albums.png
 #+hugo_section: notes
 #+hugo_base_dir: ../
 #+hugo_front_matter_format: yaml
 
-* Albums from 2017 I'm Still Listening to in 2018
+* DONE Albums from 2017 I'm Still Listening to in 2018
+  CLOSED: [2018-12-08 Sat 10:02]
 :PROPERTIES:
 :EXPORT_FILE_NAME: 2017-albums-in-2018
-:DATE: 2018-12-08
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :image "albums.png"
 :END:
 
@@ -52,7 +51,8 @@ library("jsonlite")
 plays <- fromJSON(lb)
 #+END_SRC
 
-I'm only interested in my activity from 2018, so I will 
+I'm only interested in my activity from 2018, so I will filter
+my dataset down to only the entries with a timecode in 2018.
 
 #+BEGIN_SRC R :session :colnames no
 stamp <- as.numeric(as.POSIXct("2018-01-01", format="%Y-%m-%d"))
@@ -65,14 +65,14 @@ nrow(recentPlays)
 
 That's a lot of music! How was that listening distributed over time? 
 
-#+BEGIN_SRC R :session :exports both :results value file :var fname="images/all_music_distribution_hist.png" :colnames no
+#+BEGIN_SRC R :session :exports both :results value file :var fname="images/2018_music_week_distribution_hist.png" :colnames no
   library("ggplot2")
   library("scales")
 
-  plays$date <- as.Date(as.POSIXct(plays$timestamp, origin="1970-01-01"))
-  plot <- ggplot(plays, aes(format(plays$date, "%Y-%m"))) +
+  recentPlays$date <- as.Date(as.POSIXct(recentPlays$timestamp, origin="1970-01-01"))
+  plot <- ggplot(recentPlays, aes(format(recentPlays$date, "%Y-%U"))) +
       geom_bar(stat = "count") +
-      labs(x = "Month", title="Songs streamed per month.") +
+      labs(x = "Week", title="Tracks streamed per week.") +
       theme(axis.text.x=element_text(angle = -90, hjust = 0)) +
       theme(panel.border = element_blank(),
             legend.key = element_blank(),
@@ -83,58 +83,9 @@ That's a lot of music! How was that listening distributed over time?
   fname
 #+END_SRC
 
-#+CAPTION: *Number of songs streamed per month.* My 2018 streams broadly matched those from other years. Note: There were a couple of periods where scrobbling broke.
+#+CAPTION: Tracks streamed per week.
 #+RESULTS:
-[[file:images/all_music_distribution_hist.png]]
-
-*** Initial analysis
-
-We can use this data to answer some pretty easy questions. For
-example, who were my top artists in 2018?
-
-#+BEGIN_SRC R :session :colnames yes
-  head(
-      sort(table(unlist(recentPlays$artist_name)), decreasing=TRUE),
-      n=5
-  )
-#+END_SRC
-
-#+RESULTS:
-| Var1             | Freq |
-|------------------+------|
-| Charli XCX       |  840 |
-| Carly Rae Jepsen |  425 |
-| Ariana Grande    |  294 |
-| Kacey Musgraves  |  277 |
-| SOPHIE           |  211 |
-
-[[https://pitchfork.com/reviews/albums/charli-xcx-pop-2/][Critically]] [[https://music.avclub.com/carly-rae-jepsen-lands-her-romantic-80s-pop-daydream-1798184677][acclaimed]] [[https://www.thelineofbestfit.com/reviews/albums/ariana-grande-sweetener-album-review][pop]] [[https://consequenceofsound.net/2018/03/album-review-kacey-musgraves-absolutely-shines-on-golden-hour/][perfection]] [[https://www.tinymixtapes.com/music-review/sophie-oil-every-pearls-un-insides][yes]]!
-
-I can also do something similar to find my top tracks for the year.
-I listen to a /lot/ of Charli XCX, so let's filter the results to
-only show one song per artist (otherwise Charli would dominate).
-
-#+BEGIN_SRC R :session :colnames yes
-library("plyr")
-playCounts <- count(recentPlays, c("artist_name", "track_name"))
-playCounts <- playCounts[order(playCounts$freq, decreasing=T), ]
-head(playCounts[ !duplicated(playCounts$artist_name),], n=10)
-#+END_SRC
-
-#+RESULTS:
-| artist_name              | track_name                                                  | freq |
-|--------------------------+-------------------------------------------------------------+------|
-| Charli XCX               | No Angel                                                    |   40 |
-| SOPHIE                   | Immaterial                                                  |   37 |
-| Kacey Musgraves          | High Horse                                                  |   31 |
-| Troye Sivan              | My My My!                                                   |   31 |
-| Carly Rae Jepsen         | Party For One                                               |   26 |
-| Kimbra                   | Human                                                       |   22 |
-| Calvin Harris & Dua Lipa | One Kiss                                                    |   21 |
-| Kali Uchis               | After The Storm (feat. Tyler, The Creator & Bootsy Collins) |   18 |
-| Rina Sawayama            | Take Me as I Am                                             |   18 |
-| Shawn Mendes             | Lost In Japan                                               |   18 |
-
+[[file:images/2018_music_week_distribution_hist.png]]
 *** Learning about each track
 
 Great, so this is everything from the year, but I want to limit the
@@ -144,6 +95,7 @@ It's a huge database with just about every song, recording, and
 album imaginable. Plus it has an API, so it's ideal for getting
 information about each track.
 
+#+NAME: musicbrainz
 #+BEGIN_SRC R :session :results silent
   library(xml2)
   library(RCurl)
@@ -196,6 +148,9 @@ where I have only streamed two or three songs will not make that list.
 To verify this, let's graph the distribution.
 
 #+BEGIN_SRC R :session :exports both :results value file :var fname="images/playcounts.png" :colnames no
+  library("plyr")
+  playCounts <- count(recentPlays, c("artist_name", "track_name"))
+  playCounts <- playCounts[order(playCounts$freq, decreasing=T), ]
   p <- ggplot(data=playCounts, aes(playCounts$freq)) + geom_histogram(binwidth=1) +
        scale_y_sqrt() +
        theme(panel.border = element_blank(),
@@ -249,13 +204,13 @@ nrow(unnested[unnested$freq > 15,])
 #+RESULTS:
 : 115
 
-This yields 86 albums; however, we still don't know anything about
+This yields 115 albums; however, we still don't know anything about
 these releases. Thankfully MusicBrainz has this information as well.
 
 #+BEGIN_SRC R :session :results silent
   fetchGroup <- function(mbid) {
       mburl <- sprintf(
-          "https://beta.musicbrainz.org/ws/2/release-group/%s",
+          "https://beta.musicbrainz.org/ws/2/release-group/%s?inc=artist-credits",
           mbid
       )
       Sys.sleep(0.25)
@@ -263,7 +218,9 @@ these releases. Thankfully MusicBrainz has this information as well.
       xml_ns_strip(groupData)
       title <- xml_text(xml_find_first(groupData, "/metadata/release-group/title"))
       date <- as.Date(xml_text(xml_find_first(groupData, "/metadata/release-group/first-release-date")), "%Y-%m-%d")
-      return(list("title" = title, "date" = date))
+      artist <- xml_text(xml_find_first(groupData, "/metadata/release-group/artist-credit/name-credit/artist/name"))
+      artistId <- xml_text(xml_find_first(groupData, "/metadata/release-group/artist-credit/name-credit/artist/@id"))
+      return(list("title" = title, "date" = date, "artist"=artist, "artistId"=artistId))
   }
 #+END_SRC
 
@@ -274,8 +231,10 @@ mostGroups <- unnested[unnested$freq > 15,]
 mostGroups$meta <- lapply(mostGroups$groups, fetchGroup)
 mostGroups$date <- unlist(lapply(mostGroups$meta, function(x) x$date))
 mostGroups$title <- unlist(lapply(mostGroups$meta, function(x) x$title))
+mostGroups$artist <- unlist(lapply(mostGroups$meta, function(x) x$artist))
+mostGroups$artistId <- unlist(lapply(mostGroups$meta, function(x) x$artistId))
 albums <- mostGroups[!is.na(mostGroups$date) & mostGroups$date >= as.Date('2017-01-01') & mostGroups$date < as.Date('2018-01-01'),]
-aTable <- albums[,c("title", "freq")]
+aTable <- albums[,c("title", "freq", "artist")]
 aTable[order(aTable$freq, decreasing=T), ]
 #+END_SRC
 
@@ -297,7 +256,7 @@ for this post.
   r1 <- image_append(image_scale(image_read(getArt(rev(albums$groups)[1:4])), "250x250"))
   r2 <- image_append(image_scale(image_read(getArt(rev(albums$groups)[5:8])), "250x250"))
   r3 <- image_append(image_scale(image_read(getArt(rev(albums$groups)[c(9, 10, 12, 14)])), "250x250"))
-  image_write(image_append(c(r1, r2, r3), stack=TRUE), "images/albums.png")
+  image_write(image_append(c(r1, r2, r3), stack=TRUE), "images/albums.png", format="png")
 #+END_SRC
 
 ** The Albums
@@ -381,5 +340,310 @@ Read their 2017 list [[https://www.albumoftheyear.org/list/summary/2017/][here]]
 * TODO My Top Albums of 2018
 :PROPERTIES:
 :EXPORT_FILE_NAME: 2018-albums
-:DATE: 2018-12-09
+:EXPORT_DATE: 2018-12-09
 :END:
+
+If your social media feed is anything like mine, you probably
+see a lot of posts like this toward the end of the year.
+
+#+CAPTION: Spotify promomotional image for "Spotify Wrapped 2018".
+[[file:images/spotify_unwrapped_2018_promo.jpg]]
+
+It can be fun to see what kind of music other people like and to share
+your own music tastes. It's also a great advertisement campaign for
+Spotify (see their nice logo in the top left of these graphics).
+
+The only problem for me is that I'm not a Spotify user, so when I try
+to open my #2018Wrapped data, I am greeted with a very nicely packaged
+empty box. Fortunately, as I wrote about in my [[/notes/2017-albums-in-2018/][last post]], I log all
+of my music streaming using a free, open-source service called
+ListenBrainz. I am going to use that data to create my own end-of-year
+music graphic similar to the ones posted by my friends who use Spotify.
+
+*** Initial analysis
+
+#+BEGIN_SRC R :session :var lb="~/Downloads/Gottesdienst_lb-2018-12-08.json"
+library("jsonlite")
+plays <- fromJSON(lb)
+stamp <- as.numeric(as.POSIXct("2018-01-01", format="%Y-%m-%d"))
+recentPlays <- plays[plays$timestamp > stamp, ]
+nrow(recentPlays)
+#+END_SRC
+
+#+RESULTS:
+|     x |
+|-------|
+| 12482 |
+
+**** Top Artists
+
+
+We can use this data to answer some pretty easy questions. For
+example, who were my top artists in 2018?
+
+#+BEGIN_SRC R :session :colnames yes
+  top_artists <- head(
+      sort(table(unlist(recentPlays$artist_name)), decreasing=TRUE),
+      n=5
+  )
+  top_artists
+#+END_SRC
+
+#+RESULTS:
+| Var1             | Freq |
+|------------------+------|
+| Charli XCX       |  840 |
+| Carly Rae Jepsen |  425 |
+| Ariana Grande    |  294 |
+| Kacey Musgraves  |  277 |
+| SOPHIE           |  211 |
+
+[[https://pitchfork.com/reviews/albums/charli-xcx-pop-2/][Critically]] [[https://music.avclub.com/carly-rae-jepsen-lands-her-romantic-80s-pop-daydream-1798184677][acclaimed]] [[https://www.thelineofbestfit.com/reviews/albums/ariana-grande-sweetener-album-review][pop]] [[https://consequenceofsound.net/2018/03/album-review-kacey-musgraves-absolutely-shines-on-golden-hour/][perfection]] [[https://www.tinymixtapes.com/music-review/sophie-oil-every-pearls-un-insides][yes]]!
+
+**** Top Songs
+
+I can also do something similar to find my top tracks for the year.
+
+#+BEGIN_SRC R
+head(
+      sort(table(unlist(recentPlays$track_name)), decreasing=TRUE),
+      n=5
+  )
+#+END_SRC
+
+#+RESULTS:
+| Var1                                                      | Freq |
+|-----------------------------------------------------------+------|
+| No Angel                                                  |   40 |
+| Immaterial                                                |   37 |
+| I Got It (feat. Brooke Candy, CupcakKe and Pabllo Vittar) |   35 |
+| Focus                                                     |   34 |
+| Lucky                                                     |   32 |
+
+I listen to a /lot/ of Charli XCX, so this list doesn't really have a
+lot of variety (though Charli is absolutely one of the most versatile
+artists in pop today). Let's filter the results to only show one song
+per artist.
+
+#+BEGIN_SRC R :session :colnames yes
+top_songs <- head(playCounts[ !duplicated(playCounts$artist_name),], n=5)
+top_songs
+#+END_SRC
+
+#+RESULTS:
+| artist_name      | track_name    | freq |
+|------------------+---------------+------|
+| Charli XCX       | No Angel      |   40 |
+| SOPHIE           | Immaterial    |   37 |
+| Kacey Musgraves  | High Horse    |   31 |
+| Troye Sivan      | My My My!     |   31 |
+| Carly Rae Jepsen | Party For One |   26 |
+
+**** Top Albums
+
+#+BEGIN_SRC R :noweb yes :eval no
+<<musicbrainz>>
+#+END_SRC
+
+
+#+BEGIN_SRC R
+albums <- mostGroups[!is.na(mostGroups$date) & mostGroups$date >= as.Date('2018-01-01'),]
+aTable <- albums[,c("title", "artist", "freq")]
+aTable <- aTable[!duplicated(aTable$title),]
+head(aTable[order(aTable$freq, decreasing=T), ], n=17)
+#+END_SRC
+
+#+CAPTION: My most-streamed albums released in the last year. 
+#+RESULTS:
+| title                                     | artist            | freq |
+|-------------------------------------------+-------------------+------|
+| Golden Hour                               | Kacey Musgraves   |  247 |
+| Bloom                                     | Troye Sivan       |  133 |
+| OIL OF EVERY PEARL'S UN-INSIDES           | SOPHIE            |  118 |
+| THINK: PEACE                              | Clarence Clarity  |  106 |
+| Sweetener                                 | Ariana Grande     |  105 |
+| Joy as an Act of Resistance.              | IDLES             |  103 |
+| Be the Cowboy                             | Mitski            |   94 |
+| I’m All Ears                              | Let’s Eat Grandma |   94 |
+| 7                                         | Beach House       |   87 |
+| Twin Fantasy (Face to Face)               | Car Seat Headrest |   75 |
+| Primal Heart                              | Kimbra            |   67 |
+| A Brief Inquiry Into Online Relationships | The 1975          |   56 |
+| [Untitled]                                | mewithoutYou      |   55 |
+| Confident Music for Confident People      | Confidence Man    |   53 |
+| Transangelic Exodus                       | Ezra Furman       |   51 |
+| Trench                                    | twenty one pilots |   50 |
+| Voicenotes                                | Charlie Puth      |   49 |
+
+#+BEGIN_SRC R 
+aTable2 <- mostGroups[,c("title", "artist", "freq")]
+aTable2 <- aTable2[!duplicated(aTable2$title),]
+head(aTable2[order(aTable2$freq, decreasing=T), ], n=25)
+#+END_SRC
+
+#+CAPTION: My most-streamed albums of 2018.
+#+RESULTS:
+| title                           | artist                  | freq |
+|---------------------------------+-------------------------+------|
+| Pop 2                           | Charli XCX              |  287 |
+| Golden Hour                     | Kacey Musgraves         |  247 |
+| E•MO•TION                       | Carly Rae Jepsen        |  209 |
+| Emotion                         | Carly Rae Jepsen        |  209 |
+| Electra Heart                   | Marina and the Diamonds |  165 |
+| Dangerous Woman                 | Ariana Grande           |  147 |
+| Melodrama                       | Lorde                   |  144 |
+| The Fame                        | Lady Gaga               |  143 |
+| Bloom                           | Troye Sivan             |  133 |
+| Number 1 Angel                  | Charli XCX              |  133 |
+| OIL OF EVERY PEARL'S UN-INSIDES | SOPHIE                  |  118 |
+| E•MO•TION: Side B               | Carly Rae Jepsen        |  117 |
+| Blackout                        | Britney Spears          |  114 |
+| THINK: PEACE                    | Clarence Clarity        |  106 |
+| Sweetener                       | Ariana Grande           |  105 |
+| Vroom Vroom                     | Charli XCX              |  105 |
+| Joy as an Act of Resistance.    | IDLES                   |  103 |
+| RINA                            | Rina Sawayama           |  102 |
+| Be the Cowboy                   | Mitski                  |   94 |
+| I’m All Ears                    | Let’s Eat Grandma       |   94 |
+| After Laughter                  | Paramore                |   90 |
+| Sucker                          | Charli XCX              |   87 |
+| 7                               | Beach House             |   87 |
+| Loss Memory                     | Coma Cinema             |   85 |
+| Age                             | The Hidden Cameras      |   78 |
+
+**** Minutes streamed
+Initially I considered a brute-force approach to this problem.
+
+#+BEGIN_SRC R
+  getLengths <- function(artist, song) {
+       song_stripped <- trimws(sub("\\(.*\\)", "", song))
+       mburl <- sprintf(
+           'https://beta.musicbrainz.org/ws/2/recording/?query=artist:%s+AND+recording:%s',
+           curlEscape(artist),
+           curlEscape(song_stripped)
+       )
+       # To comply with the rate limit.
+       Sys.sleep(0.5)
+       albumData <- read_xml(mburl)
+       xml_ns_strip(albumData)
+       length <- xml_integer(xml_find_first(albumData, "//length"))
+       return(length)
+   }
+#+END_SRC
+
+#+BEGIN_SRC R :results silent
+set.seed(425368203)
+sample <- playCounts[sample(nrow(playCounts), 100), ]
+lengths <- apply(sample, 1, function(x) getLengths(x["artist_name"], x["track_name"]))
+#+END_SRC
+
+#+BEGIN_SRC R
+lens <- lengths[!is.na(lengths)]
+ggplot() + aes(lens) + geom_histogram(binwidth=60000)
+#+END_SRC
+
+#+BEGIN_SRC R
+mins <- nrow(recentPlays) * mean(lens) / 60000
+#+END_SRC
+
+#+RESULTS:
+|                x |
+|------------------|
+| 49768.0639733333 |
+
+
+**** Top Genre
+#+BEGIN_SRC R :colnames no
+topAlbums <- mostGroups[,c("title", "artistId", "freq")]
+topAlbums <- topAlbums[!duplicated(topAlbums$title),]
+#ids <- topAlbums[topAlbums$freq > 10,]$artistId
+nrow(topAlbums[topAlbums$freq > 10,])
+#+END_SRC
+
+#+RESULTS:
+: 114
+
+#+BEGIN_SRC R :colnames no
+topAlbums$freq %>% sum()
+#+END_SRC
+
+#+RESULTS:
+: 6375
+
+#+BEGIN_SRC R
+  fetchGenres <- function(mbid) {
+      mburl <- sprintf(
+          "https://beta.musicbrainz.org/ws/2/artist/%s?inc=genres",
+          mbid
+      )
+      Sys.sleep(0.25)
+      groupData <- read_xml(mburl)
+      xml_ns_strip(groupData)
+      genres <- xml_text(xml_find_all(groupData, "//genre/name"))
+      return(genres)
+  }
+#+END_SRC
+
+#+BEGIN_SRC R 
+  ids <- topAlbums %>%
+      group_by(artistId) %>%
+      summarise(Freq=sum(freq)) %>%
+      arrange(desc(Freq))
+  ids$genres <- lapply(ids$artistId, fetchGenres)
+  topGenres <- ids %>%
+      unnest(genres) %>%
+      group_by(genres) %>%
+      summarise(Count=sum(Freq)) %>%
+      arrange(desc(Count))
+  head(topGenres)
+#+END_SRC
+
+#+RESULTS:
+| genres     | Count |
+|------------+-------|
+| pop        |  2928 |
+| electropop |  2405 |
+| dance-pop  |  2190 |
+| electronic |  1486 |
+| pop rock   |  1362 |
+| synth-pop  |   842 |
+
+** Creating the graphic
+
+#+BEGIN_SRC R :session 
+  library("plyr")
+  playCounts <- count(recentPlays, c("artist_name", "track_name"))
+  playCounts <- playCounts[order(playCounts$freq, decreasing=T), ]
+  p <- ggplot(data=playCounts, aes(playCounts$freq)) + geom_histogram(binwidth=1) +
+       scale_y_sqrt() +
+       theme(panel.border = element_blank(),
+             legend.key = element_blank(),
+             panel.background = element_blank(),
+             plot.background = element_rect(fill = "transparent",colour = NA))
+  ggsave(file=fname, plot=p, width=7, height=4, dpi=300, bg="transparent")
+  fname
+#+END_SRC
+
+
+#+BEGIN_SRC R :session :exports both :results value file :var fname="images/2018wrapped.png" :colnames no
+library(ggpubr)
+library(png)
+library(raster)
+
+top_artist_names <- attr(top_artists, "name")
+artistTable <- ggtexttable(top_artist_names, rows = NULL, theme = ttheme("blank"), cols=c("Top Artists"))
+trackTable <- ggtexttable(top_songs$track_name, rows = NULL, theme = ttheme("blank"), cols=c("Top Songs"))
+minutes <- text_grob(paste("Minutes Listened", toString(round(mins)), "", "Top Genre", toString(topGenres[1,1]), sep="\n"))
+img <- readPNG("images/albums.png")
+im_A <- ggplot() +
+    background_image(img[1:250, 1:250, 1:3]) +
+    theme(plot.margin = margin(t=.1, l=.1, r=.1, b=.1, unit = "cm"))
+p <- ggarrange(im_A, artistTable, minutes, trackTable, ncol=2, nrow=2) + bgcolor("#FFFFFF")
+ggsave(file=fname, plot=p, width=4, height=4, dpi=300)
+fname
+#+END_SRC
+
+#+RESULTS:
+[[file:images/2018wrapped.png]]
+
+
