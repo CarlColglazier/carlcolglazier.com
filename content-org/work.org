@@ -43,11 +43,13 @@ related systems.
   :EXPORT_FILE_NAME: gos
   :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :subtitle "A parallel agent-based platform for global social modeling."
   :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :tools '("Python" "Jupyter" "matplotlib" "pandas" "numpy")
+  :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :repository "https://github.com/crcresearch/GOS"
   :END:
 * Kvizo  
   :PROPERTIES:
   :EXPORT_FILE_NAME: kvizo
   :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :subtitle "A practice and learning tool for adademic quiz bowl."
+  :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :repository "https://github.com/CarlColglazier/kvizo"
   :END:
 Kvizo is a practice and learning tool for adademic quiz bowl. It
 currently supports the following features:

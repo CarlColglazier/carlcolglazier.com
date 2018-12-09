@@ -1,61 +1,71 @@
-#+title: Albums from 2017 I'm Still Listening to in 2018
-#+draft: true
-#+date: 2018-11-23T9:00:00-04:00
+#+date: 2018-12-08T9:00:00-04:00
+#+PROPERTY: header-args:R :session *R* :exports both :colnames yes :eval never-export :results value
 #+image: albums.png
+#+hugo_section: notes
+#+hugo_base_dir: ../
+#+hugo_front_matter_format: yaml
 
-I listen to a /lot/ of music. Some albums I'll listen to a few
-times and move on, but some albums stay with me.
+* Albums from 2017 I'm Still Listening to in 2018
+:PROPERTIES:
+:EXPORT_FILE_NAME: 2017-albums-in-2018
+:DATE: 2018-12-08
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :image "albums.png"
+:END:
+
+I listen to a /lot/ of music. While I will listen to some albums a
+few times and move on, some stay with me. This post quantifies the
+albums from 2017 that stayed in my life in 2018.
 
 # more
 
-Every year, I typically write [[https://gist.github.com/CarlColglazier/913963cc7197fb7a024d736c96545439][a list]] of my favorite albums
-of the year for my own amusement. People really enjoy reading
-things in list form, so this kind of thing is pretty standard
-for music publications as well[fn:aoty].
+Each December, I compile [[https://gist.github.com/CarlColglazier/913963cc7197fb7a024d736c96545439][a list]] of my favorite recent albums from the
+past year. People really enjoy reading lists, so pretty much every
+music publication also releases a end-of-year list around the same
+time [fn:aoty].
 
-Liking an album is no guarantee of future streams. Sometimes there
-are albums like Sufjan Steven's /Carrie & Lowell/ which is an
-exceptional album, but not necessarily one I would just put on in the
-background while I'm working. Other times there are albums I really
-enjoy on repeat for a period of time but I then associate it pretty
-closely with that time in my life. At this point, going back to the
-record—although it is still excellent—feels mostly like a journey in
-nostalgia.
+As fun as it is to parse through yearly lists, liking an album is no
+guarantee of future streams. Sometimes there are albums like Sufjan
+Steven's /Carrie & Lowell/ which, although exceptional, are do not
+exactly make the best background music for homework. Other times
+I might really en joy an album on repeat for a period of time, but
+I eventually move on the something else. I might get a nice feeling
+of nostalgia looking back at the record and how I now associate it
+with that time period, but there would be no way to replicate that
+initial infatuation.
 
 In the streaming era, my music library is sometimes a bit like a
-midnight refrigerator: there's plenty inside, but at the moment
-I'm just looking for something quick and easy. Thus this list
-is probably best described as my musical comfort food. There are
+midnight refrigerator run: there's always plenty inside, but at the
+moment I might just be looking for something quick and easy. Thus this
+list is probably best described as my musical comfort food. There are
 the albums from 2017 I had on repeat in my head and in my ears
 throughout 2018.
 
-* Method
-
-** The data
+** Method
+*** The data
 
 I track the music I stream using [[http://listenbrainz.org/][ListenBrainz]]. It's a pretty
 cool service that lets you download your data at any time
 as a JSON file. Let's load my data in R.
 
-#+BEGIN_SRC R :session :var lb="~/Downloads/Gottesdienst_lb-2018-11-23.json" :results silent
+#+BEGIN_SRC R :session :var lb="~/Downloads/Gottesdienst_lb-2018-12-08.json" :results silent
 library("jsonlite")
 plays <- fromJSON(lb)
 #+END_SRC
 
-I'm only interested in my activity from 2018.
+I'm only interested in my activity from 2018, so I will 
 
-#+BEGIN_SRC R :session
+#+BEGIN_SRC R :session :colnames no
 stamp <- as.numeric(as.POSIXct("2018-01-01", format="%Y-%m-%d"))
 recentPlays <- plays[plays$timestamp > stamp, ]
 nrow(recentPlays)
 #+END_SRC
 
 #+RESULTS:
-: 11783
+: 12482
 
 That's a lot of music! How was that listening distributed over time? 
 
-#+BEGIN_SRC R :session :results silent
+#+BEGIN_SRC R :session :exports both :results value file :var fname="images/all_music_distribution_hist.png" :colnames no
   library("ggplot2")
   library("scales")
 
@@ -69,15 +79,15 @@ That's a lot of music! How was that listening distributed over time?
             panel.background = element_blank(),
             plot.background = element_rect(fill = "transparent",colour = NA)
       )
-  ggsave(file="images/testggplot.png", plot=plot, width=7, height=4, dpi=300, bg="transparent")
+  ggsave(file=fname, plot=plot, width=7, height=4, dpi=300, bg="transparent")
+  fname
 #+END_SRC
 
-{{< figure src="/images/testggplot.png" 
-    title="Number of songs streamed per month." 
-    caption="My 2018 streams broadly matched those from other years. Note: There were a couple of periods where scrobbling broke."
->}}
+#+CAPTION: *Number of songs streamed per month.* My 2018 streams broadly matched those from other years. Note: There were a couple of periods where scrobbling broke.
+#+RESULTS:
+[[file:images/all_music_distribution_hist.png]]
 
-** Initial analysis
+*** Initial analysis
 
 We can use this data to answer some pretty easy questions. For
 example, who were my top artists in 2018?
@@ -92,17 +102,17 @@ example, who were my top artists in 2018?
 #+RESULTS:
 | Var1             | Freq |
 |------------------+------|
-| Charli XCX       |  834 |
-| Carly Rae Jepsen |  404 |
-| Ariana Grande    |  292 |
-| Kacey Musgraves  |  271 |
+| Charli XCX       |  840 |
+| Carly Rae Jepsen |  425 |
+| Ariana Grande    |  294 |
+| Kacey Musgraves  |  277 |
 | SOPHIE           |  211 |
 
 [[https://pitchfork.com/reviews/albums/charli-xcx-pop-2/][Critically]] [[https://music.avclub.com/carly-rae-jepsen-lands-her-romantic-80s-pop-daydream-1798184677][acclaimed]] [[https://www.thelineofbestfit.com/reviews/albums/ariana-grande-sweetener-album-review][pop]] [[https://consequenceofsound.net/2018/03/album-review-kacey-musgraves-absolutely-shines-on-golden-hour/][perfection]] [[https://www.tinymixtapes.com/music-review/sophie-oil-every-pearls-un-insides][yes]]!
 
 I can also do something similar to find my top tracks for the year.
 I listen to a /lot/ of Charli XCX, so let's filter the results to
-only show one song per artist.
+only show one song per artist (otherwise Charli would dominate).
 
 #+BEGIN_SRC R :session :colnames yes
 library("plyr")
@@ -114,22 +124,22 @@ head(playCounts[ !duplicated(playCounts$artist_name),], n=10)
 #+RESULTS:
 | artist_name              | track_name                                                  | freq |
 |--------------------------+-------------------------------------------------------------+------|
-| Charli XCX               | No Angel                                                    |   39 |
+| Charli XCX               | No Angel                                                    |   40 |
 | SOPHIE                   | Immaterial                                                  |   37 |
 | Kacey Musgraves          | High Horse                                                  |   31 |
-| Troye Sivan              | My My My!                                                   |   30 |
+| Troye Sivan              | My My My!                                                   |   31 |
 | Carly Rae Jepsen         | Party For One                                               |   26 |
+| Kimbra                   | Human                                                       |   22 |
 | Calvin Harris & Dua Lipa | One Kiss                                                    |   21 |
-| Kimbra                   | Human                                                       |   21 |
 | Kali Uchis               | After The Storm (feat. Tyler, The Creator & Bootsy Collins) |   18 |
+| Rina Sawayama            | Take Me as I Am                                             |   18 |
 | Shawn Mendes             | Lost In Japan                                               |   18 |
-| Taylor Swift             | Delicate                                                    |   18 |
 
-** Learning about each track
+*** Learning about each track
 
 Great, so this is everything from the year, but I want to limit the
 results to just albums from 2017. Unfortunately ListenBrainz does not
-include a lot of metadata. We need MusicBrainz to help with this.
+include a lot of metadata. We need [[https://musicbrainz.org/][MusicBrainz]] to help with this.
 It's a huge database with just about every song, recording, and
 album imaginable. Plus it has an API, so it's ideal for getting
 information about each track.
@@ -169,7 +179,7 @@ information about each track.
 
 Let's see this function in action.
 
-#+BEGIN_SRC R :session
+#+BEGIN_SRC R :session :colnames no
 getAlbums("Charli XCX", "Vroom Vroom")
 #+END_SRC
 
@@ -185,35 +195,40 @@ sorted by the number of songs played, it is safe to assume that albums
 where I have only streamed two or three songs will not make that list.
 To verify this, let's graph the distribution.
 
-#+BEGIN_SRC R :session :results silent
-  p <- ggplot(data=playCounts, aes(playCounts$freq)) + geom_histogram(binwidth=3) +
+#+BEGIN_SRC R :session :exports both :results value file :var fname="images/playcounts.png" :colnames no
+  p <- ggplot(data=playCounts, aes(playCounts$freq)) + geom_histogram(binwidth=1) +
        scale_y_sqrt() +
        theme(panel.border = element_blank(),
              legend.key = element_blank(),
-             #panel.grid = element_blank(),
-             #panel.grid.minor = element_blank(), 
-             #panel.grid.major = element_blank(),
              panel.background = element_blank(),
              plot.background = element_rect(fill = "transparent",colour = NA))
-  ggsave(file="images/playcounts.png", plot=p, width=7, height=4, dpi=300, bg="transparent")
+  ggsave(file=fname, plot=p, width=7, height=4, dpi=300, bg="transparent")
+  fname
 #+END_SRC
 
-[[file:/images/playcounts.png]]
+#+RESULTS:
+[[file:images/playcounts.png]]
 
-Taking out songs with fewer than four plays removes a bulk of the
-songs from the log while likely keeping everything interesting.
+As it turns out, I only listened to a majority of these songs only one
+time. Taking out songs with fewer than three plays removes a bulk of
+the songs from the log while likely keeping everything interesting.
+Remember, I'm trying to end up with a list of albums. Since I
+generally listen to complete albums, we can assume that each track on
+any album which would make the list would have at least two plays.
 
-#+BEGIN_SRC R :session
-mostFreqPlays <- playCounts[playCounts$freq > 3, ]
+#+BEGIN_SRC R :session 
+mostFreqPlays <- playCounts[playCounts$freq > 2, ]
 nrow(mostFreqPlays)
 #+END_SRC
 
 #+RESULTS:
-: 685
+|    x |
+|------|
+| 1095 |
 
 # Note "Whole New World / Pretend World" is having an issue with that slash.
 
-Now grab the release groups (albums) for each track.
+Now grab the release groups (albums) for each track from MusicBrainz.
 
 #+BEGIN_SRC R :session :results silent
 groups <- apply(mostFreqPlays, 1, function(x) getAlbums(x["artist_name"], x["track_name"]))
@@ -221,7 +236,7 @@ groups <- apply(mostFreqPlays, 1, function(x) getAlbums(x["artist_name"], x["tra
 
 Get only the release groups with more than fifteen streams.
 
-#+BEGIN_SRC R :session
+#+BEGIN_SRC R :session :colnames no
 library(tidyr)
 
 mostFreqPlays$groups <- groups
@@ -232,7 +247,7 @@ nrow(unnested[unnested$freq > 15,])
 #+END_SRC
 
 #+RESULTS:
-: 86
+: 115
 
 This yields 86 albums; however, we still don't know anything about
 these releases. Thankfully MusicBrainz has this information as well.
@@ -278,26 +293,27 @@ for this post.
       )
       return(arturl)
   }
+  as <- aTable[order(aTable$freq, decreasing=T), ]
   r1 <- image_append(image_scale(image_read(getArt(rev(albums$groups)[1:4])), "250x250"))
   r2 <- image_append(image_scale(image_read(getArt(rev(albums$groups)[5:8])), "250x250"))
-  r3 <- image_append(image_scale(image_read(getArt(rev(albums$groups)[c(10, 11, 13, 15)])), "250x250"))
+  r3 <- image_append(image_scale(image_read(getArt(rev(albums$groups)[c(9, 10, 12, 14)])), "250x250"))
   image_write(image_append(c(r1, r2, r3), stack=TRUE), "images/albums.png")
 #+END_SRC
 
-* The Albums
+** The Albums
 
 Now I'll say a few words about the albums on this list.
 
-** Charli XCX - /Pop 2/
+[[file:images/albums.png]]
+
+*** Charli XCX - /Pop 2/
 
 The prolific UK-based singer-songwriter has released a 
 masterpiece. Featuring production from the likes of A.G. Cook
 and SOPHIE, /Pop 2/ is a celebration of future-facing pop
 music with catchy hooks and hyper-glossy production.
 
-{{< youtube Rj6dwEBmBJA >}}
-
-** Lorde - /Melodrama/
+*** Lorde - /Melodrama/
 
 I was completely blown away by this on my first listen.  Jack Antonoff
 joined Lorde as executive producer and together they crafted a record
@@ -305,9 +321,7 @@ full of unexpected hooks and sleek arrangements. The fact that this
 album is even being compared to Kate Bush's /Hounds of Love/ is a
 testament to the songwriting chops of the young singer-songwriter.
 
-{{< youtube 8l8s4Y8m-FM >}}
-
-** Charli XCX - /Number 1 Angel/
+*** Charli XCX - /Number 1 Angel/
 
 Honestly I really wish that XCX3 got released last year as planned,
 but these two mixtapes are possibly the greatest consolation prize
@@ -316,53 +330,56 @@ most impressive accomplishment in these mixtapes is her ability
 to feature so many other artists while at the same time not
 being overshadowed in the slightest.
 
-{{< youtube d7TSDVLRM1E >}}
-
-** Rina Sawayama - /RINA/
+*** Rina Sawayama - /RINA/
 
 I love the sound and aesthetic of pop music from the late 90's and
 early 2000's. It's hard for me to describe, but there's just a level
-of confidence I associate with it.
+of confidence to it that is difficult to reproduce. While Rina
+Sawayama by no means tries to replicate the sound, she channels
+it perfectly in this Clarence Clarity-produced EP.
 
-{{< youtube mW-ZiKXMcGk >}}
+*** Paramore - /After Laughter/
 
-** Coma Cinema - /Loss Memory/
+Does Hayley Williams have one of the best voices in today's music
+industry? Yes. Does Paramore keep getting better and better over time?
+Also yes.
 
-{{< youtube 0SmrfSTjSk0 >}}
+*** Coma Cinema - /Loss Memory/
 
-** Paramore - /After Laughter/
+This was late release (early December) and it did not receive very
+much attention from the music press. Nonetheless, I found it to be
+a very enjoyable winter album with a raw yet removed approach to
+its emotional subject matter.
 
-{{< youtube V0hvzjyuZ5k >}}
+*** Alex Cameron - /Forced Witness/
 
-** Alex Cameron - /Forced Witness/
+Heartland synthpop drenched in irony and social commentary. Cameron 
+is simultaneously hilarious and thought-provoking.
 
-{{< youtube j1DqBFYgDzc >}}
+*** Baths - /Romaplasm/
 
-** Baths - /Romaplasm/
+Bubbly production and chippy songwriting. It's a concept album.
+I still don't quite get the concept, but that's okay.
 
-{{< youtube BYkP4WRM118 >}}
+*** Phoebe Bridgers - /Stranger in the Alps/
 
-** Phoebe Bridgers - /Stranger in the Alps/
+I didn't really get into this release until late this year.
+Wow, there are some good songs in here! Another great winter
+album with a lot of sad subjects, but also some intimate
+and emotional arrangements.
 
-{{< youtube jcq5NlYz1PU >}}
-
-** BROCKHAMPTON - /SATURATION III/
-
-{{< youtube tXaeLbheT0k >}}
-
-** Craig Finn - /We All Want the Same Things/
-
-{{< youtube FXXxOJ2-Uj0 >}}
-
-** Vince Staples - /Big Fish Theory/
-
-{{< youtube KF6x7g5ZfwM >}}
-
-** LCD Soundsystem - /American Dream/
-
-{{< youtube ML1MUKOJIIo >}}
+Rounding out the list:
++ Vince Staples - /Big Fish Theory/
++ BROCKHAMPTON - /SATURATION III/
++ Craig Finn - /We All Want the Same Things/
++ Richard Dawson - /Peasant/
++ LCD Soundsystem - /American Dream/
 
 
 [fn:aoty] AOTY publishes an aggregate of over a hundred end-of-year lists annually.
-Read their 2017 list
-<a href="https://www.albumoftheyear.org/list/summary/2017/">here</a>.
+Read their 2017 list [[https://www.albumoftheyear.org/list/summary/2017/][here]].
+* TODO My Top Albums of 2018
+:PROPERTIES:
+:EXPORT_FILE_NAME: 2018-albums
+:DATE: 2018-12-09
+:END:

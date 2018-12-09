@@ -3,6 +3,7 @@ title: "Kvizo"
 author: ["Carl Colglazier"]
 draft: false
 subtitle: "A practice and learning tool for adademic quiz bowl."
+repository: "https://github.com/CarlColglazier/kvizo"
 ---
 
 Kvizo is a practice and learning tool for adademic quiz bowl. It
