@@ -3,7 +3,7 @@ title: "Publications"
 date: 2018-08-01T23:30:15-04:00
 ---
 
-An automatic list of my publications can be found on [Google Scholar](gscholar).
+An automatic list of my publications can be found on [Google Scholar][gscholar].
 
 ## Conference Papers.
 
