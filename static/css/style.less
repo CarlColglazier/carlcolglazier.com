@@ -1,3 +1,8 @@
+@import (inline) "syntax.css";
+.chroma {
+    background: none;
+}
+
 /**** VARIABLES ****/
 
 @black: #101010;
@@ -57,8 +62,9 @@ body {
   color: @black;
   background-color: @white;
   font-family: 'Glacial Indifference', 'Trebuchet MS', sans-serif;
-  font-size: 125%;
+  font-size: 130%;
   min-width: 300px;
+  text-align: justify;
 }
 
 @media (max-width: 1150px) {
@@ -161,20 +167,21 @@ article {
 
 code {
   font-family: monospace;
-  font-size: 0.7rem;
+  //font-size: 0.7rem;
 }
 
 pre {
-  .white;
+  //.white;
   overflow-y: hidden;
   overflow-x: auto;
   padding: 1rem;
-  font-size: 0.7rem;
+  border-left: solid @dark-gray;
+  //font-size: 0.7rem;
   code {
     overflow-wrap: normal;
     overflow: hidden;
     white-space: pre;
-    font-size: 1.0rem;
+    font-size: 0.75rem;
   }
 }
 
@@ -185,6 +192,35 @@ img {
 canvas {
   width: 100%;
   height: 100px;
+}
+
+figure {
+    margin: 0;
+    img {
+        display: block;
+    }
+    figcaption {
+        border-left: solid @dark-gray;
+        p {
+            margin: 0;
+            padding: 1rem;
+            width: 100%;
+        }
+    }
+}
+
+table {
+    text-align: left;
+    border-collapse: collapse;
+    th {
+        font-weight: normal;
+        border-right: 1.5rem solid transparent;
+        border-bottom: 0.1rem solid;
+    }
+    td {
+        padding-right: 1em;
+      	border-right: 1.5rem solid transparent;
+    }
 }
 
 .video {

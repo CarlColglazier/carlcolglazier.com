@@ -4,7 +4,8 @@
 #+hugo_base_dir: ../
 #+hugo_front_matter_format: yaml
 
-* TODO My 2018 in Music
+* DONE My 2018 in Music
+  CLOSED: [2018-12-21 Fri 09:18]
 :PROPERTIES:
 :EXPORT_FILE_NAME: 2018-albums
 :EXPORT_DATE: 2018-12-09
@@ -202,7 +203,6 @@ I streamed.
 #+END_SRC
 
 #+BEGIN_SRC R :session :results silent
-
   recentAlbums <- topAlbums %>% filter(n > 25) %>% by_row(..f=getAlbum, .to=".out") %>% unnest()
 #+END_SRC
 
@@ -230,7 +230,10 @@ recentAlbums %>%
 | Mid-Air Thief             | Crumbling 무너지기              |  78 | 2018-07-31 |
 
 **** Minutes streamed
-Initially I considered a brute-force approach to this problem.
+Initially I considered a brute-force approach to this problem;
+however, it does not seem a good use of resources to get the
+length for every single song. Instead I'll write a function
+to grab lengths for songs...
 
 #+BEGIN_SRC R
   getLengths <- function(row) {
@@ -249,10 +252,14 @@ Initially I considered a brute-force approach to this problem.
    }
 #+END_SRC
 
+...and sample 250 of my streams. 
+
 #+BEGIN_SRC R :results silent
 set.seed(425368203)
 len_sample <- recentPlays %>% sample_n(250) %>% by_row(..f=getLengths, .to="length") %>% unnest()
 #+END_SRC
+
+This gives me a reasonable mean length.
 
 #+BEGIN_SRC R
 mean_len <- len_sample %>% dplyr::summarize(Mean=mean(length, na.rm=T))
@@ -261,12 +268,14 @@ mean_len <- len_sample %>% dplyr::summarize(Mean=mean(length, na.rm=T))
 #+RESULTS:
 |             Mean |
 |------------------|
-| 235480.470833333 |
+| 240542.148760331 |
 
-#+BEGIN_SRC R
+#+BEGIN_SRC R :exports none
 lens <- lengths[!is.na(lengths)]
 ggplot() + aes(lens) + geom_histogram(binwidth=60000)
 #+END_SRC
+
+Which I can use to estimate the total for the population.
 
 #+BEGIN_SRC R
 mins <- nrow(recentPlays) * mean(as.numeric(mean_len)) / 60000
