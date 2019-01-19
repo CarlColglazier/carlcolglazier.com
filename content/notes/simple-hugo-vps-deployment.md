@@ -26,7 +26,7 @@ git config receive.denyCurrentBranch updateInstead
 ```
 
 inside the repository to allow the current branch (master) to be updated from
-an external source. Now I could push directly to the server.
+an external source. Now I could push directly to the server[^git].
 
 I needed to do the following when building the website:
 
@@ -84,3 +84,5 @@ git push <remote> <branch>
 I can then push directly to the repository on the server and receive
 the output from `npm` on my computer while the website builds. On
 average, the entire build process takes a little more than a second.
+
+[^git]: Note: This requires a git version of [at least 2.3](https://stackoverflow.com/questions/32643065/git-receive-denycurrentbranch-updateinstead-fails).
