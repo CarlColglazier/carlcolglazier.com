@@ -1,5 +1,5 @@
-<a href="{{ .Permalink }}" class="plain"><div class="card">
-  <h3>{{ .Title}}</h3>
+<div class="card">
+  <h3><a href="{{ .Permalink }}" class="plain">{{ .Title}}</a></h3>
   {{ if isset .Params "subtitle" }}
   <p>{{ index .Params "subtitle" }}</p>
   {{ end }}
@@ -10,5 +10,5 @@
     {{end}}
     </small>
   {{end}}
-</div></a>
+</div>
 

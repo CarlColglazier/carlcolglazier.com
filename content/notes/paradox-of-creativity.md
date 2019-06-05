@@ -2,8 +2,8 @@
 date: 2017-09-15T15:01:27-04:00
 title: The Paradox of Creativity
 image: ouroboros.jpg
-notes:
-  - acoustics
+aliases:
+  - /notes/acoustics/paradox-of-creativity/
 ---
 
 ## Creativity is mythologized.

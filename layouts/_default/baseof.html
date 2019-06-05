@@ -22,7 +22,127 @@
       {{ .Site.Title }}
     {{ end }}</title>
     <link rel="canonical" href="{{ .Permalink }}">
-    <link href="/css/style.css?{{ now.Unix }}" rel="stylesheet">
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Lato:100,400:700&display=swap');
+      body {
+	  font-family: 'Lato', sans-serif;
+	  font-weight: normal;
+	  line-height: 1.75;
+	  color: black;
+	  background-color: white;
+      }
+
+      h2, h3, h4, h5, h6 {
+	  font-weight: 800;
+	  padding: 0;
+      }
+
+      h1 {
+	  font-weight: 100;
+	  font-size: 3rem;
+      }
+
+      time {
+	  font-weight: 100;
+      }
+
+      h2 {
+	  font-weight: 100;
+	  font-variant-caps: small-caps;
+	  text-transform: uppercase;
+	  letter-spacing: 0.5rem;
+	  margin: 4rem 0 0.4rem 0;
+      }
+
+      navigation {
+	  display: flex;
+	  justify-content: space-between;
+	  max-width: 60rem;
+	  margin: 3rem auto 0 auto;
+      }
+
+      a {
+	  color: inherit;
+	  border-bottom: 3px solid;
+	  text-decoration: none;
+      }
+
+      img {
+	  max-width: 100%;
+      }
+
+      pre {
+	  overflow-y: hidden;
+	  overflow-x: auto;
+	  padding: 1rem;
+	  border-left: solid;
+      }
+
+      pre code {
+	  overflow-wrap: normal;
+	  overflow: hidden;
+	  white-space: pre;
+	  font-size: 0.75rem;
+      }
+
+      .inline-list {
+	  list-style: none;
+	  float: right;
+	  text-align: center;
+      }
+
+      .inline-list li {
+	  display: inline-block;
+	  min-width: 4rem;
+	  margin-left: auto;
+      }
+
+      .main {
+	  width: 90%;
+	  margin-left: auto;
+	  margin-right: auto;
+      }
+
+      .main p, ul, ol {
+	  max-width: 30rem;
+	  text-align: justify;
+      }
+
+      .card {
+	  border-left: solid;
+	  padding: 0.5rem 1rem;
+	  margin-bottom: 1rem;
+      }
+
+      @media only screen and (min-width: 60em) { /* 960px */
+	  .main {
+	      width: 75%;
+	      max-width: 60rem;
+	  }
+      }
+
+      .logo {
+	  font-weight: 100;
+	  font-size: 1.5rem;
+	  position: relative;
+	  height: 3rem;
+	  width: 3rem;
+	  margin: auto;
+	  margin-bottom: -2rem;
+	  padding: 2rem 0 0;
+      }
+      .logo a {
+	  position: absolute;
+	  left: 0;
+	  padding: 1rem 1.2rem;
+	  border-radius: 2.25rem;
+	  text-decoration: none;
+	  border: none;
+	  background-color: black;
+	  color: white;
+      }
+    </style>
+
 
     <!--<base href="{{ .Site.BaseURL }}">-->
 

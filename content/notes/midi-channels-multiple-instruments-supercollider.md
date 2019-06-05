@@ -1,8 +1,8 @@
 ---
 title: "Mapping MIDI Channels to Multiple Instruments in SuperCollider"
 date: 2017-09-23T19:18:35-04:00
-notes:
-  - acoustics
+aliases:
+  - /notes/acoustics/midi-channels-multiple-instruments-supercollider/
 ---
 
 Being able

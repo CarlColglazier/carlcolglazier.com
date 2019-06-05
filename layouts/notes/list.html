@@ -7,22 +7,15 @@
   {{ partial "title.html" . }}
   {{.Content}}
   <div>
-    {{ $pages := .Data.Pages }}
-    {{- if .Sections -}}
-      {{- range .Sections -}}
-        {{ $pages = $pages | append .Data.Pages }}
-      {{- end -}}
-    {{- end -}}
-    {{ $pag := .Paginate (sort $pages "Date" "desc") }}
-    {{ range $pag.Pages }}
+  {{ range .Paginator.Pages }}
     {{ .Render "li" }}
-    {{ end }}
+  {{ end }}
   </div>
-  {{ if $pag.HasPrev }}
-    <a href="{{ $pag.Prev.URL }}">Previous</a>
+  {{ if .Paginator.HasPrev }}
+    <a href="{{ .Paginator.Prev.URL }}">Previous</a>
   {{ end }}
   {{ if .Paginator.HasNext }}
-    <a href="{{ $pag.Next.URL }}" class="right">Next</a>
+    <a href="{{ .Paginator.Next.URL }}" class="right">Next</a>
   {{ end }}
 </article>
 {{ end }}

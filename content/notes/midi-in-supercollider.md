@@ -1,8 +1,8 @@
 ---
 title: "Making Connections: MIDI in SuperCollider"
 date: 2017-09-19T19:45:49-04:00
-notes:
-  - acoustics
+aliases:
+  - /notes/acoustics/midi-in-supercollider/
 ---
 
 The [previous post](/notes/acoustics/starting-supercollider/)

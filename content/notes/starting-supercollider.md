@@ -1,8 +1,8 @@
 ---
 date: 2017-09-18T18:51:29-04:00
 title: Starting SuperCollider
-notes: 
-  - "acoustics"
+aliases: 
+  - /notes/acoustics/starting-supercollider/
 ---
 
 Over the next few posts, I will be documenting the process of creating

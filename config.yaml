@@ -10,6 +10,8 @@ title: "Carl Colglazier"
 languageCode: "en-us"
 menu:
   main:
+    - Name: "Home"
+      URL: "/"
     - Name: "Notes"
       URL: "/notes"
       Weight: 0

@@ -3,8 +3,9 @@ title: "The Challenge of Content"
 author: ["Carl Colglazier"]
 date: 2018-12-27
 draft: false
-video: "jldzffJba5Y"
 ---
+
+{{< youtube jldzffJba5Y >}}
 
 This is a video about three things: cleaning, curves, and content.
 

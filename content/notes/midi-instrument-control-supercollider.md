@@ -1,8 +1,8 @@
 ---
 title: "Controlling Synths with MIDI in SuperCollider"
 date: 2017-09-22T17:12:41-04:00
-notes:
-  - acoustics
+aliases:
+  - /notes/acoustics/midi-instrument/control-supercollider/
 ---
 
 I previously showed how to set up SuperCollider to communicate
