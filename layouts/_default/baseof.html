@@ -18,6 +18,10 @@
     <!-- Other metadata -->
     <meta name="description" content="{{ .Summary }}" />
 
+    {{ with .OutputFormats.Get "rss" -}}
+      {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}  
+
     <title>{{ block "title" . }}
       {{ .Site.Title }}
     {{ end }}</title>
@@ -67,6 +71,10 @@
 	  text-decoration: none;
       }
 
+      p {
+	  margin-bottom: 2rem;
+      }
+
       img {
 	  max-width: 100%;
       }
@@ -83,6 +91,21 @@
 	  overflow: hidden;
 	  white-space: pre;
 	  font-size: 0.75rem;
+      }
+
+      table {
+	  text-align: left;
+	  border-collapse: collapse;
+      }
+
+      table th {
+	  border-right: 1.5rem solid transparent;
+	  border-bottom: 0.1rem solid;
+      }
+
+      table td {
+	  padding-right: 1rem;
+	  border-right: 1.5rem solid transparent;
       }
 
       .inline-list {
@@ -145,11 +168,7 @@
 
 
     <!--<base href="{{ .Site.BaseURL }}">-->
-
-    {{ if .RSSLink }}
-    <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-    <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
-    {{ end }}
+    
   </head>
   <body>
     <div class="black main">
