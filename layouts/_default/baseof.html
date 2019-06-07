@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name=viewport content="width=device-width, initial-scale=1">
@@ -34,6 +34,7 @@
 	  line-height: 1.75;
 	  color: black;
 	  background-color: white;
+          min-width: 460px;
       }
 
       h2, h3, h4, h5, h6 {
@@ -175,12 +176,17 @@
           display: inline-block;
           max-width: 20rem;
       }
+
+      @media only screen and (min-device-width: 640px) {
+      .grid1 {
+          padding-right: 0rem;
+      }
     </style>
   </head>
   <body>
     <div class="black main">
       <navigation>
-        <div style="visibility: hidden;">Carl Colglazier</div>
+        <div style="visibility: hidden;"><small>Carl Colglazier</small></div>
         <ul class="inline-list center">
           {{ range .Site.Menus.main }}<li><a href="{{ .URL }}">{{ .Name }}</a></li>{{ end }}
         </ul>
