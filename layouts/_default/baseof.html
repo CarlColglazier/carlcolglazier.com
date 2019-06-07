@@ -43,7 +43,7 @@
 
       h1 {
 	  font-weight: 100;
-	  font-size: 3rem;
+	  font-size: 3.5rem;
       }
 
       time {
@@ -164,19 +164,34 @@
 	  background-color: black;
 	  color: white;
       }
+
+      .grid1 {
+          display: inline-block;
+          max-width: 30rem;
+          padding-right: 10rem;
+          
+      }
+
+      .grid2 {
+          display: inline-block;
+          max-width: 20rem;
+      }
     </style>
-
-
-    <!--<base href="{{ .Site.BaseURL }}">-->
-    
   </head>
   <body>
     <div class="black main">
-      {{ partial "header.html" . }}
+      <navigation>
+        <div style="visibility: hidden;">Carl Colglazier</div>
+        <ul class="inline-list center">
+          {{ range .Site.Menus.main }}<li><a href="{{ .URL }}">{{ .Name }}</a></li>{{ end }}
+        </ul>
+      </navigation>
       {{ block "main" . }}
       {{ end }}
       {{ if .IsPage }}
-        {{ partial "footer.html" . }}
+        <footer class="footer">
+          <p class="right-text"><small>Created by Carl Colglazier <span>{{ index (slice "❤️" "💙" "💛") (mod (index (.Title) 0) 3) }}</span></small></p>
+        </footer>
       {{ end }}
     </div>
   </body>

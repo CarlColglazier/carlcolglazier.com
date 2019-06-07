@@ -5,8 +5,7 @@
   "private": true,
   "scripts": {
     "prebuild": "echo Building...",
-    "build": "npm run-script prepare && hugo && npm run-script minify",
-    "prepare": "./node_modules/.bin/rimraf public",
+    "build": "hugo && npm run-script minify",
     "minify": "./node_modules/.bin/html-minifier --input-dir public --output-dir public -c html-minify.conf --file-ext html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,7 +20,6 @@
   },
   "homepage": "http://carlcolglazier.com/",
   "devDependencies": {
-    "html-minifier": "3.5.21",
-    "rimraf": "2.6.3"
+    "html-minifier": "4.0.0"
   }
 }
