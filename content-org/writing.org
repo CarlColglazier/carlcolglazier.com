@@ -1,0 +1,78 @@
+#+hugo_base_dir: ../
+#+hugo_front_matter_format: yaml
+#+hugo_section: notes
+
+* TODO Speaking into the Void
+  :PROPERTIES:
+  :EXPORT_FILE_NAME: speaking-into-the-void
+  :EXPORT_DATE: 2019-06-09
+  :END:
+
+This thought dump goes back to motivation. Why do I write? Why do I
+post online? Who is my audience and what do they (and I) want?
+
+If there is one thing I've learned about myself, it is that I can be
+highly motivated by boredom. I'm happiest with my mind engaged on
+solving some problem---even one of my own creation. So that's kind of
+what I plan to do, at least for the time being. I think there's a hugo
+pressure in many online spaces to reduce yourself to a brand.
+YouTube, for instance, [[https://creatoracademy.youtube.com/page/lesson/niche][suggests channels discover and stick to a
+specific niche]]. Fair advice if you are trying to grow on the platform,
+but this approach may not be best for everyone.
+
+In my head, my niche is very broad: media. It's what I study and my
+primary personal interest as well. A lot of things fit in that label:
+I define media as tools which transform our view of space and time.
+This is pretty broad[fn:innis]. I see the overlap, but it's less clear
+if anyone else would. No matter.
+
+[fn:innis] And this is also clearly inspired by Harold Innis.
+* Principles for Creative Work
+  :PROPERTIES:
+  :EXPORT_FILE_NAME: creative-work-principles
+  :EXPORT_DATE: 2019-06-06
+  :END:
+
+A lot of these ideas aren't original. In fact, many are borrowed from
+processes in software development and team management I have learned
+while a college student. I am writing them down here as a bit of a
+self-reminder. This note isn't perfect, but....
+** Perfection is a fantasy
+
+Don't fall for it.
+
+The idea of perfection comes the imagination: an unrealistic,
+idealized version of ourselves with no basis in reality.  Most of the
+time, "good enough" is good enough. The goal should never be
+perfection.  Rather, ask what you are trying to convey? How do you
+want people to feel? What do you want them to know? If you can say
+you've put to form what you want the audience to experience, you have
+succeeded.
+
+Otherwise...
+
+** Build quickly and fail cheaply.
+
+I wrote this up as one principle because I think they are necessarily
+linked to each other.  As a recovering perfectionist, I remain
+astutely aware of failure. It's inevitable in nearly any project. The
+best way to manage it is to incorporate it into the process. Create
+opportunities to flesh out ideas and prototypes to avoid racking up
+higher costs later on.
+
+** Reduce workflow friction.
+
+How much time are you actually working and how much time do you spend
+on paperwork? This isn't to say documentation is useless.
+Coordination and teamwork often are exactly the bottlenecks which need
+to be eliminated.
+
+** It's easiest after you start.
+
+I did summer swim team for many years. In May and early June, getting
+into the water was a real drudge. The air wasn't quite warm enough for
+it to feel refreshing and the water hadn't warmed up enough from its
+chilly tapwater origins. The thing is, you could spend forever building
+everything up, waiting at the side of the pool. Trying to amp yourself
+up. It gets you nowhere. The only way to get through it is to get started.
+It sucks, but you get better at managing it.
