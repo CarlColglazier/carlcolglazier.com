@@ -1,18 +1,18 @@
 ---
-title: "Publications"
+title: "Research"
 date: 2018-08-01T23:30:15-04:00
 ---
 
 An automatic list of my publications can be found on [Google Scholar][gscholar].
 
-## Conference Papers.
+### Conference Papers.
 
 ["Parallel Python for Agent-Based Modeling at a Global Scale."](https://dl.acm.org/citation.cfm?id=3145588)
 : Nicole Blandin, **Carl Colglazier**, John O'Hare, and Paul Brenner.
 In *Proceedings of the 2017 International Conference of The Computational Social Science Society of the Americas*, p. 10. ACM, 2017.
 
 
-## Posters
+### Posters
 
 ["Advanced Tools for Computational Social Science"][css2018-poster].
 :  **Carl Colglazier** and Paul Brenner.
@@ -24,7 +24,7 @@ In *Proceedings of the 2017 International Conference of The Computational Social
   2017 Summer Undergraduate Research Symposium, University of Notre
   Dame.
 
-## Conferences I've attended.
+### Conferences I've attended.
 
 + [IC2S2 2018][ic2s22018]
 + [CHI 2018][chi2018]

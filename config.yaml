@@ -10,13 +10,21 @@ title: "Carl Colglazier"
 languageCode: "en-us"
 menu:
   main:
-    - Name: "Home"
-      URL: "/"
-    - Name: "Notes"
-      URL: "/notes"
-      Weight: 0
-    - Name: "Work"
-      URL: "/work"
+    - name: "Home"
+      url: "/"
+      weight: -2
+    - name: "Notes"
+      url: "/notes"
+      weight: 0
+    - name: "Code"
+      url: "/code"
+      weight: -1
+    - name: "Media"
+      url: "/media"
+      weight: -1
+    - name: "Research"
+      url: "/research"
+      weight: -1
 blackfriday:
     plainIdAnchors: true
 privacy:
