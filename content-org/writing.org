@@ -1,7 +1,12 @@
+# -*- eval: (org-hugo-auto-export-mode 1); -*-
 #+hugo_base_dir: ../
 #+hugo_front_matter_format: yaml
 #+hugo_section: notes
 
+* TODO Software on Patreon
+
+- https://www.patreon.com/evanyou
+- 
 * A Fast from Electron: Streaming Music through MPD
   :PROPERTIES:
   :EXPORT_FILE_NAME: electron-fast
@@ -27,6 +32,11 @@ Bonus: my scrobbles now cache if there is ever a connectivity issue.
   :EXPORT_FILE_NAME: speaking-into-the-void
   :EXPORT_DATE: 2019-06-09
   :END:
+How do we measure...well, anything? In research design, /operationalization/ describes the process of turning the intangible into a measurable variable. The trick is to tally some other variable which closely correlates with the desired variable.
+
+Of course, this measure isn't going to be perfect. If you sampled some weeks, you might conclude that I don't like coffee at all: bodies are fragile things and sometimes I must forgo my daily cup(s)-of-joe for my health.
+
+Operationalization becomes particularly important when orginizations handle large quantities of data at scale. YouTube made a big change a few years when they changed what they mean by a "view". The site used to run rampant with clickbait content that people would only watch for maybe a few seconds at most. Because views were an important measure and because even the shortest watch-time counted for a view, this incentivized some to create a lot of bad content like this. In short, YouTube's operationalization for views encouraged spam and click-bait. They changed this several years ago, making their definition more subtle and contextual.
 
 This thought dump goes back to motivation. Why do I write? Why do I
 post online? Who is my audience and what do they (and I) want?
