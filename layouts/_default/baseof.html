@@ -27,135 +27,14 @@
     {{ end }}</title>
     <link rel="canonical" href="{{ .Permalink }}">
     <style>
-      @import url('https://fonts.googleapis.com/css?family=Lato:100,400:700&display=swap');
-      body {
-	  font-family: 'Lato', sans-serif;
-	  font-weight: normal;
-	  line-height: 1.75;
-	  color: black;
-	  background-color: white;
-          min-width: 460px;
-      }
-
-      h1 {
-	  font-weight: 100;
-	  font-size: 3.5rem;
-      }
-
-      h2, h3, h4, h5, h6 {
-	  font-weight: 800;
-	  padding: 0;
-      }
-
-      time {
-	  font-weight: 100;
-      }
-
-      navigation {
-	  display: flex;
-	  justify-content: space-between;
-	  max-width: 60rem;
-	  margin: 3rem auto 0 auto;
-      }
-
-      a {
-	  color: inherit;
-	  border-bottom: 3px solid;
-	  text-decoration: none;
-      }
-
-      p {
-	  margin-bottom: 2rem;
-      }
-
-      img {
-	  max-width: 100%;
-      }
-
-      pre {
-	  overflow-y: hidden;
-	  overflow-x: auto;
-	  padding: 1rem;
-	  border-left: solid;
-      }
-
-      pre code {
-	  overflow-wrap: normal;
-	  overflow: hidden;
-	  white-space: pre;
-	  font-size: 0.75rem;
-      }
-
-      table {
-	  text-align: left;
-	  border-collapse: collapse;
-      }
-
-      table th {
-	  border-right: 1.5rem solid transparent;
-	  border-bottom: 0.1rem solid;
-      }
-
-      table td {
-	  padding-right: 1rem;
-	  border-right: 1.5rem solid transparent;
-      }
-
-      .inline-list {
-	  list-style: none;
-	  float: right;
-	  text-align: center;
-      }
-
-      .inline-list li {
-	  display: inline-block;
-	  margin-left: auto;
-          padding-left: 2rem;
-      }
-
-      .main {
-	  width: 90%;
-	  margin-left: auto;
-	  margin-right: auto;
-      }
-
-      .main p, ul, ol {
-	  max-width: 30rem;
-      }
-
-      .card {
-	  border-left: solid;
-	  padding: 0.5rem 1rem;
-	  margin-bottom: 1rem;
-      }
-
-      @media only screen and (min-width: 60em) { /* 960px */
-	  .main {
-	      width: 75%;
-	      max-width: 60rem;
-	  }
-      }
-
-      .grid1 {
-          display: inline-block;
-          max-width: 30rem;
-      }
-
-      .grid2 {
-          display: inline-block;
-          max-width: 20rem;
-      }
-
-      @media only screen and (min-width: 640px) {
-      .grid1 {
-          padding-right: 10rem;
-      }
+     @import url('https://fonts.googleapis.com/css?family=Lato:100,400:700&display=swap');
     </style>
+    <link href="/css/style.css" rel="stylesheet">
   </head>
   <body>
     <div class="black main">
       <navigation>
-        <div style="visibility: hidden;"><small>Carl Colglazier</small></div>
+        <div class="name-title"><small>Carl Colglazier</small></div>
         <ul class="inline-list center">
           {{ range .Site.Menus.main }}<li><a href="{{ .URL }}">{{ .Name }}</a></li>{{ end }}
         </ul>
