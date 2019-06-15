@@ -28,6 +28,19 @@ navigation {
     margin: 3rem auto 0 auto;
 }
 
+.paginator {
+    display: flex;
+    justify-content: space-between;
+}
+
+.right {
+    float: right;
+}
+
+.content {
+    padding-bottom: 1rem;
+}
+
 a {
     color: inherit;
     border-bottom: 3px solid;
@@ -106,7 +119,7 @@ table td {
     }
 }
 
-.content {
+.grid {
     display: grid;
 }
 

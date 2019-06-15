@@ -1,16 +1,17 @@
 {{ define "main" }}
 <article class="content">
-  {{ partial "title.html" . }}
-  <div class="grid1">
-    {{.Content}}
-  </div>
-  <div class="grid2">
-  <h2>Latest Notes</h2>
-    {{ $paginator := .Paginate (where .Data.Pages "Section" "notes") }}
-    {{ range first 4 $paginator.Pages }}
-      {{ .Render "li"}}
-    {{ end }}
-  </div>
+    {{ partial "title.html" . }}
+    <div class="grid">
+	<div class="grid1">
+	    {{.Content}}
+	</div>
+	<div class="grid2">
+	    <h2>Latest Notes</h2>
+	    {{ $paginator := .Paginate (where .Data.Pages "Section" "notes") }}
+	    {{ range first 4 $paginator.Pages }}
+	    {{ .Render "li"}}
+	    {{ end }}
+	</div>
+    </div>
 </article>
 {{ end }}
-

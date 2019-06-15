@@ -11,11 +11,13 @@
     {{ .Render "li"}}
   {{ end }}
   </div>
-  {{ if .Paginator.HasPrev }}
-    <a href="{{ .Paginator.Prev.URL }}">Previous</a>
-  {{ end }}
-  {{ if .Paginator.HasNext }}
-    <a href="{{ .Paginator.Next.URL }}" class="right">Next</a>
-  {{ end }}
+  <div class="paginator">
+    {{ if .Paginator.HasPrev }}
+      <a href="{{ .Paginator.Prev.URL }}">Previous</a>
+    {{ end }}
+    {{ if .Paginator.HasNext }}
+      <a href="{{ .Paginator.Next.URL }}" class="right">Next</a>
+    {{ end }}
+  </div>  
 </article>
 {{ end }}
