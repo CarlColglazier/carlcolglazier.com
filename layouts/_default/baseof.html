@@ -29,9 +29,11 @@
     <style>
      @import url('https://fonts.googleapis.com/css?family=Lato:100,400:700&display=swap');
     </style>
-    {{ $style := resources.Get "style.css" | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
-    <!-- <link href="/css/style.css" rel="stylesheet"> -->
+    {{ $style := resources.Get "style.css" }}
+    {{ $syntax := resources.Get "syntax.css" }}
+    {{ $stylesheet := slice $style $syntax | resources.Concat "style.css" }}
+    {{ $stylesheet := $stylesheet | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $stylesheet.Permalink }}">
   </head>
   <body>
     <div class="black main">
