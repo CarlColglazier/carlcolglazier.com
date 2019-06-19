@@ -1,8 +1,6 @@
 ---
 date: 2017-08-09T09:07:14-04:00
 title: Carl Colglazier
---image: portrait.jpg
---image-caption: "A portrait of Carl Colglazier."
 ---
 
 Rooted in my dual education in computer science and
