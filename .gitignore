@@ -1,5 +1,7 @@
 public/
 node_modules/
 datasets/
+resources/
+_gen/*
 *.RData
 *.Rhistory

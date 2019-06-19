@@ -29,7 +29,9 @@
     <style>
      @import url('https://fonts.googleapis.com/css?family=Lato:100,400:700&display=swap');
     </style>
-    <link href="/css/style.css" rel="stylesheet">
+    {{ $style := resources.Get "style.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <!-- <link href="/css/style.css" rel="stylesheet"> -->
   </head>
   <body>
     <div class="black main">
