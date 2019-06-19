@@ -1,6 +1,5 @@
 #+TITLE: CarlColglazier.com
 #+AUTHOR: Carl Colglazier
-#+DATE: <2017-04-28 Fri>
 
 This repository contains the source code and files that are used to build
 [[http://carlcolglazier.com/][CarlColglazier.com]]. The website is build using Hugo and maintained on
@@ -9,11 +8,7 @@ GitHub. When changes are made, the entire website is rebuilt using a
 
 ** Installation
 *** Prerequisites
-The build process for this website requires that the following be installed:
-+ [[http://gohugo.io/][Hugo]], a static website engine.
-+ [[https://www.npmjs.com/][npm]] and [[https://nodejs.org/en/][node.js]].
-+ [[http://pygments.org/][Pygments]] for syntax highlighting.
-
+The build process for this website requires [[http://gohugo.io/][Hugo]] to be installed.
 *** Getting Started
 To modify this repository, use ~git~ to clone a local copy.
 
