@@ -3,50 +3,10 @@
 #+hugo_front_matter_format: yaml
 #+hugo_section: notes
 
-* TODO Waiting for Upstream
-  :PROPERTIES:
-  :EXPORT_FILE_NAME: waiting-for-upstream
-  :EXPORT_DATE: 2019-06-20
-  :END:
-This is a post about this website. It's also a small reflection on software development.
-
----
-
-This website has always relied on JavaScript in some way. At the moment, none runs on the site itself, but it's always been a part of the build process. Gulp, grunt, just plain npm---I think I've tried all of them at some point.
-
-From today forward, everything on these pages is generated with a single Hugo command. 
-
-Software with a large community of contributors brings advantages. I obviously was not the only person with this kind of minification workflow. Now I am able to upgrade
-
-Jekyll and Hugo both tally roughly the same GitHub star count.
-* TODO Software on Patreon
-
-- https://www.patreon.com/evanyou
-- 
-* A Fast from Electron: Streaming Music through MPD
-  :PROPERTIES:
-  :EXPORT_FILE_NAME: electron-fast
-  :EXPORT_DATE: 2019-06-13
-  :END:
-Enough has been written on Electron's shortfalls that I feel no need to add my own gripes. Generally, I try to avoid it as much as possible. I'm sure the Discord desktop client is nice, but it also works just fine in my web browser. Slack? Okay, but you're only allowed on the work computer!
-
-Despite my hesitations, one Electron app has constantly followed me around for years: the unofficial Google Play Music desktop player. Before you ask, no, I don't use Spotify. I do think it's the better-designed service, but GPM has a good family plan though and it comes with YouTube Red, which is a nice bonus.
-
-Because of this setup, I basically have had a Chromium browser open on my computer at all times just to play music. What's the point of having 20 GB of RAM if I'm not trying to minimize its use at all times?
-
-Here's what I'm using now instead:
-- [[https://github.com/gmusicproxy/gmusicproxy][gmusicproxy]]
-- [[https://www.musicpd.org/][Music Player Daemon (MPD)]]
-- [[https://github.com/MusicPlayerDaemon/mpdscribble][mpdscribble]]
-- [[https://rybczak.net/ncmpcpp/][NCurses Music Player Client (Plus Plus)]]
-
-The only real pain point in my workflow is searching for new albums which are not already in my playlists. I might write a simple program for that at some point.
-
-Bonus: my scrobbles now cache if there is ever a connectivity issue.
 * TODO Speaking into the Void
   :PROPERTIES:
   :EXPORT_FILE_NAME: speaking-into-the-void
-  :EXPORT_DATE: 2019-06-14
+  :EXPORT_DATE: 2019-06-20
   :END:
 How do we measure...well, anything? In research design, /operationalization/ describes how we transform the intangible into a measurable variable. How do you measure an abstract concept like violence or happiness? The trick is to tally some other variable which closely correlates with the desired variable.
 
@@ -85,6 +45,48 @@ It's easy to simply chase goals without realizing it. What is the "goal" of a pl
 [fn:enjoyment] You could make the counterargument here that enjoyment includes the entire experience of consumption. In this case, it would include the potential for acid reflux, which is enough to sour the entire experience. This is a fair point!
 
 [fn:innis] And this is also clearly inspired by Harold Innis.
+
+* Waiting for Upstream
+  :PROPERTIES:
+  :EXPORT_FILE_NAME: waiting-for-upstream
+  :EXPORT_DATE: 2019-06-20
+  :END:
+This is a post about this website. It's also a small reflection on software development. Enjoy.
+
+---
+
+This website has always relied on JavaScript in some way. At the moment, very little runs on the site itself outside specialty pages, but JavaScript always been central to the build process. Gulp, grunt, just plain npm---I think I've tried all of them at some point.
+But as of this note, JavaScript is no longer a part of the build process. Here is how I did it.
+
+Software with a large community of contributors brings further advantages. I obviously was not the only person using JavaScript for my minification workflow. On the Hugo repository, the [[https://github.com/gohugoio/hugo/issues/1251]["Support for minification of generated HTML files"]] issue was first started in 2015, around the same time I switched to Hugo. It was implemented in 2018 after a pretty extensive discussion. I should emphasize that I played absolutely no part in this process. I had a need shared with some others and I got to completely ride free off of their upstream contributions to the software I use. Others also wrote up the documentation that alerted me to this feature in the first place.
+
+This is why popular software brings several advantages beyond their feature set. With a dedicated community, you get expanded documentation and more spaces to find help without any additional effort on your part. Your unusual workflow or edge-cases are more likely to be shared with someone else.
+
+Software should not be evaluated on popularity alone; however, I do think it should be a factor. After all, it would seem quite the waste to throw out the fruits of popular collaboration.
+* TODO Software on Patreon
+
+- https://www.patreon.com/evanyou
+- 
+* A Fast from Electron: Streaming Music through MPD
+  :PROPERTIES:
+  :EXPORT_FILE_NAME: electron-fast
+  :EXPORT_DATE: 2019-06-13
+  :END:
+Enough has been written on Electron's shortfalls that I feel no need to add my own gripes. Generally, I try to avoid it as much as possible. I'm sure the Discord desktop client is nice, but it also works just fine in my web browser. Slack? Okay, but you're only allowed on the work computer!
+
+Despite my hesitations, one Electron app has constantly followed me around for years: the unofficial Google Play Music desktop player. Before you ask, no, I don't use Spotify. I do think it's the better-designed service, but GPM has a good family plan though and it comes with YouTube Red, which is a nice bonus.
+
+Because of this setup, I basically have had a Chromium browser open on my computer at all times just to play music. What's the point of having 20 GB of RAM if I'm not trying to minimize its use at all times?
+
+Here's what I'm using now instead:
+- [[https://github.com/gmusicproxy/gmusicproxy][gmusicproxy]]
+- [[https://www.musicpd.org/][Music Player Daemon (MPD)]]
+- [[https://github.com/MusicPlayerDaemon/mpdscribble][mpdscribble]]
+- [[https://rybczak.net/ncmpcpp/][NCurses Music Player Client (Plus Plus)]]
+
+The only real pain point in my workflow is searching for new albums which are not already in my playlists. I might write a simple program for that at some point.
+
+Bonus: my scrobbles now cache if there is ever a connectivity issue.
 * Principles for Creative Work
   :PROPERTIES:
   :EXPORT_FILE_NAME: creative-work-principles
