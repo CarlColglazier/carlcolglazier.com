@@ -36,18 +36,13 @@
     <link rel="stylesheet" href="{{ $stylesheet.Permalink }}">
   </head>
   <body>
-    <div class="main"><!-- class="black main"> -->
+    <div class="main">
       <navigation>
         <ul>
           {{ range .Site.Menus.main }}<li><a href="{{ .URL }}">{{ .Name }}</a></li>{{ end }}
         </ul>
       </navigation>
       {{ block "main" . }}
-      {{ end }}
-      {{ if .IsPage }}
-        <footer class="footer">
-          <p class="right-text"><small>Created by Carl Colglazier <span>{{ index (slice "❤️" "💙" "💛") (mod (index (.Title) 0) 3) }}</span></small></p>
-        </footer>
       {{ end }}
     </div>
   </body>

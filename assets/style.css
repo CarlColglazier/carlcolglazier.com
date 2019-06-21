@@ -2,8 +2,8 @@ body {
     font-family: 'Lato', sans-serif;
     font-weight: normal;
     line-height: 1.75;
-    color: black;
-    background-color: white;
+    color: #111;
+    background-color: #EEE;
     min-width: 360px;
 }
 
@@ -18,12 +18,12 @@ h2, h3, h4, h5, h6 {
 }
 
 time {
-    font-weight: 100;
+    font-size: 0.75rem;
 }
 
 .main navigation {
     position: fixed;
-    width: 20rem;
+    width: 10rem;
     top: 0px;
     left: 0px;
     overflow: auto;
@@ -34,6 +34,25 @@ time {
 .main navigation ul {
     list-style: none;
     padding: 0;
+}
+
+.main navigation li {
+    line-height: 2.5rem;
+    border-bottom: 2px solid #444;
+}
+
+.main navigation a {
+    padding-left: 1rem;
+    color: #444;
+    text-decoration: none;
+    border-bottom: none;
+    display: block;
+    width: 100%;
+}
+
+.main navigation a:hover {
+    background-color: #444;
+    color: #FFF;
 }
 
 .paginator {
@@ -55,7 +74,7 @@ time {
    /* max-width: 30rem;*/
 }
 
-.entry p, dl, ul, li {
+.entry p, dl, ul, li, dd {
     max-width: 30rem;
 }
 
@@ -169,7 +188,8 @@ table td {
     }
 
     .content {
-	margin: 0;
+	margin: 0 auto;
+	padding: 0 2rem;
     }
     
     .grid1, .grid2 {
@@ -178,5 +198,9 @@ table td {
 
     .grid2 {
 	grid-column: 1;
+    }
+
+    .main navigation {
+	margin: 0;
     }
 }
