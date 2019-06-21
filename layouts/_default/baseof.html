@@ -36,10 +36,9 @@
     <link rel="stylesheet" href="{{ $stylesheet.Permalink }}">
   </head>
   <body>
-    <div class="black main">
+    <div class="main"><!-- class="black main"> -->
       <navigation>
-        <div class="name-title"><small>Carl Colglazier</small></div>
-        <ul class="inline-list center">
+        <ul>
           {{ range .Site.Menus.main }}<li><a href="{{ .URL }}">{{ .Name }}</a></li>{{ end }}
         </ul>
       </navigation>

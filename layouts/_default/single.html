@@ -5,6 +5,8 @@
 {{ define "main" }}
 <article class="content">
   {{ partial "title.html" . }}
-  {{.Content}}
+  <div class="entry">
+    {{.Content}}
+  </div>
 </article>
 {{ end }}

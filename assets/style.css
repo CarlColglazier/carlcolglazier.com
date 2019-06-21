@@ -21,11 +21,19 @@ time {
     font-weight: 100;
 }
 
-navigation {
-    display: flex;
-    justify-content: space-between;
-    max-width: 60rem;
-    margin: 3rem auto 0 auto;
+.main navigation {
+    position: fixed;
+    width: 20rem;
+    top: 0px;
+    left: 0px;
+    overflow: auto;
+    overflow-x: hidden;
+    margin: 12rem 0 0 5rem;
+}
+
+.main navigation ul {
+    list-style: none;
+    padding: 0;
 }
 
 .paginator {
@@ -39,7 +47,22 @@ navigation {
 
 .content {
     padding-bottom: 1rem;
+    margin-left: 20rem;
+    margin-right: 5rem;
 }
+
+.entry {
+   /* max-width: 30rem;*/
+}
+
+.entry p, dl, ul, li {
+    max-width: 30rem;
+}
+
+.footnotes p, dl, ul, li {
+    max-width: 100%;
+}
+
 
 a {
     color: inherit;
@@ -84,28 +107,6 @@ table td {
     border-right: 1.5rem solid transparent;
 }
 
-.inline-list {
-    list-style: none;
-    float: right;
-    text-align: center;
-}
-
-.inline-list li {
-    display: inline-block;
-    margin-left: auto;
-    padding-left: 2rem;
-}
-
-.main {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.main p, ul, ol {
-    max-width: 30rem;
-}
-
 .card {
     border-left: solid;
     padding: 0.5rem 1rem;
@@ -113,10 +114,12 @@ table td {
 }
 
 @media only screen and (min-width: 60em) { /* 960px */
+    /*
     .main {
 	width: 75%;
 	max-width: 60rem;
     }
+*/
 }
 
 .grid {
@@ -151,7 +154,7 @@ table td {
     }
 }
 
-@media only screen and (min-width: 60rem) {
+@media only screen and (min-width: 70rem) {
     .grid1 {
 	width: 30rem;
     }
@@ -160,7 +163,15 @@ table td {
 	width: 20rem;
     }
 }
-@media only screen and (max-width: 60rem) {
+@media only screen and (max-width: 70rem) {
+    .main navigation {
+	position: relative;
+    }
+
+    .content {
+	margin: 0;
+    }
+    
     .grid1, .grid2 {
 	width: 100%;
     }
