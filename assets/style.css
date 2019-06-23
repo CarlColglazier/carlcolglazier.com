@@ -4,7 +4,7 @@ body {
     line-height: 1.75;
     color: #111;
     background-color: #EEE;
-    min-width: 360px;
+    margin: 0;
 }
 
 h1 {
@@ -47,7 +47,6 @@ time {
     text-decoration: none;
     border-bottom: none;
     display: block;
-    width: 100%;
 }
 
 .main navigation a:hover {
@@ -94,7 +93,8 @@ p {
 }
 
 img {
-    max-width: 100%;
+    width: 100%;
+    max-width: 960px;
 }
 
 pre {
@@ -130,15 +130,6 @@ table td {
     border-left: solid;
     padding: 0.5rem 1rem;
     margin-bottom: 1rem;
-}
-
-@media only screen and (min-width: 60em) { /* 960px */
-    /*
-    .main {
-	width: 75%;
-	max-width: 60rem;
-    }
-*/
 }
 
 .grid {
@@ -189,7 +180,7 @@ table td {
 
     .content {
 	margin: 0 auto;
-	padding: 0 2rem;
+	padding: 0 1rem;
     }
     
     .grid1, .grid2 {

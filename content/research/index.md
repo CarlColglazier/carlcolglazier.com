@@ -1,6 +1,10 @@
 ---
 title: "Research"
 date: 2018-08-01T23:30:15-04:00
+resources:
+  - name: header
+    src: images/IMG_2953_01.jpg
+    title: A set of three lenses.
 ---
 
 An automatic list of my publications can be found on [Google Scholar][gscholar].

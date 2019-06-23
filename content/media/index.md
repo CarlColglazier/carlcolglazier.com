@@ -1,6 +1,10 @@
 ---
 title: "Media"
 date: 2018-08-01T23:30:09-04:00
+resources:
+  - name: header
+    src: images/IMG_2946_01.jpg
+    title: Some of my audio equipment.
 ---
 
 I have over a decade of experience with various artistic media such as

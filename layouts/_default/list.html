@@ -5,7 +5,9 @@
 {{ define "main" }}
 <article class="content">
   {{ partial "title.html" . }}
-  {{.Content}}
+  <div class="entry">
+    {{.Content}}
+  </div>
   <div>
   {{ range .Paginator.Pages }}
     {{ .Render "li"}}

@@ -6,11 +6,28 @@
   {{ if eq .Section "notes" }}
     <p>
     {{ if .IsPage }}
-      <time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time>
-    {{ end }}
+	<time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time>
+	{{ end }}
     </p>
-  {{ end }}
+    {{ end }}
 </header>
+
+{{ with .Resources.ByType "image" }}
+{{ range . }}
+{{ $image := . }}
+{{ $image32 := $image.Resize "32x" }}
+{{ $image960 := $image.Resize "960x" }}
+<figure>
+    <img sizes="100vw"
+	 src="data:image/jpeg;base64,{{ $image32.Content | base64Encode }}"
+	 srcset="{{ $image960.RelPermalink }} 960w"
+    >
+</figure>
+{{ end }}
+{{end}}
+
+
+
 {{ if isset .Params "image" }}
 <img class="featured" src="/images/{{ index .Params "image" }}"
      {{ if isset .Params "image-caption" }}
