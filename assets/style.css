@@ -21,19 +21,24 @@ time {
     font-size: 0.75rem;
 }
 
+.main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .main navigation {
     position: fixed;
-    width: 10rem;
     top: 0px;
-    left: 0px;
-    overflow: auto;
-    overflow-x: hidden;
-    margin: 12rem 0 0 5rem;
+    overflow: hidden;
+    width: 30%;
+    flex-direction: column;
 }
 
 .main navigation ul {
     list-style: none;
     padding: 0;
+    max-width: 240px;
+
 }
 
 .main navigation li {
@@ -54,8 +59,14 @@ time {
     color: #FFF;
 }
 
+.fixed-side {
+    position: relative;
+    width: 30%;
+    min-width: 400px;
+    flex: 0 0 auto;
+}
+
 .paginator {
-    display: flex;
     justify-content: space-between;
 }
 
@@ -64,13 +75,11 @@ time {
 }
 
 .content {
-    padding-bottom: 1rem;
+    flex: 1;
+    max-width: 60rem;
+	/*padding-bottom: 1rem;
     margin-left: 20rem;
-    margin-right: 5rem;
-}
-
-.entry {
-   /* max-width: 30rem;*/
+    margin-right: 5rem;*/
 }
 
 .entry p, dl, ul, li, dd {
@@ -172,7 +181,13 @@ table td {
     .grid2 {
 	width: 20rem;
     }
+
+    .main navigation {
+	margin: 12.5rem auto;
+    }
+
 }
+
 @media only screen and (max-width: 70rem) {
     .main navigation {
 	position: relative;
@@ -192,6 +207,6 @@ table td {
     }
 
     .main navigation {
-	margin: 0;
+	margin: 0 auto;
     }
 }

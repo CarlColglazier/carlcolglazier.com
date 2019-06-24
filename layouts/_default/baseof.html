@@ -37,11 +37,13 @@
   </head>
   <body>
     <div class="main">
+      <div class="fixed-side">
       <navigation>
         <ul>
           {{ range .Site.Menus.main }}<li><a href="{{ .URL }}">{{ .Name }}</a></li>{{ end }}
         </ul>
       </navigation>
+      </div>
       {{ block "main" . }}
       {{ end }}
     </div>
