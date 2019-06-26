@@ -1404,61 +1404,51 @@ The best way I have found to integrate these Linux-native formats into
 my workflow has been to use [[http://kxstudio.linuxaudio.org/Applications:Carla][Carla]]. It's a program that hosts other
 plugins and can be imported as a VST or VSTi (important because REAPER
 does not directly support LV2 and LADSPA plugins).
-** TODO Mapping MIDI Channels to Multiple Instruments in SuperCollider
-Being able
-to
-[control a polyphonic instrument in MIDI](/notes/acoustics/midi-instrument-control-supercollider/) is
+** Mapping MIDI Channels to Multiple Instruments in SuperCollider
+:PROPERTIES:
+:EXPORT_FILE_NAME: midi-channels-multiple-instruments-supercollider
+:END:
+Being able to [control a polyphonic instrument in
+MIDI](/notes/acoustics/midi-instrument-control-supercollider/) is
 good, but being able to control multiple instruments is even
 better. SuperCollider offers a lot of flexibility when it comes to
 timbre. For my personal workflow, I like to try out a lot of different
 sounds to see what best in the mix. Thus when thinking about how I
 want to use the MIDI controller in connection with SuperCollider, it
 makes sense to me to be able to switch between instruments fluidly.
-
-Finding some sounds
--------------------
-
+*** Finding some sounds
 If you do not want to start from scratch, there are a number of excellent
-resources for finding SuperCollider `SynthDef`s:
+resources for finding SuperCollider =SynthDef=s:
 
-+ [GitHub](http://github.com/) is a service that hosts millions of
-  software projects created and maintained by developers around the
-  world. The source code for [SuperCollider](https://github.com/supercollider/supercollider)
-  itself is hosted on GitHub in addition to [hundreds of other projects]
-  (https://github.com/search?utf8=%E2%9C%93&q=language%3ASuperCollider&type=Repositories&ref=advsearch&l=SuperCollider&l=) written in the SuperCollider language.
-+ [SuperCollider Code](http://sccode.org/) is a community-driven
-  website which allows users to post snippets of their SuperCollider
-  code. These snippets use tagging, which makes it easy to search for
-  specific timbres.  The website also hosts
-  the [SuperCollider documentation](http://doc.sccode.org/).
-+ [patchstorage](https://patchstorage.com/platform/supercollider/) has a few
-  SuperCollider patches, but seems to have rather limited activity currently.
++ [[http://github.com/][GitHub]] is a service that hosts millions of software projects created
+  and maintained by developers around the world. The source code for
+  [[https://github.com/supercollider/supercollider][SuperCollider]] itself is hosted on GitHub in addition to [[https://github.com/search?utf8=%E2%9C%93&q=language%3ASuperCollider&type=Repositories&ref=advsearch&l=SuperCollider&l=][hundreds of
+  other projects]] written in the SuperCollider language.
++ [[http://sccode.org/][SuperCollider Code]] is a community-driven website which allows users
+  to post snippets of their SuperCollider code. These snippets use
+  tagging, which makes it easy to search for specific timbres.  The
+  website also hosts the [[http://doc.sccode.org/][SuperCollider documentation]].
++ [[https://patchstorage.com/platform/supercollider/][patchstorage]] has a few SuperCollider patches, but seems to have
+  rather limited activity currently.
   
-To start, I copied a few `SynthDefs`:
+To start, I copied a few =SynthDefs=:
 
-+ The first channel is for the simple sine wave `SynthDef`.
-+ I attached the second channel to a [piano](http://sccode.org/1-51p)
-  `SynthDef` which uses `MdaPiano`, a generator provided by
-  [`sc3-plugins`](https://github.com/supercollider/sc3-plugins).
++ The first channel is for the simple sine wave =SynthDef=.
++ I attached the second channel to a [[http://sccode.org/1-51p][piano]] =SynthDef= which uses
+  =MdaPiano=, a generator provided by [[https://github.com/supercollider/sc3-plugins][=sc3-plugins=]].
 + The third channel provides an Electric Piano timber found on
-  [sccode.org](http://sccode.org/1-522).
-+ The fourth channel is used for
-  an
-  [organ instrument](https://github.com/patrickmcminn/beatles/blob/2f6119165f51f8d3f885aca22b332133d010d234/source/system/SynthDefs/Synth%20SynthDefs/additive.scd) meant
-  to emulate a classic Hammond organ.
+  [[http://sccode.org/1-522][sccode.org]].
++ The fourth channel is used for an [[https://github.com/patrickmcminn/beatles/blob/2f6119165f51f8d3f885aca22b332133d010d234/source/system/SynthDefs/Synth%20SynthDefs/additive.scd][organ instrument]] meant to emulate
+  a classic Hammond organ.
   
 I considered these sounds to be a good starting point for emulating
 many classic keyboard instruments.
-  
-  
-Switching instruments
----------------------
-  
+*** Switching instruments
 To allow these different timbres to be selected, I made a few changes
 to the function defined in the [previous post](/notes/acoustics/midi-instrument-control-supercollider/). First, I created a second array with sixteen elements to hold
 the names of the different `SynthDef`s.
 
-```sc
+#+BEGIN_SRC sc
 // https://gist.github.com/umbrellaprocess/973d2aa16e95bf329ee2
 var keys, instruments;
 keys = Array.newClear(128);
@@ -1468,12 +1458,12 @@ instruments.put(0, \sinpk);
 instruments.put(1, \piano);
 instruments.put(2, \rhodey_sc);
 instruments.put(3, \hammond);
-```
+#+END_SRC
 
-I then modified the `NoteOn` function such that the correct instrument
+I then modified the =NoteOn= function such that the correct instrument
 is selected based on its position in the `instruments` array.
 
-```sc
+#+BEGIN_SRC sc
 ~noteOnFunc = {arg val, num, chan, src;
 	var node;
 	node = keys.at(num);
@@ -1485,14 +1475,12 @@ is selected based on its position in the `instruments` array.
 	[num, chan].postln;
 	keys.put(num, node);
 };
-```
+#+END_SRC
+
 
 Now I could select the appropriate instrument by simply changing the MIDI
 channel on my controller.
-
-A quick demo
-------------
-
+*** A quick demo
 Putting it all together, I created a simple track to demonstrate these
 different timbers (accompanied with some mandolin):
 
@@ -1500,124 +1488,119 @@ different timbers (accompanied with some mandolin):
 </audio>
 <script type="text/javascript" src="/js/oscilloscope.min.js"></script>
 
-- - - 
+---
 
 The [past](/notes/acoustics/starting-supercollider/)
 [few](/notes/acoustics/midi-in-supercollider/)
-[posts](/notes/acoustics/midi-instrument-control-supercollider/)
-have worked through some building blocks for using SuperCollider
-as a platform for creativity. As I wrote in ["The Paradox of Creativity"]
-(/notes/acoustics/paradox-of-creativity/), I find the creative process
-to be best when applied to areas that are challenging. I believe it is
-for this reason that I find SuperCollider to be such an interesting
-platform: it provides the pieces for expansive sonic possibilities,
-but it takes a bit of effort and curiosity to make the most of it.
+[posts](/notes/acoustics/midi-instrument-control-supercollider/) have
+worked through some building blocks for using SuperCollider as a
+platform for creativity. As I wrote in [[/notes/acoustics/paradox-of-creativity/]["The Paradox of Creativity"]], I
+find the creative process to be best when applied to areas that are
+challenging. I believe it is for this reason that I find SuperCollider
+to be such an interesting platform: it provides the pieces for
+expansive sonic possibilities, but it takes a bit of effort and
+curiosity to make the most of it.
 ** TODO Controlling Synths with MIDI in SuperCollider
 I previously showed how to set up SuperCollider to communicate
 with other programs and external hardware using MIDI. Today I
 am going to use these connections to manipulate instruments.
 
-Controlling the tone with MIDI
-------------------------------
+*** Controlling the tone with MIDI
 
 In my [notes on setting up SuperCollider](/notes/acoustics/starting-supercollider/),
 I created a function that generated a simple tone.
 
-```sc
+#+BEGIN_SRC sc
 g = { SinOsc.ar(440, 0, 0.1) + PinkNoise.ar(0.01) }.play;
 g.free;
-```
+#+END_SRC
 
-To give more control over the tone, we need to define the generator using
-`SynthDef`. This class can be thought of as the instructions or recipe
-which can be used to create `Synth` instances.
+To give more control over the tone, we need to define the generator
+using =SynthDef=. This class can be thought of as the instructions or
+recipe which can be used to create =Synth= instances.
 
-```sc
+#+BEGIN_SRC sc
 SynthDef.new(\sinpk, 
     { Out.ar(0, SinOsc.ar(440, 0, 0.1) + PinkNoise.ar(0.01)) }
 ).play;
-```
+#+END_SRC
 
-Let us deconstruct this `SynthDef`. `\sinpk` is the name of the
-`SynthDef`. It can be used when creating instances, for example by
-calling `Synth.new(\sinpk)`. The definition itself contains the same
+Let us deconstruct this =SynthDef=. =\sinpk= is the name of the
+=SynthDef=. It can be used when creating instances, for example by
+calling =Synth.new(\sinpk)=. The definition itself contains the same
 tone generator function used previously, but the output is being
-explicitly sent to the first bus in `Out.ar`. `Pan2.ar` ensures
+explicitly sent to the first bus in =Out.ar=. =Pan2.ar= ensures
 that the sound is in stereo.
 
 Of course, we are going to want to add some parameters so that
 we can modify the tone over time.
 
-```sc
+#+BEGIN_SRC sc
 SynthDef.new(\sinpk, { arg freq = 440;
 	Out.ar(0, Pan2.ar(SinOsc.ar(freq, 0, 0.1) + PinkNoise.ar(0.01)));
 }).add;
-```
+#+END_SRC
 
-`freq` is an argument representing the frequency of the sine wave.
-Arguments are parameters which can be sent when creating a new `Synth`
-and which can be modified later on. Instances of a `Synth` can be
-created by calling `Synth`.
 
-```sc
+=freq= is an argument representing the frequency of the sine wave.
+Arguments are parameters which can be sent when creating a new =Synth=
+and which can be modified later on. Instances of a =Synth= can be
+created by calling =Synth=.
+
+#+BEGIN_SRC sc
 h = Synth(\sinpk, [\freq, 440]);
-```
+#+END_SRC
 
-This call creates a new `Synth` node and assigns it to the variable `h`.
+This call creates a new =Synth= node and assigns it to the variable =h=.
 The frequency is being set to 440 hertz. MIDI uses incriminating integers
 instead to represent notes, so we will need to convert these numbers
-to frequencies using `midicps`.
+to frequencies using =midicps=.
 
-```sc
+#+BEGIN_SRC sc
 h.set("freq", (69).midicps);
-```
+#+END_SRC
 
 We can now use MIDI to control the note being generated by the node
-stored in `h`.
+stored in =h=.
 
-```sc
+#+BEGIN_SRC sc
 MIDIdef.noteOn(\changefreq, {arg val, num, chan, src;
 	h.set("freq", (num).midicps);
 });
-```
-
-This attaches a new functions that responds to MIDI note presses called `\changefreq`.
-The function is passed arguments representing the velocity, note, channel, and source.
-Each time a note is pressed, the frequency will be changed to match the note.
-
-To unattach the function and any other function that is triggered by MIDI, run
-`MIDIdef.freeAll`.
+#+END_SRC
 
 
-Creating an instrument
-----------------------
+This attaches a new functions that responds to MIDI note presses
+called =changefreq=.  The function is passed arguments representing
+the velocity, note, channel, and source.  Each time a note is pressed,
+the frequency will be changed to match the note.
 
+To unattach the function and any other function that is triggered by
+MIDI, run =MIDIdef.freeAll=.
+*** Creating an instrument
 The note generator is monophonic and the note continues to play
 perpetually. To make it polyphonic, we are going to do things slightly
 differently. First we need a sound for SuperCollider to generate
 whenever a note is pressed. We also need to make sure that the sound
 stops being made when the note is released. In SuperCollider, this is
-typically done by
-setting
-[gate](http://danielnouri.org/docs/SuperColliderHelp/ServerArchitecture/SynthDef.html) variable
-when the note ends.
+typically done by setting [[http://danielnouri.org/docs/SuperColliderHelp/ServerArchitecture/SynthDef.html][gate]] variable when the note ends.
 
-```sc
+#+BEGIN_SRC sc
 SynthDef(\sinpk, { arg freq = 440, gate = 1;
     var x;
     x = SinOsc.ar(freq, 0, 0.1) + PinkNoise.ar(0.01);
     x = EnvGen.kr(Env.asr, gate, doneAction: 2) * x;
 	Out.ar(0, Pan2.ar(x));
 }).add;
-```
+#+END_SRC
 
 We need a way to keep track of which notes are currently pressed.
 To do this, create an array which can store the notes. Each time
-a note is pressed, create a new `Synth` and add it to the position
+a note is pressed, create a new =Synth= and add it to the position
 in the array corresponding to the note. Every time a key is pressed,
 release the note.
 
-```sc
+#+BEGIN_SRC sc
 (
 // https://gist.github.com/umbrellaprocess/973d2aa16e95bf329ee2
 var keys;
@@ -1646,8 +1629,8 @@ MIDIdef.noteOn(\on, ~noteOnFunc);
 };
 
 MIDIdef.noteOff(\off, ~noteOffFunc);
-)
-```
+#+END_SRC
+
 
 Evaluating this block allows notes to be pressed and released
 by pressing and releasing the keys.
@@ -1660,31 +1643,27 @@ The instrument now can be controlled over MIDI. In the next
 post, I will be setting up multiple instruments which can be
 selected using one of the sixteen MIDI channels.
 ** TODO Making Connections: MIDI in SuperCollider
-The [previous post](/notes/acoustics/starting-supercollider/)
-demonstrated the process of setting up SuperCollider and generating a
-tone. In this next post, I will be explaining how to set up MIDI input
-in SuperCollider.
+The [[/notes/acoustics/starting-supercollider/][previous post]] demonstrated the process of setting up SuperCollider
+and generating a tone. In this next post, I will be explaining how to
+set up MIDI input in SuperCollider.
 
-[MIDI](https://en.wikipedia.org/wiki/MIDI) is a standard protocol that
-dates back to the early 1980s. It supports up to sixteen channels and
-can be used to communicate pitch, velocity, and other information
-important for the operation of musical instruments. In the long term,
-I would like to be able to choose different timbres by mapping them
-to different MIDI channels. I would also like to be able to change parameters
-using
-[control change messages](https://www.midi.org/specifications/item/table-3-control-change-messages-data-bytes-2).
+[[https://en.wikipedia.org/wiki/MIDI][MIDI]] is a standard protocol that dates back to the early 1980s. It
+supports up to sixteen channels and can be used to communicate pitch,
+velocity, and other information important for the operation of musical
+instruments. In the long term, I would like to be able to choose
+different timbres by mapping them to different MIDI channels. I would
+also like to be able to change parameters using [[https://www.midi.org/specifications/item/table-3-control-change-messages-data-bytes-2][control change
+messages]].
 
-First, however, I needed to set up SuperCollider to accept MIDI
-input.
+First, however, I needed to set up SuperCollider to accept MIDI input.
 
-Enabling MIDI in SuperCollider
-------------------------------
+*** Enabling MIDI in SuperCollider
 
 Start the SuperCollider server if it is not already running.
 
-```sc
+#+BEGIN_SRC sc
 s.boot;
-```
+#+END_SRC
 
 From the Catia patchbay, it is clear that the SuperCollider instance
 does not currently accept MIDI input.
@@ -1693,83 +1672,83 @@ does not currently accept MIDI input.
 
 We can change this by running
 
-```sc
+#+BEGIN_SRC sc
 MIDIClient.init;
 MIDIIn.connectAll;
-```
+#+END_SRC
 
 On my system, this created three MIDI input ports and one output port.
 
 ![](/images/jack-cadence-sc-midi.jpg)
 
-In this case, I was only interested in controlling the server
-from one source, so I only needed one MIDI input. The
-[documentation](http://doc.sccode.org/Classes/MIDIClient.html)
-for `MIDIClient` shows by default running `MIDIClient.init`
-"opens as many inports as there are MIDI sources". To only have
-one inport, I reset the `MIDIClient` and reinitialized it with
-the correct number of ports specified.
+In this case, I was only interested in controlling the server from one
+source, so I only needed one MIDI input. The [[http://doc.sccode.org/Classes/MIDIClient.html][documentation]] for
+=MIDIClient= shows by default running =MIDIClient.init= "opens as many
+inports as there are MIDI sources". To only have one inport, I reset
+the =MIDIClient= and reinitialized it with the correct number of ports
+specified.
 
-```sc
+#+BEGIN_SRC sc
 MIDIClient.disposeClient;
 MIDIClient.init(1, 1);
-```
+#+END_SRC
 
 Now I had one input port and one output port.
 
-Getting input
--------------
+*** Getting input
 
-[`MIDIdef.noteOn`](http://doc.sccode.org/Classes/MIDIdef.htm) allows us to
-run a function whenever a note is pressed. To test this out, I created a
-simple function that prints the associated MIDI information whenever a
-key is pressed.
+[[http://doc.sccode.org/Classes/MIDIdef.htm][=MIDIdef.noteOn=]] allows us to run a function whenever a note is
+pressed. To test this out, I created a simple function that prints the
+associated MIDI information whenever a key is pressed.
 
-```sc
+#+BEGIN_SRC sc
 MIDIdef.noteOn(\print, {arg val, num, chan, src; [src,chan, num, val].postln});
-```
+#+END_SRC
 
 I then opened my DAW and created a simple MIDI pattern in the piano
 roll.  I then configured the DAW to export any MIDI playback on that
 track to the program's output. Connecting the DAW's output to
 SuperCollider's printed gave the following information:
 
-```
+#+BEGIN_SRC 
 [ 8454144, 0, 60, 127 ]
 [ 8454144, 0, 63, 127 ]
 [ 8454144, 0, 67, 127 ]
 [ 8454144, 0, 65, 59 ]
 [ 8454144, 0, 68, 59 ]
 [ 8454144, 0, 72, 59 ]
-```
+#+END_SRC
 
-This indicates that the source is identified by the integer 8454144 and that the
-MIDI notes were sent on the first channel (they are indexed starting with zero). 
-The third number in the arrays represent [notes](http://computermusicresource.com/midikeys.html)
-and the last number represents the velocity of the note (ranging from zero to
-127).
+This indicates that the source is identified by the integer 8454144
+and that the MIDI notes were sent on the first channel (they are
+indexed starting with zero).  The third number in the arrays represent
+[[(http://computermusicresource.com/midikeys.html][notes]] and the last number represents the velocity of the note (ranging
+from zero to 127).
 
 We can filter the notes such that the function is only called for a
 certain source or channel:
 
-```sc
+#+BEGIN_SRC sc
 MIDIdef.noteOn(\test4, {arg val, num, chan, src; 
     [src,chan, num, val].postln;
 }, chan: 1);
-```
+#+END_SRC
 
 Down the road, this will give us the ability to set up multiple instruments
 that can be selected using the MIDI channel.
 
-- - -
+---
 
 In this post, we have opened up SuperCollider to be able to interact
 with other programs and hardware using the MIDI standard.  In the next
 post, we will use this MIDI control to control the sound generated by
 the server.
-** TODO The Paradox of Creativity
-## Creativity is mythologized.
-
+** The Paradox of Creativity
+:PROPERTIES:
+:EXPORT_FILE_NAME: paradox-of-creativity
+:UNNUMBERED: t
+:END:
+*** Creativity is mythologized.
 Many times we think of creativity like the ouroboros, an ancient
 symbol of a snake eating its own tail. We think of creative people as
 those who are able to come up with original ideas out of thin air and
@@ -1784,9 +1763,7 @@ don't have the natural talent. A psychologist might diagnose us with a
 harsh case of cognitive dissonance; it is easier to believe that a
 successful pursuit of creativity is beyond our grasps than to take
 action to bring it within our reach.
-
-## Creativity is intimidating.
-
+*** Creativity is intimidating.
 When engaging in a creative pursuit, we are setting ourselves up for
 failure. After all, creativity is a process of constant
 failure. Regardless of medium, it takes a tremendous amount of
@@ -1806,9 +1783,7 @@ not uncommon to experience a flurry of creative energy in the
 beginning of a project. I have an idea or a concept that I want to
 see reach its potential. Soon, however, I realize that my initial
 idea was incomplete or too fuzzy to know what to do next.
-
-## Creativity is hard work.
-
+*** Creativity is hard work.
 This summer, I worked on creating a series of folktronica songs using
 primarily my mandolin and an analogue synthesizer. The synthesizer
 itself was a new tool to my process and I really enjoyed exploring how
@@ -1833,9 +1808,7 @@ a portable audio recorder around for when I came up with something
 outside of that space. This helped me to deal with my biggest creative
 struggle: time. Creativity demands our time--the type of time that
 requires our energy.
-
-## Creativity is worth it.
-
+*** Creativity is worth it.
 Creativity does not exist in a vacuum. No person is simply a creative
 person; in contrast, we all have the ability to create, but it is not
 easy. Creativity requires that we conscientiously work to improve our
@@ -1938,7 +1911,7 @@ average, the entire build process takes a little more than a second.
 2.3](https://stackoverflow.com/questions/32643065/git-receive-denycurrentbranch-updateinstead-fails).
 ** TODO Starting SuperCollider
 :PROPERTIES:
-:EXPORT_FILE_NAME:
+:EXPORT_FILE_NAME: starting-supercollider
 :EXPORT_DATE:
 :END:
 Over the next few posts, I will be documenting the process of creating
@@ -1947,12 +1920,9 @@ devices. The goal of this project is to bring together the powerful
 expressiveness of software synthesis with the intuition of hardware
 interaction.
 
-This first post describes some of the software used in the
-project.
+This first post describes some of the software used in the project.
 
-Motivation
-----------
-
+*** Motivation
 I have a MIDI controller that I would like to bring into the mix more
 (so to speak) in my music workflow. The great thing about hardware
 designed to work with software on a computer is that it offers a lot
@@ -1961,99 +1931,87 @@ of effort and creativity on the software end to take full advantage of
 the hardware.
 
 When it comes to digital sound synthesis, there is perhaps no program
-more powerful than [SuperCollider](http://supercollider.github.io/).
-SuperCollider runs as a server which can be sent commands from
-clients. The server is usually are controlled using the `sclang`
-programming language. The program and language are designed specifically
-for electroacoustics and generative music. See the video below for an
-example of a project that used SuperCollider for both of these functions.
+more powerful than [[http://supercollider.github.io/][SuperCollider]].  SuperCollider runs as a server
+which can be sent commands from clients. The server is usually are
+controlled using the `sclang` programming language. The program and
+language are designed specifically for electroacoustics and generative
+music. See the video below for an example of a project that used
+SuperCollider for both of these functions.
 
 {{< youtube Xh0mXrPRuqw >}}
 
-The
-[laptop as an instrument](https://www.jstor.org/stable/42578951?seq=1)
-is a rather new concept, but the techniques used in digital synthesis
-and generative music are decades old. With this project, I aim to tap
-into and expand upon that legacy.
+The [[https://www.jstor.org/stable/42578951?seq=1][laptop as an instrument]] is a rather new concept, but the
+techniques used in digital synthesis and generative music are decades
+old. With this project, I aim to tap into and expand upon that legacy.
 
-Development Tools
------------------
+*** Development Tools
 
 {{< figure src="images/emacs-sc.jpg" title="Emacs interfacing with SuperCollider" >}}
 
-SuperCollider has its own IDE called `scide`, but I will be working in
+SuperCollider has its own IDE called =scide=, but I will be working in
 the Emacs development environment. Emacs is a general purpose text
 editor which I use for most of my work that involves plain text.
 Emacs is well suited for SuperCollider development because Emacs
-itself runs with
-a
-[REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) (Read--eval--print
-loop). This encourages a workflow of writing small chucks of code,
-sending them to the server to be evaluated, and then analyzing the
-results.
+itself runs with a [[https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop][REPL]] (Read--eval--print loop). This encourages a
+workflow of writing small chucks of code, sending them to the server
+to be evaluated, and then analyzing the results.
 
 {{< figure src="/images/jack-cadence.jpg" title="JACK server connections." >}}
 
-SuperCollider works by interfacing with
-the [JACK Audio Connection Kit](http://jackaudio.org/). Like
-SuperCollider itself, JACK works as a server that directs signals from
-many different sources. It is designed for real-time audio
-applications and thus tends to have very low latency. I use a suite of
-tools
-called [Cadence](http://kxstudio.linuxaudio.org/Applications:Cadence)
-to control and connect my JACK applications. The figure above shows
-how I have wired together the SuperCollider server with my system
-capture (microphone) and system playback (speakers or headphones).
-Using JACK allows SuperCollider to interact with other audio
-programs such as a DAW (digital audio workstation).
+SuperCollider works by interfacing with the [[http://jackaudio.org/][JACK Audio Connection
+Kit]]. Like SuperCollider itself, JACK works as a server that directs
+signals from many different sources. It is designed for real-time
+audio applications and thus tends to have very low latency. I use a
+suite of tools called [[http://kxstudio.linuxaudio.org/Applications:Cadence][Cadence]] to control and connect my JACK
+applications. The figure above shows how I have wired together the
+SuperCollider server with my system capture (microphone) and system
+playback (speakers or headphones).  Using JACK allows SuperCollider to
+interact with other audio programs such as a DAW (digital audio
+workstation).
 
-Making Some Sounds
-------------------
+*** Making Some Sounds
 
 Now that I have all the tools needed to run SuperCollider set up,
 let's start making some noise. I first needed to boot up Emacs running
 the SuperCollider environment.
 
-```sh
+#+BEGIN_SRC sh
 emacs -sclang
-```
+#+END_SRC
 
 I then booted the SuperCollider server.
 
-```sc
+#+BEGIN_SRC sc
 s = Server.local.boot;
-```
+#+END_SRC
 
-`s` is a special variable that is used exclusively for the `Server`.
+=s= is a special variable that is used exclusively for the =Server=.
 The other letters of the alphabet can be used as global variables.  It
 is best to attach functions or any other sound generator to a variable
 so that they can be stopped or modified when needed. To start, I used
 a function that combined a sine oscillator with pink noise. The
-arguments for
-the [sine oscillator](http://doc.sccode.org/Classes/SinOsc.html)
-indicate frequency, phase, and amplitude. The argument for the
-`PinkNoise` generator indicates volume.
+arguments for the [[http://doc.sccode.org/Classes/SinOsc.html][sine oscillator]] indicate frequency, phase, and
+amplitude. The argument for the =PinkNoise= generator indicates
+volume.
 
-```sc
+#+BEGIN_SRC sc
 g = { SinOsc.ar(440, 0, 0.1) + PinkNoise.ar(0.01) }.play;
-```
+#+END_SRC
 
 This sound will play indefinitely until we free the function.
 
-```
+#+BEGIN_SRC sc
 g.free;
-```
+#+END_SRC
 
 Running and then freeing the function produces the following output:
-
-
 
 <audio src="/audio/startingsc.mp3" controls class="scope">
 </audio>
 <script type="text/javascript" src="/js/oscilloscope.min.js"></script>
 
-We now have sound being generated by SuperCollider. In the
-next post, I will be setting up MIDI input.
+We now have sound being generated by SuperCollider. In the next post,
+I will be setting up MIDI input.
 
 ** Studying Technology and Technology for Studying
 :PROPERTIES:
