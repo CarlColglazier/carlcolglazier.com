@@ -1,138 +1,2508 @@
 # -*- eval: (org-hugo-auto-export-mode 1); -*-
 #+hugo_base_dir: ../
+#+hugo_secton: /
 #+hugo_front_matter_format: yaml
-#+hugo_section: notes
+#+PROPERTY: header-args:R :session *R* :exports both :colnames yes :eval never-export :results value
 
-* TODO Speaking into the Void
-  :PROPERTIES:
-  :EXPORT_FILE_NAME: speaking-into-the-void
-  :EXPORT_DATE: 2019-06-20
-  :END:
-How do we measure...well, anything? In research design, /operationalization/ describes how we transform the intangible into a measurable variable. How do you measure an abstract concept like violence or happiness? The trick is to tally some other variable which closely correlates with the desired variable.
+* Carl Colglazier
+:PROPERTIES:
+:EXPORT_HUGO_SECTION: /
+:EXPORT_FILE_NAME: _index
+:END:
+Rooted in my dual education in computer science and
+communication, I *make meaningful information
+accessible* with new media, social computing, and
+computational social science. My media background is
+rooted in documentary filmmaking and this perspective
+continues to influence my approach to research and
+writing.
 
-Of course, any such measure isn't going to be perfect. In fact, bad assumptions in the operationalizations can easily throw everything off. This is often the step where research gets messy. By definition, if the construct could be empirically measured, an operationalization wouldn't be necessary in the first place. This leaves open room for a disconnect, which risks pushing the researcher toward an incorrect conclusion.
+At North Carolina State University in Raleigh, I am a senior studying
+computer science and communication (media). I graduate December 2019.
 
-Take this example. You want to know how much I like the taste of coffee. To measure this, you take samples of my coffee consumption over time. The assumption behind this operationalization is that the more I like the taste of coffee, the more I would consume. Now if you sampled my beverage consumption some weeks, you might conclude that I don't like coffee at all: bodies are fragile things and sometimes I must forgo my daily cup(s)-of-joe for my health. Do my periods avoiding coffee mean I don't like it? Hardly, but if we tried to measure enjoyment of a beverage through these samples, we might end up reaching the wrong conclusion: that I don't like coffee [fn:enjoyment], when in reality I am just avoiding the potential for acid reflux.
-** What's the goal?
-Operationalization becomes particularly important when orginizations handle large quantities of data at scale. At a certain point, data become too overwhelming for a system based on manual decision-making. The usual response is automation, which can have unconsidered second-order effects.
+I am
+a [[https://caldwellfellows.ncsu.edu/][Caldwell Fellow]] and [[https://ids.chass.ncsu.edu/dual/franklin.php][Benjamin Franklin Scholar]].
 
-A few years ago, YouTube made a big change when they changed what they mean by a "view". The site used to run rampant with clickbait content that people would only watch for maybe a few seconds at most. Because views were /the/ important measure and because even the shortest watch-time counted for a view, this incentivized some to create a lot of bad content---the kind that people would click away from within seconds. In short, YouTube's operationalization for views encouraged spam and click-bait.
+This summer, I am working as a Full Stack Developer Intern at IBM.
+I have also worked as an undergraduate research assistant at the
+Center for Research Computing at the University of Notre Dame
+and at the Department of History at NC State.
 
-They changed this several years ago, making their definition more subtle and contextual. You might notice that I'm being pretty vague here. That's intentional as YouTube is intentionally vague on the definition of a view themselves. After all, if they told people their precise methods, that would make it easier to cheat.
+Want to contact me? Just send an message to carl`@`{this website}.
+I am also very active on [Twitter](https://twitter.com/carlcolglazier).
 
-Views, however, are no longer king on the site. Instead, YouTube has moved toward "time watched" as its primary metric. This is harder to game and has the consequence of rewarding videos that keep people glued to the site for longer periods of time.
 
-This thought dump goes back to motivation. Why do I write? Why do I
-post online? Who is my audience and what do they (and I) want?
+[caldwell]:  "NC State Alumni Association - Caldwell Fellows"
 
-If there is one thing I've learned about myself, it is that I can be
-highly motivated by boredom. I'm happiest with my mind engaged on
-solving some problem---even one of my own creation. So that's kind of
-what I plan to do, at least for the time being. I think there's a hugo
-pressure in many online spaces to reduce yourself to a brand.
-YouTube, for instance, [[https://creatoracademy.youtube.com/page/lesson/niche][suggests channels discover and stick to a
-specific niche]]. Fair advice if you are trying to grow on the platform,
-but this approach may not be best for everyone.
+[bfs]: https://ids.chass.ncsu.edu/dual/franklin.php "Benjamin Franklin Scholars FAQ - Interdisciplinary Studies - NC State"
 
-In my head, my niche is very broad: media. It's what I study and my
-primary personal interest as well. A lot of things fit in that label:
-I define media as tools which transform our view of space and time.
-This is pretty broad[fn:innis]. I see the overlap, but it's less clear
-if anyone else would. No matter.
-** Who sets the goal?
-It's easy to simply chase goals without realizing it. What is the "goal" of a place like Facebook? 
+* Notes Section
+:PROPERTIES:
+:EXPORT_HUGO_SECTION: notes
+:END:
+** Notes
+:PROPERTIES:
+:EXPORT_FILE_NAME: _index
+:END:
+This page is for notes.
+** TODO Speaking into the Void
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: speaking-into-the-void
+   :EXPORT_DATE: 2019-06-20
+   :END:
+ How do we measure...well, anything? In research design, /operationalization/ describes how we transform the intangible into a measurable variable. How do you measure an abstract concept like violence or happiness? The trick is to tally some other variable which closely correlates with the desired variable.
+
+ Of course, any such measure isn't going to be perfect. In fact, bad assumptions in the operationalizations can easily throw everything off. This is often the step where research gets messy. By definition, if the construct could be empirically measured, an operationalization wouldn't be necessary in the first place. This leaves open room for a disconnect, which risks pushing the researcher toward an incorrect conclusion.
+
+ Take this example. You want to know how much I like the taste of coffee. To measure this, you take samples of my coffee consumption over time. The assumption behind this operationalization is that the more I like the taste of coffee, the more I would consume. Now if you sampled my beverage consumption some weeks, you might conclude that I don't like coffee at all: bodies are fragile things and sometimes I must forgo my daily cup(s)-of-joe for my health. Do my periods avoiding coffee mean I don't like it? Hardly, but if we tried to measure enjoyment of a beverage through these samples, we might end up reaching the wrong conclusion: that I don't like coffee [fn:enjoyment], when in reality I am just avoiding the potential for acid reflux.
+*** What's the goal?
+ Operationalization becomes particularly important when orginizations handle large quantities of data at scale. At a certain point, data become too overwhelming for a system based on manual decision-making. The usual response is automation, which can have unconsidered second-order effects.
+
+ A few years ago, YouTube made a big change when they changed what they mean by a "view". The site used to run rampant with clickbait content that people would only watch for maybe a few seconds at most. Because views were /the/ important measure and because even the shortest watch-time counted for a view, this incentivized some to create a lot of bad content---the kind that people would click away from within seconds. In short, YouTube's operationalization for views encouraged spam and click-bait.
+
+ They changed this several years ago, making their definition more subtle and contextual. You might notice that I'm being pretty vague here. That's intentional as YouTube is intentionally vague on the definition of a view themselves. After all, if they told people their precise methods, that would make it easier to cheat.
+
+ Views, however, are no longer king on the site. Instead, YouTube has moved toward "time watched" as its primary metric. This is harder to game and has the consequence of rewarding videos that keep people glued to the site for longer periods of time.
+
+ This thought dump goes back to motivation. Why do I write? Why do I
+ post online? Who is my audience and what do they (and I) want?
+
+ If there is one thing I've learned about myself, it is that I can be
+ highly motivated by boredom. I'm happiest with my mind engaged on
+ solving some problem---even one of my own creation. So that's kind of
+ what I plan to do, at least for the time being. I think there's a hugo
+ pressure in many online spaces to reduce yourself to a brand.
+ YouTube, for instance, [[https://creatoracademy.youtube.com/page/lesson/niche][suggests channels discover and stick to a
+ specific niche]]. Fair advice if you are trying to grow on the platform,
+ but this approach may not be best for everyone.
+
+ In my head, my niche is very broad: media. It's what I study and my
+ primary personal interest as well. A lot of things fit in that label:
+ I define media as tools which transform our view of space and time.
+ This is pretty broad[fn:innis]. I see the overlap, but it's less clear
+ if anyone else would. No matter.
+*** Who sets the goal?
+ It's easy to simply chase goals without realizing it. What is the "goal" of a place like Facebook? 
 
 [fn:enjoyment] You could make the counterargument here that enjoyment includes the entire experience of consumption. In this case, it would include the potential for acid reflux, which is enough to sour the entire experience. This is a fair point!
 
 [fn:innis] And this is also clearly inspired by Harold Innis.
 
-* Waiting for Upstream
+** Waiting for Upstream
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: waiting-for-upstream
+   :EXPORT_DATE: 2019-06-20
+   :END:
+ This is a post about this website. It's also a small reflection on software development. Enjoy.
+
+ ---
+
+ This website has always relied on JavaScript in some way. At the moment, very little runs on the site itself outside specialty pages, but JavaScript always been central to the build process. Gulp, grunt, just plain npm---I think I've tried all of them at some point.
+ But as of this note, JavaScript is no longer a part of the build process. Here is how I did it.
+
+ Software with a large community of contributors brings further advantages. I obviously was not the only person using JavaScript for my minification workflow. On the Hugo repository, the [[https://github.com/gohugoio/hugo/issues/1251]["Support for minification of generated HTML files"]] issue was first started in 2015, around the same time I switched to Hugo. It was implemented in 2018 after a pretty extensive discussion. I should emphasize that I played absolutely no part in this process. I had a need shared with some others and I got to completely ride free off of their upstream contributions to the software I use. Others also wrote up the documentation that alerted me to this feature in the first place.
+
+ This is why popular software brings several advantages beyond their feature set. With a dedicated community, you get expanded documentation and more spaces to find help without any additional effort on your part. Your unusual workflow or edge-cases are more likely to be shared with someone else.
+
+ Software should not be evaluated on popularity alone; however, I do think it should be a factor. After all, it would seem quite the waste to throw out the fruits of popular collaboration.
+** TODO Software on Patreon
+
+ - https://www.patreon.com/evanyou
+ - 
+** A Fast from Electron: Streaming Music through MPD
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: electron-fast
+   :EXPORT_DATE: 2019-06-13
+   :END:
+ Enough has been written on Electron's shortfalls that I feel no need to add my own gripes. Generally, I try to avoid it as much as possible. I'm sure the Discord desktop client is nice, but it also works just fine in my web browser. Slack? Okay, but you're only allowed on the work computer!
+
+ Despite my hesitations, one Electron app has constantly followed me around for years: the unofficial Google Play Music desktop player. Before you ask, no, I don't use Spotify. I do think it's the better-designed service, but GPM has a good family plan though and it comes with YouTube Red, which is a nice bonus.
+
+ Because of this setup, I basically have had a Chromium browser open on my computer at all times just to play music. What's the point of having 20 GB of RAM if I'm not trying to minimize its use at all times?
+
+ Here's what I'm using now instead:
+ - [[https://github.com/gmusicproxy/gmusicproxy][gmusicproxy]]
+ - [[https://www.musicpd.org/][Music Player Daemon (MPD)]]
+ - [[https://github.com/MusicPlayerDaemon/mpdscribble][mpdscribble]]
+ - [[https://rybczak.net/ncmpcpp/][NCurses Music Player Client (Plus Plus)]]
+
+ The only real pain point in my workflow is searching for new albums which are not already in my playlists. I might write a simple program for that at some point.
+
+ Bonus: my scrobbles now cache if there is ever a connectivity issue.
+** The Challenge of Content
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: challenge-of-content
+   :EXPORT_DATE: 2018-12-25
+   :END:
+This is a post about three things: cleaning, curves, and content.
+
+Content is a catch-all term for media distributed through online
+platforms. Many popular websites are now shared spaces that
+essentially serve other people's stuff. It's a two-way relationship:
+people publish where there are eyeball and readers don't want to miss
+out on where everything is happening.
+
+| Rank | Website      | Type            |
+|------+--------------+-----------------|
+|    1 | Google       | Search/services |
+|    2 | YouTube      | Video           |
+|    3 | Facebook     | Social          |
+|    4 | Baidu        | Search          |
+|    5 | Wikipedia    | Encyclopedia    |
+|    6 | Reddit       | Aggregator      |
+|    7 | Yahoo!       | Portal/media    |
+|    8 | Tencent QQ   | Portal          |
+|    9 | Taobao       | Shopping        |
+|   10 | Google India | Search/services |
+
+These spaces' allure comes from how they constantly serve something
+fresh, media whose popularity generally follows a power law
+probability distribution. In fact, if you graph the views for each of
+my videos on this channel by the end of 2014 sorted by rank, the
+distribution pretty closely matches Zipf's law, the value of the
+maximum divided by the rank.
+** Principles for Creative Work
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: creative-work-principles
+   :EXPORT_DATE: 2019-06-06
+   :END:
+
+ A lot of these ideas aren't original. In fact, many are borrowed from
+ processes in software development and team management I have learned
+ while a college student. I am writing them down here as a bit of a
+ self-reminder. This note isn't perfect, but....
+*** Perfection is a fantasy
+
+ Don't fall for it.
+
+ The idea of perfection comes the imagination: an unrealistic,
+ idealized version of ourselves with no basis in reality.  Most of the
+ time, "good enough" is good enough. The goal should never be
+ perfection.  Rather, ask what you are trying to convey? How do you
+ want people to feel? What do you want them to know? If you can say
+ you've put to form what you want the audience to experience, you have
+ succeeded.
+
+ Otherwise...
+
+*** Build quickly and fail cheaply.
+
+ I wrote this up as one principle because I think they are necessarily
+ linked to each other.  As a recovering perfectionist, I remain
+ astutely aware of failure. It's inevitable in nearly any project. The
+ best way to manage it is to incorporate it into the process. Create
+ opportunities to flesh out ideas and prototypes to avoid racking up
+ higher costs later on.
+
+*** Reduce workflow friction.
+
+ How much time are you actually working and how much time do you spend
+ on paperwork? This isn't to say documentation is useless.
+ Coordination and teamwork often are exactly the bottlenecks which need
+ to be eliminated.
+
+*** It's easiest after you start.
+
+ I did summer swim team for many years. In May and early June, getting
+ into the water was a real drudge. The air wasn't quite warm enough for
+ it to feel refreshing and the water hadn't warmed up enough from its
+ chilly tapwater origins. The thing is, you could spend forever building
+ everything up, waiting at the side of the pool. Trying to amp yourself
+ up. It gets you nowhere. The only way to get through it is to get started.
+ It sucks, but you get better at managing it.
+** Cartograms of the 2018 U.S. House Vote
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: 2018-house-cartograms
+   :EXPORT_DATE: 2018-11-16
+   :END:
+
+ The divide between urban and rural voters has become an [[https://www.washingtonpost.com/graphics/politics/2016-election/urban-rural-vote-swing/][increasingly
+ observable]] pattern in U.S. elections.  Many Democratic voters pack
+ into areas with higher population densities. Choropleth maps—where
+ regions are shaded by a variable—often hide this reality because
+ geographic area has little to do with the vote count.
+
+ Area cartograms can address this issue by distorting the geography
+ to match the population. Furthermore, cartograms on different
+ variables can present some insights. Below are three different
+ maps of the 2018 midterm U.S. House election results by populations:
+ total population, population of Democratic voters, and population of
+ GOP voters.
+
+ #+BEGIN_EXPORT html
+ <script src="//cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.min.js"></script>
+
+ <script src="https://unpkg.com/cartogram-chart@1.0.6/dist/cartogram-chart.min.js"></script>
+
+ <!-- htmlmin:ignore -->
+ <div id="world">
+   <!-- This will contain the map.-->
+ </div>
+ <!-- htmlmin:ignore -->
+
+ <select name="pop">
+   <option value="HC01_EST_VC01" selected="selected">Population</option>
+   <option value="Dem.Votes">Democrats</option>
+   <option value="GOP.Votes">Republicans</option>
+ </select>
+
+ <script>
+ var cart;
+ d3.json('/images/test.json', function (error, world) {
+         if (error) throw error;
+         const colorScale = d3.scaleOrdinal(["#F8766D", "#619CFF", "#CCCCCC"]);
+         cart = Cartogram()
+             .topoJson(world)
+             .topoObjectName('states')
+             .projection(d3.geoAlbers())
+             .iterations(12)
+             .value(function (obj) {
+                 return obj.properties["HC01_EST_VC01"] + 1000;
+             })
+             .color(({ properties: { Party } }) => colorScale(Party))
+             .label(({ properties: p }) => `${p.STUSAB}${p.CD115FP} (${p.Party})`)
+             .valFormatter(d3.format(".3s"))
+             .width("100%")
+             .height(500)
+             (document.getElementById('world'));
+ });
+ document.addEventListener('DOMContentLoaded',function() {
+     document.querySelector('select[name="pop"]').onchange=changeEventHandler;
+ },false);
+ function changeEventHandler(event) {
+     if(event.target.value) {
+         cart.value(function (obj) { return obj.properties[event.target.value] + 1000;});
+     }
+ }
+ </script>
+ #+END_EXPORT
+
+
+*** How I Made This
+
+ I processed the data in R. The House results came from a spreadsheet
+ maintained by [[https://docs.google.com/spreadsheets/d/1WxDaxD5az6kdOjJncmGph37z0BPNhV1fNAH_g7IkpC0/htmlview?sle=true][David Wasserman & Ally Flinn of Cook Political Report.]] I
+ also used a table from the [[https://www2.census.gov/geo/docs/reference/state.txt][U.S. Census]] to map the [[https://www.census.gov/geo/maps-data/data/cbf/cbf_cds.html][Congressional
+ District shapefiles]] to the results.
+
+ #+BEGIN_SRC R :session :colnames yes :exports both
+ library(maps)
+
+ all_content = readLines("https://docs.google.com/spreadsheets/d/1WxDaxD5az6kdOjJncmGph37z0BPNhV1fNAH_g7IkpC0/gviz/tq?tqx=out:csv&sheet=Sheet1")
+ all_content = all_content[-2]
+ all_content = all_content[-2]
+ results <- read.csv(textConnection(all_content), header = TRUE, stringsAsFactors = FALSE)
+ results$CD.[is.na(results$CD.)]<-0
+ fips <- read.csv("https://www2.census.gov/geo/docs/reference/state.txt", sep="|")
+ results_fips <- merge(results, fips, by.x="State", by.y="STATE_NAME")
+ results_fips$GEOID <- sprintf("%02d%02d", results_fips$STATE, results_fips$CD.)
+ tail(results_fips[,c("State", "CD.", "Party", "GEOID")])
+ #+END_SRC
+
+ #+RESULTS:
+ | State     | CD. | Party | GEOID |
+ |-----------+-----+-------+-------|
+ | Wisconsin |   4 | D     |  5504 |
+ | Wisconsin |   5 | R     |  5505 |
+ | Wisconsin |   6 | R     |  5506 |
+ | Wisconsin |   7 | R     |  5507 |
+ | Wisconsin |   8 | R     |  5508 |
+ | Wyoming   |   0 | R     |  5600 |
+
+ To visualize this data, I need to use my trusty [[https://www.census.gov/geo/maps-data/data/cbf/cbf_cds.html][congressional shape
+ files]] from the U.S. Census Bureau.
+
+ #+BEGIN_SRC R :session :results silent :var shapefile="/home/carl/Downloads/cb_2017_us_cd115_20m.shp"
+ library(cartogram)
+ library(maptools)
+
+ shape <- sf::st_read(shapefile)
+ shape$STATEFP =  as.numeric(shape$STATEFP)
+ shape_data <- merge(shape, results_fips, by="GEOID")
+ shape_data <- shape_data[!is.na(shape_data$State) & shape_data$State != "Alaska" & shape_data$State != "Hawaii",]
+ shape_data$GOP.Votes <- as.numeric(gsub(",", "", shape_data$GOP.Votes))
+ shape_data$Dem.Votes <- as.numeric(gsub(",", "", shape_data$Dem.Votes))
+ #+END_SRC
+
+ Sorry, Alaska and Hawaii. Some things are easier without you.
+
+ Creating the cartogram ended up being the tricky part. I tried a few
+ different libraries, but ended up finding the most success with
+ [[https://github.com/dreamRs/topogRam][topogRam]]. The only issue I had was getting it to work with my website.
+ To do this, I ended up writing the JavaScript myself and loading it
+ from a pre-saved JSON file.
+
+ #+BEGIN_SRC R :session :results silent :var popfile="/home/carl/Downloads/ACS_17_1YR_S0101.csv"
+ library(topogram)
+ top <- topogram(shape=shape_data, value="Dem.Votes")
+ hpop <- read.csv(popfile)
+ hpop$GEOID <- sprintf("%04d", hpop$GEO.id2)
+ data <- merge(shape_data, hpop, by="GEOID")
+ d <- data[,c("STUSAB", "CD115FP", "Party", "HC01_EST_VC01", "Dem.Votes", "GOP.Votes")]
+ top2 <- topogram(shape=d, value="HC01_EST_VC01")
+ write(top2$x$shape, "images/test.json")
+ #+END_SRC
+
+ That is all there is to it. The end results look a bit strange
+ (and a bit like Russia according to some observers), but I think
+ they do a good job at showing where each respective party's voters
+ are located.
+** DONE My 2018 in Music
+   CLOSED: [2018-12-21 Fri 09:18]
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: 2018-albums
+   :EXPORT_DATE: 2018-12-09
+   :END:
+
+ If your social media feed is anything like mine, you probably
+ see a lot of posts like this toward the end of the year.
+
+ #+CAPTION: Spotify promomotional image for "Spotify Wrapped 2018".
+ [[file:images/spotify_unwrapped_2018_promo.jpg]]
+
+ It can be fun to see what kind of music other people like and to share
+ your own music tastes. It's also a great advertisement campaign for
+ Spotify (see their nice logo in the top left of these graphics).
+
+ The only problem for me is that I'm not a Spotify user, so when I try
+ to open my #2018Wrapped data, I am greeted with a very nicely packaged
+ empty box. Fortunately, as I wrote about in my [[/notes/2017-albums-in-2018/][last post]], I log all
+ of my music streaming using a free, open-source service called
+ ListenBrainz. I am going to use that data to create my own end-of-year
+ music graphic similar to the ones posted by my friends who use Spotify.
+
+**** The Data
+ I'm doing this project in R for a couple of reasons. First of all, I
+ kind of like R. Honestly this wasn't the case a few years ago. It has
+ tons of great stats tools, but a lot of things are very much designed
+ for statisticians. 
+
+ #+BEGIN_SRC R :session
+ print("starts")
+ #+END_SRC
+
+ #+RESULTS:
+ | x      |
+ |--------|
+ | starts |
+
+ #+BEGIN_SRC R :session :var lb="../datasets/music-data-2018.json" :results silent
+ library("jsonlite")
+ library("tidyverse")
+ library("xml2")
+ library("RCurl")
+ library("scales")
+ library("purrrlyr")
+ plays <- fromJSON(lb)
+ #+END_SRC
+
+ I'm only interested in my activity from 2018, so I will filter
+ my dataset down to only the entries with a timecode in 2018.
+
+ #+BEGIN_SRC R :session :colnames no
+ stamp <- as.numeric(as.POSIXct("2018-01-01", format="%Y-%m-%d"))
+ recentPlays <- plays[plays$timestamp >= stamp, ]
+ recentPlays <- as_tibble(recentPlays[c("artist_name", "track_name", "release_name", "timestamp")])
+ nrow(recentPlays)
+ #+END_SRC
+
+ #+RESULTS:
+ : 13226
+
+ That's a lot of music! How was that listening distributed over time? 
+
+ #+BEGIN_SRC R :session :exports both :results value file :var fname="images/2018_music_week_distribution_hist.png" :colnames no
+   recentPlays$date <- as.Date(as.POSIXct(recentPlays$timestamp, origin="1970-01-01"))
+   plot <- ggplot(recentPlays, aes(format(recentPlays$date, "%Y-%U"))) +
+       geom_bar(stat = "count") +
+       labs(x = "Week", title="Tracks streamed per week.") +
+       theme(axis.text.x=element_text(angle = -90, hjust = 0),
+             panel.border = element_blank(),
+             legend.key = element_blank(),
+             panel.background = element_blank(),
+             plot.background = element_rect(fill = "transparent",colour = NA)
+       )
+   ggsave(file=fname, plot=plot, width=7, height=4, dpi=300, bg="transparent")
+   fname
+ #+END_SRC
+
+ #+CAPTION: Tracks streamed per week.
+ #+RESULTS:
+ [[file:images/2018_music_week_distribution_hist.png]]
+***** Top Artists
+ We can use this data to answer some pretty easy questions. For
+ example, who were my top artists in 2018?
+
+ #+BEGIN_SRC R :session :colnames yes
+   top_artists <-recentPlays %>%
+       count(artist_name, sort=T)
+   top_artists %>% head()
+ #+END_SRC
+
+ #+RESULTS:
+ | artist_name             |   n |
+ |-------------------------+-----|
+ | Charli XCX              | 870 |
+ | Carly Rae Jepsen        | 427 |
+ | Ariana Grande           | 311 |
+ | Kacey Musgraves         | 277 |
+ | Marina And The Diamonds | 223 |
+ | Lady Gaga               | 215 |
+
+ [[https://pitchfork.com/reviews/albums/charli-xcx-pop-2/][Critically]] [[https://music.avclub.com/carly-rae-jepsen-lands-her-romantic-80s-pop-daydream-1798184677][acclaimed]] [[https://www.thelineofbestfit.com/reviews/albums/ariana-grande-sweetener-album-review][pop]] [[https://consequenceofsound.net/2018/03/album-review-kacey-musgraves-absolutely-shines-on-golden-hour/][perfection]] [[https://www.tinymixtapes.com/music-review/sophie-oil-every-pearls-un-insides][yes]]!
+
+***** Top Songs
+
+ I can also do something similar to find my top tracks for the year.
+
+ #+BEGIN_SRC R
+   recentPlays %>%
+       count(artist_name, track_name, sort=T) %>%
+       head(5)
+ #+END_SRC
+
+ #+RESULTS:
+ | artist_name | track_name                                                |  n |
+ |-------------+-----------------------------------------------------------+----|
+ | SOPHIE      | Immaterial                                                | 41 |
+ | Charli XCX  | No Angel                                                  | 40 |
+ | Charli XCX  | I Got It (feat. Brooke Candy, CupcakKe and Pabllo Vittar) | 36 |
+ | Charli XCX  | Focus                                                     | 34 |
+ | Charli XCX  | Lucky                                                     | 33 |
+
+ I listen to a /lot/ of Charli XCX, so this list doesn't really have a
+ lot of variety (though Charli is absolutely one of the most versatile
+ artists in pop today). Let's filter the results to only show one song
+ per artist.
+
+ #+BEGIN_SRC R :session :colnames yes
+   top_songs <- recentPlays %>%
+       group_by(artist_name, track_name) %>%
+       count(sort=T) %>%
+       ungroup() %>%
+       distinct(artist_name, .keep_all=T) %>%
+       head(5)
+ #+END_SRC
+
+ #+RESULTS:
+ | artist_name      | track_name    |  n |
+ |------------------+---------------+----|
+ | SOPHIE           | Immaterial    | 41 |
+ | Charli XCX       | No Angel      | 40 |
+ | Troye Sivan      | My My My!     | 32 |
+ | Kacey Musgraves  | High Horse    | 31 |
+ | Carly Rae Jepsen | Party For One | 26 |
+
+***** Top Albums
+
+ ListenBrainz also logs the release name, so it's pretty easy
+ to compile a list of my top albums.
+
+ #+BEGIN_SRC R :session :results value
+   topAlbums <- recentPlays %>%
+       group_by(artist_name, release_name) %>%
+       count(sort=T)
+   topAlbums %>% head()
+ #+END_SRC
+
+ #+CAPTION: My most-streamed albums of 2018.
+ #+RESULTS:
+ | artist_name             | release_name     |   n |
+ |-------------------------+------------------+-----|
+ | Charli XCX              | Pop 2            | 296 |
+ | Kacey Musgraves         | Golden Hour      | 247 |
+ | Carly Rae Jepsen        | Emotion (Deluxe) | 191 |
+ | Marina And The Diamonds | Electra Heart    | 179 |
+ | Charli XCX              | Number 1 Angel   | 153 |
+ | Ariana Grande           | Dangerous Woman  | 144 |
+
+ Let's say I just want to know which albums from the last year
+ I streamed.
+
+ #+BEGIN_SRC R :session
+   getAlbum <- function(row) {
+       mburl <- sprintf(
+           'https://beta.musicbrainz.org/ws/2/release/?query=artist:%s+release:%s+AND+status:official+AND+format:"Digital%%20Media"&inc=release-group&limit=1',
+           curlEscape(row$artist_name),
+           curlEscape(row$release_name)
+       )
+       print(mburl)
+       Sys.sleep(0.25)
+       groupData <- read_xml(mburl)
+       xml_ns_strip(groupData)
+       release <- xml_find_first(groupData, '//release[@ns2:score=100]')
+       xml_ns_strip(release)
+       # If it is empty
+       if (class(release) == "xml_missing") {
+           release <- xml_new_document() %>% xml_add_child("")
+       }
+       # Go with the earliest release date given.
+       date <- xml_text(xml_find_first(release, "//date"))
+       artistId <- xml_text(xml_find_first(release, "//artist/@id"))
+       df <- data.frame(date, artistId, stringsAsFactors=FALSE)
+       colnames(df) <- c("date", "artistId")
+       return(df)
+   }
+ #+END_SRC
+
+ #+BEGIN_SRC R :session :results silent
+   recentAlbums <- topAlbums %>% filter(n > 25) %>% by_row(..f=getAlbum, .to=".out") %>% unnest()
+ #+END_SRC
+
+ #+BEGIN_SRC R
+ recentAlbums %>%
+     filter(str_detect(date, "2018")) %>%
+     select(artist_name, release_name, n, date) %>%
+     filter(n > 75)
+ #+END_SRC
+
+ #+RESULTS:
+ | artist_name               | release_name                    |   n |       date |
+ |---------------------------+---------------------------------+-----+------------|
+ | Kacey Musgraves           | Golden Hour                     | 247 | 2018-03-30 |
+ | Clarence Clarity          | THINK: PEACE                    | 119 | 2018-10-04 |
+ | SOPHIE                    | OIL OF EVERY PEARL'S UN-INSIDES | 119 | 2018-06-15 |
+ | Amnesia Scanner           | Another Life                    | 118 | 2018-09-07 |
+ | Troye Sivan               | Bloom                           | 118 | 2018-05-02 |
+ | IDLES                     | Joy as an Act of Resistance.    | 103 | 2018-08-31 |
+ | Ariana Grande             | Sweetener                       |  98 | 2018-08-17 |
+ | A.A.L (Against All Logic) | 2012 - 2017                     |  90 | 2018-02-17 |
+ | Let's Eat Grandma         | I'm All Ears                    |  87 | 2018-06-29 |
+ | Beach House               | 7                               |  86 | 2018-05-11 |
+ | Mitski                    | Be the Cowboy                   |  86 | 2018-08-17 |
+ | Mid-Air Thief             | Crumbling 무너지기              |  78 | 2018-07-31 |
+
+***** Minutes streamed
+ Initially I considered a brute-force approach to this problem;
+ however, it does not seem a good use of resources to get the
+ length for every single song. Instead I'll write a function
+ to grab lengths for songs...
+
+ #+BEGIN_SRC R
+   getLengths <- function(row) {
+	song_stripped <- trimws(sub("\\(.*\\)", "", row$track_name))
+	mburl <- sprintf(
+            'https://beta.musicbrainz.org/ws/2/recording/?query=artist:%s+AND+recording:%s&limit=2',
+            curlEscape(row$artist_name),
+            curlEscape(song_stripped)
+	)
+	# To comply with the rate limit.
+	Sys.sleep(0.5)
+	albumData <- read_xml(mburl)
+	xml_ns_strip(albumData)
+	length <- xml_integer(xml_find_first(albumData, "//length"))
+	return(length)
+    }
+ #+END_SRC
+
+ ...and sample 250 of my streams. 
+
+ #+BEGIN_SRC R :results silent
+ set.seed(425368203)
+ len_sample <- recentPlays %>% sample_n(250) %>% by_row(..f=getLengths, .to="length") %>% unnest()
+ #+END_SRC
+
+ This gives me a reasonable mean length.
+
+ #+BEGIN_SRC R
+ mean_len <- len_sample %>% dplyr::summarize(Mean=mean(length, na.rm=T))
+ #+END_SRC
+
+ #+RESULTS:
+ |             Mean |
+ |------------------|
+ | 240542.148760331 |
+
+ #+BEGIN_SRC R :exports none
+ lens <- lengths[!is.na(lengths)]
+ ggplot() + aes(lens) + geom_histogram(binwidth=60000)
+ #+END_SRC
+
+ Which I can use to estimate the total for the population.
+
+ #+BEGIN_SRC R
+ mins <- nrow(recentPlays) * mean(as.numeric(mean_len)) / 60000
+ #+END_SRC
+
+ #+RESULTS:
+ |                x |
+ |------------------|
+ | 50698.9453704167 |
+
+***** Top Genre
+ Observation: the top quartile of artists make up the vast
+ majority of my streams this year.
+
+ #+BEGIN_SRC R
+   top_artist_ids <- recentAlbums %>%
+       group_by(artistId) %>%
+       filter(!is.na(artistId)) %>%
+       summarize(Sum=sum(n)) %>%
+       arrange(desc(Sum))
+   top_artist_ids %>%
+       summarize(sum(Sum))
+ #+END_SRC
+
+ #+RESULTS:
+ | sum(Sum) |
+ |----------|
+ |     6985 |
+
+
+ Conslution: This is a good time to use a sample again.
+
+ #+BEGIN_SRC R
+   fetchGenres <- function(row) {
+       mburl <- sprintf(
+           "https://beta.musicbrainz.org/ws/2/artist/%s?inc=genres",
+           row$artistId
+       )
+       print(mburl)
+       Sys.sleep(0.25)
+       groupData <- read_xml(mburl)
+       xml_ns_strip(groupData)
+       genres <- xml_text(xml_find_all(groupData, "//genre/name"))
+       return(genres)
+   }
+ #+END_SRC
+
+ #+BEGIN_SRC R :results silent
+   top_artist_ids <- top_artist_ids %>%
+       by_row(..f=fetchGenres, .to="Genres") %>%
+       unnest()
+ #+END_SRC
+
+ #+BEGIN_SRC R
+   topGenres <- top_artist_ids %>%
+       group_by(Genres) %>%
+       summarize(Sum=sum(Sum)) %>%
+       arrange(desc(Sum))
+   topGenres %>% head()
+ #+END_SRC
+
+ #+RESULTS:
+ | Genres     |  Sum |
+ |------------+------|
+ | pop        | 2535 |
+ | electropop | 1958 |
+ | dance-pop  | 1712 |
+ | electronic | 1411 |
+ | pop rock   | 1145 |
+ | synth-pop  |  741 |
+
+*** Creating the graphic
+
+ #+BEGIN_SRC R :session :exports both :results value file :var fname="images/2018wrapped.png" :colnames no
+   library("ggpubr")
+   library("png")
+   library("raster")
+
+   myTheme <- ttheme(colnames.style = colnames_style(color = "white",
+                                                     fill = "#8cc257",
+                                                     linewidth=0),
+                     tbody.style = tbody_style(color = "white", linewidth=0,
+                                               fill = "#8cc257"))
+
+   bgTheme <- theme(
+       plot.background =
+           element_rect(fill = "#8cc257", color="#8cc257"),
+       panel.border = element_blank(),
+       )
+
+   top_artist_names <- top_artists$artist_name %>%
+       head()
+   artistTable <- ggtexttable(top_artist_names, rows = NULL,
+                              theme = myTheme, cols=c("Top Artists")) + bgTheme
+   trackTable <- ggtexttable(top_songs$track_name, rows = NULL,
+                             theme = myTheme, cols=c("Top Songs")) + bgTheme
+   minutes <- as_ggplot(text_grob(
+       paste("Minutes Listened",
+             toString(round(mins)),
+             "",
+             "Top Genre",
+             toString(topGenres[1,1]),
+             sep="\n"),
+       color="white")) + bgTheme
+   img <- readPNG("images/albums.png")
+   im_A <- ggplot() +
+       background_image(img[1:250, 1:250, 1:3]) +
+       theme(
+           plot.margin = margin(t=.5, l=.5, r=.5, b=.5, unit = "cm"),
+       ) + bgTheme
+   p <- ggarrange(im_A, artistTable, minutes, trackTable, ncol=2, nrow=2) 
+   ggsave(file=fname, plot=p, width=4.5, height=4.5, dpi=300)
+   fname
+ #+END_SRC
+
+ #+RESULTS:
+ [[file:images/2018wrapped.png]]
+
+** DONE Albums from 2017 I'm Still Listening to in 2018
+   CLOSED: [2018-12-08 Sat 10:02]
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: 2017-albums-in-2018
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :image "albums.png"
+   :END:
+
+ I listen to a /lot/ of music. While I will listen to some albums a
+ few times and move on, some stay with me. This post quantifies the
+ albums from 2017 that stayed in my life in 2018.
+
+ # more
+
+ Each December, I compile [[https://gist.github.com/CarlColglazier/913963cc7197fb7a024d736c96545439][a list]] of my favorite recent albums from the
+ past year. People really enjoy reading lists, so pretty much every
+ music publication also releases a end-of-year list around the same
+ time [fn:aoty].
+
+ As fun as it is to parse through yearly lists, liking an album is no
+ guarantee of future streams. Sometimes there are albums like Sufjan
+ Steven's /Carrie & Lowell/ which, although exceptional, are do not
+ exactly make the best background music for homework. Other times
+ I might really en joy an album on repeat for a period of time, but
+ I eventually move on the something else. I might get a nice feeling
+ of nostalgia looking back at the record and how I now associate it
+ with that time period, but there would be no way to replicate that
+ initial infatuation.
+
+ In the streaming era, my music library is sometimes a bit like a
+ midnight refrigerator run: there's always plenty inside, but at the
+ moment I might just be looking for something quick and easy. Thus this
+ list is probably best described as my musical comfort food. There are
+ the albums from 2017 I had on repeat in my head and in my ears
+ throughout 2018.
+
+ #+BEGIN_SRC R :session
+   recentAlbums %>%
+     filter(str_detect(date, "2017")) %>%
+     select(artist_name, release_name, n) %>%
+     head(19)
+ #+END_SRC
+
+ #+RESULTS:
+ | artist_name      | release_name         |   n |
+ |------------------+----------------------+-----|
+ | Charli XCX       | Pop 2                | 296 |
+ | Charli XCX       | Number 1 Angel       | 153 |
+ | GFOTY            | GFOTYBUCKS           | 144 |
+ | Lorde            | Melodrama            | 144 |
+ | Carly Rae Jepsen | EMOTION SIDE B       |  86 |
+ | Coma Cinema      | Loss Memory          |  85 |
+ | Rina Sawayama    | RINA                 |  85 |
+ | Paramore         | After Laughter       |  84 |
+ | Alex Cameron     | Forced Witness       |  77 |
+ | Baths            | Romaplasm            |  72 |
+ | Phoebe Bridgers  | Stranger in the Alps |  61 |
+ | Elliott Smith    | Either/Or            |  58 |
+ | Vince Staples    | Big Fish Theory      |  57 |
+ | BROCKHAMPTON     | SATURATION III       |  46 |
+ | Richard Dawson   | Peasant              |  41 |
+ | Sufjan Stevens   | Carrie & Lowell Live |  41 |
+ | King Krule       | The OOZ              |  37 |
+ | LCD Soundsystem  | american dream       |  37 |
+ | Arca             | Arca                 |  36 |
+ | Carly Rae Jepsen | EMOTION Side B       |  31 |
+
+[fn:error]
+
+*** Method                                                         :noexport:
+**** Learning about each track
+
+ Great, so this is everything from the year, but I want to limit the
+ results to just albums from 2017. Unfortunately ListenBrainz does not
+ include a lot of metadata. We need [[https://musicbrainz.org/][MusicBrainz]] to help with this.
+ It's a huge database with just about every song, recording, and
+ album imaginable. Plus it has an API, so it's ideal for getting
+ information about each track.
+
+
+ Let's see this function in action.
+
+ #+BEGIN_SRC R :session :colnames no
+ getAlbums("Charli XCX", "Vroom Vroom")
+ #+END_SRC
+
+ #+RESULTS:
+ : d4cc6eea-bf86-4c79-a5d9-2da07df19e0e
+
+ This result is exactly what we'd expect: it gives a unique string for
+ each release group in the MusicBrainz archive.
+
+ I'm going to take a shortcut here. I don't want to query every single
+ song I've ever heard. Since my end goal is to compile a list of albums
+ sorted by the number of songs played, it is safe to assume that albums
+ where I have only streamed two or three songs will not make that list.
+ To verify this, let's graph the distribution.
+
+ #+BEGIN_SRC R :session :exports both :results value file :var fname="images/playcounts.png" :colnames no
+   library("plyr")
+   playCounts <- count(recentPlays, c("artist_name", "track_name"))
+   playCounts <- playCounts[order(playCounts$freq, decreasing=T), ]
+   p <- ggplot(data=playCounts, aes(playCounts$freq)) + geom_histogram(binwidth=1) +
+	scale_y_sqrt() +
+	theme(panel.border = element_blank(),
+              legend.key = element_blank(),
+              panel.background = element_blank(),
+              plot.background = element_rect(fill = "transparent",colour = NA))
+   ggsave(file=fname, plot=p, width=7, height=4, dpi=300, bg="transparent")
+   fname
+ #+END_SRC
+
+ #+RESULTS:
+ [[file:images/playcounts.png]]
+
+
+
+ As it turns out, I only listened to a majority of these songs only one
+ time. Taking out songs with fewer than three plays removes a bulk of
+ the songs from the log while likely keeping everything interesting.
+ Remember, I'm trying to end up with a list of albums. Since I
+ generally listen to complete albums, we can assume that each track on
+ any album which would make the list would have at least two plays.
+
+ #+BEGIN_SRC R :session 
+ mostFreqPlays <- playCounts[playCounts$freq > 2, ]
+ nrow(mostFreqPlays)
+ #+END_SRC
+
+ #+RESULTS:
+ |    x |
+ |------|
+ | 1156 |
+
+ # Note "Whole New World / Pretend World" is having an issue with that
+ # slash.  There may be other issues with fetching data as well. This
+ # means the rankings of albums and the exact counts should be taken
+ # with a grain of salt.
+
+ Now grab the release groups (albums) for each track from MusicBrainz.
+
+ #+BEGIN_SRC R :session :results silent
+ groups <- apply(mostFreqPlays, 1, function(x) getAlbums(x["artist_name"], x["track_name"]))
+ #+END_SRC
+
+ Get only the release groups with more than fifteen streams.
+
+ #+BEGIN_SRC R :session :colnames no
+   library(tidyverse)
+
+   mostFreqPlays$groups <- groups
+   unnested <- mostFreqPlays %>%
+       unnest(groups) %>%
+       group_by(groups) %>%
+       summarize(freq = sum(freq)) %>%
+       arrange(desc(freq))
+   nrow(unnested[unnested$freq > 15,])
+ #+END_SRC
+
+ #+RESULTS:
+ : 121
+
+ This yields 121 albums; however, we still don't know anything about
+ these releases. Thankfully MusicBrainz has this information as well.
+
+ #+BEGIN_SRC R :session :results silent
+   fetchGroup <- function(mbid) {
+       mburl <- sprintf(
+           "https://beta.musicbrainz.org/ws/2/release-group/%s?inc=artist-credits",
+           mbid
+       )
+       Sys.sleep(0.25)
+       groupData <- read_xml(mburl)
+       xml_ns_strip(groupData)
+       title <- xml_text(xml_find_first(groupData, "/metadata/release-group/title"))
+       date <- as.Date(xml_text(xml_find_first(groupData, "/metadata/release-group/first-release-date")), "%Y-%m-%d")
+       artist <- xml_text(xml_find_first(groupData, "/metadata/release-group/artist-credit/name-credit/artist/name"))
+       artistId <- xml_text(xml_find_first(groupData, "/metadata/release-group/artist-credit/name-credit/artist/@id"))
+       #return(list("title" = title, "date" = date, "artist"=artist, "artistId"=artistId))
+       df <- data.frame(title, date, artist, artistId)
+       colnames(df) <- c("title", "date", "artist", "artistId")
+       return(df)
+   }
+ #+END_SRC
+
+ Fetch metadata for each release.
+
+ #+BEGIN_SRC R :session :results silent
+   mostGroups <- unnested[unnested$freq > 15,]
+   meta <- lapply(mostGroups$groups, fetchGroup)
+   #as_tibble(do.call(rbind, meta))
+   #
+   mostGroups <- bind_cols(mostGroups, as_tibble(do.call(rbind, meta)))
+
+   albums <- mostGroups[!is.na(mostGroups$date) & mostGroups$date >= as.Date('2017-01-01') & mostGroups$date < as.Date('2018-01-01'),]
+   aTable <- albums[,c("title", "freq", "artist")]
+ #+END_SRC
+
+ We'll save this list for the rest of the post.
+
+ The last step I'll perform is creating the thumbnail collage
+ for this post.
+
+ #+BEGIN_SRC R :session :results silent
+   library(magick)
+   getArt <- function(group) {
+       arturl <- sprintf(
+           "https://coverartarchive.org/release-group/%s/front-250.jpg",
+           group
+       )
+       return(arturl)
+   }
+   as <- aTable[order(aTable$freq, decreasing=T), ]
+   r1 <- image_append(image_scale(image_read(getArt(rev(albums$groups)[1:4])), "250x250"))
+   r2 <- image_append(image_scale(image_read(getArt(rev(albums$groups)[5:8])), "250x250"))
+   r3 <- image_append(image_scale(image_read(getArt(rev(albums$groups)[c(9, 10, 12, 14)])), "250x250"))
+   image_write(image_append(c(r1, r2, r3), stack=TRUE), "images/albums.png", format="png")
+ #+END_SRC
+
+*** The Albums
+
+ Now I'll say a few words about some of the albums on this list.
+
+ [[file:images/albums.png]]
+
+**** Charli XCX - /Pop 2/
+
+ The prolific UK-based singer-songwriter has released a 
+ masterpiece. Featuring production from the likes of A.G. Cook
+ and SOPHIE, /Pop 2/ is a celebration of future-facing pop
+ music with catchy hooks and hyper-glossy production.
+
+**** Lorde - /Melodrama/
+
+ I was completely blown away by this on my first listen.  Jack Antonoff
+ joined Lorde as executive producer and together they crafted a record
+ full of unexpected hooks and sleek arrangements. The fact that this
+ album is even being compared to Kate Bush's /Hounds of Love/ is a
+ testament to the songwriting chops of the young singer-songwriter.
+
+**** Charli XCX - /Number 1 Angel/
+
+ Honestly I really wish that XCX3 got released last year as planned,
+ but these two mixtapes are possibly the greatest consolation prize
+ possible. PC Music-era Charli XCX just plain works. Perhaps the
+ most impressive accomplishment in these mixtapes is her ability
+ to feature so many other artists while at the same time not
+ being overshadowed in the slightest.
+
+**** Rina Sawayama - /RINA/
+
+ I love the sound and aesthetic of pop music from the late 90's and
+ early 2000's. It's hard for me to describe, but there's just a level
+ of confidence to it that is difficult to reproduce. While Rina
+ Sawayama by no means tries to replicate the sound, she channels
+ it perfectly in this Clarence Clarity-produced EP.
+
+**** Paramore - /After Laughter/
+
+ Does Hayley Williams have one of the best voices in today's music
+ industry? Yes. Does Paramore keep getting better and better over time?
+ Also yes.
+
+**** Coma Cinema - /Loss Memory/
+
+ This was late release (early December) and it did not receive very
+ much attention from the music press. Nonetheless, I found it to be
+ a very enjoyable winter album with a raw yet removed approach to
+ its emotional subject matter.
+
+**** Alex Cameron - /Forced Witness/
+
+ Heartland synthpop drenched in irony and social commentary. Cameron 
+ is simultaneously hilarious and thought-provoking.
+
+**** Baths - /Romaplasm/
+
+ Bubbly production and chippy songwriting. It's a concept album.
+ I still don't quite get the concept, but that's okay.
+
+**** Phoebe Bridgers - /Stranger in the Alps/
+
+ I didn't really get into this release until late this year.
+ Wow, there are some good songs in here! Another great winter
+ album with a lot of sad subjects, but also some intimate
+ and emotional arrangements.
+
+
+[fn:aoty] AOTY publishes an aggregate of over a hundred end-of-year lists annually.
+Read their 2017 list [[https://www.albumoftheyear.org/list/summary/2017/][here]].
+
+[fn:error] Some albums which were remastered and released digitally in
+2017 appear on this list.
+
+** Using Org-mode and Babel with Hugo
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: org-mode-babel-hugo
+   :EXPORT_DATE: 2017-04-25
+   :END:
+ I have been a consistent user of Org-mode for a couple of years. I
+ like it for a few reasons. It is very versatile; I can use it for
+ everything from class notes to papers to writing documentation. It
+ is very extendable; it can perform almost every operation I need
+ in a text program. Most importantly it saves time.
+
+ My main attraction to using Org-mode with Hugo is to pursue a
+ form of literate programming. [[http://orgmode.org/worg/org-contrib/babel/][Babel]] provides an excellent tool
+ for literate programming such that both the source code
+ and output can be included in the same document.
+
+ I use this technique frequently to dynamically generate adaptable
+ reports. I can write both the code and my write-up inside Org-mode
+ and any changes are automatically reflected in the next export.
+
+ For this reason, I was excited to hear that Hugo added support for
+ Org mode in [[https://github.com/spf13/hugo/releases/tag/v0.19][v0.19]]. The native go parser, [[https://github.com/chaseadamsio/goorgeous][goorgeous]], does not support
+ every part of the Org-mode syntax at the moment, but it is certainly
+ good enough to work with for now.
+
+*** Getting Started
+
+ Hugo can generate Org-mode files in the same way it creates markdown
+ files
+
+ #+BEGIN_SRC sh :results output :exports both :session
+ cd ../../
+ rm content/notes/post.org
+ hugo new notes/post.org
+ #+END_SRC
+
+ #+RESULTS:
+ : /home/carl/programs/web/carlcolglazier.com/content/notes/post.org created
+
+
+ The contents of the file will look like the following:
+
+ #+BEGIN_SRC yaml
+ ---
+ date: 2017-04-25T14:47:30-04:00
+ draft: true
+ title: post
+ ---
+ #+END_SRC
+
+ This front matter is formatted using YAML. Currently Org-mode is not
+ supported as a ~metaDataFormat~, so we will not be able to have hugo
+ create an Org-mode header by defualt; however, everything still works
+ if we create the header manually.
+
+*** Examples
+
+ First I created a simple "Hello, World" program written in C inside
+ an Org-mode source block.
+
+ #+HEADER: :exports both :results output :cache yes
+ #+BEGIN_SRC C 
+   #include <stdlib.h>
+   #include <stdio.h>
+
+   int main() {
+     printf("Hello, World!\n");
+     return 0;
+   }
+ #+END_SRC
+
+ #+RESULTS[89f50bc6df96e44b1fd5800817c76a086b3c7a87]:
+ : Hello, World!
+
+ I then ran the program in Babel, producing the above result.
+** Plotting the 2018 U.S. House Midterm Results in Python with Cartopy
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: plotting-2018-house-midterms-cartopy
+   :EXPORT_DATE: 2018-11-10
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :image "116th-congress.png"
+   :END:
+
+On Tuesday, the United States elected its representatives for the next
+session of House of Representatives.  Some of the races are still too
+close to call, but that doesn't mean it's too early to start plotting!
+
+I decided to give the map a go since I haven't seen many examples
+of how to create election maps in Python. I used pandas,
+matplotlib, and Cartopy for everything from downloading the data
+to creating the map.
+
+#+BEGIN_SRC python :session :results silent
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.gridspec as gridspec
+import cartopy.crs as ccrs
+from cartopy.io import shapereader
+from cartopy.feature import ShapelyFeature
+#+END_SRC
+
+I pulled the House results from a spreadsheet maintained by [[https://docs.google.com/spreadsheets/d/1WxDaxD5az6kdOjJncmGph37z0BPNhV1fNAH_g7IkpC0/htmlview?sle=true][David
+Wasserman & Ally Flinn of Cook Political Report.]] I then used a table
+from the [[https://www2.census.gov/geo/docs/reference/state.txt][U.S. Census]] to map the [[https://www.census.gov/geo/maps-data/data/cbf/cbf_cds.html][Congressional District shapefiles]] to
+the results.
+
+#+BEGIN_SRC python :session :results silent
+  # Download election results data.
+  house = pd.read_csv(
+      "https://docs.google.com/spreadsheets/d/1WxDaxD5az6kdOjJncmGph37z0BPNhV1fNAH_g7IkpC0/gviz/tq?tqx=out:csv&sheet=Sheet1",
+      skiprows=[1,2],
+      dtype='S'
+  )
+  # Download table mapping state names to FIPS state codes.
+  fips = pd.read_csv(
+      "https://www2.census.gov/geo/docs/reference/state.txt",
+      sep='|',
+      dtype='S'
+  )
+  fips_dict = fips.set_index('STATE_NAME').to_dict('index')
+  house["FIPS"] = [fips_dict[x]["STATE"] for x in house["State"]]
+#+END_SRC
+
+To ensure consistent results I can test, I created a small function to
+map the winning party to the Federal Information Processing Standards
+(FIPS) state codes and district numbers.
+
+#+BEGIN_SRC python :session :results silent
+  def winner(fips, dist):
+      try:
+          if dist != "00":
+              dist = str(int(dist))
+          else:
+              return house[(house["FIPS"] == fips)]["Party"].values[0]
+          return house[(house["FIPS"] == fips) & (house["CD#"] == dist)]["Party"].values[0]
+      except:
+          return None
+#+END_SRC
+
+With all the pieces in place, I created the map.
+
+#+BEGIN_SRC python :session :var filename="images/116th-congress.png" shapes="/home/carl/Downloads/cb_2017_us_cd115_20m" :results file :exports both
+  reader = shapereader.Reader(shapes)
+  shapes = [ShapelyFeature(x, ccrs.PlateCarree()) for x in reader.geometries()]
+  recs = list(reader.records())
+  fig, ax = plt.subplots(figsize=(20, 15))
+  projection = ccrs.AlbersEqualArea(central_longitude=-100)
+  ax = plt.subplot(111)
+  ax.set_visible(False)
+  # Continental United States
+  ax1 = fig.add_axes([-.05, -.05, 1.2, 1.2], projection=projection)
+  ax1.set_extent([-125, -66.5, 20, 50])
+  # Hawaii
+  axhi = fig.add_axes([0.25, .1, 0.15, 0.15], projection=projection)
+  axhi.set_extent([-155, -165, 20, 15])
+  # Alaska
+  axak = fig.add_axes([0.1, 0.1, 0.2, 0.2], projection=projection)
+  axak.set_extent([-185, -130, 70, 50])
+  # Get rid of anything extra: boxes, backgrounds, etc.
+  plt.box(False)
+  for subplot in [ax1, axak, axhi]:
+      subplot.background_patch.set_visible(False)
+      subplot.outline_patch.set_visible(False)
+
+  fig.patch.set_visible(False)
+  plt.axis('off')
+  # Draw the shapes  
+  for i, shape in enumerate(shapes):
+      win = winner(recs[i].attributes["STATEFP"], recs[i].attributes["CD115FP"])
+      if win is "R":
+          color = "#F8766D"
+      elif win is "D":
+          color = "#619CFF"
+      else:
+          color = "#CCCCCC"
+      if recs[i].attributes["STATEFP"] == '02':
+          a = axak
+      elif recs[i].attributes["STATEFP"] == '15':
+          a = axhi
+      else:
+          a = ax1
+      a.add_feature(shape, color=color, linewidth=.25, edgecolor='w')
+
+  plt.savefig(filename)
+  plt.clf()
+  filename
+#+END_SRC
+
+#+CAPTION: The final graphic.
+#+RESULTS:
+[[file:images/116th-congress.png]]
+
+Maps like these are a bit deceptive because the area maps to land
+area, not population. I probably wouldn't use this graphic to
+represent the election results, but it was still a fun activity and
+shows how to get started with mainstream Python graphic tools.
+
+-----
+
+I updated this post to show the results as of December 5, 2018.
+** 2015 Goals
+:PROPERTIES:
+:EXPORT_FILE_NAME: goals
+:EXPORT_DATE: 2015-11-01
+:END:
+The following page contains information regarding some of the aspirations which
+I am working to attain.
+*** Long-term
+*Studies* - As an undergraduate student at North Carolina State
+University, I am reading in the fields of computer science and
+communication. Since both of these studies tend to go in depth on
+their own specifics, I am also augmenting these studies with a
+personal investment in the classical liberal arts.
+
+*Literature* - I am very slowly making a dent in the world's
+extensive body of literature. Let me know if there is a great work I
+have yet to read!
+
+
+*Listening* - Just as with my immersion into literature, I am taking a
+breadth-based approach to my music listening. I listen to an average
+of five to ten new albums a week from a variety of genres and
+traditions.
+
+*Music* - Of course, I do not spend all of my time simply absorbing
+the works of others; I also enjoy creating new things in response to
+what I see around me.  Perhaps my favorite creative outlet is music. I
+am a classically trained pianist and have recently begun to work on
+learning the mandolin as well.
+
+*Productivity* - Speaking of time, I have come to realize that I have
+a plethora of interests and only so much time with which to pursue
+them. As such, I take a number of measures in order to try to increase
+my productivity as much as possible. I have written about some of
+these techniques on this page and in other places on this website.
+
+#+BEGIN_QUOTE
+*There is a tide in the affairs of men.*
+
+*Which, taken at the flood, leads on to fortune;*
+
+*Omitted, all the voyage of their life*
+
+*Is bound in shallows and in miseries.*
+
+---Brutus, *Julius Caesar* Act 4, Scene 3
+#+END_QUOTE
+
+*** Daily
+Habits make up a large basis of who we are. As a consequence, I use
+daily habits extensively in order to keep up with my long-term goals
+over time.
+
+*Flashcards* - Using an open-source spaced repetition software called
+Anki, I spend about a half-hour a day improving on a vast variety of
+knowledge in subjects such as literature, art history, classical
+music, language, and just about anything else I deem worth
+memorizing. I have also begun to use Anki as an aid in my studies,
+creating flash cards for practice problems and other class
+knowledge. This has the distinct advantage of allowing the computer to
+determine when I need to review a subject, making brushing up for
+exams later in the semester much more manageable. I would recommend
+Anki or a similar spaced repetition software to anyone who would
+attempt to improve their knowledge and memory.
+
+
+*Calendar/To-do Lists* - Without my calendar and to-do lists, I would
+have no ability to keep up with all of the tasks I must complete
+throughout the day. I currently use Google Calendar in combination
+with Google Tasks to keep track of everything I have to do at a given
+time or day.
+** An Ode to the Humble Pen
+:PROPERTIES:
+:EXPORT_FILE_NAME: an-ode-to-the-humble-pen
+:EXPORT_DATE: 2015-12-07
+:END:
+/After Wendell Berry/
+
+Ever since this summer, I have made it a personal project of mine to
+improve my cursive shorthand, a skill which is seemingly diminishing
+in Western society.  After going through two disposable pens in half
+as many months this semester, I eventually decided to succumb to a
+year-long interest and become the overzealous owner of a fountain pen.
+
+To contrast with my previous post on how much I am relying on
+computers in my studies, I would like to spend this next post praising
+the humble pen:
+
+1. It is quite challenging to be distracted by one's own notes.
+2. The pen can handle just about any layout imaginable; no special
+   software necessary!
+3. Writing in a pen forces you to only transcribe what is important,
+   possibly leading to better notes.
+** My Goals for the Fall Semester (2018)
+:PROPERTIES:
+:EXPORT_FILE_NAME: goals-fall-2018
+:EXPORT_DATE: 2018-08-13
+:END:
+This fall semester, I want to...
+
+Be a *good student* not just by doing the readings, but also by
+investing in the topics. Set myself up for success by allocating
+enough time to do things well. Remember what is important. Focus on
+the 20% that gets me 80% of the evaluation and move
+on[fn:pareto]. Keep in mind that learning is more important than
+grades.
+
+Prepare for *the future*. Work on research and side projects to
+refine and demonstrate my skills. Read books. Study for the GRE. Take
+on challenges. Consciously develop life skills.
+
+*Prioritize health*. Keep a consistent sleep schedule. Set exercise
+goals and work toward them. Take regular breaks. Reach out.
+
+*Focus on habits*. Use systems that work like flashcards. Emphasize
+the long-term over the short-term. Maintain things that matter. Give
+space and grace to slip up.
+
+*Be authentic* with humility. Know my limits. Allow vulnerability.
+Treat others unreasonably well.
+
+[fn:pareto]: See the [[https://en.wikipedia.org/wiki/Pareto_principle][Pareto principle]].
+** An Ode to Homework in a Digital Age
+:PROPERTIES:
+:EXPORT_FILE_NAME: homework_in_a_digital_age
+:EXPORT_DATE: 2015-11-30
+:END:
+I am writing this post at an average speed of thirty-five miles an
+hour.  I am on the bus, heading home from another busy day on
+campus. I usually use this time to catch up on class reading, but
+today I will use this time to catch up on class writing.
+
+The further I get into this semester, the more amazed I am at how much
+my university experience differs from that of my parents; I use
+technology in just about every area of my studies. Only one of classes
+that I am taking this semester has a physical textbook (this class
+ironically being an introductory computer science class). Furthermore,
+many of my classes use online services such as Moodle or WebAssign to
+manage homework and assignments. While I am by no means receiving an
+online education, I double that this experience would be possible
+without the aid of the Internet.
+
+It may be easy to complain that automatic software like WebAssign or
+Moodle has flaws, but overall, I have found computer-aided grading to
+be a valuable tool for learning. Having my mathematics homework in
+WebAssign, for example, allows me to receive instant feedback on
+homework problems before I complete the entire worksheet, something
+which simply would not be possible with a human grader. I have come to
+really appreciate this feedback since it is so much easier to practice
+problems when you are able to easily find out if you are completely
+off-course.
+
+So I am taking these last few minutes on the bus to give thanks to
+technological homework. Where would we be without you?
+** Resources for Using REAPER on Linux
+:PROPERTIES:
+:EXPORT_FILE_NAME: linux-reaper-resources
+:EXPORT_DATE: 2019-03-14
+:END:
+I have been a REAPER user for years and lately I've been using
+the unofficial Linux release.
+
+*** Getting Started
+Here are a few links to get started:
+
+- https://wiki.cockos.com/wiki/index.php/REAPER_for_Linux
+- https://bcacciaaudio.com/2018/10/16/reaper-using-linux-native-vsts/
+- https://distrho.sourceforge.io/
+
+*** Running LV2 and LADSPA Plugins
+The best way I have found to integrate these Linux-native formats into
+my workflow has been to use [[http://kxstudio.linuxaudio.org/Applications:Carla][Carla]]. It's a program that hosts other
+plugins and can be imported as a VST or VSTi (important because REAPER
+does not directly support LV2 and LADSPA plugins).
+** TODO Mapping MIDI Channels to Multiple Instruments in SuperCollider
+Being able
+to
+[control a polyphonic instrument in MIDI](/notes/acoustics/midi-instrument-control-supercollider/) is
+good, but being able to control multiple instruments is even
+better. SuperCollider offers a lot of flexibility when it comes to
+timbre. For my personal workflow, I like to try out a lot of different
+sounds to see what best in the mix. Thus when thinking about how I
+want to use the MIDI controller in connection with SuperCollider, it
+makes sense to me to be able to switch between instruments fluidly.
+
+Finding some sounds
+-------------------
+
+If you do not want to start from scratch, there are a number of excellent
+resources for finding SuperCollider `SynthDef`s:
+
++ [GitHub](http://github.com/) is a service that hosts millions of
+  software projects created and maintained by developers around the
+  world. The source code for [SuperCollider](https://github.com/supercollider/supercollider)
+  itself is hosted on GitHub in addition to [hundreds of other projects]
+  (https://github.com/search?utf8=%E2%9C%93&q=language%3ASuperCollider&type=Repositories&ref=advsearch&l=SuperCollider&l=) written in the SuperCollider language.
++ [SuperCollider Code](http://sccode.org/) is a community-driven
+  website which allows users to post snippets of their SuperCollider
+  code. These snippets use tagging, which makes it easy to search for
+  specific timbres.  The website also hosts
+  the [SuperCollider documentation](http://doc.sccode.org/).
++ [patchstorage](https://patchstorage.com/platform/supercollider/) has a few
+  SuperCollider patches, but seems to have rather limited activity currently.
+  
+To start, I copied a few `SynthDefs`:
+
++ The first channel is for the simple sine wave `SynthDef`.
++ I attached the second channel to a [piano](http://sccode.org/1-51p)
+  `SynthDef` which uses `MdaPiano`, a generator provided by
+  [`sc3-plugins`](https://github.com/supercollider/sc3-plugins).
++ The third channel provides an Electric Piano timber found on
+  [sccode.org](http://sccode.org/1-522).
++ The fourth channel is used for
+  an
+  [organ instrument](https://github.com/patrickmcminn/beatles/blob/2f6119165f51f8d3f885aca22b332133d010d234/source/system/SynthDefs/Synth%20SynthDefs/additive.scd) meant
+  to emulate a classic Hammond organ.
+  
+I considered these sounds to be a good starting point for emulating
+many classic keyboard instruments.
+  
+  
+Switching instruments
+---------------------
+  
+To allow these different timbres to be selected, I made a few changes
+to the function defined in the [previous post](/notes/acoustics/midi-instrument-control-supercollider/). First, I created a second array with sixteen elements to hold
+the names of the different `SynthDef`s.
+
+```sc
+// https://gist.github.com/umbrellaprocess/973d2aa16e95bf329ee2
+var keys, instruments;
+keys = Array.newClear(128);
+
+instruments = Array.newClear(16);
+instruments.put(0, \sinpk);
+instruments.put(1, \piano);
+instruments.put(2, \rhodey_sc);
+instruments.put(3, \hammond);
+```
+
+I then modified the `NoteOn` function such that the correct instrument
+is selected based on its position in the `instruments` array.
+
+```sc
+~noteOnFunc = {arg val, num, chan, src;
+	var node;
+	node = keys.at(num);
+	if (node.notNil, {
+		node.release;
+		keys.put(num, nil);
+	});
+	node = Synth(instruments.at(chan), [\freq, num.midicps, \vel, val]);
+	[num, chan].postln;
+	keys.put(num, node);
+};
+```
+
+Now I could select the appropriate instrument by simply changing the MIDI
+channel on my controller.
+
+A quick demo
+------------
+
+Putting it all together, I created a simple track to demonstrate these
+different timbers (accompanied with some mandolin):
+
+<audio src="/audio/sc-demo.mp3" controls class="scope">
+</audio>
+<script type="text/javascript" src="/js/oscilloscope.min.js"></script>
+
+- - - 
+
+The [past](/notes/acoustics/starting-supercollider/)
+[few](/notes/acoustics/midi-in-supercollider/)
+[posts](/notes/acoustics/midi-instrument-control-supercollider/)
+have worked through some building blocks for using SuperCollider
+as a platform for creativity. As I wrote in ["The Paradox of Creativity"]
+(/notes/acoustics/paradox-of-creativity/), I find the creative process
+to be best when applied to areas that are challenging. I believe it is
+for this reason that I find SuperCollider to be such an interesting
+platform: it provides the pieces for expansive sonic possibilities,
+but it takes a bit of effort and curiosity to make the most of it.
+** TODO Controlling Synths with MIDI in SuperCollider
+I previously showed how to set up SuperCollider to communicate
+with other programs and external hardware using MIDI. Today I
+am going to use these connections to manipulate instruments.
+
+Controlling the tone with MIDI
+------------------------------
+
+In my [notes on setting up SuperCollider](/notes/acoustics/starting-supercollider/),
+I created a function that generated a simple tone.
+
+```sc
+g = { SinOsc.ar(440, 0, 0.1) + PinkNoise.ar(0.01) }.play;
+g.free;
+```
+
+To give more control over the tone, we need to define the generator using
+`SynthDef`. This class can be thought of as the instructions or recipe
+which can be used to create `Synth` instances.
+
+```sc
+SynthDef.new(\sinpk, 
+    { Out.ar(0, SinOsc.ar(440, 0, 0.1) + PinkNoise.ar(0.01)) }
+).play;
+```
+
+Let us deconstruct this `SynthDef`. `\sinpk` is the name of the
+`SynthDef`. It can be used when creating instances, for example by
+calling `Synth.new(\sinpk)`. The definition itself contains the same
+tone generator function used previously, but the output is being
+explicitly sent to the first bus in `Out.ar`. `Pan2.ar` ensures
+that the sound is in stereo.
+
+Of course, we are going to want to add some parameters so that
+we can modify the tone over time.
+
+```sc
+SynthDef.new(\sinpk, { arg freq = 440;
+	Out.ar(0, Pan2.ar(SinOsc.ar(freq, 0, 0.1) + PinkNoise.ar(0.01)));
+}).add;
+```
+
+`freq` is an argument representing the frequency of the sine wave.
+Arguments are parameters which can be sent when creating a new `Synth`
+and which can be modified later on. Instances of a `Synth` can be
+created by calling `Synth`.
+
+```sc
+h = Synth(\sinpk, [\freq, 440]);
+```
+
+This call creates a new `Synth` node and assigns it to the variable `h`.
+The frequency is being set to 440 hertz. MIDI uses incriminating integers
+instead to represent notes, so we will need to convert these numbers
+to frequencies using `midicps`.
+
+```sc
+h.set("freq", (69).midicps);
+```
+
+We can now use MIDI to control the note being generated by the node
+stored in `h`.
+
+```sc
+MIDIdef.noteOn(\changefreq, {arg val, num, chan, src;
+	h.set("freq", (num).midicps);
+});
+```
+
+This attaches a new functions that responds to MIDI note presses called `\changefreq`.
+The function is passed arguments representing the velocity, note, channel, and source.
+Each time a note is pressed, the frequency will be changed to match the note.
+
+To unattach the function and any other function that is triggered by MIDI, run
+`MIDIdef.freeAll`.
+
+
+Creating an instrument
+----------------------
+
+The note generator is monophonic and the note continues to play
+perpetually. To make it polyphonic, we are going to do things slightly
+differently. First we need a sound for SuperCollider to generate
+whenever a note is pressed. We also need to make sure that the sound
+stops being made when the note is released. In SuperCollider, this is
+typically done by
+setting
+[gate](http://danielnouri.org/docs/SuperColliderHelp/ServerArchitecture/SynthDef.html) variable
+when the note ends.
+
+```sc
+SynthDef(\sinpk, { arg freq = 440, gate = 1;
+    var x;
+    x = SinOsc.ar(freq, 0, 0.1) + PinkNoise.ar(0.01);
+    x = EnvGen.kr(Env.asr, gate, doneAction: 2) * x;
+	Out.ar(0, Pan2.ar(x));
+}).add;
+```
+
+We need a way to keep track of which notes are currently pressed.
+To do this, create an array which can store the notes. Each time
+a note is pressed, create a new `Synth` and add it to the position
+in the array corresponding to the note. Every time a key is pressed,
+release the note.
+
+```sc
+(
+// https://gist.github.com/umbrellaprocess/973d2aa16e95bf329ee2
+var keys;
+keys = Array.newClear(128);
+
+~noteOnFunc = {arg val, num, chan, src;
+	var node;
+	node = keys.at(num);
+	if (node.notNil, {
+		node.release;
+		keys.put(num, nil);
+	});
+	node = Synth(\sinpk, [\freq, num.midicps]);
+	keys.put(num, node);
+};
+
+MIDIdef.noteOn(\on, ~noteOnFunc);
+
+~noteOffFunc = {arg val, num, chan, src;
+	var node;
+	node = keys.at(num);
+	if (node.notNil, {
+		node.release;
+		keys.put(num, nil);
+	});
+};
+
+MIDIdef.noteOff(\off, ~noteOffFunc);
+)
+```
+
+Evaluating this block allows notes to be pressed and released
+by pressing and releasing the keys.
+
+<audio src="/audio/midi-loop.mp3" controls loop class="scope">
+</audio>
+<script type="text/javascript" src="/js/oscilloscope.min.js"></script>
+
+The instrument now can be controlled over MIDI. In the next
+post, I will be setting up multiple instruments which can be
+selected using one of the sixteen MIDI channels.
+** TODO Making Connections: MIDI in SuperCollider
+The [previous post](/notes/acoustics/starting-supercollider/)
+demonstrated the process of setting up SuperCollider and generating a
+tone. In this next post, I will be explaining how to set up MIDI input
+in SuperCollider.
+
+[MIDI](https://en.wikipedia.org/wiki/MIDI) is a standard protocol that
+dates back to the early 1980s. It supports up to sixteen channels and
+can be used to communicate pitch, velocity, and other information
+important for the operation of musical instruments. In the long term,
+I would like to be able to choose different timbres by mapping them
+to different MIDI channels. I would also like to be able to change parameters
+using
+[control change messages](https://www.midi.org/specifications/item/table-3-control-change-messages-data-bytes-2).
+
+First, however, I needed to set up SuperCollider to accept MIDI
+input.
+
+Enabling MIDI in SuperCollider
+------------------------------
+
+Start the SuperCollider server if it is not already running.
+
+```sc
+s.boot;
+```
+
+From the Catia patchbay, it is clear that the SuperCollider instance
+does not currently accept MIDI input.
+
+![](/images/jack-cadence.jpg)
+
+We can change this by running
+
+```sc
+MIDIClient.init;
+MIDIIn.connectAll;
+```
+
+On my system, this created three MIDI input ports and one output port.
+
+![](/images/jack-cadence-sc-midi.jpg)
+
+In this case, I was only interested in controlling the server
+from one source, so I only needed one MIDI input. The
+[documentation](http://doc.sccode.org/Classes/MIDIClient.html)
+for `MIDIClient` shows by default running `MIDIClient.init`
+"opens as many inports as there are MIDI sources". To only have
+one inport, I reset the `MIDIClient` and reinitialized it with
+the correct number of ports specified.
+
+```sc
+MIDIClient.disposeClient;
+MIDIClient.init(1, 1);
+```
+
+Now I had one input port and one output port.
+
+Getting input
+-------------
+
+[`MIDIdef.noteOn`](http://doc.sccode.org/Classes/MIDIdef.htm) allows us to
+run a function whenever a note is pressed. To test this out, I created a
+simple function that prints the associated MIDI information whenever a
+key is pressed.
+
+```sc
+MIDIdef.noteOn(\print, {arg val, num, chan, src; [src,chan, num, val].postln});
+```
+
+I then opened my DAW and created a simple MIDI pattern in the piano
+roll.  I then configured the DAW to export any MIDI playback on that
+track to the program's output. Connecting the DAW's output to
+SuperCollider's printed gave the following information:
+
+```
+[ 8454144, 0, 60, 127 ]
+[ 8454144, 0, 63, 127 ]
+[ 8454144, 0, 67, 127 ]
+[ 8454144, 0, 65, 59 ]
+[ 8454144, 0, 68, 59 ]
+[ 8454144, 0, 72, 59 ]
+```
+
+This indicates that the source is identified by the integer 8454144 and that the
+MIDI notes were sent on the first channel (they are indexed starting with zero). 
+The third number in the arrays represent [notes](http://computermusicresource.com/midikeys.html)
+and the last number represents the velocity of the note (ranging from zero to
+127).
+
+We can filter the notes such that the function is only called for a
+certain source or channel:
+
+```sc
+MIDIdef.noteOn(\test4, {arg val, num, chan, src; 
+    [src,chan, num, val].postln;
+}, chan: 1);
+```
+
+Down the road, this will give us the ability to set up multiple instruments
+that can be selected using the MIDI channel.
+
+- - -
+
+In this post, we have opened up SuperCollider to be able to interact
+with other programs and hardware using the MIDI standard.  In the next
+post, we will use this MIDI control to control the sound generated by
+the server.
+** TODO The Paradox of Creativity
+## Creativity is mythologized.
+
+Many times we think of creativity like the ouroboros, an ancient
+symbol of a snake eating its own tail. We think of creative people as
+those who are able to come up with original ideas out of thin air and
+transform these ideas into creative masterpieces. We are not quite
+sure what goes on in that process, but we know that our favorite
+artists, writers, and musicians have some speical ability that we
+reuglar folks do not have.
+
+Countless people can read and write proficiently, but few have ever
+written a substantive written work. We tell ourselves that we just
+don't have the natural talent. A psychologist might diagnose us with a
+harsh case of cognitive dissonance; it is easier to believe that a
+successful pursuit of creativity is beyond our grasps than to take
+action to bring it within our reach.
+
+## Creativity is intimidating.
+
+When engaging in a creative pursuit, we are setting ourselves up for
+failure. After all, creativity is a process of constant
+failure. Regardless of medium, it takes a tremendous amount of
+practice for us to be able to achieve a creative vision and it takes
+an equal amount of studying to conceive that vision in the first
+place.
+
+> A work is never completed except by some accident such as weariness,
+> satisfaction, the need to deliver, or death: for, in relation to who
+> or what is making it, it can only be one stage in a series of inner
+> transformations.
+>
+> -- Paul Valery, "Recollection", *Collected Works*, vol. 1 (1972)
+
+Starting a creative project is not the difficult part for me. It is
+not uncommon to experience a flurry of creative energy in the
+beginning of a project. I have an idea or a concept that I want to
+see reach its potential. Soon, however, I realize that my initial
+idea was incomplete or too fuzzy to know what to do next.
+
+## Creativity is hard work.
+
+This summer, I worked on creating a series of folktronica songs using
+primarily my mandolin and an analogue synthesizer. The synthesizer
+itself was a new tool to my process and I really enjoyed exploring how
+it fit into my workflow. I like the songs that I created quite a bit
+and some have made it over that hump of initial creative energy;
+others still need refinement, a bridge, or more time to see where they
+will go.
+
+Through this process, I think I learned a few ways to stimulate my
+own creative process. I found it incredibly encouraging to engage in
+my creative medium with other people. Every Tuesday evening, I and a
+few friends would break out a song book and play music just for the fun
+of it. While these songs did not relate directly to the music I was working
+on, it helped to break the monotony of practicing on an uncomfortable chair
+with dorm room acoustics. I also found our group's different musical tastes,
+approaches, and interests refreshing.
+
+I also learned a few techniques for handling the temporal aspects of
+creativity. While I often worked during time I set aside specifically
+for creative work, I also found it useful to carry a notebook and
+a portable audio recorder around for when I came up with something
+outside of that space. This helped me to deal with my biggest creative
+struggle: time. Creativity demands our time--the type of time that
+requires our energy.
+
+## Creativity is worth it.
+
+Creativity does not exist in a vacuum. No person is simply a creative
+person; in contrast, we all have the ability to create, but it is not
+easy. Creativity requires that we conscientiously work to improve our
+craft. Creativity requires that we think big and challenge ourselves
+to embrace being uncomfortable.
+
+Instead of an ouroboros, the creative process is more like a tangled
+knot of a million snakes each pulling and intertwining on each other.
+It may not be as clean or pretty of an analogy, but the results show
+that the effort is worthwhile.
+** Simple Hugo VPS Deployment
+:PROPERTIES:
+:EXPORT_FILE_NAME: simple-hugo-vps-deployment
+:EXPORT_DATE: 2017-04-16
+:END:
+I recently moved hosting to a virtual private server and NGINX. Since
+I use git and Hugo to update my website, I wanted to be able to have
+the website build simply by pushing to the server.
+
+I had previously used Gulp and FTP for this, but I wanted a simpler
+system which requires less dependencies.
+
+To start, I set up the repository on the server. I cloned my website
+code by running
+
+#+BEGIN_SRC 
+git clone git@github.com:CarlColglazier/carlcolglazier.com.git
+#+END_SRC
+
+
+To be able to push to the server repository from my computer, I needed
+to change the way things are set up. Git does not allow pushing
+directly to the current branch by default. To change this, I ran
+
+#+BEGIN_SRC 
+git config receive.denyCurrentBranch updateInstead
+#+END_SRC
+
+inside the repository to allow the current branch (master) to be
+updated from an external source. Now I could push directly to the
+server[fn:git].
+
+I needed to do the following when building the website:
+
+1. Run the =hugo= command to build the website.
+2. Compile LESS files to CSS.
+3. Minify the public content.
+
+I ended up using the following npm packages to achieve these goals:
+
++ [[https://www.npmjs.com/package/less][less]]
++ [[https://www.npmjs.com/package/less-plugin-clean-css][less-plugin-clean-css]]
++ [[https://www.npmjs.com/package/html-minifier][html-minifier]]
++ [[https://www.npmjs.com/package/rimraf][rimraf]]
+
+This gave me the following scripts in =package.json=:
+
+#+BEGIN_SRC 
+  ...
+  "scripts": {
+    "prebuild": "echo Building...",
+    "build": "npm run-script prepare && hugo && npm run-script minify",
+    "prepare": "./node_modules/.bin/rimraf public && npm run-scrip less",
+    "less": "./node_modules/.bin/lessc --clean-css ./static/css/style.less ./static/css/style.css",
+    "minify": "./node_modules/.bin/html-minifier --input-dir public --output-dir public -c html-minify.conf --file-ext html",
+    "postbuild": "./node_modules/.bin/rimraf ./public/css/style.less",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  ...
+#+END_SRC
+
+For all installed =npm= packages, I chose to use local installs.
+
+My first step in building the website is removing the previous
+build. This ensures that deleted files do not stick around by
+mistake. To do this, I use =rimraf=, which is supported on multiple
+operating systems. I then run the command line script to process the
+LESS files. After this, I run the =hugo= command to build the website
+in the =public= directory. I run =html-minifier= on each of the HTML
+files and finally remove the LESS file from the public-facing website.
+
+With the build script written, I then added the following script to
+=.git/hooks/post-receive=:
+
+#+BEGIN_SRC 
+sh #!/bin/sh npm run build
+#+END_SRC
+
+Now I could update my website by committing and running
+
+#+BEGIN_SRC 
+git push <remote> <branch>
+#+END_SRC
+
+I can then push directly to the repository on the server and receive
+the output from =npm= on my computer while the website builds. On
+average, the entire build process takes a little more than a second.
+
+[fn:git]: Note: This requires a git version of [at least
+2.3](https://stackoverflow.com/questions/32643065/git-receive-denycurrentbranch-updateinstead-fails).
+** TODO Starting SuperCollider
+:PROPERTIES:
+:EXPORT_FILE_NAME:
+:EXPORT_DATE:
+:END:
+Over the next few posts, I will be documenting the process of creating
+a software synthesis system which interfaces with hardware MIDI
+devices. The goal of this project is to bring together the powerful
+expressiveness of software synthesis with the intuition of hardware
+interaction.
+
+This first post describes some of the software used in the
+project.
+
+Motivation
+----------
+
+I have a MIDI controller that I would like to bring into the mix more
+(so to speak) in my music workflow. The great thing about hardware
+designed to work with software on a computer is that it offers a lot
+of flexibility; however, that comes with the price of requiring a bit
+of effort and creativity on the software end to take full advantage of
+the hardware.
+
+When it comes to digital sound synthesis, there is perhaps no program
+more powerful than [SuperCollider](http://supercollider.github.io/).
+SuperCollider runs as a server which can be sent commands from
+clients. The server is usually are controlled using the `sclang`
+programming language. The program and language are designed specifically
+for electroacoustics and generative music. See the video below for an
+example of a project that used SuperCollider for both of these functions.
+
+{{< youtube Xh0mXrPRuqw >}}
+
+The
+[laptop as an instrument](https://www.jstor.org/stable/42578951?seq=1)
+is a rather new concept, but the techniques used in digital synthesis
+and generative music are decades old. With this project, I aim to tap
+into and expand upon that legacy.
+
+Development Tools
+-----------------
+
+{{< figure src="images/emacs-sc.jpg" title="Emacs interfacing with SuperCollider" >}}
+
+SuperCollider has its own IDE called `scide`, but I will be working in
+the Emacs development environment. Emacs is a general purpose text
+editor which I use for most of my work that involves plain text.
+Emacs is well suited for SuperCollider development because Emacs
+itself runs with
+a
+[REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) (Read--eval--print
+loop). This encourages a workflow of writing small chucks of code,
+sending them to the server to be evaluated, and then analyzing the
+results.
+
+{{< figure src="/images/jack-cadence.jpg" title="JACK server connections." >}}
+
+SuperCollider works by interfacing with
+the [JACK Audio Connection Kit](http://jackaudio.org/). Like
+SuperCollider itself, JACK works as a server that directs signals from
+many different sources. It is designed for real-time audio
+applications and thus tends to have very low latency. I use a suite of
+tools
+called [Cadence](http://kxstudio.linuxaudio.org/Applications:Cadence)
+to control and connect my JACK applications. The figure above shows
+how I have wired together the SuperCollider server with my system
+capture (microphone) and system playback (speakers or headphones).
+Using JACK allows SuperCollider to interact with other audio
+programs such as a DAW (digital audio workstation).
+
+Making Some Sounds
+------------------
+
+Now that I have all the tools needed to run SuperCollider set up,
+let's start making some noise. I first needed to boot up Emacs running
+the SuperCollider environment.
+
+```sh
+emacs -sclang
+```
+
+I then booted the SuperCollider server.
+
+```sc
+s = Server.local.boot;
+```
+
+`s` is a special variable that is used exclusively for the `Server`.
+The other letters of the alphabet can be used as global variables.  It
+is best to attach functions or any other sound generator to a variable
+so that they can be stopped or modified when needed. To start, I used
+a function that combined a sine oscillator with pink noise. The
+arguments for
+the [sine oscillator](http://doc.sccode.org/Classes/SinOsc.html)
+indicate frequency, phase, and amplitude. The argument for the
+`PinkNoise` generator indicates volume.
+
+```sc
+g = { SinOsc.ar(440, 0, 0.1) + PinkNoise.ar(0.01) }.play;
+```
+
+This sound will play indefinitely until we free the function.
+
+```
+g.free;
+```
+
+Running and then freeing the function produces the following output:
+
+
+
+<audio src="/audio/startingsc.mp3" controls class="scope">
+</audio>
+<script type="text/javascript" src="/js/oscilloscope.min.js"></script>
+
+We now have sound being generated by SuperCollider. In the
+next post, I will be setting up MIDI input.
+
+** Studying Technology and Technology for Studying
+:PROPERTIES:
+:EXPORT_FILE_NAME: studying-technology-and-technology-for-studying
+:EXPORT_DATE: 2015-12-06
+:END:
+When I was a high school student studying Latin, I always dreaded the
+basic process of memorization. The way I studied then, learning
+vocabulary involved creating individual flashcards by hand and
+tediously going card by card trying to determine which words were my
+weakest. Proper reviewing was nearly impossible because I had no way
+of keeping track of that words that I had mastered. As a consequence
+of what I would not consider poor studying techniques, I constantly
+struggled with even basic vocabulary in each of my four years of
+studies.
+
+As I prepared to make the transition from high school to university, I
+knew I had to make my studies far more organized, especially with the
+heavy schedule I was to take. I am now approaching the end of my first
+semester at university and looking back, I can see a lot of places in
+which I have already improved and several places where I still see
+room for improvement.
+
+*** what i've learned thus far
+
+I am now paying for a few of the mistakes I made earlier in the
+semester. In particular, I would like to improve my workflow to allow
+time for reviewing older material throughout the semester, enabling
+much more efficient long-term learning.
+
+In order to do this, I have started to turn basically everything I
+learn into flash cards. Yes, I am now fully embracing my high school
+nightmare; however, these are not your traditional flashcards.
+
+I am using a computerized system called [[https://github.com/dae/anki][Anki]] to both create and
+organize flashcards on a variety of subjects.  Anki uses a learning
+technique called [[https://en.wikipedia.org/wiki/Spaced_repetition][spaced repetition]] to optimize long-term
+memorization. The core idea is that our brains tend to discard
+information that we do not use, but if we continuously use a piece of
+knowledge, it becomes much easier over time to maintain that
+knowledge.
+
+Anki is traditionally used for language-learning (I have some rather
+extensive decks of both Latin and Esperanto vocabulary words), but
+there are many other applications.  For example, I used Anki over the
+summer to help me remember United States capital cities. I also have
+decks that I am using to commit to memory various pieces of art and
+classical music.
+
+*** practice makes perfect
+
+While I have learned quite a bit in all the lectures which I have
+attended, I have discovered that I learn material best by putting it
+to use, either in the process of making formal essays or in the
+process of solving practice problems.
+
+As I am going back to some of the practice problems I used earlier
+this semester, it has amazed me just how much material I have almost
+completely forgotten over the course of only a few months.
+
+My plan to fix this problem next semester? Flash cards for everything!
+
+New concepts? Flashcards.
+
+Practice problems? Flashcards.
+
+Graded quizzes? Flashcards.
+
+Computer-aided learning has turned an activity I previously dreaded to
+my primary means of learning. Funny how that works.
+** Technology and the Point of No Return.
+:PROPERTIES:
+:EXPORT_FILE_NAME: the_point_of_no_return
+:EXPORT_DATE: 2015-10-05
+:END:
+At this moment I am writing using the QWERTY layout on my keyboard. My
+laptop has provided me with convenient white curves on each key to
+help me remember where I am and to help locate a character if I forget
+where it is.
+
+Almost every modern computer uses some variation of the QWERTY
+keyboard.  The UK International keyboard, for example, is a variant of
+QWERTY that uses an additional key that functions like a shift key to
+support accents and other regional characters. QWERTY is even used in
+China, where Roman letters are used to input a Pinyin (phonetic)
+representation of a character or the root shapes of a character. While
+languages can be very different, the keyboard layout generally remains
+constant.
+
+The QWERTY keyboard was designed to address a technological problem
+which no longer exists in a technology that is now only rarely
+used. Early commercial typewriters were plagued by mechanical problems
+that would make them jam when neighboring letters were pressed at the
+same time. American inventor and printer Christopher Latham Sholes is
+credited with creating the modern keyboard layout in addition to the
+first practical typewriter. Despite popular myth, Sholes' keyboard
+layout was not designed to slow the machine down; it was only
+optimized to prevent jams.
+
+The QWERTY keyboard was the first successful layout and has since
+become the only successful layout. Of course, there were others. In
+1939, Dr. August Dvorak and Dr. William Dealey released the Dvorak
+Simplified Keyboard, which was designed to have the most commonly used
+keys on the "home row". Believing that typing speeds could be
+increased by alternating hands, Dvorak placed vowels in the left
+hand's home row. To reduce strain, common bigrams (two letter
+combinations) were placed where they were easiest to type using the
+strongest fingers.
+
+While designed in a much more scientific manner, the Dvorak layout had
+mixed results in tests at the time and was never widely
+adopted. Though every major operating system supports it, Dvorak is
+still rarely used.
+
+This begs the question: if it was designed to be better and more
+efficient, why was the Dvorak Keyboard Layout never adopted?
+
+To find out, I learned the Dvorak layout earlier this year. I do not
+own a typewriter, so all I had to do the change layouts was to modify
+the settings on my computer and my phone. It took a lot of thinking at
+first, but as I started to become half-proficient after working
+diligently through a repertoire of practice words (interestingly
+enough, *repertoire* is one of only five ten-letter words in the
+English language that can be typed using only the top row of keys in
+the QWERTY layout), I started to understand some of the challenges
+facing people learning new keyboard layouts.
+
+I have years of experience with QWERTY. I can type rather quickly with
+QWERTY and my workflow with QWERTY is a familiar one. Changing
+keyboard layouts meant changing just about every part of how I used a
+computer. Without special configuration, my helpful trio --- cut,
+copy, and paste --- were no longer close to each other. It is not
+until you switch from QWERTY that you realize how much every part of
+the computer was built around its use.
+
+Even if you know Dvorak or some other layout, you would still need to
+learn QWERTY if you want to work with other people; it is not
+practical to expect other people to change layouts whenever you use
+their systems and most manufacturers are not going to spend the extra
+money to create label keyboards with rarely used layouts.
+
+When it comes to keyboards, it seems that the technology has reached a
+point of no return. A layout designed for a separate technology, the
+typewriter, is now the dominant layout on a new technology, the
+computer. Even if new computer layouts are developed, it is unlikely
+that they will become adopted, further supporting the monopoly enjoyed
+by QWERTY.  As with any standard, QWERTY is arguably not the best
+option, but it is still the only option.
+** This Website Supports Dial-up.
+:PROPERTIES:
+:EXPORT_FILE_NAME: this-website-supports-dial-up
+:EXPORT_DATE: 2015-07-23
+:END:
+Throughout the past decade, the internet has become much larger (in
+multiple ways). As more people have started to become active online,
+[[http://httparchive.org/trends.php?s=Top1000&minlabel=Jun+1+2011&maxlabel=Jul+1+2015#bytesTotal&reqTotal][websites themselves have grown almost as quickly as their potential audience]]. As connections speeds have become much faster
+in many areas, however, the internet itself seems rather stagnated
+when comes to speed. The amount of requests needed to fully load many
+of the web's most-visited pages has grown exponentially, spurred on by
+the heavy use of JavaScript, custom fonts, and large images.
+
+One could hardly imagine the internet of today being accessed on a
+machine using a dial-up connection.
+
+Perhaps this is one reason why dial-up in the United States has
+increasingly lost its market share to broadband, which is often faster
+and more reliable.  According to the Pew Research Center, only [[http://www.pewresearch.org/fact-tank/2013/08/21/3-of-americans-use-dial-up-at-home/][three percent of Americans were still using dial-up at home]] as
+of 2013. While that number may seem small, that three percent
+represents *millions* of people.
+
+So why does this matter?
+
+In answer, because those who access the internet are not even close to
+equal; connection speeds range between super-speedy gigabit
+connections to slow- crawling dial-up. Despite this huge gap, however,
+both connections lead to the same final destination which takes up the
+same amount of bandwidth no matter how fast the connection.
+
+Smartphones, which have arguably done more to give the average person
+internet access than any other invention in the last decade, only
+complicate the matter; the same phone owned by the same person with
+the same service can have an excellent, strong connection one moment
+and then a weak, barely-moving connection the next.
+
+I remember the pain of trying to download a simple PDF during a trip
+down to South Carolina. The document's contents were simple and could
+have been just as plainly released in plain text, but I had to wait
+patiently for half-an-hour to download the document as we moved in and
+out of data coverage. On several occasions, the connection would drop
+out for so long that my phone simply gave up and cut the process. Once
+the download finally finished, I had very little time left for reading
+as the constant searching for networks had done a number on my battery
+level.
+
+When designing for the web, I believe it necessary to think not only
+of those with an average connection, but also of those with a
+substandard connection.  After all, if even a reader with a slow
+connection can load the page quickly, think of how much better the
+connection will be for a reader with a fast connection!
+** What is a YouTuber?
+:PROPERTIES:
+:EXPORT_FILE_NAME: what-is-a-youtuber
+:EXPORT_DATE: 2015-05-30
+:END:
+While reading a YouTube comment section recently, I happened upon a
+rather humorous comment claiming that "This is why Viners only act for
+six seconds," referring to a prominent Vine user featured in the
+YouTube video. Though the comment was likely meant as a joke, a series
+of replies squabbled over the line between "Viners" and
+"YouTubers". Some argued that since those in question started making
+videos on YouTube, they were obviously "YouTubers". Others proposed
+that since those in question were better known for their videos on
+Vine, they must actually be "Viners". The line between creators on
+these two website, it would appear, has become increasingly blurred.
+
+But does such a line actually exist? Is there any noticeable or
+notable difference between users on one online video sharing service
+and other?
+
+To answer these questions, it is important to consider what a
+"YouTuber" is in the first place. The term "YouTuber" is often used to
+label YouTube users.  Sometimes the term's use concerns any user of
+YouTube, including commenters.  Others use the term when [[http://video.pbs.org/video/2365039828/][discussing YouTube's regular video creators]].  For the purpose of clarity, I
+will be using the term henceforth under the latter use.
+
+My main issue with using the term "YouTuber" is that it is often an
+exclusionary term. The vast majority of active YouTube users have an
+online presence beyond the video-based website. Most YouTube users,
+for example, are active on social media websites such as
+[[https://twitter.com/CarlColglazier][Twitter]]. For many of these users, their content on YouTube makes
+up a larger brand that is visible in multiple locations. The product
+in question (videos with ad-based revenue) are often hosted on and
+distributed through YouTube, but YouTube is not their exclusive point
+of interaction.
+
+YouTube is only one outlet in the larger world of online video. This
+world has existed long before YouTube and will likely exist long after
+YouTube. With this in mind, calling some a "YouTuber" is a bit like
+calling a musician from the 1980's a "cassetter" or an author of the
+16th Century a "printing presser". The term simply does not fit.
+* Code Section
+:PROPERTIES:
+:EXPORT_HUGO_SECTION: code
+:END:
+** Code
+:PROPERTIES:
+:EXPORT_FILE_NAME: _index
+:END:
+[[/files/resume.pdf][My resume]].
+** Cheesecake
   :PROPERTIES:
-  :EXPORT_FILE_NAME: waiting-for-upstream
-  :EXPORT_DATE: 2019-06-20
+  :EXPORT_FILE_NAME: cheesecake
+  :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :types "Software"
+  :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :tools '("Python" "Flask" "React.js")
   :END:
-This is a post about this website. It's also a small reflection on software development. Enjoy.
+Cheesecake is an evidence-based scouting and statistics approach to
+the /FIRST/ Robotics Competition. It has two main goals:
 
----
+1. To use existing data on the results of /FIRST/ competitions to
+   create measurably accurate prediction metrics.
+2. To facilitate a mixed-methods (quantitative plus qualitative)
+   approach to FRC scouting specific to each game.
 
-This website has always relied on JavaScript in some way. At the moment, very little runs on the site itself outside specialty pages, but JavaScript always been central to the build process. Gulp, grunt, just plain npm---I think I've tried all of them at some point.
-But as of this note, JavaScript is no longer a part of the build process. Here is how I did it.
+Cheesecake takes an empirical, evidence-based approach to how it
+handles FRC data.
 
-Software with a large community of contributors brings further advantages. I obviously was not the only person using JavaScript for my minification workflow. On the Hugo repository, the [[https://github.com/gohugoio/hugo/issues/1251]["Support for minification of generated HTML files"]] issue was first started in 2015, around the same time I switched to Hugo. It was implemented in 2018 after a pretty extensive discussion. I should emphasize that I played absolutely no part in this process. I had a need shared with some others and I got to completely ride free off of their upstream contributions to the software I use. Others also wrote up the documentation that alerted me to this feature in the first place.
+*** Motivation
+Scouting is a large commitment for a team. At most competitions we
+attend, we usually allocate a significant amount of team resources to
+ensure we have as much data as possible on each robot at the
+competition. This information typically goes into a binder and is used
+by our scouting team to determine the best robots to pick during the
+alliance selections and the optimal strategies to play against
+individual robots.
 
-This is why popular software brings several advantages beyond their feature set. With a dedicated community, you get expanded documentation and more spaces to find help without any additional effort on your part. Your unusual workflow or edge-cases are more likely to be shared with someone else.
-
-Software should not be evaluated on popularity alone; however, I do think it should be a factor. After all, it would seem quite the waste to throw out the fruits of popular collaboration.
-* TODO Software on Patreon
-
-- https://www.patreon.com/evanyou
-- 
-* A Fast from Electron: Streaming Music through MPD
+The goal of Cheesecake is to ensure that scouting information is
+transformed into useful metrics. It draws inspiration (and some
+models) from other types of sports analytics, statistics, and previous
+related systems.
+** Global Open Simulator (GOS)
   :PROPERTIES:
-  :EXPORT_FILE_NAME: electron-fast
-  :EXPORT_DATE: 2019-06-13
+  :EXPORT_FILE_NAME: gos
+  :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :subtitle "A parallel agent-based platform for global social modeling."
+  :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :tools '("Python" "Jupyter" "matplotlib" "pandas" "numpy")
+  :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :repository "https://github.com/crcresearch/GOS"
   :END:
-Enough has been written on Electron's shortfalls that I feel no need to add my own gripes. Generally, I try to avoid it as much as possible. I'm sure the Discord desktop client is nice, but it also works just fine in my web browser. Slack? Okay, but you're only allowed on the work computer!
-
-Despite my hesitations, one Electron app has constantly followed me around for years: the unofficial Google Play Music desktop player. Before you ask, no, I don't use Spotify. I do think it's the better-designed service, but GPM has a good family plan though and it comes with YouTube Red, which is a nice bonus.
-
-Because of this setup, I basically have had a Chromium browser open on my computer at all times just to play music. What's the point of having 20 GB of RAM if I'm not trying to minimize its use at all times?
-
-Here's what I'm using now instead:
-- [[https://github.com/gmusicproxy/gmusicproxy][gmusicproxy]]
-- [[https://www.musicpd.org/][Music Player Daemon (MPD)]]
-- [[https://github.com/MusicPlayerDaemon/mpdscribble][mpdscribble]]
-- [[https://rybczak.net/ncmpcpp/][NCurses Music Player Client (Plus Plus)]]
-
-The only real pain point in my workflow is searching for new albums which are not already in my playlists. I might write a simple program for that at some point.
-
-Bonus: my scrobbles now cache if there is ever a connectivity issue.
-* Principles for Creative Work
+** Kvizo  
   :PROPERTIES:
-  :EXPORT_FILE_NAME: creative-work-principles
-  :EXPORT_DATE: 2019-06-06
+  :EXPORT_FILE_NAME: kvizo
+  :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :subtitle "A practice and learning tool for adademic quiz bowl."
+  :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :repository "https://github.com/CarlColglazier/kvizo"
+  :END:
+Kvizo is a practice and learning tool for adademic quiz bowl. It
+currently supports the following features:
+
++ A practice interface designed to minimize eye movement.
++ A question database.
+
+Kvizo is still in active development. This is an early preview
+release. The following are planned future features:
+
++ User accounts.
++ Tracking of performance over time.
++ Exploration and searching insights for studying.
++ Generated user profiles based on past performance.
+  - Estimated tossup points per tossup heard by category.
+  - Estimated probability of a user correctly answering a question.
+  - Personalized studying insights and suggestions.
+
+** Emoj(i)dentity
+  :PROPERTIES:
+  :EXPORT_FILE_NAME: emojidentity
+  :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :types "Paper"
+  :EXPORT_AUTHOR: Carl Colglazier, Zackary Allen
+  :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :subtitle "A paper on emoji and collective identity on Twitter."
+  :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :tools '("Python")
+  :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :repository "https://github.com/CarlColglazier/emojidentity"
   :END:
 
-A lot of these ideas aren't original. In fact, many are borrowed from
-processes in software development and team management I have learned
-while a college student. I am writing them down here as a bit of a
-self-reminder. This note isn't perfect, but....
-** Perfection is a fantasy
+We propose a measure for group identity on Twitter using emoji
+displayed by users in their names or biographies. Viewing the use of
+emoji as social phenomenon, we introduce methods for measuring how
+often emoji users follow/friend other emoji users compared to
+non-emoji users. Furthermore, we introduce methods to measure quantify
+the frequency users friend/follow users with similar emojis,
+concluding with visual analysis of what ties between certain emoji
+look like.
 
-Don't fall for it.
+* Research
+:PROPERTIES:
+:EXPORT_HUGO_SECTION: /
+:EXPORT_FILE_NAME: research
+:END:
+An automatic list of my publications can be found on [Google
+Scholar][gscholar].
 
-The idea of perfection comes the imagination: an unrealistic,
-idealized version of ourselves with no basis in reality.  Most of the
-time, "good enough" is good enough. The goal should never be
-perfection.  Rather, ask what you are trying to convey? How do you
-want people to feel? What do you want them to know? If you can say
-you've put to form what you want the audience to experience, you have
-succeeded.
+** Conference Papers.
 
-Otherwise...
+["Parallel Python for Agent-Based Modeling at a Global
+Scale."](https://dl.acm.org/citation.cfm?id=3145588)
+: Nicole Blandin, **Carl Colglazier**, John O'Hare, and Paul Brenner.
+In *Proceedings of the 2017 International Conference of The
+Computational Social Science Society of the Americas*,
+p. 10. ACM, 2017.
 
-** Build quickly and fail cheaply.
 
-I wrote this up as one principle because I think they are necessarily
-linked to each other.  As a recovering perfectionist, I remain
-astutely aware of failure. It's inevitable in nearly any project. The
-best way to manage it is to incorporate it into the process. Create
-opportunities to flesh out ideas and prototypes to avoid racking up
-higher costs later on.
+** Posters
 
-** Reduce workflow friction.
+["Advanced Tools for Computational Social Science"][css2018-poster].
+:  **Carl Colglazier** and Paul Brenner.
+  2018 Summer Undergraduate Research Symposium, University of Notre
+  Dame.
 
-How much time are you actually working and how much time do you spend
-on paperwork? This isn't to say documentation is useless.
-Coordination and teamwork often are exactly the bottlenecks which need
-to be eliminated.
+["Parallel Python for Global Social Simulations"][css2017-poster].
+:  **Carl Colglazier** and Paul Brenner.
+  2017 Summer Undergraduate Research Symposium, University of Notre
+  Dame.
 
-** It's easiest after you start.
+** Conferences I've attended.
 
-I did summer swim team for many years. In May and early June, getting
-into the water was a real drudge. The air wasn't quite warm enough for
-it to feel refreshing and the water hadn't warmed up enough from its
-chilly tapwater origins. The thing is, you could spend forever building
-everything up, waiting at the side of the pool. Trying to amp yourself
-up. It gets you nowhere. The only way to get through it is to get started.
-It sucks, but you get better at managing it.
++ [IC2S2 2018][ic2s22018]
++ [CHI 2018][chi2018]
+
+[gscholar]:
+https://scholar.google.com/citations?hl=en&user=18JgozoAAAAJ&view_op=list_works&sortby=pubdate
+"Carl Colglazier - Google Scholar Citations"
+
+[css2017-poster]:
+https://crc.nd.edu/images/docs/reu/2017/posters/Final-Final-Poster---Carl-Colglazier.png
+"Parallel Python for Global Social Simulations"
+
+[css2018-poster]:
+https://crc.nd.edu/images/docs/reu/2018/posters/Poster---Carl-Colglazier.png
+"Advanced Tools for Computational Social Science"
+
+[chi2018]: https://chi2018.acm.org/ "CHI 2018 &#8211; Engage with CHI
+&#8211; Montréal, Canada • April 21-26"
+
+[ic2s22018]:
+https://www.kellogg.northwestern.edu/news-events/conference/ic2s2/2018.aspx
+"2018 International Conference on Computational Social Science"
+* Media
+:PROPERTIES:
+:EXPORT_HUGO_SECTION: /
+:EXPORT_FILE_NAME: media
+:END:
+I have over a decade of experience with various artistic media such as
+film, music, and writing.
+
+** Filmography
+*** Documentary Films
+
++ [*The People's House*](http://www.viddler.com/v/6805fb13) (2015)
+  [^ph]
++ [*Due Process*](http://www.viddler.com/v/3e83e938) (2014) [^dp]
++ *Cary* (2013) [^cary]
++ *Executive Powers* (2013)
++ [*Intellectual
+  Property*](https://www.youtube.com/watch?v=c_SvgFo71x0) (2012) [^ip]
++ [*The Great
+  Compromise*](https://www.c-span.org/video/?298275-27/the-great-compromise)
+  (2011) [^gc]
++ [*Wasting
+  Waste*](https://www.c-span.org/video/?292400-17/wasting-waste)
+  (2010) [^ww]
+
+### Web Series
+
+*Filmmakers' Guide*
+: Ran for the course of a year from 2012 to 2013.
+: Reached over a thousand subscribers and over a hundred thousand views.
+
+*The Hitchhikers*
+: Created a documentary series as marketing tool for Hitchhikers Robotics Group, Inc between 2012 and 2015.
+: Reached over fifteen thousand views.
+
+<!-- ### Contributions
+
++ Patrol Z --- Boy Scouts of America
++ AquaMorph Productions
+
+
+Music
+-----
+
+["Thebes"](https://coalglazer.bandcamp.com/track/thebes)
+: Thebes is inspired by the ancient Greek tragedy Antigone. The play, written by Sophocles many years ago, tells a tale of conflict between law and justice and a grave consequence of power. The piece was primarily created using a combination of additive synthesis and temporally distorted acoustic instruments.
+-->
+
+Press
+-----
+
+["Cary teen wins fifth C-SPAN video
+award"](https://www.newsobserver.com/news/local/community/cary-news/article22811496.html)
+: Will Doran, The Cary News. 1 June 2015.
+
+"Cary teen's documentary tops contest"
+: Andrew Kenney, The Cary News. 30 March 2011.
+
+
+[^ph]: Honorable Mention, StudentCam 2015
+
+[^dp]: Honorable Mention, StudentCam 2014
+
+[^ip]: First Prize (High School), StudentCam 2012
+
+[^gc]: Grand Prize, StudentCam 2011
+
+[^ww]: Third Prize, StudentCam 2010
+
+[^cary]: Paul Green Multimedia Award recipient (North Carolina Society
+of Historians)
