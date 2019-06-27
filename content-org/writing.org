@@ -1733,7 +1733,7 @@ SuperCollider's printed gave the following information:
 This indicates that the source is identified by the integer 8454144
 and that the MIDI notes were sent on the first channel (they are
 indexed starting with zero).  The third number in the arrays represent
-[[(http://computermusicresource.com/midikeys.html][notes]] and the last number represents the velocity of the note (ranging
+[[http://computermusicresource.com/midikeys.html][notes]] and the last number represents the velocity of the note (ranging
 from zero to 127).
 
 We can filter the notes such that the function is only called for a
