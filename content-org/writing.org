@@ -1407,6 +1407,7 @@ does not directly support LV2 and LADSPA plugins).
 ** Mapping MIDI Channels to Multiple Instruments in SuperCollider
 :PROPERTIES:
 :EXPORT_FILE_NAME: midi-channels-multiple-instruments-supercollider
+:EXPORT_HUGO_ALIASES: acoustics/midi-channels-multiple-instruments-supercollider
 :END:
 Being able to [control a polyphonic instrument in
 MIDI](/notes/acoustics/midi-instrument-control-supercollider/) is
@@ -1500,7 +1501,12 @@ challenging. I believe it is for this reason that I find SuperCollider
 to be such an interesting platform: it provides the pieces for
 expansive sonic possibilities, but it takes a bit of effort and
 curiosity to make the most of it.
-** TODO Controlling Synths with MIDI in SuperCollider
+** Controlling Synths with MIDI in SuperCollider
+:PROPERTIES:
+:FILE_NAME: midi-instrument-control-supercollider
+:EXPORT_HUGO_ALIASES: acoustics/midi-instrument-control-supercollider
+:EXPORT_DATE: 2017-09-22
+:END:
 I previously showed how to set up SuperCollider to communicate
 with other programs and external hardware using MIDI. Today I
 am going to use these connections to manipulate instruments.
@@ -1642,7 +1648,12 @@ by pressing and releasing the keys.
 The instrument now can be controlled over MIDI. In the next
 post, I will be setting up multiple instruments which can be
 selected using one of the sixteen MIDI channels.
-** TODO Making Connections: MIDI in SuperCollider
+** Making Connections: MIDI in SuperCollider
+:PROPERTIES:
+:EXPORT_FILE_NAME: midi-in-supercollider
+:EXPORT_DATE: 2017-09-19
+:EXPORT_HUGO_ALIASES: acoustics/midi-in-supercollider
+:END:
 The [[/notes/acoustics/starting-supercollider/][previous post]] demonstrated the process of setting up SuperCollider
 and generating a tone. In this next post, I will be explaining how to
 set up MIDI input in SuperCollider.
@@ -1746,7 +1757,8 @@ the server.
 ** The Paradox of Creativity
 :PROPERTIES:
 :EXPORT_FILE_NAME: paradox-of-creativity
-:UNNUMBERED: t
+:EXPORT_HUGO_ALIASES: acoustics/paradox-of-creativity
+:EXPORT_DATE: 2017-09-15
 :END:
 *** Creativity is mythologized.
 Many times we think of creativity like the ouroboros, an ancient
@@ -1822,6 +1834,7 @@ that the effort is worthwhile.
 ** Simple Hugo VPS Deployment
 :PROPERTIES:
 :EXPORT_FILE_NAME: simple-hugo-vps-deployment
+:EXPORT_HUGO_ALIASES: acoustics/simple-hugo-vps-deployment
 :EXPORT_DATE: 2017-04-16
 :END:
 I recently moved hosting to a virtual private server and NGINX. Since
@@ -1909,10 +1922,11 @@ average, the entire build process takes a little more than a second.
 
 [fn:git]: Note: This requires a git version of [at least
 2.3](https://stackoverflow.com/questions/32643065/git-receive-denycurrentbranch-updateinstead-fails).
-** TODO Starting SuperCollider
+** Starting SuperCollider
 :PROPERTIES:
 :EXPORT_FILE_NAME: starting-supercollider
-:EXPORT_DATE:
+:EXPORT_HUGO_ALIASES: acoustics/starting-supercollider
+:EXPORT_DATE: 2017-09-18
 :END:
 Over the next few posts, I will be documenting the process of creating
 a software synthesis system which interfaces with hardware MIDI
