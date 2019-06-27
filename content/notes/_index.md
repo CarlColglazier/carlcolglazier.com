@@ -1,4 +1,7 @@
 ---
 title: "Notes"
-subtitle: "Thoughts on art, technology, and other topics."
+author: ["Carl Colglazier"]
+draft: false
 ---
+
+This page is for notes.

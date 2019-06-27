@@ -69,10 +69,10 @@ plot <- ggplot(recentPlays, aes(format(recentPlays$date, "%Y-%U"))) +
     geom_bar(stat = "count") +
     labs(x = "Week", title="Tracks streamed per week.") +
     theme(axis.text.x=element_text(angle = -90, hjust = 0),
-          panel.border = element_blank(),
-          legend.key = element_blank(),
-          panel.background = element_blank(),
-          plot.background = element_rect(fill = "transparent",colour = NA)
+	  panel.border = element_blank(),
+	  legend.key = element_blank(),
+	  panel.background = element_blank(),
+	  plot.background = element_rect(fill = "transparent",colour = NA)
     )
 ggsave(file=fname, plot=plot, width=7, height=4, dpi=300, bg="transparent")
 fname
@@ -177,9 +177,9 @@ I streamed.
 ```R
 getAlbum <- function(row) {
     mburl <- sprintf(
-        'https://beta.musicbrainz.org/ws/2/release/?query=artist:%s+release:%s+AND+status:official+AND+format:"Digital%%20Media"&inc=release-group&limit=1',
-        curlEscape(row$artist_name),
-        curlEscape(row$release_name)
+	'https://beta.musicbrainz.org/ws/2/release/?query=artist:%s+release:%s+AND+status:official+AND+format:"Digital%%20Media"&inc=release-group&limit=1',
+	curlEscape(row$artist_name),
+	curlEscape(row$release_name)
     )
     print(mburl)
     Sys.sleep(0.25)
@@ -189,7 +189,7 @@ getAlbum <- function(row) {
     xml_ns_strip(release)
     # If it is empty
     if (class(release) == "xml_missing") {
-        release <- xml_new_document() %>% xml_add_child("")
+	release <- xml_new_document() %>% xml_add_child("")
     }
     # Go with the earliest release date given.
     date <- xml_text(xml_find_first(release, "//date"))
@@ -238,9 +238,9 @@ to grab lengths for songs...
 getLengths <- function(row) {
      song_stripped <- trimws(sub("\\(.*\\)", "", row$track_name))
      mburl <- sprintf(
-         'https://beta.musicbrainz.org/ws/2/recording/?query=artist:%s+AND+recording:%s&limit=2',
-         curlEscape(row$artist_name),
-         curlEscape(song_stripped)
+	 'https://beta.musicbrainz.org/ws/2/recording/?query=artist:%s+AND+recording:%s&limit=2',
+	 curlEscape(row$artist_name),
+	 curlEscape(song_stripped)
      )
      # To comply with the rate limit.
      Sys.sleep(0.5)
@@ -303,8 +303,8 @@ Conslution: This is a good time to use a sample again.
 ```R
 fetchGenres <- function(row) {
     mburl <- sprintf(
-        "https://beta.musicbrainz.org/ws/2/artist/%s?inc=genres",
-        row$artistId
+	"https://beta.musicbrainz.org/ws/2/artist/%s?inc=genres",
+	row$artistId
     )
     print(mburl)
     Sys.sleep(0.25)
@@ -347,36 +347,36 @@ library("png")
 library("raster")
 
 myTheme <- ttheme(colnames.style = colnames_style(color = "white",
-                                                  fill = "#8cc257",
-                                                  linewidth=0),
-                  tbody.style = tbody_style(color = "white", linewidth=0,
-                                            fill = "#8cc257"))
+						  fill = "#8cc257",
+						  linewidth=0),
+		  tbody.style = tbody_style(color = "white", linewidth=0,
+					    fill = "#8cc257"))
 
 bgTheme <- theme(
     plot.background =
-        element_rect(fill = "#8cc257", color="#8cc257"),
+	element_rect(fill = "#8cc257", color="#8cc257"),
     panel.border = element_blank(),
     )
 
 top_artist_names <- top_artists$artist_name %>%
     head()
 artistTable <- ggtexttable(top_artist_names, rows = NULL,
-                           theme = myTheme, cols=c("Top Artists")) + bgTheme
+			   theme = myTheme, cols=c("Top Artists")) + bgTheme
 trackTable <- ggtexttable(top_songs$track_name, rows = NULL,
-                          theme = myTheme, cols=c("Top Songs")) + bgTheme
+			  theme = myTheme, cols=c("Top Songs")) + bgTheme
 minutes <- as_ggplot(text_grob(
     paste("Minutes Listened",
-          toString(round(mins)),
-          "",
-          "Top Genre",
-          toString(topGenres[1,1]),
-          sep="\n"),
+	  toString(round(mins)),
+	  "",
+	  "Top Genre",
+	  toString(topGenres[1,1]),
+	  sep="\n"),
     color="white")) + bgTheme
 img <- readPNG("images/albums.png")
 im_A <- ggplot() +
     background_image(img[1:250, 1:250, 1:3]) +
     theme(
-        plot.margin = margin(t=.5, l=.5, r=.5, b=.5, unit = "cm"),
+	plot.margin = margin(t=.5, l=.5, r=.5, b=.5, unit = "cm"),
     ) + bgTheme
 p <- ggarrange(im_A, artistTable, minutes, trackTable, ncol=2, nrow=2)
 ggsave(file=fname, plot=p, width=4.5, height=4.5, dpi=300)

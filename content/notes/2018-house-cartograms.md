@@ -1,7 +1,7 @@
 ---
 title: "Cartograms of the 2018 U.S. House Vote"
 author: ["Carl Colglazier"]
-date: 2018-11-16T15:34:58-04:00
+date: 2018-11-16
 draft: false
 ---
 

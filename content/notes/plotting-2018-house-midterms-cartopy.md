@@ -1,7 +1,7 @@
 ---
 title: "Plotting the 2018 U.S. House Midterm Results in Python with Cartopy"
 author: ["Carl Colglazier"]
-date: 2018-11-10T19:07:14-04:00
+date: 2018-11-10
 draft: false
 image: "116th-congress.png"
 ---
@@ -54,13 +54,13 @@ map the winning party to the Federal Information Processing Standards
 ```python
 def winner(fips, dist):
     try:
-        if dist != "00":
-            dist = str(int(dist))
-        else:
-            return house[(house["FIPS"] == fips)]["Party"].values[0]
-        return house[(house["FIPS"] == fips) & (house["CD#"] == dist)]["Party"].values[0]
+	if dist != "00":
+	    dist = str(int(dist))
+	else:
+	    return house[(house["FIPS"] == fips)]["Party"].values[0]
+	return house[(house["FIPS"] == fips) & (house["CD#"] == dist)]["Party"].values[0]
     except:
-        return None
+	return None
 ```
 
 With all the pieces in place, I created the map.
@@ -94,17 +94,17 @@ plt.axis('off')
 for i, shape in enumerate(shapes):
     win = winner(recs[i].attributes["STATEFP"], recs[i].attributes["CD115FP"])
     if win is "R":
-        color = "#F8766D"
+	color = "#F8766D"
     elif win is "D":
-        color = "#619CFF"
+	color = "#619CFF"
     else:
-        color = "#CCCCCC"
+	color = "#CCCCCC"
     if recs[i].attributes["STATEFP"] == '02':
-        a = axak
+	a = axak
     elif recs[i].attributes["STATEFP"] == '15':
-        a = axhi
+	a = axhi
     else:
-        a = ax1
+	a = ax1
     a.add_feature(shape, color=color, linewidth=.25, edgecolor='w')
 
 plt.savefig(filename)

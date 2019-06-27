@@ -1,17 +1,18 @@
 ---
 title: "My Goals for the Fall Semester (2018)"
-date: 2018-08-13T17:25:46-04:00
+author: ["Carl Colglazier"]
+date: 2018-08-13
+draft: false
 ---
 
 This fall semester, I want to...
 
-<!--more-->
-
 Be a **good student** not just by doing the readings, but also by
 investing in the topics. Set myself up for success by allocating
 enough time to do things well. Remember what is important. Focus on
-the 20% that gets me 80% of the evaluation and move on[^pareto]. Keep
-in mind that learning is more important than grades.
+the 20% that gets me 80% of the evaluation and move
+on[^fn:1]. Keep in mind that learning is more important than
+grades.
 
 Prepare for **the future**. Work on research and side projects to
 refine and demonstrate my skills. Read books. Study for the GRE. Take
@@ -27,4 +28,4 @@ space and grace to slip up.
 **Be authentic** with humility. Know my limits. Allow vulnerability.
 Treat others unreasonably well.
 
-[^pareto]: See the [Pareto principle](https://en.wikipedia.org/wiki/Pareto_principle).
+[^fn:1]: : See the [Pareto principle](https://en.wikipedia.org/wiki/Pareto%5Fprinciple).

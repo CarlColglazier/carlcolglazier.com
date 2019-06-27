@@ -1,9 +1,9 @@
-+++
-title = "Using Org-mode and Babel with Hugo"
-author = ["Carl Colglazier"]
-date = 2017-04-25T10:34:58-04:00
-draft = false
-+++
+---
+title: "Using Org-mode and Babel with Hugo"
+author: ["Carl Colglazier"]
+date: 2017-04-25
+draft: false
+---
 
 I have been a consistent user of Org-mode for a couple of years. I
 like it for a few reasons. It is very versatile; I can use it for

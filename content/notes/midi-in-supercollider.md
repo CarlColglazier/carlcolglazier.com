@@ -1,29 +1,27 @@
 ---
 title: "Making Connections: MIDI in SuperCollider"
-date: 2017-09-19T19:45:49-04:00
-aliases:
-  - /notes/acoustics/midi-in-supercollider/
+author: ["Carl Colglazier"]
+date: 2017-09-19
+aliases: ["acoustics/midi-in-supercollider"]
+draft: false
 ---
 
-The [previous post](/notes/acoustics/starting-supercollider/)
-demonstrated the process of setting up SuperCollider and generating a
-tone. In this next post, I will be explaining how to set up MIDI input
-in SuperCollider.
+The [previous post](/notes/acoustics/starting-supercollider/) demonstrated the process of setting up SuperCollider
+and generating a tone. In this next post, I will be explaining how to
+set up MIDI input in SuperCollider.
 
-[MIDI](https://en.wikipedia.org/wiki/MIDI) is a standard protocol that
-dates back to the early 1980s. It supports up to sixteen channels and
-can be used to communicate pitch, velocity, and other information
-important for the operation of musical instruments. In the long term,
-I would like to be able to choose different timbres by mapping them
-to different MIDI channels. I would also like to be able to change parameters
-using
-[control change messages](https://www.midi.org/specifications/item/table-3-control-change-messages-data-bytes-2).
+[MIDI](https://en.wikipedia.org/wiki/MIDI) is a standard protocol that dates back to the early 1980s. It
+supports up to sixteen channels and can be used to communicate pitch,
+velocity, and other information important for the operation of musical
+instruments. In the long term, I would like to be able to choose
+different timbres by mapping them to different MIDI channels. I would
+also like to be able to change parameters using [control change
+messages](https://www.midi.org/specifications/item/table-3-control-change-messages-data-bytes-2).
 
-First, however, I needed to set up SuperCollider to accept MIDI
-input.
+First, however, I needed to set up SuperCollider to accept MIDI input.
 
-Enabling MIDI in SuperCollider
-------------------------------
+
+## Enabling MIDI in SuperCollider {#enabling-midi-in-supercollider}
 
 Start the SuperCollider server if it is not already running.
 
@@ -34,7 +32,7 @@ s.boot;
 From the Catia patchbay, it is clear that the SuperCollider instance
 does not currently accept MIDI input.
 
-![](/images/jack-cadence.jpg)
+\![](/images/jack-cadence.jpg)
 
 We can change this by running
 
@@ -45,15 +43,14 @@ MIDIIn.connectAll;
 
 On my system, this created three MIDI input ports and one output port.
 
-![](/images/jack-cadence-sc-midi.jpg)
+\![](/images/jack-cadence-sc-midi.jpg)
 
-In this case, I was only interested in controlling the server
-from one source, so I only needed one MIDI input. The
-[documentation](http://doc.sccode.org/Classes/MIDIClient.html)
-for `MIDIClient` shows by default running `MIDIClient.init`
-"opens as many inports as there are MIDI sources". To only have
-one inport, I reset the `MIDIClient` and reinitialized it with
-the correct number of ports specified.
+In this case, I was only interested in controlling the server from one
+source, so I only needed one MIDI input. The [documentation](http://doc.sccode.org/Classes/MIDIClient.html) for
+`MIDIClient` shows by default running `MIDIClient.init` "opens as many
+inports as there are MIDI sources". To only have one inport, I reset
+the `MIDIClient` and reinitialized it with the correct number of ports
+specified.
 
 ```sc
 MIDIClient.disposeClient;
@@ -62,13 +59,12 @@ MIDIClient.init(1, 1);
 
 Now I had one input port and one output port.
 
-Getting input
--------------
 
-[`MIDIdef.noteOn`](http://doc.sccode.org/Classes/MIDIdef.htm) allows us to
-run a function whenever a note is pressed. To test this out, I created a
-simple function that prints the associated MIDI information whenever a
-key is pressed.
+## Getting input {#getting-input}
+
+[`MIDIdef.noteOn`](http://doc.sccode.org/Classes/MIDIdef.htm) allows us to run a function whenever a note is
+pressed. To test this out, I created a simple function that prints the
+associated MIDI information whenever a key is pressed.
 
 ```sc
 MIDIdef.noteOn(\print, {arg val, num, chan, src; [src,chan, num, val].postln});
@@ -79,7 +75,7 @@ roll.  I then configured the DAW to export any MIDI playback on that
 track to the program's output. Connecting the DAW's output to
 SuperCollider's printed gave the following information:
 
-```
+```nil
 [ 8454144, 0, 60, 127 ]
 [ 8454144, 0, 63, 127 ]
 [ 8454144, 0, 67, 127 ]
@@ -88,17 +84,17 @@ SuperCollider's printed gave the following information:
 [ 8454144, 0, 72, 59 ]
 ```
 
-This indicates that the source is identified by the integer 8454144 and that the
-MIDI notes were sent on the first channel (they are indexed starting with zero). 
-The third number in the arrays represent [notes](http://computermusicresource.com/midikeys.html)
-and the last number represents the velocity of the note (ranging from zero to
-127).
+This indicates that the source is identified by the integer 8454144
+and that the MIDI notes were sent on the first channel (they are
+indexed starting with zero).  The third number in the arrays represent
+[notes](http://computermusicresource.com/midikeys.html) and the last number represents the velocity of the note (ranging
+from zero to 127).
 
 We can filter the notes such that the function is only called for a
 certain source or channel:
 
 ```sc
-MIDIdef.noteOn(\test4, {arg val, num, chan, src; 
+MIDIdef.noteOn(\test4, {arg val, num, chan, src;
     [src,chan, num, val].postln;
 }, chan: 1);
 ```
@@ -106,7 +102,7 @@ MIDIdef.noteOn(\test4, {arg val, num, chan, src;
 Down the road, this will give us the ability to set up multiple instruments
 that can be selected using the MIDI channel.
 
-- - -
+---
 
 In this post, we have opened up SuperCollider to be able to interact
 with other programs and hardware using the MIDI standard.  In the next

@@ -1,5 +1,5 @@
 ---
-title: "Global Oopen Simulator (GOS)"
+title: "Global Open Simulator (GOS)"
 author: ["Carl Colglazier"]
 draft: false
 subtitle: "A parallel agent-based platform for global social modeling."
