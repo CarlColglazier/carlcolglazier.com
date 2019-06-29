@@ -6,8 +6,9 @@
   {{ if eq .Section "notes" }}
     <p>
     {{ if .IsPage }}
-	<time datetime="{{ .Date }}" class="dt-published">{{ .Date.Format "January 2, 2006" }}</time>
-	{{ end }}
+      <time datetime="{{ .Date }}" class="dt-published">{{ .Date.Format "January 2, 2006" }}</time>.
+      <a href="{{.Page.Permalink}}" class="u-url"><small>[Permalink]</small></a>
+    {{ end }}
     </p>
     {{ end }}
 </header>
