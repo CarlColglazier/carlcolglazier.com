@@ -4,14 +4,6 @@ author: ["Carl Colglazier"]
 draft: false
 ---
 
-Rooted in my dual education in computer science and
-communication, I **make meaningful information
-accessible** with new media, social computing, and
-computational social science. My media background is
-rooted in documentary filmmaking and this perspective
-continues to influence my approach to research and
-writing.
-
 At North Carolina State University in Raleigh, I am a senior studying
 computer science and communication (media). I graduate December 2019.
 

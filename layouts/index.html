@@ -9,22 +9,10 @@
 {{ define "main" }}
 <article class="content">
     {{ partial "title.html" . }}
+    {{ partial "bio.html" . }}
     <div class="grid">
 	<div class="grid1">
 	    {{.Content}}
-	</div>
-	<div class="grid2">
-	    <div class="vcard">
-		<img class="photo" src="/images/portrait.jpg" alt="A portrait of Carl Colglazier" />
-		<div class="fn">Carl Colglazier</div>
-		<ul>
-		    <li><a class="u-url u-uid" href="https://carlcolglazier.com">Website</a></li>
-		    <li class="email"><a href="mailto:carl@carlcolglazier.com">carl@carlcolgazier.com</a></li>
-		    <li class="twitter" rel="me"><a href="https://twitter.com/carlcolglazier">Twitter</a></li>
-		    <li class="youtube" rel="me"><a href="https://youtube.com/carlcolglazier">YouTube</a></li>
-		    <li class="github" rel="me"><a href="https://github.com/carlcolglazier">GitHub</a></li>
-		</ul>
-	    </div>
 	</div>
 	<div>
 	    <h2>Latest Notes</h2>

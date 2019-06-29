@@ -8,6 +8,8 @@
   <div class="entry e-content">
     {{.Content}}
   </div>
+  <hr />
+  {{ partial "bio.html" . }}
   <div id="comments"></div>
   <script>
    var permalink = "{{ .Page.Permalink }}"
