@@ -6,8 +6,11 @@
   {{ if eq .Section "notes" }}
     <p>
     {{ if .IsPage }}
-      <time datetime="{{ .Date }}" class="dt-published">{{ .Date.Format "January 2, 2006" }}</time>.
+    <small>	
+      Published <time datetime="{{ .Date }}" class="dt-published">{{ .Date.Format "January 2, 2006" }}</time>
+      by <a rel="author" class="p-author h-card" href="https://carlcolglazier.com/">Carl Colglazier</a>.
       <a href="{{.Page.Permalink}}" class="u-url"><small>[Permalink]</small></a>
+    </small>
     {{ end }}
     </p>
     {{ end }}
