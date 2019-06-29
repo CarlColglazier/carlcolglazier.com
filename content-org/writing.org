@@ -10,13 +10,6 @@
 :EXPORT_FILE_NAME: _index
 :EXPORT_TITLE: This is my website.
 :END:
-Rooted in my dual education in computer science and
-communication, I *make meaningful information
-accessible* with new media, social computing, and
-computational social science. My media background is
-rooted in documentary filmmaking and this perspective
-continues to influence my approach to research and
-writing.
 
 At North Carolina State University in Raleigh, I am a senior studying
 computer science and communication (media). I graduate December 2019.
@@ -1401,8 +1394,7 @@ does not directly support LV2 and LADSPA plugins).
 :EXPORT_FILE_NAME: midi-channels-multiple-instruments-supercollider
 :EXPORT_HUGO_ALIASES: acoustics/midi-channels-multiple-instruments-supercollider
 :END:
-Being able to [control a polyphonic instrument in
-MIDI](/notes/acoustics/midi-instrument-control-supercollider/) is
+Being able to [[/notes/midi-instrument-control-supercollider/][control a polyphonic instrument in MIDI]] is
 good, but being able to control multiple instruments is even
 better. SuperCollider offers a lot of flexibility when it comes to
 timbre. For my personal workflow, I like to try out a lot of different
@@ -1483,16 +1475,13 @@ different timbers (accompanied with some mandolin):
 
 ---
 
-The [past](/notes/acoustics/starting-supercollider/)
-[few](/notes/acoustics/midi-in-supercollider/)
-[posts](/notes/acoustics/midi-instrument-control-supercollider/) have
-worked through some building blocks for using SuperCollider as a
-platform for creativity. As I wrote in [[/notes/acoustics/paradox-of-creativity/]["The Paradox of Creativity"]], I
-find the creative process to be best when applied to areas that are
-challenging. I believe it is for this reason that I find SuperCollider
-to be such an interesting platform: it provides the pieces for
-expansive sonic possibilities, but it takes a bit of effort and
-curiosity to make the most of it.
+The [[/notes/starting-supercollider/][past]] [[/notes/midi-in-supercollider/][few]] [[/notes/midi-instrument-control-supercollider/][posts]] have worked through some building blocks for using
+SuperCollider as a platform for creativity. As I wrote in [[/notes/acoustics/paradox-of-creativity/]["The Paradox
+of Creativity"]], I find the creative process to be best when applied to
+areas that are challenging. I believe it is for this reason that I
+find SuperCollider to be such an interesting platform: it provides the
+pieces for expansive sonic possibilities, but it takes a bit of effort
+and curiosity to make the most of it.
 ** Controlling Synths with MIDI in SuperCollider
 :PROPERTIES:
 :FILE_NAME: midi-instrument-control-supercollider
@@ -1505,7 +1494,7 @@ am going to use these connections to manipulate instruments.
 
 *** Controlling the tone with MIDI
 
-In my [notes on setting up SuperCollider](/notes/acoustics/starting-supercollider/),
+In my [[/notes/starting-supercollider/][notes on setting up SuperCollider]],
 I created a function that generated a simple tone.
 
 #+BEGIN_SRC sc
@@ -2351,55 +2340,25 @@ look like.
 :EXPORT_HUGO_SECTION: /
 :EXPORT_FILE_NAME: research
 :END:
-An automatic list of my publications can be found on [Google
-Scholar][gscholar].
+An automatic list of my publications can be found on [[https://scholar.google.com/citations?hl=en&user=18JgozoAAAAJ&view_op=list_works&sortby=pubdate][Google Scholar]].
 
 ** Conference Papers.
 
-["Parallel Python for Agent-Based Modeling at a Global
-Scale."](https://dl.acm.org/citation.cfm?id=3145588)
-: Nicole Blandin, **Carl Colglazier**, John O'Hare, and Paul Brenner.
-In *Proceedings of the 2017 International Conference of The
-Computational Social Science Society of the Americas*,
-p. 10. ACM, 2017.
+- [[https://dl.acm.org/citation.cfm?id=3145588]["Parallel Python for Agent-Based Modeling at a Global Scale."]] :: Nicole Blandin, *Carl Colglazier*, John O'Hare, and Paul Brenner. In /Proceedings of the 2017 International Conference of The Computational Social Science Society of the Americas/, p. 10. ACM, 2017.
 
 
 ** Posters
 
-["Advanced Tools for Computational Social Science"][css2018-poster].
-:  **Carl Colglazier** and Paul Brenner.
-  2018 Summer Undergraduate Research Symposium, University of Notre
-  Dame.
+- [[https://crc.nd.edu/images/docs/reu/2018/posters/Poster---Carl-Colglazier.png]["Advanced Tools for Computational Social Science"]]. :: *Carl Colglazier* and Paul Brenner. 2018 Summer Undergraduate Research Symposium, University of Notre Dame.
 
-["Parallel Python for Global Social Simulations"][css2017-poster].
-:  **Carl Colglazier** and Paul Brenner.
-  2017 Summer Undergraduate Research Symposium, University of Notre
-  Dame.
+- [[https://crc.nd.edu/images/docs/reu/2017/posters/Final-Final-Poster---Carl-Colglazier.png]["Parallel Python for Global Social Simulations"]] :: *Carl Colglazier* and Paul Brenner. 2017 Summer Undergraduate Research Symposium, University of Notre Dame.
 
 ** Conferences I've attended.
 
-+ [IC2S2 2018][ic2s22018]
-+ [CHI 2018][chi2018]
++ [[https://www.kellogg.northwestern.edu/news-events/conference/ic2s2/2018.aspx][IC2S2 2018]]
++ [[https://chi2018.acm.org/][CHI 2018]]
 
-[gscholar]:
-https://scholar.google.com/citations?hl=en&user=18JgozoAAAAJ&view_op=list_works&sortby=pubdate
-"Carl Colglazier - Google Scholar Citations"
-
-[css2017-poster]:
-https://crc.nd.edu/images/docs/reu/2017/posters/Final-Final-Poster---Carl-Colglazier.png
-"Parallel Python for Global Social Simulations"
-
-[css2018-poster]:
-https://crc.nd.edu/images/docs/reu/2018/posters/Poster---Carl-Colglazier.png
-"Advanced Tools for Computational Social Science"
-
-[chi2018]: https://chi2018.acm.org/ "CHI 2018 &#8211; Engage with CHI
-&#8211; Montréal, Canada • April 21-26"
-
-[ic2s22018]:
-https://www.kellogg.northwestern.edu/news-events/conference/ic2s2/2018.aspx
-"2018 International Conference on Computational Social Science"
-* Media
+* Films
 :PROPERTIES:
 :EXPORT_HUGO_SECTION: /
 :EXPORT_FILE_NAME: media
@@ -2442,3 +2401,29 @@ film, music, and writing.
 
 [fn:cary]: Paul Green Multimedia Award recipient (North Carolina Society
 of Historians)
+* Music
+:PROPERTIES:
+:EXPORT_HUGO_SECTION: music
+:END:
+** Index
+:PROPERTIES:
+:EXPORT_FILE_NAME: _index
+:EXPORT_TITLE: Music
+:END:
+** 2019 Demos and Sketches
+:PROPERTIES:
+:EXPORT_FILE_NAME: 2019-demos
+:END:
+{{< bandcamp album 3260714489 >}}
+** 2018 Demos
+:PROPERTIES:
+:EXPORT_FILE_NAME: 2018-demos
+:END:
+{{< bandcamp album 214025832 >}}
+** Seven Summer Demos
+:PROPERTIES:
+:EXPORT_FILE_NAME: 2017-demos
+:END:
+
+{{< bandcamp album 956992833 >}}
+

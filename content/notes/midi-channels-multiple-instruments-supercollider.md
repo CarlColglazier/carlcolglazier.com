@@ -5,8 +5,7 @@ aliases: ["acoustics/midi-channels-multiple-instruments-supercollider"]
 draft: false
 ---
 
-Being able to [control a polyphonic instrument in
-MIDI](_notes/acoustics/midi-instrument-control-supercollider_) is
+Being able to [control a polyphonic instrument in MIDI](/notes/midi-instrument-control-supercollider/) is
 good, but being able to control multiple instruments is even
 better. SuperCollider offers a lot of flexibility when it comes to
 timbre. For my personal workflow, I like to try out a lot of different
@@ -95,13 +94,10 @@ different timbers (accompanied with some mandolin):
 
 ---
 
-The [past](_notes/acoustics/starting-supercollider_)
-[few](_notes/acoustics/midi-in-supercollider_)
-[posts](_notes/acoustics/midi-instrument-control-supercollider_) have
-worked through some building blocks for using SuperCollider as a
-platform for creativity. As I wrote in ["The Paradox of Creativity"](/notes/acoustics/paradox-of-creativity/), I
-find the creative process to be best when applied to areas that are
-challenging. I believe it is for this reason that I find SuperCollider
-to be such an interesting platform: it provides the pieces for
-expansive sonic possibilities, but it takes a bit of effort and
-curiosity to make the most of it.
+The [past](/notes/starting-supercollider/) [few](/notes/midi-in-supercollider/) [posts](/notes/midi-instrument-control-supercollider/) have worked through some building blocks for using
+SuperCollider as a platform for creativity. As I wrote in ["The Paradox
+of Creativity"](/notes/acoustics/paradox-of-creativity/), I find the creative process to be best when applied to
+areas that are challenging. I believe it is for this reason that I
+find SuperCollider to be such an interesting platform: it provides the
+pieces for expansive sonic possibilities, but it takes a bit of effort
+and curiosity to make the most of it.
