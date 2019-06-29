@@ -28,11 +28,11 @@ post online? Who is my audience and what do they (and I) want?
 If there is one thing I've learned about myself, it is that I can be
 highly motivated by boredom. I'm happiest with my mind engaged on
 solving some problem---even one of my own creation. So that's kind of
-what I plan to do, at least for the time being. I think there's a hugo
-pressure in many online spaces to reduce yourself to a brand.
+what I plan to do, at least for the time being. I think there's a
+hugo pressure in many online spaces to reduce yourself to a brand.
 YouTube, for instance, [suggests channels discover and stick to a
-specific niche](https://creatoracademy.youtube.com/page/lesson/niche). Fair advice if you are trying to grow on the platform,
-but this approach may not be best for everyone.
+specific niche](https://creatoracademy.youtube.com/page/lesson/niche). Fair advice if you are trying to grow on the
+platform, but this approach may not be best for everyone.
 
 In my head, my niche is very broad: media. It's what I study and my
 primary personal interest as well. A lot of things fit in that label:
