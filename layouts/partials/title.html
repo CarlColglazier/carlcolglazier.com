@@ -1,12 +1,12 @@
 <header>
-  <h1 id="title">{{ .Title }}</h1>
+  <h1 id="title e-content p-name">{{ .Title }}</h1>
   {{ if isset .Params "subtitle" }}
     <p><em>{{ index .Params "subtitle" }}</em></p>
   {{ end }}
   {{ if eq .Section "notes" }}
     <p>
     {{ if .IsPage }}
-	<time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time>
+	<time datetime="{{ .Date }}" class="td-published">{{ .Date.Format "January 2, 2006" }}</time>
 	{{ end }}
     </p>
     {{ end }}
