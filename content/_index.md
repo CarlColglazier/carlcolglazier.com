@@ -1,5 +1,5 @@
 ---
-title: "Carl Colglazier"
+title: "This is my website."
 author: ["Carl Colglazier"]
 draft: false
 ---
@@ -22,10 +22,3 @@ This summer, I am working as a Full Stack Developer Intern at IBM.
 I have also worked as an undergraduate research assistant at the
 Center for Research Computing at the University of Notre Dame
 and at the Department of History at NC State.
-
-Want to contact me? Just send an message to carl\`@\`{this website}.
-I am also very active on [Twitter](<https://twitter.com/carlcolglazier>).
-
-[caldwell]:  "NC State Alumni Association - Caldwell Fellows"
-
-[bfs]: <https://ids.chass.ncsu.edu/dual/franklin.php> "Benjamin Franklin Scholars FAQ - Interdisciplinary Studies - NC State"

@@ -1,3 +1,11 @@
+{{ define "meta" }}
+<!-- Meta data -->
+<link rel="me" href="https://twitter.com/carlcolglazier" />
+<link rel="me" href="https://github.com/carlcolglazier" />
+<link rel="profile" href="http://microformats.org/profile/hcard">
+{{ end }}
+
+
 {{ define "main" }}
 <article class="content">
     {{ partial "title.html" . }}
@@ -6,6 +14,21 @@
 	    {{.Content}}
 	</div>
 	<div class="grid2">
+	    <div class="vcard">
+		<img class="photo" src="/images/portrait.jpg" alt="A portrait of Carl Colglazier" />
+		<dl class="fn">
+		    <dt>
+			<span class="given-name">Carl</span>
+			<span class="family-name">Colglazier</span>
+		    </dt>
+		    <dd class="email"><a href="mailto:carl@carlcolglazier.com">carl@carlcolgazier.com</a></dd>
+		    <dd class="twitter"><a href="https://twitter.com/carlcolglazier">Twitter</a></dd>
+		    <dd class="youtube"><a href="https://youtube.com/carlcolglazier">YouTube</a></dd>
+		    <dd class="github"><a href="https://github.com/carlcolglazier">GitHub</a></dd>
+		</dl>
+	    </div>
+	</div>
+	<div>
 	    <h2>Latest Notes</h2>
 	    {{ $paginator := .Paginate (where .Data.Pages "Section" "notes") }}
 	    {{ range first 4 $paginator.Pages }}
