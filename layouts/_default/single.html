@@ -8,5 +8,16 @@
   <div class="entry e-content">
     {{.Content}}
   </div>
+  <div id="comments">
+  </div>
+  <script>
+   var permalink = "{{ .Page.Permalink }}"
+   fetch('https://webmention.io/api/links.jf2?target=' + permalink)
+       .then((response) => {
+	   return response.json();
+       }).then((json) => {
+	   console.log(json.children.length);
+       });
+  </script>
 </article>
 {{ end }}
