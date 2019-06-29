@@ -1,5 +1,5 @@
 <header>
-  <h1 id="title e-content p-name">{{ .Title }}</h1>
+  <h1 id="title" class="e-content p-name">{{ .Title }}</h1>
   {{ if isset .Params "subtitle" }}
     <p><em>{{ index .Params "subtitle" }}</em></p>
   {{ end }}
