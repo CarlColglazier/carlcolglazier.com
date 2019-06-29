@@ -12,6 +12,7 @@
   </div>
   <script>
    var permalink = "{{ .Page.Permalink }}"
+   console.log('https://webmention.io/api/links.jf2?target=' + permalink);
    fetch('https://webmention.io/api/links.jf2?target=' + permalink)
        .then((response) => {
 	   return response.json();

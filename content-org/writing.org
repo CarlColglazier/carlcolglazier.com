@@ -1438,7 +1438,7 @@ I considered these sounds to be a good starting point for emulating
 many classic keyboard instruments.
 *** Switching instruments
 To allow these different timbres to be selected, I made a few changes
-to the function defined in the [previous post](/notes/acoustics/midi-instrument-control-supercollider/). First, I created a second array with sixteen elements to hold
+to the function defined in the [[https://carlcolglazier.com/notes/starting-supercollider/][previous post]]. First, I created a second array with sixteen elements to hold
 the names of the different `SynthDef`s.
 
 #+BEGIN_SRC sc

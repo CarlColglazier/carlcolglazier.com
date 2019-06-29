@@ -48,7 +48,7 @@ many classic keyboard instruments.
 ## Switching instruments {#switching-instruments}
 
 To allow these different timbres to be selected, I made a few changes
-to the function defined in the [previous post](_notes/acoustics/midi-instrument-control-supercollider_). First, I created a second array with sixteen elements to hold
+to the function defined in the [previous post](https://carlcolglazier.com/notes/starting-supercollider/). First, I created a second array with sixteen elements to hold
 the names of the different \`SynthDef\`s.
 
 ```sc
