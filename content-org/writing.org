@@ -30,6 +30,23 @@ and at the Department of History at NC State.
 :EXPORT_FILE_NAME: _index
 :END:
 This page is for notes.
+** YouTube Subscriptions are Broken, but RSS Still Works
+:PROPERTIES:
+:EXPORT_FILE_NAME: youtube-subscriptions-rss
+:EXPORT_DATE: 2019-06-30
+:END:
+At one point, subscriptions used to be the primary UX point on YouTube. If you got subscribers, you were guaranteed some eyeballs.
+
+This is no longer the case. YouTube now emphasizes its algorithm-based homepage; the subscription page is tucked away behind an extra click that gets far less use. Even worse, a subscription is no longer a guarantee because the feature is constantly broken.
+
+But did you know that you can integrate YouTube into your RSS reader? Here's how: 
+1. Navigate to [[https://www.youtube.com/subscription_manager][the YouTube subscription manager]].
+2. Scroll down to the bottom of the page.
+3. Click "Export subscriptions".
+
+This will give you a file that you can import to your RSS reader of choice.
+
+Why do this? The advantage of RSS is you get a nice, linear list of the feeds you care about all in one place. Personally I think this is quite a nice, quiet way to browse the web and it's how I plan to keep up with YouTube channels at the moment.
 ** This Website Supports Webmentions
 :PROPERTIES:
 :EXPORT_FILE_NAME: support-webmentions
