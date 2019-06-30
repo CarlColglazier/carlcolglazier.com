@@ -10,7 +10,14 @@
   </div>
   <hr />
   {{ partial "bio.html" . }}
-  <div id="comments"></div>
+  <div id="comments">
+      <h3>Mentions</h3>
+      <form action="https://webmention.io/carlcolglazier.com/webmention" method="POST">
+	  <input class="url" type="url" name="source" />
+	  <input class="url" type="url" name="target" value="{{.Page.Permalink}}" style="display: none;" />
+	  <input class="submit button" type="submit" value="Submit Webmention" />
+      </form>
+  </div>
   <script>
    var permalink = "{{ .Page.Permalink }}"
    fetch('https://webmention.io/api/links.jf2?target=' + permalink)
@@ -20,8 +27,6 @@
 	   if (json.children.length > 0) {
 	       console.log(json.children);
 	       var list = document.createElement("ul");
-	       var mentions = document.createElement("h3");
-	       mentions.textContent = "Mentions";
 	       for (const i in json.children) {
 		   var child = json.children[i];
 		   console.log(child);
@@ -33,7 +38,6 @@
 		   list.appendChild(element);
 	       }
 	       var commentsNode = document.getElementById("comments");
-	       commentsNode.appendChild(mentions);
 	       commentsNode.appendChild(list);
 	   };
        });
