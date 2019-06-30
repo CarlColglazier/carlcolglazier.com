@@ -6,7 +6,7 @@ aliases: ["acoustics/midi-in-supercollider"]
 draft: false
 ---
 
-The [previous post](/notes/acoustics/starting-supercollider/) demonstrated the process of setting up SuperCollider
+The [previous post](/notes/starting-supercollider/) demonstrated the process of setting up SuperCollider
 and generating a tone. In this next post, I will be explaining how to
 set up MIDI input in SuperCollider.
 
