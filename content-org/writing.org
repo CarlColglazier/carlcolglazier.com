@@ -1635,7 +1635,7 @@ selected using one of the sixteen MIDI channels.
 :EXPORT_DATE: 2017-09-19
 :EXPORT_HUGO_ALIASES: acoustics/midi-in-supercollider
 :END:
-The [[/notes/starting-supercollider/][previous post]] demonstrated the process of setting up SuperCollider
+The [[https://carlcolglazier.com/notes/starting-supercollider/][previous post]] demonstrated the process of setting up SuperCollider
 and generating a tone. In this next post, I will be explaining how to
 set up MIDI input in SuperCollider.
 
