@@ -36,12 +36,12 @@ time {
     padding: 0;
 }
 
-.main navigation li {
+.main navigation li, label.toggle {
     line-height: 2.5rem;
     border-bottom: 2px solid #444;
 }
 
-.main navigation a {
+.main navigation a, label.toggle {
     padding-left: 1rem;
     color: #444;
     text-decoration: none;
@@ -49,7 +49,7 @@ time {
     display: block;
 }
 
-.main navigation a:hover {
+.main navigation a:hover, label.toggle  {
     background-color: #444;
     color: #FFF;
 }
@@ -163,6 +163,8 @@ table td {
     visibility: hidden;
 }
 
+
+
 @media only screen and (max-width: 640px) {
     .name-title {
 	display: none;
@@ -186,6 +188,10 @@ table td {
     .grid2 {
 	width: 20rem;
     }
+
+    label.toggle, #drop {
+	display: none;
+    }
 }
 @media only screen and (max-width: 70rem) {
     .main navigation {
@@ -207,5 +213,22 @@ table td {
 
     .main navigation {
 	margin: 0;
+    }
+
+    [id^=drop] {
+	display: none;
+    }
+
+    .toggle + a,
+    .menu {
+	display: none;
+    }
+
+    [id^=drop]:checked + ul {
+	display: block;
+    }
+
+    label.toggle {
+	text-align: center;
     }
 }

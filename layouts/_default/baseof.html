@@ -45,7 +45,9 @@
   <body>
     <div class="main">
       <navigation>
-        <ul>
+        <label for="drop" class="toggle">Carl Colglazier [Menu]</label>
+        <input type="checkbox" id="drop" />
+        <ul class="menu">
           {{ range .Site.Menus.main }}<li><a href="{{ .URL }}">{{ .Name }}</a></li>{{ end }}
         </ul>
       </navigation>
