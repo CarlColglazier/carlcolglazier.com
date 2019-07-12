@@ -93,7 +93,7 @@ time {
 }
 
 .entry p, dl, ul, li, dd {
-    max-width: 35rem;
+    max-width: 30rem;
 }
 
 .footnotes p, dl, ul, li {
