@@ -3,22 +3,28 @@ html {
 }
 
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Amiri', serif;
     font-weight: normal;
-    line-height: 1.75;
+    line-height: 1.7;
     color: #111;
     background-color: #EEE;
     margin: 0;
 }
 
+h1, h2, h3, h4, h5, h6, navigation {
+		font-family: 'Lato', serif;
+}
+
 h1 {
     font-weight: 100;
     font-size: 3.5rem;
+		font-variant-caps: all-small-caps;
 }
 
 h2, h3, h4, h5, h6 {
     font-weight: 800;
     padding: 0;
+		font-variant: small-caps;
 }
 
 time {
@@ -51,6 +57,7 @@ time {
     text-decoration: none;
     border-bottom: none;
     display: block;
+		background: none;
 }
 
 .main navigation a:hover, label.toggle  {
@@ -103,8 +110,12 @@ time {
 
 a {
     color: inherit;
-    border-bottom: 3px solid;
-    text-decoration: none;
+		text-decoration: none;
+		--color: #111111;
+		background-image: linear-gradient(var(--color) 0%, var(--color) 100%);
+    background-repeat: repeat-x;
+		background-position: 0 1.2rem;
+    background-size: 2px 2px;
 }
 
 p {
