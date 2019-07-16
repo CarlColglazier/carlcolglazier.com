@@ -38,6 +38,8 @@ This page is for notes.
 :END:
 
 This is a Pisound. It's a digital audio device that plugs into a Raspberry Pi. You can purchase one from [[https://blokas.io/][Blokas]].
+
+Blokas has developed a number of packages for the Pisound that are both worth a look. The first I tried was their Linux flavor designed specifically for their hardware. It works great and is easy to install, but I did find it a little sluggish. I also tried MODEP, a MOD clone that really packs some great features. It comes with over two-hundred built-in effects pedals!
 ** YouTube Subscriptions are Broken, but RSS Still Works
 :PROPERTIES:
 :EXPORT_FILE_NAME: youtube-subscriptions-rss
