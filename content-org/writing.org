@@ -38,6 +38,12 @@ This page is for notes.
 :END:
 
 This is a Pisound. It's a digital audio device that plugs into a Raspberry Pi. You can purchase one from [[https://blokas.io/][Blokas]].
+** A Desk Tour (of sorts)
+	 :PROPERTIES:
+   :EXPORT_FILE_NAME: 2019-desk-tour
+	 :EXPORT_DATE: 2019-07-15
+   :END:
+   #+html: {{< youtube id="F3j0_X9M5es" >}}
 ** YouTube Subscriptions are Broken, but RSS Still Works
 :PROPERTIES:
 :EXPORT_FILE_NAME: youtube-subscriptions-rss
