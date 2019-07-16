@@ -46,6 +46,16 @@ Blokas has developed a number of packages for the Pisound that are both worth a 
 	 :EXPORT_DATE: 2019-07-15
    :END:
    #+html: {{< youtube id="F3j0_X9M5es" >}}
+
+	 /The transcript for this video is reproduced below./
+
+	 Even from a very quick glance of my room, one thing that stands out is the amount of wires I have. Everywhere. Wires are how I connect different devices and pieces of equipment to each other to make up not just individual instruments or keyboards or speakers, but a fully formed studio. They communicate through these wires. They are able to build on top of each other's capabilities to create a whole system that is better than any of its individual components.
+
+	 I filmed that entire intro about a month ago and now I'm just getting around to filming the rest of it, so pretty much everything here is moved, but that's fine. This is kind of like a desk tour but instead of just talking about stuff and equipment, I thought I would reflect a little bit about the way I've organized things and my intentions behind my process.
+
+	 Almost all my software run on my laptop, which operates on Arch Linux. It's not a perfect setup. I might have spent a good day working on this video just trying to get the audio config to work and also transitions to and from the dock could be smoother. But it isn't enough of a pain point yet for me to change anything. In the end, my main goal is to have the workflow disappear completely into the work. What does this mean in practice? Well generally, things getting out of the way. Writing tends to be my main blocker. It takes so much of my focus, so much creative energy and thus I want to reduce those things that get in the way of my main goal: words on the page. Open the file, close pretty much everything else. I use an Emacs feature called Org-mode because it works in so many contexts: webpages, papers, code sketches. If you use Emacs, I highly recommend it.
+
+	 So yeah, this is just a quick little update. I've been working a few projects. You can read a little bit about some of them on my website (link in the description) and I'll be coming back with another video sometime soon. Thanks for watching.
 ** YouTube Subscriptions are Broken, but RSS Still Works
 :PROPERTIES:
 :EXPORT_FILE_NAME: youtube-subscriptions-rss
