@@ -31,15 +31,14 @@ and at the Department of History at NC State.
 :EXPORT_FILE_NAME: _index
 :END:
 This page is for notes.
-** TODO Things I Tried When I Got a Pisound
+** Pisound + MODEP: An Oopen Multi-effects Pedal
 :PROPERTIES:
-:EXPORT_FILE_NAME: pisound-experiments
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :image "pisound.jpg"
+:EXPORT_DATE: 2019-07-29
+:EXPORT_FILE_NAME: pisound-blokas-modep
+
 :END:
 
-This is a Pisound. It's a digital audio device that plugs into a Raspberry Pi. You can purchase one from [[https://blokas.io/][Blokas]].
-
-Blokas has developed a number of packages for the Pisound that are both worth a look. The first I tried was their Linux flavor designed specifically for their hardware. It works great and is easy to install, but I did find it a little sluggish. I also tried MODEP, a MOD clone that really packs some great features. It comes with over two-hundred built-in effects pedals!
+#+html: {{< youtube id="TpycpqVJw-E" >}}
 ** A Desk Tour (of sorts)
 	 :PROPERTIES:
    :EXPORT_FILE_NAME: 2019-desk-tour
