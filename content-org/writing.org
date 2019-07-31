@@ -39,6 +39,14 @@ This page is for notes.
 :END:
 
 #+html: {{< youtube id="TpycpqVJw-E" >}}
+
+/Transcript reproduced below/.
+
+I love computers, but that doesn't necessarily mean I want to spend all my time using one. Especially when I'm writing music, I often just want to focus on one instrument, one sound and naturally to fix that problem...I got another computer.
+
+The Pisound is a hat for the Raspberry Pi from a Lithuanian company called Blokas. And for those who aren't aware what a Raspberry Pi is, it's a really neat, small computer that's very inexpensive and what the Pisound does is you add it on top of the Pi and it provides a digital analogue converter that supports 1/4 inch and it also supports MIDI.
+
+Here's a look at how I have my Pisound set up. It connects to the wall using a standard Micro UBS port and everything on the hat is powered using the GPIO ports on the Raspberry Pi. It accepts standard 1/4 inch inputs and outputs and it has such a wide range on the gain that you can use it on pretty much any type of speaker, instrument, or synthesizer. There are a number of environments that you can run on the Pisound. The one that I have loaded is called MODEP. That stands for "MOD DUO Emulator for Raspberry Pi". It's essentially an environment that lets you load from a selection of almost three hundred different Linux audio plugins. It serves the whole interface up through a web server over WiFi. You can connect with your external devices and it will present a skeuomorphic (that's way too many syllables) that looks like guitar pedals. There's another interface you can access through the Pisound app that lets you switch between pedalboards that you've saved and you can also toggle between them by pressing the one button on top.
 ** A Desk Tour (of sorts)
 	 :PROPERTIES:
    :EXPORT_FILE_NAME: 2019-desk-tour
