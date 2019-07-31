@@ -31,11 +31,10 @@ and at the Department of History at NC State.
 :EXPORT_FILE_NAME: _index
 :END:
 This page is for notes.
-** Pisound + MODEP: An Oopen Multi-effects Pedal
+** Pisound + MODEP: An Open Multi-effects Pedal
 :PROPERTIES:
 :EXPORT_DATE: 2019-07-29
 :EXPORT_FILE_NAME: pisound-blokas-modep
-
 :END:
 
 #+html: {{< youtube id="TpycpqVJw-E" >}}
