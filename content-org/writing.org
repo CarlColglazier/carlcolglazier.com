@@ -22,6 +22,9 @@ This summer, I am working as a Full Stack Developer Intern at IBM.
 I have also worked as an undergraduate research assistant at the
 Center for Research Computing at the University of Notre Dame
 and at the Department of History at NC State.
+
+You may also be interested in my catalogue of [[/code][code projects]], [[/media][films]] and [[/music][music]]
+(that I've made). I also vlog regularly on [[https://youtube.com/carlcolglazier][YouTube]].
 * Notes Section
 :PROPERTIES:
 :EXPORT_HUGO_SECTION: notes
@@ -2354,90 +2357,17 @@ calling a musician from the 1980's a "cassetter" or an author of the
 :PROPERTIES:
 :EXPORT_HUGO_SECTION: code
 :END:
-** Code
+** Code Projects
 :PROPERTIES:
 :EXPORT_FILE_NAME: _index
 :END:
-[[/files/resume.pdf][My resume]].
-** Cheesecake
-  :PROPERTIES:
-  :EXPORT_FILE_NAME: cheesecake
-  :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :types "Software"
-  :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :tools '("Python" "Flask" "React.js")
-  :END:
-Cheesecake is an evidence-based scouting and statistics approach to
-the /FIRST/ Robotics Competition. It has two main goals:
 
-1. To use existing data on the results of /FIRST/ competitions to
-   create measurably accurate prediction metrics.
-2. To facilitate a mixed-methods (quantitative plus qualitative)
-   approach to FRC scouting specific to each game.
-
-Cheesecake takes an empirical, evidence-based approach to how it
-handles FRC data.
-
-*** Motivation
-Scouting is a large commitment for a team. At most competitions we
-attend, we usually allocate a significant amount of team resources to
-ensure we have as much data as possible on each robot at the
-competition. This information typically goes into a binder and is used
-by our scouting team to determine the best robots to pick during the
-alliance selections and the optimal strategies to play against
-individual robots.
-
-The goal of Cheesecake is to ensure that scouting information is
-transformed into useful metrics. It draws inspiration (and some
-models) from other types of sports analytics, statistics, and previous
-related systems.
-** Global Open Simulator (GOS)
-  :PROPERTIES:
-  :EXPORT_FILE_NAME: gos
-  :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :subtitle "A parallel agent-based platform for global social modeling."
-  :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :tools '("Python" "Jupyter" "matplotlib" "pandas" "numpy")
-  :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :repository "https://github.com/crcresearch/GOS"
-  :END:
-** Kvizo  
-  :PROPERTIES:
-  :EXPORT_FILE_NAME: kvizo
-  :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :subtitle "A practice and learning tool for adademic quiz bowl."
-  :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :repository "https://github.com/CarlColglazier/kvizo"
-  :END:
-Kvizo is a practice and learning tool for adademic quiz bowl. It
-currently supports the following features:
-
-+ A practice interface designed to minimize eye movement.
-+ A question database.
-
-Kvizo is still in active development. This is an early preview
-release. The following are planned future features:
-
-+ User accounts.
-+ Tracking of performance over time.
-+ Exploration and searching insights for studying.
-+ Generated user profiles based on past performance.
-  - Estimated tossup points per tossup heard by category.
-  - Estimated probability of a user correctly answering a question.
-  - Personalized studying insights and suggestions.
-
-** Emoj(i)dentity
-  :PROPERTIES:
-  :EXPORT_FILE_NAME: emojidentity
-  :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :types "Paper"
-  :EXPORT_AUTHOR: Carl Colglazier, Zackary Allen
-  :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :subtitle "A paper on emoji and collective identity on Twitter."
-  :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :tools '("Python")
-  :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :repository "https://github.com/CarlColglazier/emojidentity"
-  :END:
-
-We propose a measure for group identity on Twitter using emoji
-displayed by users in their names or biographies. Viewing the use of
-emoji as social phenomenon, we introduce methods for measuring how
-often emoji users follow/friend other emoji users compared to
-non-emoji users. Furthermore, we introduce methods to measure quantify
-the frequency users friend/follow users with similar emojis,
-concluding with visual analysis of what ties between certain emoji
-look like.
-
++ [[https://cheesecake.live/][Cheesecake Live]] is an evidence-based scouting and statistics approach to
+  the /FIRST/ Robotics Competition.
++ [[https://github.com/CarlColglazier/emojidentity][Emojidentity]] is an inquiry on the use of emoji as a messaging device
+  for collective identity.
++ [[https://twitter.com/pitch_bot][_Unicorn Pitch Bot_]] is a very silly Twitter bot that might be the next big thing.
++ Kvizo was a practice and learning tool for adademic quiz bowl (2015-2017).
 * Research
 :PROPERTIES:
 :EXPORT_HUGO_SECTION: /
