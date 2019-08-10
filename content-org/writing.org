@@ -12,19 +12,22 @@
 :EXPORT_TITLE: This is my website.
 :END:
 
+** An Introduction
+
 At North Carolina State University in Raleigh, I am a senior studying
 computer science and communication (media). I graduate December 2019.
 
-I am
-a [[https://caldwellfellows.ncsu.edu/][Caldwell Fellow]] and [[https://ids.chass.ncsu.edu/dual/franklin.php][Benjamin Franklin Scholar]].
+I am a [[https://caldwellfellows.ncsu.edu/][Caldwell Fellow]] and [[https://ids.chass.ncsu.edu/dual/franklin.php][Benjamin Franklin Scholar]].
 
 This summer, I am working as a Full Stack Developer Intern at IBM.
 I have also worked as an undergraduate research assistant at the
 Center for Research Computing at the University of Notre Dame
 and at the Department of History at NC State.
 
-You may also be interested in my catalogue of [[/code][code projects]], [[/media][films]] and [[/music][music]]
-(that I've made). I also vlog regularly on [[https://youtube.com/carlcolglazier][YouTube]].
+** What I do
+
+You may also be interested in my catalogue of [[/code][code projects]] and [[/media][films]].
+I also vlog regularly on [[https://youtube.com/carlcolglazier][YouTube]].
 * Notes Section
 :PROPERTIES:
 :EXPORT_HUGO_SECTION: notes
@@ -34,37 +37,6 @@ You may also be interested in my catalogue of [[/code][code projects]], [[/media
 :EXPORT_FILE_NAME: _index
 :END:
 This page is for notes.
-** Pisound + MODEP: An Open Multi-effects Pedal
-:PROPERTIES:
-:EXPORT_DATE: 2019-07-29
-:EXPORT_FILE_NAME: pisound-blokas-modep
-:END:
-
-#+html: {{< youtube id="TpycpqVJw-E" >}}
-
-/Transcript reproduced below/.
-
-I love computers, but that doesn't necessarily mean I want to spend all my time using one. Especially when I'm writing music, I often just want to focus on one instrument, one sound and naturally to fix that problem...I got another computer.
-
-The Pisound is a hat for the Raspberry Pi from a Lithuanian company called Blokas. And for those who aren't aware what a Raspberry Pi is, it's a really neat, small computer that's very inexpensive and what the Pisound does is you add it on top of the Pi and it provides a digital analogue converter that supports 1/4 inch and it also supports MIDI.
-
-Here's a look at how I have my Pisound set up. It connects to the wall using a standard Micro UBS port and everything on the hat is powered using the GPIO ports on the Raspberry Pi. It accepts standard 1/4 inch inputs and outputs and it has such a wide range on the gain that you can use it on pretty much any type of speaker, instrument, or synthesizer. There are a number of environments that you can run on the Pisound. The one that I have loaded is called MODEP. That stands for "MOD DUO Emulator for Raspberry Pi". It's essentially an environment that lets you load from a selection of almost three hundred different Linux audio plugins. It serves the whole interface up through a web server over WiFi. You can connect with your external devices and it will present a skeuomorphic (that's way too many syllables) that looks like guitar pedals. There's another interface you can access through the Pisound app that lets you switch between pedalboards that you've saved and you can also toggle between them by pressing the one button on top.
-** A Desk Tour (of sorts)
-	 :PROPERTIES:
-   :EXPORT_FILE_NAME: 2019-desk-tour
-	 :EXPORT_DATE: 2019-07-15
-   :END:
-   #+html: {{< youtube id="F3j0_X9M5es" >}}
-
-	 /The transcript for this video is reproduced below./
-
-	 Even from a very quick glance of my room, one thing that stands out is the amount of wires I have. Everywhere. Wires are how I connect different devices and pieces of equipment to each other to make up not just individual instruments or keyboards or speakers, but a fully formed studio. They communicate through these wires. They are able to build on top of each other's capabilities to create a whole system that is better than any of its individual components.
-
-	 I filmed that entire intro about a month ago and now I'm just getting around to filming the rest of it, so pretty much everything here is moved, but that's fine. This is kind of like a desk tour but instead of just talking about stuff and equipment, I thought I would reflect a little bit about the way I've organized things and my intentions behind my process.
-
-	 Almost all my software run on my laptop, which operates on Arch Linux. It's not a perfect setup. I might have spent a good day working on this video just trying to get the audio config to work and also transitions to and from the dock could be smoother. But it isn't enough of a pain point yet for me to change anything. In the end, my main goal is to have the workflow disappear completely into the work. What does this mean in practice? Well generally, things getting out of the way. Writing tends to be my main blocker. It takes so much of my focus, so much creative energy and thus I want to reduce those things that get in the way of my main goal: words on the page. Open the file, close pretty much everything else. I use an Emacs feature called Org-mode because it works in so many contexts: webpages, papers, code sketches. If you use Emacs, I highly recommend it.
-
-	 So yeah, this is just a quick little update. I've been working a few projects. You can read a little bit about some of them on my website (link in the description) and I'll be coming back with another video sometime soon. Thanks for watching.
 ** YouTube Subscriptions are Broken, but RSS Still Works
 :PROPERTIES:
 :EXPORT_FILE_NAME: youtube-subscriptions-rss
@@ -220,38 +192,6 @@ I think it's important to be clear, honest, and intentional to ourselves about w
  The only real pain point in my workflow is searching for new albums which are not already in my playlists. I might write a simple program for that at some point.
 
  Bonus: my scrobbles now cache if there is ever a connectivity issue.
-** The Challenge of Content
-   :PROPERTIES:
-   :EXPORT_FILE_NAME: challenge-of-content
-   :EXPORT_DATE: 2018-12-25
-   :END:
-This is a post about three things: cleaning, curves, and content.
-
-Content is a catch-all term for media distributed through online
-platforms. Many popular websites are now shared spaces that
-essentially serve other people's stuff. It's a two-way relationship:
-people publish where there are eyeball and readers don't want to miss
-out on where everything is happening.
-
-| Rank | Website      | Type            |
-|------+--------------+-----------------|
-|    1 | Google       | Search/services |
-|    2 | YouTube      | Video           |
-|    3 | Facebook     | Social          |
-|    4 | Baidu        | Search          |
-|    5 | Wikipedia    | Encyclopedia    |
-|    6 | Reddit       | Aggregator      |
-|    7 | Yahoo!       | Portal/media    |
-|    8 | Tencent QQ   | Portal          |
-|    9 | Taobao       | Shopping        |
-|   10 | Google India | Search/services |
-
-These spaces' allure comes from how they constantly serve something
-fresh, media whose popularity generally follows a power law
-probability distribution. In fact, if you graph the views for each of
-my videos on this channel by the end of 2014 sorted by rank, the
-distribution pretty closely matches Zipf's law, the value of the
-maximum divided by the rank.
 ** Principles for Creative Work
    :PROPERTIES:
    :EXPORT_FILE_NAME: creative-work-principles
@@ -1499,6 +1439,7 @@ does not directly support LV2 and LADSPA plugins).
 :PROPERTIES:
 :EXPORT_FILE_NAME: midi-channels-multiple-instruments-supercollider
 :EXPORT_HUGO_ALIASES: acoustics/midi-channels-multiple-instruments-supercollider
+:EXPORT_DATE: 2017-09-23
 :END:
 Being able to [[/notes/midi-instrument-control-supercollider/][control a polyphonic instrument in MIDI]] is
 good, but being able to control multiple instruments is even
@@ -2434,29 +2375,3 @@ film, music, and writing.
 
 [fn:cary]: Paul Green Multimedia Award recipient (North Carolina Society
 of Historians)
-* Music
-:PROPERTIES:
-:EXPORT_HUGO_SECTION: music
-:END:
-** Index
-:PROPERTIES:
-:EXPORT_FILE_NAME: _index
-:EXPORT_TITLE: Music
-:END:
-** 2019 Demos and Sketches
-:PROPERTIES:
-:EXPORT_FILE_NAME: 2019-demos
-:END:
-{{< bandcamp album 3260714489 >}}
-** 2018 Demos
-:PROPERTIES:
-:EXPORT_FILE_NAME: 2018-demos
-:END:
-{{< bandcamp album 214025832 >}}
-** Seven Summer Demos
-:PROPERTIES:
-:EXPORT_FILE_NAME: 2017-demos
-:END:
-
-{{< bandcamp album 956992833 >}}
-

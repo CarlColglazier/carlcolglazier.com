@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    font-family: 'Amiri', serif;
+    font-family: 'Futura LT';
     font-weight: normal;
     line-height: 1.7;
     color: #111;
@@ -11,20 +11,16 @@ body {
     margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6, navigation {
-		font-family: 'Lato', serif;
-}
-
 h1 {
     font-weight: 100;
     font-size: 3.5rem;
-		font-variant-caps: all-small-caps;
+		/*font-variant-caps: all-small-caps;*/
 }
 
 h2, h3, h4, h5, h6 {
     font-weight: 800;
     padding: 0;
-		font-variant: small-caps;
+		/*font-variant: small-caps;*/
 }
 
 time {
@@ -72,11 +68,12 @@ time {
 .block {
     display: inline-block;
     vertical-align:top;
-    max-width: 20rem;
+    max-width: 17.5rem;
+		margin-right: 2rem;
 }
 
 .bio img {
-    max-width: 15rem;
+    max-width: 10rem;
 		padding-right: 1rem;
 }
 
@@ -91,12 +88,10 @@ time {
 
 .content {
     padding-bottom: 1rem;
-    margin-left: 20rem;
-    margin-right: 5rem;
-}
-
-.entry {
-   /* max-width: 30rem;*/
+		max-width: 50rem;
+		margin-left: 20rem;
+		margin-right: 5rem;
+		/*margin: 0 auto;*/
 }
 
 .entry p, dl, ul, li, dd {
@@ -110,12 +105,12 @@ time {
 
 a {
     color: inherit;
-		text-decoration: none;
+		/*text-decoration: none;
 		--color: #111111;
 		background-image: linear-gradient(var(--color) 0%, var(--color) 100%);
     background-repeat: repeat-x;
 		background-position: 0 1.2rem;
-    background-size: 2px 2px;
+    background-size: 2px 2px;*/
 }
 
 p {
@@ -179,72 +174,70 @@ table td {
     visibility: hidden;
 }
 
-
+.footnotes {
+		font-size: 0.7rem;
+}
 
 @media only screen and (max-width: 640px) {
     .name-title {
-	display: none;
+				display: none;
     }
 
     .inline-list {
-	padding: 0;
+				padding: 0;
     }
 
     .inline-list li {
-	padding-left: 0.75rem;
-	padding-right: 0.75rem;
+				padding-left: 0.75rem;
+				padding-right: 0.75rem;
     }
 }
 
 @media only screen and (min-width: 70rem) {
-    .grid1 {
-	width: 30rem;
-    }
-
-    .grid2 {
-	width: 20rem;
+    .grid1, .grid2 {
+				width: 30rem;
     }
 
     label.toggle, #drop {
-	display: none;
+				display: none;
     }
 }
 @media only screen and (max-width: 70rem) {
     .main navigation {
-	position: relative;
+				position: relative;
     }
 
     .content {
-	margin: 0 auto;
-	padding: 0 1rem;
+				margin: 0 auto;
+				padding: 0 1rem;
     }
     
     .grid1, .grid2 {
-	width: 100%;
+				width: 100%;
     }
 
     .grid2 {
-	grid-column: 1;
+				grid-column: 1;
     }
 
     .main navigation {
-	margin: 0;
+				margin: 0;
     }
 
     [id^=drop] {
-	display: none;
+				display: none;
     }
 
     .toggle + a,
     .menu {
-	display: none;
+				display: none;
     }
 
     [id^=drop]:checked + ul {
-	display: block;
+				display: block;
     }
 
     label.toggle {
-	text-align: center;
+				text-align: center;
     }
 }
