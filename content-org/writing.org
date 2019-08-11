@@ -46,7 +46,10 @@ This page is for notes.
 This page will be out of date pretty quickly, but I wanted to compile a nice list at least once.
 
 + [[https://llllllll.co/][Lines]].
++ [[https://news.ycombinator.com/][Hacker News]].
 + [[https://scsynth.org/][SuperCollider Forum]].
++ [[https://forum.toplap.org/][TOPLAP Forum]].
++ [[https://www.reddit.com/r/popheads/][r/popheads on reddit]].
 
 Will add more as I think of them!
 ** YouTube Subscriptions are Broken, but RSS Still Works
