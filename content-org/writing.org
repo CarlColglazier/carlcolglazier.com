@@ -37,6 +37,18 @@ I also vlog regularly on [[https://youtube.com/carlcolglazier][YouTube]].
 :EXPORT_FILE_NAME: _index
 :END:
 This page is for notes.
+** Forums I Read
+:PROPERTIES:
+:EXPORT_FILE_NAME: forums-i-read-2019
+:EXPORT_DATE: 2019-08-11
+:END:
+
+This page will be out of date pretty quickly, but I wanted to compile a nice list at least once.
+
++ [[https://llllllll.co/][Lines]].
++ [[https://scsynth.org/][SuperCollider Forum]].
+
+Will add more as I think of them!
 ** YouTube Subscriptions are Broken, but RSS Still Works
 :PROPERTIES:
 :EXPORT_FILE_NAME: youtube-subscriptions-rss
