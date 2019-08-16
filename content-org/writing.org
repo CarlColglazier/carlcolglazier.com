@@ -19,11 +19,6 @@ computer science and communication (media). I graduate December 2019.
 
 I am a [[https://caldwellfellows.ncsu.edu/][Caldwell Fellow]] and [[https://ids.chass.ncsu.edu/dual/franklin.php][Benjamin Franklin Scholar]].
 
-This summer, I am working as a Full Stack Developer Intern at IBM.
-I have also worked as an undergraduate research assistant at the
-Center for Research Computing at the University of Notre Dame
-and at the Department of History at NC State.
-
 ** What I do
 
 You may also be interested in my catalogue of [[/code][code projects]] and [[/media][films]].
