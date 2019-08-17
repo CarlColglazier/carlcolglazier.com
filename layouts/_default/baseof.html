@@ -68,8 +68,7 @@
   <body>
     <div class="main">
       <navigation>
-        <label for="drop" class="toggle">Carl Colglazier [Menu]</label>
-        <input type="checkbox" id="drop" />
+				<a href="/" id="logo">CC</a>
         <ul class="menu">
           {{ range .Site.Menus.main }}<li><a href="{{ .URL }}">{{ .Name }}</a></li>{{ end }}
         </ul>

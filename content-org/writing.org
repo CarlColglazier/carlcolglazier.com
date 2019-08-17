@@ -9,18 +9,20 @@
 :PROPERTIES:
 :EXPORT_HUGO_SECTION: /
 :EXPORT_FILE_NAME: _index
-:EXPORT_TITLE: This is my website.
+:EXPORT_TITLE: 
 :END:
 
 ** An Introduction
 
-At North Carolina State University in Raleigh, I am a senior studying
-computer science and communication (media). I graduate December 2019.
+I study computer science and communication (media) at North Carolina State University in Raleigh,
+where I am a [[https://caldwellfellows.ncsu.edu/][Caldwell Fellow]] and [[https://ids.chass.ncsu.edu/dual/franklin.php][Benjamin Franklin Scholar]].
+I graduate December 2019. 
 
-I am a [[https://caldwellfellows.ncsu.edu/][Caldwell Fellow]] and [[https://ids.chass.ncsu.edu/dual/franklin.php][Benjamin Franklin Scholar]].
+My research interests span the intersection of technology, media, and society.
 
 ** What I do
 
+My art reveals the hidden history and technology behind everyday institutions.
 You may also be interested in my catalogue of [[/code][code projects]] and [[/media][films]].
 I also vlog regularly on [[https://youtube.com/carlcolglazier][YouTube]].
 * Notes Section
