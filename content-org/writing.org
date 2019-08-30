@@ -2315,12 +2315,11 @@ calling a musician from the 1980's a "cassetter" or an author of the
 :EXPORT_FILE_NAME: _index
 :END:
 
-+ [[https://cheesecake.live/][Cheesecake Live]] is an evidence-based scouting and statistics approach to
-  the /FIRST/ Robotics Competition.
-+ [[https://github.com/CarlColglazier/emojidentity][Emojidentity]] is an inquiry on the use of emoji as a messaging device
-  for collective identity.
++ [[https://cheesecake.live/][Cheesecake Live]] is an evidence-based scouting and statistics approach to the /FIRST/ Robotics Competition.
++ [[https://github.com/CarlColglazier/emojidentity][Emojidentity]] is an inquiry on the use of emoji as a messaging device for collective identity.
 + [[https://twitter.com/pitch_bot][_Unicorn Pitch Bot_]] is a very silly Twitter bot that might be the next big thing.
-+ Kvizo was a practice and learning tool for adademic quiz bowl (2015-2017).
++ Kvizo was a practice and learning tool for adademic quiz bowl (2015-2017). It supported some based natural language processing to create associations between named entities.
++ My [[https://github.com/team2059/fll-world-class-scoring][FLL /World Class/ Live Scoring System]] was used in a practice competition in Raleigh in 2014. Referees could update the completed objective and the scores were displayed in real time.
 * Research
 :PROPERTIES:
 :EXPORT_HUGO_SECTION: /
@@ -2328,10 +2327,9 @@ calling a musician from the 1980's a "cassetter" or an author of the
 :END:
 An automatic list of my publications can be found on [[https://scholar.google.com/citations?hl=en&user=18JgozoAAAAJ&view_op=list_works&sortby=pubdate][Google Scholar]].
 
-** Conference Papers.
+** Papers
 
 - [[https://dl.acm.org/citation.cfm?id=3145588]["Parallel Python for Agent-Based Modeling at a Global Scale."]] :: Nicole Blandin, *Carl Colglazier*, John O'Hare, and Paul Brenner. In /Proceedings of the 2017 International Conference of The Computational Social Science Society of the Americas/, p. 10. ACM, 2017.
-
 
 ** Posters
 
