@@ -14,7 +14,7 @@
 
 I study Computer Science (B.S.) and Communication Media (B.A.) at North Carolina State University in Raleigh, where I will be graduating in December. Currently, I am working toward entering graduate school and continuing my research at the intersection of media, technology, and society.
 
-I am a [[https://caldwellfellows.ncsu.edu/][Caldwell Fellow]], [[https://ids.chass.ncsu.edu/dual/franklin.php][Benjamin Franklin Scholar]] and a member of Phi Kappa Phi and Lambda Pi Eta. Outside of academia, I get hands-on with media through documentary filmmaking, bedroom music production, and vlogging.
+I am a [[https://caldwellfellows.ncsu.edu/][Caldwell Fellow]], [[https://ids.chass.ncsu.edu/dual/franklin.php][Benjamin Franklin Scholar]] and a member of Phi Kappa Phi and Lambda Pi Eta. Outside of academia, I get hands-on with media through [[/code][coding projects]], [[/films][documentary filmmaking]], bedroom music production, and vlogging.
 
 * Notes Section
 :PROPERTIES:
@@ -2336,7 +2336,7 @@ An automatic list of my publications can be found on [[https://scholar.google.co
 * Films
 :PROPERTIES:
 :EXPORT_HUGO_SECTION: /
-:EXPORT_FILE_NAME: media
+:EXPORT_FILE_NAME: films
 :END:
 I have over a decade of experience with various artistic media such as
 film, music, and writing.
