@@ -3,12 +3,16 @@ html {
 }
 
 body {
-    font-family: 'Futura LT';
+    font-family: 'EB Garamond', serif;
     font-weight: normal;
     line-height: 1.7;
     color: #111;
     background-color: #EEE;
     margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+		font-family: 'Futura LT', sans-serif;
 }
 
 h1 {
@@ -26,6 +30,7 @@ time {
 }
 
 #logo {
+		font-family: 'Futura LT', sans-serif;
 		background-color: #111;
 		color: #EEE;
 		padding: 1rem;
@@ -52,6 +57,10 @@ time {
 .main navigation li {
 		display: inline-block;
 		margin: 1rem;
+}
+
+.main navigation li a {
+		font-family: 'Futura LT', sans-serif;
 }
 
 .bio {
