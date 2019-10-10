@@ -14,7 +14,7 @@
 
 I study Computer Science (B.S.) and Communication Media (B.A.) at North Carolina State University in Raleigh, where I will be graduating in December. Currently, I am working toward entering graduate school and continuing my research at the intersection of media, technology, and society.
 
-I am a [[https://caldwellfellows.ncsu.edu/][Caldwell Fellow]], [[https://ids.chass.ncsu.edu/dual/franklin.php][Benjamin Franklin Scholar]] and a member of Phi Kappa Phi and Lambda Pi Eta. Outside of academia, I get hands-on with media through [[/code][coding projects]], [[/films][documentary filmmaking]], bedroom music production, and vlogging.
+I am a [[https://caldwellfellows.ncsu.edu/][Caldwell Fellow]], [[https://ids.chass.ncsu.edu/dual/franklin.php][Benjamin Franklin Scholar]] and a member of Phi Beta Kappa and Lambda Pi Eta. Outside of academia, I get hands-on with media through [[/code][coding projects]], [[/films][documentary filmmaking]], bedroom music production, and vlogging.
 
 * Notes Section
 :PROPERTIES:
@@ -2316,8 +2316,9 @@ calling a musician from the 1980's a "cassetter" or an author of the
 :EXPORT_HUGO_SECTION: /
 :EXPORT_FILE_NAME: research
 :END:
-An automatic list of my publications can be found on [[https://scholar.google.com/citations?hl=en&user=18JgozoAAAAJ&view_op=list_works&sortby=pubdate][Google Scholar]].
+I am currently investigating the design of media systems and their impact on public discourse. I view mediated communication as a negotiation between multiple parties and thus employ a combination of methods from computational social science and media studies to understand both sender and receiver perspectives.
 
+An automatic list of my publications can be found on [[https://scholar.google.com/citations?hl=en&user=18JgozoAAAAJ&view_op=list_works&sortby=pubdate][Google Scholar]].
 ** Papers
 
 - [[https://dl.acm.org/citation.cfm?id=3145588]["Parallel Python for Agent-Based Modeling at a Global Scale."]] :: Nicole Blandin, *Carl Colglazier*, John O'Hare, and Paul Brenner. In /Proceedings of the 2017 International Conference of The Computational Social Science Society of the Americas/, p. 10. ACM, 2017.
