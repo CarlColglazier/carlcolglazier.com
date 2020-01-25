@@ -12,7 +12,7 @@
 :EXPORT_TITLE: 
 :END:
 
-I study Computer Science (B.S.) and Communication Media (B.A.) at North Carolina State University in Raleigh, where I will be graduating in December. Currently, I am working toward entering graduate school and continuing my research at the intersection of media, technology, and society.
+I graduated with a B.S. in Computer Science and a B.A. in Communication Media from North Carolina State University in Raleigh. Currently, I am working toward entering graduate school and continuing my research at the intersection of media, technology, and society.
 
 I am a [[https://caldwellfellows.ncsu.edu/][Caldwell Fellow]], [[https://ids.chass.ncsu.edu/dual/franklin.php][Benjamin Franklin Scholar]] and a member of Phi Beta Kappa and Lambda Pi Eta. Outside of academia, I get hands-on with media through [[/code][coding projects]], [[/films][documentary filmmaking]], bedroom music production, and vlogging.
 
