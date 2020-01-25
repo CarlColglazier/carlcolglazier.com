@@ -25,6 +25,28 @@ I am a [[https://caldwellfellows.ncsu.edu/][Caldwell Fellow]], [[https://ids.cha
 :EXPORT_FILE_NAME: _index
 :END:
 This page is for notes.
+** Post-graduation reading list (undergrad edition)
+:PROPERTIES:
+:EXPORT_FILE_NAME: reading-undergrad
+:EXPORT_DATE: 2020-01-20
+:END:
+
+With some nice blocks of free time directly after graduation, I've poured my energy into prepping for the next step. Will update this list as I read more.
+
+*** Books I completed
+
+/The Professor Is In: The Essential Guide To Turning Your Ph.D. Into a Job/ by Karen Kelsky. Glad I read this right before starting my Ph.D.
+
+/How to Write a Lot: A Practical Guide to Productive Academic Writing/ by Paul J. Silvia. A joy to read a book on writing which is both witty and well-written. Reinforces my beliefs about how habits and consistency tend to create the best outcomes.
+
+/Antisocial Media: How Facebook Disconnects Us and Undermines Democracy/ by Siva Vaidhyanathan.
+
+*** Books in progress
+
++ /The Visual Display of Quantitative Information/ by Edward Tufte.
++ /Custodians of the Internet: Platforms, Content Moderation, and the Hidden Decisions That Shape Social Media/ by Tarleton Gillespie.
++ /The Wealth of Networks/ by Yochai Benkler.
+
 ** Forums I Read
 :PROPERTIES:
 :EXPORT_FILE_NAME: forums-i-read-2019
