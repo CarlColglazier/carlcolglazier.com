@@ -44,8 +44,15 @@ With some nice blocks of free time directly after graduation, I've poured my ene
 *** Books in progress
 
 + /The Visual Display of Quantitative Information/ by Edward Tufte.
-+ /Custodians of the Internet: Platforms, Content Moderation, and the Hidden Decisions That Shape Social Media/ by Tarleton Gillespie.
++ /Custodians of the Internet: Platforms, Content Moderation, and the Hidden Decisions That Shape Social Media/ by Tarleton Gillespie. This is my second time reading this book. It's that good.
 + /The Wealth of Networks/ by Yochai Benkler.
+
+*** Books for reference
+
+While I am not reading these cover to cover, I am using these as references for my creative projects.
+
++ /The Computer Music Tutorial/ by Curtis Roads.
++ /The theory and technique of electronic music/ by Miller Puckette.
 
 ** Forums I Read
 :PROPERTIES:
