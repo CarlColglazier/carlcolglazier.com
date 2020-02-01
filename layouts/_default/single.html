@@ -8,8 +8,10 @@
   <div class="entry e-content">
     {{.Content}}
   </div>
-  <hr />
-  {{ partial "bio.html" . }}
+	<div class="bio">
+		<hr />
+		{{ partial "bio.html" . }}
+	</div>
   <div id="comments">
       <h3>Mentions</h3>
       <form action="https://webmention.io/carlcolglazier.com/webmention" method="POST">

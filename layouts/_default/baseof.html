@@ -41,6 +41,7 @@
 				 font-weight: normal;
 				 src: local('Futura LT Book'), url('/font/FuturaLT-Book.woff') format('woff');
 		 }
+		 /*
 		 @font-face {
 				 font-family: 'Futura LT';
 				 font-style: normal;
@@ -59,6 +60,7 @@
 				 font-weight: bold;
 				 src: local('Futura LT Bold'), url('/font/FuturaLT-Bold.woff') format('woff');
 		 }
+		 */
     </style>
     {{ $style := resources.Get "style.css" }}
     {{ $syntax := resources.Get "syntax.css" }}
@@ -66,16 +68,20 @@
     {{ $stylesheet := $stylesheet | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $stylesheet.Permalink }}">
   </head>
-  <body>
-    <div class="main">
-      <navigation>
-				<a href="/" id="logo">CC</a>
-        <ul class="menu">
-          {{ range .Site.Menus.main }}<li><a href="{{ .URL }}">{{ .Name }}</a></li>{{ end }}
-        </ul>
-      </navigation>
-      {{ block "main" . }}
-      {{ end }}
-    </div>
+  <body class="main">
+		<div class="site">
+			<div class="header">
+				<navigation>
+  				<a href="/" id="logo"><span>Carl Colglazier</span></a>
+					<ul class="menu">
+						{{ range .Site.Menus.main }}<li><a href="{{ .URL }}">{{ .Name }}</a></li>{{ end }}
+					</ul>
+				</navigation>
+			</div>
+			<div class="content">
+				{{ block "main" . }}
+				{{ end }}
+			</div>
+		</div>
   </body>
 </html>

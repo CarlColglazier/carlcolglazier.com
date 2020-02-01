@@ -9,12 +9,13 @@
 :PROPERTIES:
 :EXPORT_HUGO_SECTION: /
 :EXPORT_FILE_NAME: _index
-:EXPORT_TITLE: 
+:EXPORT_TITLE:
 :END:
 
-I graduated with a B.S. in Computer Science and a B.A. in Communication Media from North Carolina State University in Raleigh. Currently, I am working toward entering graduate school and continuing my research at the intersection of media, technology, and society.
+I graduated in 2019 with a B.S. in Computer Science and a B.A. in Communication Media from North Carolina State University in Raleigh.
+I am an alumni of the [[https://caldwellfellows.ncsu.edu/][Caldwell Fellows]] and the [[https://ids.chass.ncsu.edu/dual/franklin.php][Benjamin Franklin Scholars]]. Currently, I am a PhD applicant, working to continue my research at the intersection of media, technology, and society.
 
-I am a [[https://caldwellfellows.ncsu.edu/][Caldwell Fellow]], [[https://ids.chass.ncsu.edu/dual/franklin.php][Benjamin Franklin Scholar]] and a member of Phi Beta Kappa and Lambda Pi Eta. Outside of academia, I get hands-on with media through [[/code][coding projects]], [[/films][documentary filmmaking]], bedroom music production, and vlogging.
+Outside of academia, I get hands-on with media through [[/code][coding projects]], [[/films][documentary filmmaking]], bedroom music production, and vlogging.
 
 * Notes Section
 :PROPERTIES:
@@ -24,7 +25,7 @@ I am a [[https://caldwellfellows.ncsu.edu/][Caldwell Fellow]], [[https://ids.cha
 :PROPERTIES:
 :EXPORT_FILE_NAME: _index
 :END:
-This page is for notes.
+This page is for notes---somewhere between a blog and a personal wiki.
 ** Post-graduation reading list (undergrad edition)
 :PROPERTIES:
 :EXPORT_FILE_NAME: reading-undergrad
@@ -2349,7 +2350,7 @@ calling a musician from the 1980's a "cassetter" or an author of the
 :EXPORT_HUGO_SECTION: /
 :EXPORT_FILE_NAME: research
 :END:
-I am currently investigating the design of media systems and their impact on public discourse. I view mediated communication as a negotiation between multiple parties and thus employ a combination of methods from computational social science and media studies to understand both sender and receiver perspectives.
+My research investigates the design of media systems and their impact on public discourse. I view mediated communication as a negotiation between multiple parties---including media, platforms, moderators, producers, and readers. Thus, I employ a combination of methods from computational social science and media studies to understand both sender and receiver perspectives.
 
 An automatic list of my publications can be found on [[https://scholar.google.com/citations?hl=en&user=18JgozoAAAAJ&view_op=list_works&sortby=pubdate][Google Scholar]].
 ** Papers

@@ -5,19 +5,20 @@ html {
 body {
     font-family: 'EB Garamond', serif;
     font-weight: normal;
-    line-height: 1.7;
-    color: #111;
-    background-color: #EEE;
+    line-height: 1.5;
+    color: #000;
+    background-color: #FFF;
     margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-		font-family: 'Futura LT', sans-serif;
+.content {
+		max-width: 40rem;
+		margin: 10rem auto;
 }
 
 h1 {
     font-weight: 100;
-    font-size: 3.5rem;
+    font-size: 2rem;
 }
 
 h2, h3, h4, h5, h6 {
@@ -29,10 +30,17 @@ time {
     font-size: 0.75rem;
 }
 
+.header {
+		display: inline-block;
+		width: 100%;
+		background-color: #000;
+		color: #FFF;
+}
+
 #logo {
 		font-family: 'Futura LT', sans-serif;
-		background-color: #111;
-		color: #EEE;
+		background-color: #000;
+		color: #FFF;
 		padding: 1rem;
 		text-decoration: none;
 		text-align: center;
@@ -40,43 +48,53 @@ time {
 		position: absolute;
 		left: 50%;
 		top: 1rem;
+		border-style: solid;
+		border-color: #FFF;
+		border-width: 2px;
 		border-radius: 2rem;
 		line-height: 29.333px;
 }
 
-.main navigation {
+#logo span {
+		display: none;
+}
+
+#logo::after {
+		content: "CC";
+}
+
+.header navigation {
+		display: block;
 		text-align: right;
+		max-width: 40rem;
+		margin: 0 auto;
 }
 
-.main navigation ul {
-		max-width: 50rem;
-		margin: 1rem auto;
-		padding: 0;
+.header navigation ul {
+		float: right;
 }
 
-.main navigation li {
+.header navigation li {
 		display: inline-block;
 		margin: 1rem;
 }
 
-.main navigation li a {
+.header navigation li a {
 		font-family: 'Futura LT', sans-serif;
 }
 
-.bio {
-    display: inline;
+div.bio {
+		margin-top: 3rem;
 }
 
-.block {
+.bio {
     display: inline-block;
-    vertical-align:top;
-    max-width: 17.5rem;
-		margin-right: 2rem;
 }
 
 .bio img {
     max-width: 10rem;
-		padding-right: 1rem;
+		margin-right: 2rem;
+		float: left;
 }
 
 .paginator {
@@ -88,29 +106,8 @@ time {
     float: right;
 }
 
-.content {
-    padding-bottom: 1rem;
-		max-width: 50rem;
-		margin: 0 auto;
-}
-
-.entry p, dl, ul, li, dd {
-    max-width: 30rem;
-}
-
-.footnotes p, dl, ul, li {
-    max-width: 100%;
-}
-
-
 a {
     color: inherit;
-		/*text-decoration: none;
-		--color: #111111;
-		background-image: linear-gradient(var(--color) 0%, var(--color) 100%);
-    background-repeat: repeat-x;
-		background-position: 0 1.2rem;
-    background-size: 2px 2px;*/
 }
 
 p {
@@ -127,6 +124,10 @@ pre {
     overflow-x: auto;
     padding: 1rem;
     border-left: solid;
+		tab-size: 4;
+		-moz-tab-size: 4;
+		-o-tab-size: 4;
+		-webkit-tab-size: 4;
 }
 
 pre code {
@@ -134,6 +135,7 @@ pre code {
     overflow: hidden;
     white-space: pre;
     font-size: 0.75rem;
+		tab-size: 4;
 }
 
 table {
@@ -157,19 +159,6 @@ table td {
     margin-bottom: 1rem;
 }
 
-.grid {
-    display: grid;
-}
-
-.grid1 {
-    grid-column: 1;
-}
-
-.grid2 {
-    grid-column: 2;
-    justify-self: end;
-}
-
 .name-title {
     visibility: hidden;
 }
@@ -178,10 +167,20 @@ table td {
 		font-size: 0.7rem;
 }
 
+img.photo {
+		border-radius: 40%;
+		padding: 1em;
+}
+
+/* Small screens */
 @media only screen and (max-width: 640px) {
     .name-title {
 				display: none;
     }
+
+		.header navigation ul {
+				float: none;
+		}
 
     .inline-list {
 				padding: 0;
@@ -191,26 +190,21 @@ table td {
 				padding-left: 0.75rem;
 				padding-right: 0.75rem;
     }
-}
 
-@media only screen and (min-width: 70rem) {
-    .grid1, .grid2 {
-				width: 30rem;
-    }
+		.bio img {
+				max-width: 5rem;
+				padding: 0rem;
+		}
+
+		p {
+				margin-bottom: 0rem;
+		}
 }
 
 @media only screen and (max-width: 70rem) {
     .content {
 				margin: 0 auto;
 				padding: 0 1rem;
-    }
-    
-    .grid1, .grid2 {
-				width: 100%;
-    }
-
-    .grid2 {
-				grid-column: 1;
     }
 
 		.main navigation {

@@ -8,12 +8,8 @@
 
 {{ define "main" }}
 <article class="content">
-    {{ partial "title.html" . }}
-    {{ partial "bio.html" . }}
-    <div class="grid">
-			<div class="grid1">
-				{{.Content}}
-			</div>
-    </div>
+  {{ partial "title.html" . }}
+  {{ partial "bio.html" . }}
+	{{.Content}}
 </article>
 {{ end }}
