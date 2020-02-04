@@ -35,23 +35,20 @@ This page is for notes---somewhere between a blog and a personal wiki.
 With some nice blocks of free time directly after graduation, I've poured my energy into prepping for the next step. Will update this list as I read more.
 
 *** Books I completed
-
 **** January 2020
+Gillespie, Tarleton. /Custodians of the Internet: Platforms, Content Moderation, and the Hidden Decisions That Shape Social Media/. New Haven: Yale University Press, 2018.
 
-/The Professor Is In: The Essential Guide To Turning Your Ph.D. Into a Job/ by Karen Kelsky.
+Kelsky, Karen. /The Professor Is in: The Essential Guide to Turning Your Ph.D. into a Job/. First edition. New York: Three Rivers Press, 2015.
 
-/How to Write a Lot: A Practical Guide to Productive Academic Writing/ by Paul J. Silvia.
+Silvia, Paul J. /How to Write a Lot: A Practical Guide to Productive Academic Writing/. Second edition. Washington, DC: American Psychological Association, 2019.
 
-/Antisocial Media: How Facebook Disconnects Us and Undermines Democracy/ by Siva Vaidhyanathan.
-
-/Custodians of the Internet: Platforms, Content Moderation, and the Hidden Decisions That Shape Social Media/ by Tarleton Gillespie.
-
+Vaidhyanathan, Siva. /Antisocial Media: How Facebook Disconnects US and Undermines Democracy/. New York, NY, United States of America: Oxford University Press, 2018.
 *** Books in progress
-
 + /The Visual Display of Quantitative Information/ by Edward Tufte.
 + /The Wealth of Networks/ by Yochai Benkler.
 + /Algorithms of Oppression: How Search Engines Reinforce Racism/ by Safiya Umoja Noble.
-
++ /Why We're Polarized/ by Ezra Klein
++ /The War of Art/ by Steven Pressfield
 *** Books for reference
 
 While I am not reading these cover to cover, I am using these as references for my creative projects.
