@@ -41,6 +41,8 @@ Klein, Ezra. /Why We’re Polarized/. Avid Reader Press, 2020.
 Pressfield, Steven. /The War of Art/. New York: Black Irish Entertainment LLC, 2002.
 
 Ronson, Jon. /So You’ve Been Publicly Shamed/. New York: Riverhead Books, A member of Penguin Group (USA), 2015.
+
+Tetlock, Philip E., and Dan Gardner. /Superforecasting: The Art and Science of Prediction/. First edition. New York: Crown Publishers, 2015.
 **** January 2020
 Gillespie, Tarleton. /Custodians of the Internet: Platforms, Content Moderation, and the Hidden Decisions That Shape Social Media/. New Haven: Yale University Press, 2018.
 
@@ -53,7 +55,6 @@ Vaidhyanathan, Siva. /Antisocial Media: How Facebook Disconnects US and Undermin
 + /The Visual Display of Quantitative Information/ by Edward Tufte.
 + /The Wealth of Networks/ by Yochai Benkler.
 + /Algorithms of Oppression: How Search Engines Reinforce Racism/ by Safiya Umoja Noble.
-+ /Superforecasting: The Art and Science of Prediction/ by Philip E. Tetlock and Dan Gardner.
 *** Books for reference
 
 While I am not reading these cover to cover, I am using these as references for my creative projects.
