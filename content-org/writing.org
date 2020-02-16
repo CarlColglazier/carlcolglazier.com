@@ -45,6 +45,8 @@ Pressfield, Steven. /The War of Art/. New York: Black Irish Entertainment LLC, 2
 Ronson, Jon. /So You’ve Been Publicly Shamed/. New York: Riverhead Books, A member of Penguin Group (USA), 2015.
 
 Tetlock, Philip E., and Dan Gardner. /Superforecasting: The Art and Science of Prediction/. First edition. New York: Crown Publishers, 2015.
+
+Tufte, Edward R. /The Visual Display of Quantitative Information/. 2nd ed. Cheshire, Conn: Graphics Press, 2001.
 **** January 2020
 Gillespie, Tarleton. /Custodians of the Internet: Platforms, Content Moderation, and the Hidden Decisions That Shape Social Media/. New Haven: Yale University Press, 2018.
 
@@ -54,8 +56,8 @@ Silvia, Paul J. /How to Write a Lot: A Practical Guide to Productive Academic Wr
 
 Vaidhyanathan, Siva. /Antisocial Media: How Facebook Disconnects US and Undermines Democracy/. New York, NY, United States of America: Oxford University Press, 2018.
 *** Books in progress
-+ /The Visual Display of Quantitative Information/ by Edward Tufte.
 + /The Wealth of Networks/ by Yochai Benkler.
++ /Stylish Academic Writing/ by Helen Sword.
 *** Books for reference
 
 While I am not reading these cover to cover, I am using these as references for my creative projects.
