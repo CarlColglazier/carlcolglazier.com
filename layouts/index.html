@@ -10,6 +10,8 @@
 <article class="content">
   {{ partial "title.html" . }}
   {{ partial "bio.html" . }}
-	{{.Content}}
+	<div class="entry">
+		{{.Content}}
+	</div>
 </article>
 {{ end }}

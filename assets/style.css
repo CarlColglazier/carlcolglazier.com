@@ -5,29 +5,42 @@ html {
 body {
     font-family: 'EB Garamond', serif;
     font-weight: normal;
-    line-height: 1.5;
+    line-height: 1.4;
     color: #000;
     background-color: #FFF;
     margin: 0;
 }
 
 .content {
-		max-width: 40rem;
+		width: 48rem;
+		max-width: 100%;
 		margin: 10rem auto;
 }
 
+.entry p, ul, dl {
+		width: 30rem;
+}
+
 h1 {
-    font-weight: 100;
+    font-weight: 700;
     font-size: 2rem;
 }
 
 h2, h3, h4, h5, h6 {
-    font-weight: 800;
+    font-weight: 600;
     padding: 0;
 }
 
 time {
     font-size: 0.75rem;
+}
+
+figure {
+		margin: 0;
+}
+
+figcaption p {
+		font-size: 0.75rem;
 }
 
 .header {
@@ -94,7 +107,7 @@ div.bio {
 .bio img {
     max-width: 10rem;
 		margin-right: 2rem;
-		float: left;
+		float: right;
 }
 
 .paginator {
