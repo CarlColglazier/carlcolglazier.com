@@ -46,6 +46,8 @@ Pressfield, Steven. /The War of Art/. New York: Black Irish Entertainment LLC, 2
 
 Ronson, Jon. /So You’ve Been Publicly Shamed/. New York: Riverhead Books, A member of Penguin Group (USA), 2015.
 
+Sword, Helen. /Stylish Academic Writing/. Cambridge, Mass: Harvard University Press, 2012.
+
 Tetlock, Philip E., and Dan Gardner. /Superforecasting: The Art and Science of Prediction/. First edition. New York: Crown Publishers, 2015.
 
 Tufte, Edward R. /The Visual Display of Quantitative Information/. 2nd ed. Cheshire, Conn: Graphics Press, 2001.
@@ -58,7 +60,8 @@ Silvia, Paul J. /How to Write a Lot: A Practical Guide to Productive Academic Wr
 
 Vaidhyanathan, Siva. /Antisocial Media: How Facebook Disconnects US and Undermines Democracy/. New York, NY, United States of America: Oxford University Press, 2018.
 *** Books in progress
-+ /Stylish Academic Writing/ by Helen Sword.
++ /Network Science/ by Albert-László Barabási.
++ /Automating Inequality: How High-Tech Tools Profile, Police, and Punish the Poor/ by Virginia Eubanks.
 *** Books for reference
 
 While I am not reading these cover to cover, I am using these as references for my creative projects.
