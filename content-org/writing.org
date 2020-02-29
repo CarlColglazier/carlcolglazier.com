@@ -36,6 +36,8 @@ With some nice blocks of free time directly after graduation, I've poured my ene
 
 *** Books I completed
 **** February 2020
+Eubanks, Virginia. /Automating Inequality: How High-Tech Tools Profile, Police, and Punish the Poor/. First Edition. New York, NY: St. Martin’s Press, 2017.
+
 Klein, Ezra. /Why We’re Polarized/. Avid Reader Press, 2020.
 
 Noble, Safiya Umoja. /Algorithms of Oppression: How Search Engines Reinforce Racism/. New York: New York University Press, 2018.
@@ -61,7 +63,7 @@ Silvia, Paul J. /How to Write a Lot: A Practical Guide to Productive Academic Wr
 Vaidhyanathan, Siva. /Antisocial Media: How Facebook Disconnects US and Undermines Democracy/. New York, NY, United States of America: Oxford University Press, 2018.
 *** Books in progress
 + /Network Science/ by Albert-László Barabási.
-+ /Automating Inequality: How High-Tech Tools Profile, Police, and Punish the Poor/ by Virginia Eubanks.
++ /Invisible Women/ by Caroline Criado-Perez
 *** Books for reference
 
 While I am not reading these cover to cover, I am using these as references for my creative projects.
