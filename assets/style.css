@@ -19,6 +19,7 @@ body {
 
 .entry p, .entry ul, .entry dl {
 		width: 30rem;
+		max-width: 90%;
 }
 
 h1 {
@@ -206,6 +207,7 @@ img.photo {
 
     article.content {
 				width: 30rem;
+				max-width: 90%;
     }
 
 		.main navigation {
