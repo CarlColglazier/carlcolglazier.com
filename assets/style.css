@@ -17,7 +17,7 @@ body {
 		margin: 10rem auto;
 }
 
-.entry p, ul, dl {
+.entry p, .entry ul, .entry dl {
 		width: 30rem;
 }
 
@@ -172,10 +172,6 @@ table td {
     margin-bottom: 1rem;
 }
 
-.name-title {
-    visibility: hidden;
-}
-
 .footnotes {
 		font-size: 0.7rem;
 }
@@ -186,11 +182,7 @@ img.photo {
 }
 
 /* Small screens */
-@media only screen and (max-width: 640px) {
-    .name-title {
-				display: none;
-    }
-
+@media only screen and (max-width: 1080px) {
 		.header navigation ul {
 				float: none;
 		}
@@ -204,20 +196,16 @@ img.photo {
 				padding-right: 0.75rem;
     }
 
-		.bio img {
-				max-width: 5rem;
-				padding: 0rem;
-		}
-
 		p {
 				margin-bottom: 0rem;
 		}
-}
 
-@media only screen and (max-width: 70rem) {
-    .content {
-				margin: 0 auto;
-				padding: 0 1rem;
+		.content {
+				margin-top: 2rem;
+		}
+
+    article.content {
+				width: 30rem;
     }
 
 		.main navigation {
