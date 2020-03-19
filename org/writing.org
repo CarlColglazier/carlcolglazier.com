@@ -1,0 +1,99 @@
+# -*- eval: (org-hugo-auto-export-mode 1); -*-
+#+hugo_base_dir: ../
+#+hugo_section: /
+#+hugo_front_matter_format: yaml
+#+STARTUP: logdone
+#+PROPERTY: header-args:R :session *R* :exports both :colnames yes :eval never-export :results value
+
+* Carl Colglazier
+:PROPERTIES:
+:EXPORT_HUGO_SECTION: /
+:EXPORT_FILE_NAME: _index
+:EXPORT_TITLE:
+:END:
+
+I graduated in 2019 with a B.S. in Computer Science and a B.A. in Communication Media from North Carolina State University in Raleigh.
+I am an alumni of the [[https://caldwellfellows.ncsu.edu/][Caldwell Fellows]] and the [[https://ids.chass.ncsu.edu/dual/franklin.php][Benjamin Franklin Scholars]]. Currently, I am a PhD applicant, working to continue my research at the intersection of media, technology, and society.
+
+Outside of academia, I get hands-on with media through [[/code][coding projects]], [[/films][documentary filmmaking]], bedroom music production, and vlogging.
+
+* Code Section
+:PROPERTIES:
+:EXPORT_HUGO_SECTION: code
+:END:
+** Code Projects
+:PROPERTIES:
+:EXPORT_FILE_NAME: _index
+:END:
+
++ [[https://cheesecake.live/][Cheesecake Live]] is an evidence-based scouting and statistics approach to the /FIRST/ Robotics Competition.
++ [[https://github.com/CarlColglazier/emojidentity][Emojidentity]] is an inquiry on the use of emoji as a messaging device for collective identity.
++ [[https://twitter.com/pitch_bot][_Unicorn Pitch Bot_]] is a very silly Twitter bot that might be the next big thing.
++ Kvizo was a practice and learning tool for adademic quiz bowl (2015-2017). It supported some based natural language processing to create associations between named entities.
++ My [[https://github.com/team2059/fll-world-class-scoring][FLL /World Class/ Live Scoring System]] was used in a practice competition in Raleigh in 2014. Referees could update the completed objective and the scores were displayed in real time.
+* Research
+:PROPERTIES:
+:EXPORT_HUGO_SECTION: /
+:EXPORT_FILE_NAME: research
+:END:
+My research investigates the design of media systems and their impact on public discourse. I view mediated communication as a negotiation between multiple parties---including media, platforms, moderators, producers, and readers. Thus, I employ a combination of methods from computational social science and media studies to understand both sender and receiver perspectives.
+
+An automatic list of my publications can be found on [[https://scholar.google.com/citations?hl=en&user=18JgozoAAAAJ&view_op=list_works&sortby=pubdate][Google Scholar]].
+** Papers
+
+- [[https://dl.acm.org/citation.cfm?id=3145588]["Parallel Python for Agent-Based Modeling at a Global Scale."]] :: Nicole Blandin, *Carl Colglazier*, John O'Hare, and Paul Brenner. In /Proceedings of the 2017 International Conference of The Computational Social Science Society of the Americas/, p. 10. ACM, 2017.
+
+** Posters
+
+- [[https://crc.nd.edu/images/docs/reu/2018/posters/Poster---Carl-Colglazier.png]["Advanced Tools for Computational Social Science"]]. :: *Carl Colglazier* and Paul Brenner. 2018 Summer Undergraduate Research Symposium, University of Notre Dame.
+
+- [[https://crc.nd.edu/images/docs/reu/2017/posters/Final-Final-Poster---Carl-Colglazier.png]["Parallel Python for Global Social Simulations"]] :: *Carl Colglazier* and Paul Brenner. 2017 Summer Undergraduate Research Symposium, University of Notre Dame.
+
+** Conferences I've attended.
+
++ [[https://www.kellogg.northwestern.edu/news-events/conference/ic2s2/2018.aspx][IC2S2 2018]]
++ [[https://chi2018.acm.org/][CHI 2018]]
+
+* Films
+:PROPERTIES:
+:EXPORT_HUGO_SECTION: /
+:EXPORT_FILE_NAME: films
+:END:
+I have over a decade of experience with various artistic media such as
+film, music, and writing.
+
+** Filmography
+*** Documentary Films
++ [[http://www.viddler.com/v/6805fb13][The People's House]] (2015)
+  [fn:ph]
++ [[http://www.viddler.com/v/3e83e938][Due Process]] (2014) [fn:dp]
++ Cary (2013) [fn:cary]
++ Executive Powers (2013)
++ [[https://www.youtube.com/watch?v=c_SvgFo71x0][Intellectual Property]] (2012) [fn:ip]
++ [[https://www.c-span.org/video/?298275-27/the-great-compromise][The Great Compromise]]
+  (2011) [fn:gc]
++ [[https://www.c-span.org/video/?292400-17/wasting-waste][Wasting  Waste]]
+  (2010) [fn:ww]
+
+***  Web Series
+- *Filmmakers' Guide* :: Ran for the course of a year from 2012 to 2013. Reached over a thousand subscribers and over a hundred thousand views.
+- *The Hitchhikers* :: Created a documentary series as marketing tool for Hitchhikers
+  Robotics Group, Inc between 2012 and 2015.  Reached over fifteen
+  thousand views.
+**** Press
+- [[https://www.newsobserver.com/news/local/community/cary-news/article22811496.html]["Cary teen wins fifth C-SPAN video award"]] :: Will Doran, The Cary News. 1 June 2015.
+- "Cary teen's documentary tops contest" :: Andrew Kenney, The Cary News. 30 March 2011.
+
+
+[fn:ph]: Honorable Mention, StudentCam 2015
+
+[fn:dp]: Honorable Mention, StudentCam 2014
+
+[fn:ip]: First Prize (High School), StudentCam 2012
+
+[fn:gc]: Grand Prize, StudentCam 2011
+
+[fn:ww]: Third Prize, StudentCam 2010
+
+[fn:cary]: Paul Green Multimedia Award recipient (North Carolina Society
+of Historians)

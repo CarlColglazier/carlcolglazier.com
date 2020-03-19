@@ -1,41 +1,30 @@
 # -*- eval: (org-hugo-auto-export-mode 1); -*-
 #+hugo_base_dir: ../
-#+hugo_secton: /
+#+hugo_section: notes
 #+hugo_front_matter_format: yaml
 #+STARTUP: logdone
 #+PROPERTY: header-args:R :session *R* :exports both :colnames yes :eval never-export :results value
 
-* Carl Colglazier
-:PROPERTIES:
-:EXPORT_HUGO_SECTION: /
-:EXPORT_FILE_NAME: _index
-:EXPORT_TITLE:
-:END:
-
-I graduated in 2019 with a B.S. in Computer Science and a B.A. in Communication Media from North Carolina State University in Raleigh.
-I am an alumni of the [[https://caldwellfellows.ncsu.edu/][Caldwell Fellows]] and the [[https://ids.chass.ncsu.edu/dual/franklin.php][Benjamin Franklin Scholars]]. Currently, I am a PhD applicant, working to continue my research at the intersection of media, technology, and society.
-
-Outside of academia, I get hands-on with media through [[/code][coding projects]], [[/films][documentary filmmaking]], bedroom music production, and vlogging.
-
-* Notes Section
-:PROPERTIES:
-:EXPORT_HUGO_SECTION: notes
-:END:
-** Notes
-:PROPERTIES:
-:EXPORT_FILE_NAME: _index
-:END:
+* Notes
+	:PROPERTIES:
+	:EXPORT_FILE_NAME: _index
+	:END:
 This page is for notes---somewhere between a blog and a personal wiki.
-** Post-graduation reading list (undergrad edition)
-:PROPERTIES:
-:EXPORT_FILE_NAME: reading-undergrad
-:EXPORT_DATE: 2020-01-20
-:END:
+* Post-graduation reading list (undergrad edition)
+	:PROPERTIES:
+	:EXPORT_FILE_NAME: reading-undergrad
+	:EXPORT_DATE: 2020-01-20
+	:END:
 
 With some nice blocks of free time directly after graduation, I've poured my energy into prepping for the next step. Will update this list as I read more.
 
-*** Books I completed
-**** February 2020
+** Books I completed
+*** March 2020
+Criado Perez, Caroline. /Invisible Women: Exposing Data Bias in a World Designed for Men/. London: Chatto & Windus, 2019.
+
+Newport, Cal. /Deep Work: Rules for Focused Success in a Distracted World/. First Edition. New York: Grand Central Publishing, 2016.
+
+*** February 2020
 Eubanks, Virginia. /Automating Inequality: How High-Tech Tools Profile, Police, and Punish the Poor/. First Edition. New York, NY: St. Martin’s Press, 2017.
 
 Klein, Ezra. /Why We’re Polarized/. Avid Reader Press, 2020.
@@ -53,7 +42,7 @@ Sword, Helen. /Stylish Academic Writing/. Cambridge, Mass: Harvard University Pr
 Tetlock, Philip E., and Dan Gardner. /Superforecasting: The Art and Science of Prediction/. First edition. New York: Crown Publishers, 2015.
 
 Tufte, Edward R. /The Visual Display of Quantitative Information/. 2nd ed. Cheshire, Conn: Graphics Press, 2001.
-**** January 2020
+*** January 2020
 Gillespie, Tarleton. /Custodians of the Internet: Platforms, Content Moderation, and the Hidden Decisions That Shape Social Media/. New Haven: Yale University Press, 2018.
 
 Kelsky, Karen. /The Professor Is in: The Essential Guide to Turning Your Ph.D. into a Job/. First edition. New York: Three Rivers Press, 2015.
@@ -61,21 +50,21 @@ Kelsky, Karen. /The Professor Is in: The Essential Guide to Turning Your Ph.D. i
 Silvia, Paul J. /How to Write a Lot: A Practical Guide to Productive Academic Writing/. Second edition. Washington, DC: American Psychological Association, 2019.
 
 Vaidhyanathan, Siva. /Antisocial Media: How Facebook Disconnects US and Undermines Democracy/. New York, NY, United States of America: Oxford University Press, 2018.
-*** Books in progress
+** Books in progress
 + /Network Science/ by Albert-László Barabási.
-+ /Invisible Women/ by Caroline Criado-Perez
-*** Books for reference
++ /Statistical Rethinking/ by Richard McElreath.
+** Books for reference
 
 While I am not reading these cover to cover, I am using these as references for my creative projects.
 
 + /The Computer Music Tutorial/ by Curtis Roads.
 + /The theory and technique of electronic music/ by Miller Puckette.
 
-** Forums I Read
-:PROPERTIES:
-:EXPORT_FILE_NAME: forums-i-read-2019
-:EXPORT_DATE: 2019-08-11
-:END:
+* Forums I Read
+	:PROPERTIES:
+	:EXPORT_FILE_NAME: forums-i-read-2019
+	:EXPORT_DATE: 2019-08-11
+	:END:
 
 This page will be out of date pretty quickly, but I wanted to compile a nice list at least once.
 
@@ -86,11 +75,11 @@ This page will be out of date pretty quickly, but I wanted to compile a nice lis
 + [[https://www.reddit.com/r/popheads/][r/popheads on reddit]].
 
 Will add more as I think of them!
-** YouTube Subscriptions are Broken, but RSS Still Works
-:PROPERTIES:
-:EXPORT_FILE_NAME: youtube-subscriptions-rss
-:EXPORT_DATE: 2019-06-30
-:END:
+* YouTube Subscriptions are Broken, but RSS Still Works
+	:PROPERTIES:
+	:EXPORT_FILE_NAME: youtube-subscriptions-rss
+	:EXPORT_DATE: 2019-06-30
+	:END:
 At one point, subscriptions used to be the primary UX point on YouTube. If you got subscribers, you were guaranteed some eyeballs.
 
 This is no longer the case. YouTube now emphasizes its algorithm-based homepage; the subscription page is tucked away behind an extra click that gets far less use. Even worse, a subscription is no longer a guarantee because the feature is constantly broken.
@@ -103,91 +92,91 @@ But did you know that you can integrate YouTube into your RSS reader? Here's how
 This will give you a file that you can import to your RSS reader of choice.
 
 Why do this? The advantage of RSS is you get a nice, linear list of the feeds you care about all in one place. Personally I think this is quite a nice, quiet way to browse the web and it's how I plan to keep up with YouTube channels at the moment.
-** This Website Supports Webmentions
-:PROPERTIES:
-:EXPORT_FILE_NAME: support-webmentions
-:EXPORT_DATE: 2019-06-29
-:END:
+* This Website Supports Webmentions
+	:PROPERTIES:
+	:EXPORT_FILE_NAME: support-webmentions
+	:EXPORT_DATE: 2019-06-29
+	:END:
 
 Here's a handy little feature I hacked together this weekend. [[https://www.w3.org/TR/webmention/][Webmention]] is a W3C recommendation for a protocol to notify a URL when a website links to it. It reminds me of the Pingback feature I used in my Wordpress days.
 
 You can find a list of all the pages mentioning this under the "Mentions" heading below. If you would like to mention this page, there is also a form. Add this page as a link to your page, add it to the input, and click "Submit Webmention". If everything goes right, your page should then be linked below.
-** DONE Speaking into the Void
-	 CLOSED: [2019-07-12 Fri 15:13]
-   :PROPERTIES:
-   :EXPORT_FILE_NAME: speaking-into-the-void
-   :END:
- How do we measure...well, anything? In research design,
- /operationalization/ describes how we transform the intangible into a
- measurable variable. How do you measure an abstract concept like
- violence or happiness? The trick is to tally some other variable
- which closely correlates with the desired variable.
+* DONE Speaking into the Void
+	CLOSED: [2019-07-12 Fri 15:13]
+  :PROPERTIES:
+  :EXPORT_FILE_NAME: speaking-into-the-void
+  :END:
+How do we measure...well, anything? In research design,
+/operationalization/ describes how we transform the intangible into a
+measurable variable. How do you measure an abstract concept like
+violence or happiness? The trick is to tally some other variable
+which closely correlates with the desired variable.
 
- Of course, any such measure isn't going to be perfect. In fact, bad
- assumptions behind operationalizations can easily throw everything
- off. Thus this is often the step where research gets messy. By
- definition, if the construct could be empirically measured, an
- operationalization wouldn't be necessary in the first place. This
- leaves open room for a disconnect, which risks pushing the researcher
- toward an incorrect conclusion.
+Of course, any such measure isn't going to be perfect. In fact, bad
+assumptions behind operationalizations can easily throw everything
+off. Thus this is often the step where research gets messy. By
+definition, if the construct could be empirically measured, an
+operationalization wouldn't be necessary in the first place. This
+leaves open room for a disconnect, which risks pushing the researcher
+toward an incorrect conclusion.
 
- Take this example. You want to know how much I like the taste of
- coffee. To measure this, you take samples of my coffee consumption
- over time. The assumption behind this operationalization is that the
- more I like the taste of coffee, the more I would consume. Now if you
- sampled my beverage consumption some weeks, you might conclude that I
- don't like coffee at all: bodies are fragile things and sometimes I
- must forgo my daily cup(s)-of-joe for my health. Do my periods
- avoiding coffee mean I don't like it? Hardly, but if we tried to
- measure enjoyment of a beverage through these samples, we might end
- up reaching the wrong conclusion: that I don't like
- coffee [fn:enjoyment], when in reality I am just avoiding the
- potential for acid reflux.
-*** What's the goal?
- Operationalization becomes particularly important when organizations
- handle large quantities of data at scale. At a certain point, data
- become too overwhelming for a system based on manual
- decision-making. The usual response becomes automation, which can
- have unconsidered second-order effects.
+Take this example. You want to know how much I like the taste of
+coffee. To measure this, you take samples of my coffee consumption
+over time. The assumption behind this operationalization is that the
+more I like the taste of coffee, the more I would consume. Now if you
+sampled my beverage consumption some weeks, you might conclude that I
+don't like coffee at all: bodies are fragile things and sometimes I
+must forgo my daily cup(s)-of-joe for my health. Do my periods
+avoiding coffee mean I don't like it? Hardly, but if we tried to
+measure enjoyment of a beverage through these samples, we might end
+up reaching the wrong conclusion: that I don't like
+coffee [fn:enjoyment], when in reality I am just avoiding the
+potential for acid reflux.
+** What's the goal?
+Operationalization becomes particularly important when organizations
+handle large quantities of data at scale. At a certain point, data
+become too overwhelming for a system based on manual
+decision-making. The usual response becomes automation, which can
+have unconsidered second-order effects.
 
- A few years ago, YouTube made a big change when they redefined
- they mean by a "view". The site used to run rampant with clickbait
- content that people would only watch for maybe a few seconds at
- most. Because views were /the/ important measure and because even the
- shortest watch-time counted for a view, this incentivized some to
- create a lot of bad content---the kind that people would click away
- from within seconds. In short, YouTube's operationalization for views
- encouraged spam and click-bait.
+A few years ago, YouTube made a big change when they redefined
+they mean by a "view". The site used to run rampant with clickbait
+content that people would only watch for maybe a few seconds at
+most. Because views were /the/ important measure and because even the
+shortest watch-time counted for a view, this incentivized some to
+create a lot of bad content---the kind that people would click away
+from within seconds. In short, YouTube's operationalization for views
+encouraged spam and click-bait.
 
- They changed this several years ago, making their definition more
- subtle and contextual. You might notice that I'm being pretty vague
- here. That's intentional as YouTube does not release a lot themselves
- on how they count views. After all, if they told people their precise
- methods, that would make it easier to cheat.
+They changed this several years ago, making their definition more
+subtle and contextual. You might notice that I'm being pretty vague
+here. That's intentional as YouTube does not release a lot themselves
+on how they count views. After all, if they told people their precise
+methods, that would make it easier to cheat.
 
- Views, however, are no longer king on the site. Instead, YouTube has
- moved toward "time watched" as its primary metric. This is harder to
- game and rewards videos that keep people glued to the site for longer
- periods of time.
+Views, however, are no longer king on the site. Instead, YouTube has
+moved toward "time watched" as its primary metric. This is harder to
+game and rewards videos that keep people glued to the site for longer
+periods of time.
 
- This thought dump goes back to motivation. Why do I write? Why do I
- post online? Who is my audience and what do they (and I) want?
+This thought dump goes back to motivation. Why do I write? Why do I
+post online? Who is my audience and what do they (and I) want?
 
- If there is one thing I've learned about myself, it is that I can be
- highly motivated by boredom. I'm happiest with my mind engaged on
- solving some problem---even one of my own creation. So that's kind of
- what I plan to do, at least for the time being. I think there's a
- huge pressure in many online spaces to reduce yourself to a brand.
- YouTube, for instance, [[https://creatoracademy.youtube.com/page/lesson/niche][suggests channels discover and stick to a
- specific niche]]. Fair advice if you are trying to grow on the
- platform, but this approach may not be best for everyone.
+If there is one thing I've learned about myself, it is that I can be
+highly motivated by boredom. I'm happiest with my mind engaged on
+solving some problem---even one of my own creation. So that's kind of
+what I plan to do, at least for the time being. I think there's a
+huge pressure in many online spaces to reduce yourself to a brand.
+YouTube, for instance, [[https://creatoracademy.youtube.com/page/lesson/niche][suggests channels discover and stick to a
+specific niche]]. Fair advice if you are trying to grow on the
+platform, but this approach may not be best for everyone.
 
- In my head, my niche is broad: media. It's what I study and my
- primary personal interest as well. A lot of things fit in that label:
- I define media as tools which transform our view of space and time.
- This is pretty broad[fn:innis]. I see the overlap, but it's less
- clear if anyone else would. No matter.
-*** Who sets the goal?
+In my head, my niche is broad: media. It's what I study and my
+primary personal interest as well. A lot of things fit in that label:
+I define media as tools which transform our view of space and time.
+This is pretty broad[fn:innis]. I see the overlap, but it's less
+clear if anyone else would. No matter.
+** Who sets the goal?
 It's easy to simply chase goals without realizing it. What is the
 "goal" of a place like Facebook? I'd say it's to connect with people,
 but in practice I mostly just lurk and occasionally like. In effect, I
@@ -200,908 +189,908 @@ I think it's important to be clear, honest, and intentional to ourselves about w
 [fn:enjoyment] You could make the counterargument here that enjoyment includes the entire experience of consumption. In this case, it would include the potential for acid reflux, which is enough to sour the entire experience. This is a fair point.
 
 [fn:innis] And this is also clearly inspired by Harold Innis.
-** Waiting for Upstream
-   :PROPERTIES:
-   :EXPORT_FILE_NAME: waiting-for-upstream
-   :EXPORT_DATE: 2019-06-20
-   :END:
- This is a post about this website. It's also a small reflection on software development. Enjoy.
-
- ---
-
- This website has always relied on JavaScript in some way. At the moment, very little runs on the site itself outside specialty pages, but JavaScript always been central to the build process. Gulp, grunt, just plain npm---I think I've tried all of them at some point.
- But as of this note, JavaScript is no longer a part of the build process. Here is how I did it.
-
- Software with a large community of contributors brings further advantages. I obviously was not the only person using JavaScript for my minification workflow. On the Hugo repository, the [[https://github.com/gohugoio/hugo/issues/1251]["Support for minification of generated HTML files"]] issue was first started in 2015, around the same time I switched to Hugo. It was implemented in 2018 after a pretty extensive discussion. I should emphasize that I played absolutely no part in this process. I had a need shared with some others and I got to completely ride free off of their upstream contributions to the software I use. Others also wrote up the documentation that alerted me to this feature in the first place.
-
- This is why popular software brings several advantages beyond their feature set. With a dedicated community, you get expanded documentation and more spaces to find help without any additional effort on your part. Your unusual workflow or edge-cases are more likely to be shared with someone else.
-
- Software should not be evaluated on popularity alone; however, I do think it should be a factor. After all, it would seem quite the waste to throw out the fruits of popular collaboration.
-** TODO Software on Patreon
-
- - https://www.patreon.com/evanyou
- - 
-** A Fast from Electron: Streaming Music through MPD
-   :PROPERTIES:
-   :EXPORT_FILE_NAME: electron-fast
-   :EXPORT_DATE: 2019-06-13
-   :END:
- Enough has been written on Electron's shortfalls that I feel no need to add my own gripes. Generally, I try to avoid it as much as possible. I'm sure the Discord desktop client is nice, but it also works just fine in my web browser. Slack? Okay, but you're only allowed on the work computer!
-
- Despite my hesitations, one Electron app has constantly followed me around for years: the unofficial Google Play Music desktop player. Before you ask, no, I don't use Spotify. I do think it's the better-designed service, but GPM has a good family plan though and it comes with YouTube Red, which is a nice bonus.
-
- Because of this setup, I basically have had a Chromium browser open on my computer at all times just to play music. What's the point of having 20 GB of RAM if I'm not trying to minimize its use at all times?
-
- Here's what I'm using now instead:
- - [[https://github.com/gmusicproxy/gmusicproxy][gmusicproxy]]
- - [[https://www.musicpd.org/][Music Player Daemon (MPD)]]
- - [[https://github.com/MusicPlayerDaemon/mpdscribble][mpdscribble]]
- - [[https://rybczak.net/ncmpcpp/][NCurses Music Player Client (Plus Plus)]]
-
- The only real pain point in my workflow is searching for new albums which are not already in my playlists. I might write a simple program for that at some point.
-
- Bonus: my scrobbles now cache if there is ever a connectivity issue.
-** Principles for Creative Work
-   :PROPERTIES:
-   :EXPORT_FILE_NAME: creative-work-principles
-   :EXPORT_DATE: 2019-06-06
-   :END:
-
- A lot of these ideas aren't original. In fact, many are borrowed from
- processes in software development and team management I have learned
- while a college student. I am writing them down here as a bit of a
- self-reminder. This note isn't perfect, but....
-*** Perfection is a fantasy
-
- Don't fall for it.
-
- The idea of perfection comes the imagination: an unrealistic,
- idealized version of ourselves with no basis in reality.  Most of the
- time, "good enough" is good enough. The goal should never be
- perfection.  Rather, ask what you are trying to convey? How do you
- want people to feel? What do you want them to know? If you can say
- you've put to form what you want the audience to experience, you have
- succeeded.
-
- Otherwise...
-
-*** Build quickly and fail cheaply.
-
- I wrote this up as one principle because I think they are necessarily
- linked to each other.  As a recovering perfectionist, I remain
- astutely aware of failure. It's inevitable in nearly any project. The
- best way to manage it is to incorporate it into the process. Create
- opportunities to flesh out ideas and prototypes to avoid racking up
- higher costs later on.
-
-*** Reduce workflow friction.
-
- How much time are you actually working and how much time do you spend
- on paperwork? This isn't to say documentation is useless.
- Coordination and teamwork often are exactly the bottlenecks which need
- to be eliminated.
-
-*** It's easiest after you start.
-
- I did summer swim team for many years. In May and early June, getting
- into the water was a real drudge. The air wasn't quite warm enough for
- it to feel refreshing and the water hadn't warmed up enough from its
- chilly tapwater origins. The thing is, you could spend forever building
- everything up, waiting at the side of the pool. Trying to amp yourself
- up. It gets you nowhere. The only way to get through it is to get started.
- It sucks, but you get better at managing it.
-** Cartograms of the 2018 U.S. House Vote
-   :PROPERTIES:
-   :EXPORT_FILE_NAME: 2018-house-cartograms
-   :EXPORT_DATE: 2018-11-16
-   :END:
-
- The divide between urban and rural voters has become an [[https://www.washingtonpost.com/graphics/politics/2016-election/urban-rural-vote-swing/][increasingly
- observable]] pattern in U.S. elections.  Many Democratic voters pack
- into areas with higher population densities. Choropleth maps—where
- regions are shaded by a variable—often hide this reality because
- geographic area has little to do with the vote count.
-
- Area cartograms can address this issue by distorting the geography
- to match the population. Furthermore, cartograms on different
- variables can present some insights. Below are three different
- maps of the 2018 midterm U.S. House election results by populations:
- total population, population of Democratic voters, and population of
- GOP voters.
-
- #+BEGIN_EXPORT html
- <script src="//cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.min.js"></script>
-
- <script src="https://unpkg.com/cartogram-chart@1.0.6/dist/cartogram-chart.min.js"></script>
-
- <!-- htmlmin:ignore -->
- <div id="world">
-   <!-- This will contain the map.-->
- </div>
- <!-- htmlmin:ignore -->
-
- <select name="pop">
-   <option value="HC01_EST_VC01" selected="selected">Population</option>
-   <option value="Dem.Votes">Democrats</option>
-   <option value="GOP.Votes">Republicans</option>
- </select>
-
- <script>
- var cart;
- d3.json('/images/test.json', function (error, world) {
-         if (error) throw error;
-         const colorScale = d3.scaleOrdinal(["#F8766D", "#619CFF", "#CCCCCC"]);
-         cart = Cartogram()
-             .topoJson(world)
-             .topoObjectName('states')
-             .projection(d3.geoAlbers())
-             .iterations(12)
-             .value(function (obj) {
-                 return obj.properties["HC01_EST_VC01"] + 1000;
-             })
-             .color(({ properties: { Party } }) => colorScale(Party))
-             .label(({ properties: p }) => `${p.STUSAB}${p.CD115FP} (${p.Party})`)
-             .valFormatter(d3.format(".3s"))
-             .width("100%")
-             .height(500)
-             (document.getElementById('world'));
- });
- document.addEventListener('DOMContentLoaded',function() {
-     document.querySelector('select[name="pop"]').onchange=changeEventHandler;
- },false);
- function changeEventHandler(event) {
-     if(event.target.value) {
-         cart.value(function (obj) { return obj.properties[event.target.value] + 1000;});
-     }
- }
- </script>
- #+END_EXPORT
-
-
-*** How I Made This
-
- I processed the data in R. The House results came from a spreadsheet
- maintained by [[https://docs.google.com/spreadsheets/d/1WxDaxD5az6kdOjJncmGph37z0BPNhV1fNAH_g7IkpC0/htmlview?sle=true][David Wasserman & Ally Flinn of Cook Political Report.]] I
- also used a table from the [[https://www2.census.gov/geo/docs/reference/state.txt][U.S. Census]] to map the [[https://www.census.gov/geo/maps-data/data/cbf/cbf_cds.html][Congressional
- District shapefiles]] to the results.
-
- #+BEGIN_SRC R :session :colnames yes :exports both
- library(maps)
-
- all_content = readLines("https://docs.google.com/spreadsheets/d/1WxDaxD5az6kdOjJncmGph37z0BPNhV1fNAH_g7IkpC0/gviz/tq?tqx=out:csv&sheet=Sheet1")
- all_content = all_content[-2]
- all_content = all_content[-2]
- results <- read.csv(textConnection(all_content), header = TRUE, stringsAsFactors = FALSE)
- results$CD.[is.na(results$CD.)]<-0
- fips <- read.csv("https://www2.census.gov/geo/docs/reference/state.txt", sep="|")
- results_fips <- merge(results, fips, by.x="State", by.y="STATE_NAME")
- results_fips$GEOID <- sprintf("%02d%02d", results_fips$STATE, results_fips$CD.)
- tail(results_fips[,c("State", "CD.", "Party", "GEOID")])
- #+END_SRC
-
- #+RESULTS:
- | State     | CD. | Party | GEOID |
- |-----------+-----+-------+-------|
- | Wisconsin |   4 | D     |  5504 |
- | Wisconsin |   5 | R     |  5505 |
- | Wisconsin |   6 | R     |  5506 |
- | Wisconsin |   7 | R     |  5507 |
- | Wisconsin |   8 | R     |  5508 |
- | Wyoming   |   0 | R     |  5600 |
-
- To visualize this data, I need to use my trusty [[https://www.census.gov/geo/maps-data/data/cbf/cbf_cds.html][congressional shape
- files]] from the U.S. Census Bureau.
-
- #+BEGIN_SRC R :session :results silent :var shapefile="/home/carl/Downloads/cb_2017_us_cd115_20m.shp"
- library(cartogram)
- library(maptools)
-
- shape <- sf::st_read(shapefile)
- shape$STATEFP =  as.numeric(shape$STATEFP)
- shape_data <- merge(shape, results_fips, by="GEOID")
- shape_data <- shape_data[!is.na(shape_data$State) & shape_data$State != "Alaska" & shape_data$State != "Hawaii",]
- shape_data$GOP.Votes <- as.numeric(gsub(",", "", shape_data$GOP.Votes))
- shape_data$Dem.Votes <- as.numeric(gsub(",", "", shape_data$Dem.Votes))
- #+END_SRC
-
- Sorry, Alaska and Hawaii. Some things are easier without you.
-
- Creating the cartogram ended up being the tricky part. I tried a few
- different libraries, but ended up finding the most success with
- [[https://github.com/dreamRs/topogRam][topogRam]]. The only issue I had was getting it to work with my website.
- To do this, I ended up writing the JavaScript myself and loading it
- from a pre-saved JSON file.
-
- #+BEGIN_SRC R :session :results silent :var popfile="/home/carl/Downloads/ACS_17_1YR_S0101.csv"
- library(topogram)
- top <- topogram(shape=shape_data, value="Dem.Votes")
- hpop <- read.csv(popfile)
- hpop$GEOID <- sprintf("%04d", hpop$GEO.id2)
- data <- merge(shape_data, hpop, by="GEOID")
- d <- data[,c("STUSAB", "CD115FP", "Party", "HC01_EST_VC01", "Dem.Votes", "GOP.Votes")]
- top2 <- topogram(shape=d, value="HC01_EST_VC01")
- write(top2$x$shape, "images/test.json")
- #+END_SRC
-
- That is all there is to it. The end results look a bit strange
- (and a bit like Russia according to some observers), but I think
- they do a good job at showing where each respective party's voters
- are located.
-** DONE My 2018 in Music
-   CLOSED: [2018-12-21 Fri 09:18]
-   :PROPERTIES:
-   :EXPORT_FILE_NAME: 2018-albums
-   :EXPORT_DATE: 2018-12-09
-   :END:
-
- If your social media feed is anything like mine, you probably
- see a lot of posts like this toward the end of the year.
-
- #+CAPTION: Spotify promomotional image for "Spotify Wrapped 2018".
- [[file:images/spotify_unwrapped_2018_promo.jpg]]
-
- It can be fun to see what kind of music other people like and to share
- your own music tastes. It's also a great advertisement campaign for
- Spotify (see their nice logo in the top left of these graphics).
-
- The only problem for me is that I'm not a Spotify user, so when I try
- to open my #2018Wrapped data, I am greeted with a very nicely packaged
- empty box. Fortunately, as I wrote about in my [[/notes/2017-albums-in-2018/][last post]], I log all
- of my music streaming using a free, open-source service called
- ListenBrainz. I am going to use that data to create my own end-of-year
- music graphic similar to the ones posted by my friends who use Spotify.
-
-**** The Data
- I'm doing this project in R for a couple of reasons. First of all, I
- kind of like R. Honestly this wasn't the case a few years ago. It has
- tons of great stats tools, but a lot of things are very much designed
- for statisticians. 
-
- #+BEGIN_SRC R :session
- print("starts")
- #+END_SRC
-
- #+RESULTS:
- | x      |
- |--------|
- | starts |
-
- #+BEGIN_SRC R :session :var lb="../datasets/music-data-2018.json" :results silent
- library("jsonlite")
- library("tidyverse")
- library("xml2")
- library("RCurl")
- library("scales")
- library("purrrlyr")
- plays <- fromJSON(lb)
- #+END_SRC
-
- I'm only interested in my activity from 2018, so I will filter
- my dataset down to only the entries with a timecode in 2018.
-
- #+BEGIN_SRC R :session :colnames no
- stamp <- as.numeric(as.POSIXct("2018-01-01", format="%Y-%m-%d"))
- recentPlays <- plays[plays$timestamp >= stamp, ]
- recentPlays <- as_tibble(recentPlays[c("artist_name", "track_name", "release_name", "timestamp")])
- nrow(recentPlays)
- #+END_SRC
-
- #+RESULTS:
- : 13226
-
- That's a lot of music! How was that listening distributed over time? 
-
- #+BEGIN_SRC R :session :exports both :results value file :var fname="images/2018_music_week_distribution_hist.png" :colnames no
-   recentPlays$date <- as.Date(as.POSIXct(recentPlays$timestamp, origin="1970-01-01"))
-   plot <- ggplot(recentPlays, aes(format(recentPlays$date, "%Y-%U"))) +
-       geom_bar(stat = "count") +
-       labs(x = "Week", title="Tracks streamed per week.") +
-       theme(axis.text.x=element_text(angle = -90, hjust = 0),
-             panel.border = element_blank(),
-             legend.key = element_blank(),
-             panel.background = element_blank(),
-             plot.background = element_rect(fill = "transparent",colour = NA)
-       )
-   ggsave(file=fname, plot=plot, width=7, height=4, dpi=300, bg="transparent")
-   fname
- #+END_SRC
-
- #+CAPTION: Tracks streamed per week.
- #+RESULTS:
- [[file:images/2018_music_week_distribution_hist.png]]
-***** Top Artists
- We can use this data to answer some pretty easy questions. For
- example, who were my top artists in 2018?
-
- #+BEGIN_SRC R :session :colnames yes
-   top_artists <-recentPlays %>%
-       count(artist_name, sort=T)
-   top_artists %>% head()
- #+END_SRC
-
- #+RESULTS:
- | artist_name             |   n |
- |-------------------------+-----|
- | Charli XCX              | 870 |
- | Carly Rae Jepsen        | 427 |
- | Ariana Grande           | 311 |
- | Kacey Musgraves         | 277 |
- | Marina And The Diamonds | 223 |
- | Lady Gaga               | 215 |
-
- [[https://pitchfork.com/reviews/albums/charli-xcx-pop-2/][Critically]] [[https://music.avclub.com/carly-rae-jepsen-lands-her-romantic-80s-pop-daydream-1798184677][acclaimed]] [[https://www.thelineofbestfit.com/reviews/albums/ariana-grande-sweetener-album-review][pop]] [[https://consequenceofsound.net/2018/03/album-review-kacey-musgraves-absolutely-shines-on-golden-hour/][perfection]] [[https://www.tinymixtapes.com/music-review/sophie-oil-every-pearls-un-insides][yes]]!
-
-***** Top Songs
-
- I can also do something similar to find my top tracks for the year.
-
- #+BEGIN_SRC R
-   recentPlays %>%
-       count(artist_name, track_name, sort=T) %>%
-       head(5)
- #+END_SRC
-
- #+RESULTS:
- | artist_name | track_name                                                |  n |
- |-------------+-----------------------------------------------------------+----|
- | SOPHIE      | Immaterial                                                | 41 |
- | Charli XCX  | No Angel                                                  | 40 |
- | Charli XCX  | I Got It (feat. Brooke Candy, CupcakKe and Pabllo Vittar) | 36 |
- | Charli XCX  | Focus                                                     | 34 |
- | Charli XCX  | Lucky                                                     | 33 |
-
- I listen to a /lot/ of Charli XCX, so this list doesn't really have a
- lot of variety (though Charli is absolutely one of the most versatile
- artists in pop today). Let's filter the results to only show one song
- per artist.
-
- #+BEGIN_SRC R :session :colnames yes
-   top_songs <- recentPlays %>%
-       group_by(artist_name, track_name) %>%
-       count(sort=T) %>%
-       ungroup() %>%
-       distinct(artist_name, .keep_all=T) %>%
-       head(5)
- #+END_SRC
-
- #+RESULTS:
- | artist_name      | track_name    |  n |
- |------------------+---------------+----|
- | SOPHIE           | Immaterial    | 41 |
- | Charli XCX       | No Angel      | 40 |
- | Troye Sivan      | My My My!     | 32 |
- | Kacey Musgraves  | High Horse    | 31 |
- | Carly Rae Jepsen | Party For One | 26 |
-
-***** Top Albums
-
- ListenBrainz also logs the release name, so it's pretty easy
- to compile a list of my top albums.
-
- #+BEGIN_SRC R :session :results value
-   topAlbums <- recentPlays %>%
-       group_by(artist_name, release_name) %>%
-       count(sort=T)
-   topAlbums %>% head()
- #+END_SRC
-
- #+CAPTION: My most-streamed albums of 2018.
- #+RESULTS:
- | artist_name             | release_name     |   n |
- |-------------------------+------------------+-----|
- | Charli XCX              | Pop 2            | 296 |
- | Kacey Musgraves         | Golden Hour      | 247 |
- | Carly Rae Jepsen        | Emotion (Deluxe) | 191 |
- | Marina And The Diamonds | Electra Heart    | 179 |
- | Charli XCX              | Number 1 Angel   | 153 |
- | Ariana Grande           | Dangerous Woman  | 144 |
-
- Let's say I just want to know which albums from the last year
- I streamed.
-
- #+BEGIN_SRC R :session
-   getAlbum <- function(row) {
-       mburl <- sprintf(
-           'https://beta.musicbrainz.org/ws/2/release/?query=artist:%s+release:%s+AND+status:official+AND+format:"Digital%%20Media"&inc=release-group&limit=1',
-           curlEscape(row$artist_name),
-           curlEscape(row$release_name)
-       )
-       print(mburl)
-       Sys.sleep(0.25)
-       groupData <- read_xml(mburl)
-       xml_ns_strip(groupData)
-       release <- xml_find_first(groupData, '//release[@ns2:score=100]')
-       xml_ns_strip(release)
-       # If it is empty
-       if (class(release) == "xml_missing") {
-           release <- xml_new_document() %>% xml_add_child("")
-       }
-       # Go with the earliest release date given.
-       date <- xml_text(xml_find_first(release, "//date"))
-       artistId <- xml_text(xml_find_first(release, "//artist/@id"))
-       df <- data.frame(date, artistId, stringsAsFactors=FALSE)
-       colnames(df) <- c("date", "artistId")
-       return(df)
-   }
- #+END_SRC
-
- #+BEGIN_SRC R :session :results silent
-   recentAlbums <- topAlbums %>% filter(n > 25) %>% by_row(..f=getAlbum, .to=".out") %>% unnest()
- #+END_SRC
-
- #+BEGIN_SRC R
- recentAlbums %>%
-     filter(str_detect(date, "2018")) %>%
-     select(artist_name, release_name, n, date) %>%
-     filter(n > 75)
- #+END_SRC
-
- #+RESULTS:
- | artist_name               | release_name                    |   n |       date |
- |---------------------------+---------------------------------+-----+------------|
- | Kacey Musgraves           | Golden Hour                     | 247 | 2018-03-30 |
- | Clarence Clarity          | THINK: PEACE                    | 119 | 2018-10-04 |
- | SOPHIE                    | OIL OF EVERY PEARL'S UN-INSIDES | 119 | 2018-06-15 |
- | Amnesia Scanner           | Another Life                    | 118 | 2018-09-07 |
- | Troye Sivan               | Bloom                           | 118 | 2018-05-02 |
- | IDLES                     | Joy as an Act of Resistance.    | 103 | 2018-08-31 |
- | Ariana Grande             | Sweetener                       |  98 | 2018-08-17 |
- | A.A.L (Against All Logic) | 2012 - 2017                     |  90 | 2018-02-17 |
- | Let's Eat Grandma         | I'm All Ears                    |  87 | 2018-06-29 |
- | Beach House               | 7                               |  86 | 2018-05-11 |
- | Mitski                    | Be the Cowboy                   |  86 | 2018-08-17 |
- | Mid-Air Thief             | Crumbling 무너지기              |  78 | 2018-07-31 |
-
-***** Minutes streamed
- Initially I considered a brute-force approach to this problem;
- however, it does not seem a good use of resources to get the
- length for every single song. Instead I'll write a function
- to grab lengths for songs...
-
- #+BEGIN_SRC R
-   getLengths <- function(row) {
-	song_stripped <- trimws(sub("\\(.*\\)", "", row$track_name))
-	mburl <- sprintf(
-            'https://beta.musicbrainz.org/ws/2/recording/?query=artist:%s+AND+recording:%s&limit=2',
-            curlEscape(row$artist_name),
-            curlEscape(song_stripped)
-	)
-	# To comply with the rate limit.
-	Sys.sleep(0.5)
-	albumData <- read_xml(mburl)
-	xml_ns_strip(albumData)
-	length <- xml_integer(xml_find_first(albumData, "//length"))
-	return(length)
+* Waiting for Upstream
+  :PROPERTIES:
+  :EXPORT_FILE_NAME: waiting-for-upstream
+  :EXPORT_DATE: 2019-06-20
+  :END:
+This is a post about this website. It's also a small reflection on software development. Enjoy.
+
+---
+
+This website has always relied on JavaScript in some way. At the moment, very little runs on the site itself outside specialty pages, but JavaScript always been central to the build process. Gulp, grunt, just plain npm---I think I've tried all of them at some point.
+But as of this note, JavaScript is no longer a part of the build process. Here is how I did it.
+
+Software with a large community of contributors brings further advantages. I obviously was not the only person using JavaScript for my minification workflow. On the Hugo repository, the [[https://github.com/gohugoio/hugo/issues/1251]["Support for minification of generated HTML files"]] issue was first started in 2015, around the same time I switched to Hugo. It was implemented in 2018 after a pretty extensive discussion. I should emphasize that I played absolutely no part in this process. I had a need shared with some others and I got to completely ride free off of their upstream contributions to the software I use. Others also wrote up the documentation that alerted me to this feature in the first place.
+
+This is why popular software brings several advantages beyond their feature set. With a dedicated community, you get expanded documentation and more spaces to find help without any additional effort on your part. Your unusual workflow or edge-cases are more likely to be shared with someone else.
+
+Software should not be evaluated on popularity alone; however, I do think it should be a factor. After all, it would seem quite the waste to throw out the fruits of popular collaboration.
+* TODO Software on Patreon
+
+- https://www.patreon.com/evanyou
+- 
+* A Fast from Electron: Streaming Music through MPD
+  :PROPERTIES:
+  :EXPORT_FILE_NAME: electron-fast
+  :EXPORT_DATE: 2019-06-13
+  :END:
+Enough has been written on Electron's shortfalls that I feel no need to add my own gripes. Generally, I try to avoid it as much as possible. I'm sure the Discord desktop client is nice, but it also works just fine in my web browser. Slack? Okay, but you're only allowed on the work computer!
+
+Despite my hesitations, one Electron app has constantly followed me around for years: the unofficial Google Play Music desktop player. Before you ask, no, I don't use Spotify. I do think it's the better-designed service, but GPM has a good family plan though and it comes with YouTube Red, which is a nice bonus.
+
+Because of this setup, I basically have had a Chromium browser open on my computer at all times just to play music. What's the point of having 20 GB of RAM if I'm not trying to minimize its use at all times?
+
+Here's what I'm using now instead:
+- [[https://github.com/gmusicproxy/gmusicproxy][gmusicproxy]]
+- [[https://www.musicpd.org/][Music Player Daemon (MPD)]]
+- [[https://github.com/MusicPlayerDaemon/mpdscribble][mpdscribble]]
+- [[https://rybczak.net/ncmpcpp/][NCurses Music Player Client (Plus Plus)]]
+
+The only real pain point in my workflow is searching for new albums which are not already in my playlists. I might write a simple program for that at some point.
+
+Bonus: my scrobbles now cache if there is ever a connectivity issue.
+* Principles for Creative Work
+  :PROPERTIES:
+  :EXPORT_FILE_NAME: creative-work-principles
+  :EXPORT_DATE: 2019-06-06
+  :END:
+
+A lot of these ideas aren't original. In fact, many are borrowed from
+processes in software development and team management I have learned
+while a college student. I am writing them down here as a bit of a
+self-reminder. This note isn't perfect, but....
+** Perfection is a fantasy
+
+Don't fall for it.
+
+The idea of perfection comes the imagination: an unrealistic,
+idealized version of ourselves with no basis in reality.  Most of the
+time, "good enough" is good enough. The goal should never be
+perfection.  Rather, ask what you are trying to convey? How do you
+want people to feel? What do you want them to know? If you can say
+you've put to form what you want the audience to experience, you have
+succeeded.
+
+Otherwise...
+
+** Build quickly and fail cheaply.
+
+I wrote this up as one principle because I think they are necessarily
+linked to each other.  As a recovering perfectionist, I remain
+astutely aware of failure. It's inevitable in nearly any project. The
+best way to manage it is to incorporate it into the process. Create
+opportunities to flesh out ideas and prototypes to avoid racking up
+higher costs later on.
+
+** Reduce workflow friction.
+
+How much time are you actually working and how much time do you spend
+on paperwork? This isn't to say documentation is useless.
+Coordination and teamwork often are exactly the bottlenecks which need
+to be eliminated.
+
+** It's easiest after you start.
+
+I did summer swim team for many years. In May and early June, getting
+into the water was a real drudge. The air wasn't quite warm enough for
+it to feel refreshing and the water hadn't warmed up enough from its
+chilly tapwater origins. The thing is, you could spend forever building
+everything up, waiting at the side of the pool. Trying to amp yourself
+up. It gets you nowhere. The only way to get through it is to get started.
+It sucks, but you get better at managing it.
+* Cartograms of the 2018 U.S. House Vote
+  :PROPERTIES:
+  :EXPORT_FILE_NAME: 2018-house-cartograms
+  :EXPORT_DATE: 2018-11-16
+  :END:
+
+The divide between urban and rural voters has become an [[https://www.washingtonpost.com/graphics/politics/2016-election/urban-rural-vote-swing/][increasingly
+observable]] pattern in U.S. elections.  Many Democratic voters pack
+into areas with higher population densities. Choropleth maps—where
+regions are shaded by a variable—often hide this reality because
+geographic area has little to do with the vote count.
+
+Area cartograms can address this issue by distorting the geography
+to match the population. Furthermore, cartograms on different
+variables can present some insights. Below are three different
+maps of the 2018 midterm U.S. House election results by populations:
+total population, population of Democratic voters, and population of
+GOP voters.
+
+#+BEGIN_EXPORT html
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.min.js"></script>
+
+<script src="https://unpkg.com/cartogram-chart@1.0.6/dist/cartogram-chart.min.js"></script>
+
+<!-- htmlmin:ignore -->
+<div id="world">
+  <!-- This will contain the map.-->
+</div>
+<!-- htmlmin:ignore -->
+
+<select name="pop">
+  <option value="HC01_EST_VC01" selected="selected">Population</option>
+  <option value="Dem.Votes">Democrats</option>
+  <option value="GOP.Votes">Republicans</option>
+</select>
+
+<script>
+var cart;
+d3.json('/images/test.json', function (error, world) {
+        if (error) throw error;
+        const colorScale = d3.scaleOrdinal(["#F8766D", "#619CFF", "#CCCCCC"]);
+        cart = Cartogram()
+            .topoJson(world)
+            .topoObjectName('states')
+            .projection(d3.geoAlbers())
+            .iterations(12)
+            .value(function (obj) {
+                return obj.properties["HC01_EST_VC01"] + 1000;
+            })
+            .color(({ properties: { Party } }) => colorScale(Party))
+            .label(({ properties: p }) => `${p.STUSAB}${p.CD115FP} (${p.Party})`)
+            .valFormatter(d3.format(".3s"))
+            .width("100%")
+            .height(500)
+            (document.getElementById('world'));
+});
+document.addEventListener('DOMContentLoaded',function() {
+    document.querySelector('select[name="pop"]').onchange=changeEventHandler;
+},false);
+function changeEventHandler(event) {
+    if(event.target.value) {
+        cart.value(function (obj) { return obj.properties[event.target.value] + 1000;});
     }
- #+END_SRC
-
- ...and sample 250 of my streams. 
-
- #+BEGIN_SRC R :results silent
- set.seed(425368203)
- len_sample <- recentPlays %>% sample_n(250) %>% by_row(..f=getLengths, .to="length") %>% unnest()
- #+END_SRC
-
- This gives me a reasonable mean length.
-
- #+BEGIN_SRC R
- mean_len <- len_sample %>% dplyr::summarize(Mean=mean(length, na.rm=T))
- #+END_SRC
-
- #+RESULTS:
- |             Mean |
- |------------------|
- | 240542.148760331 |
-
- #+BEGIN_SRC R :exports none
- lens <- lengths[!is.na(lengths)]
- ggplot() + aes(lens) + geom_histogram(binwidth=60000)
- #+END_SRC
-
- Which I can use to estimate the total for the population.
-
- #+BEGIN_SRC R
- mins <- nrow(recentPlays) * mean(as.numeric(mean_len)) / 60000
- #+END_SRC
-
- #+RESULTS:
- |                x |
- |------------------|
- | 50698.9453704167 |
-
-***** Top Genre
- Observation: the top quartile of artists make up the vast
- majority of my streams this year.
-
- #+BEGIN_SRC R
-   top_artist_ids <- recentAlbums %>%
-       group_by(artistId) %>%
-       filter(!is.na(artistId)) %>%
-       summarize(Sum=sum(n)) %>%
-       arrange(desc(Sum))
-   top_artist_ids %>%
-       summarize(sum(Sum))
- #+END_SRC
-
- #+RESULTS:
- | sum(Sum) |
- |----------|
- |     6985 |
+}
+</script>
+#+END_EXPORT
 
 
- Conslution: This is a good time to use a sample again.
+** How I Made This
 
- #+BEGIN_SRC R
-   fetchGenres <- function(row) {
-       mburl <- sprintf(
-           "https://beta.musicbrainz.org/ws/2/artist/%s?inc=genres",
-           row$artistId
-       )
-       print(mburl)
-       Sys.sleep(0.25)
-       groupData <- read_xml(mburl)
-       xml_ns_strip(groupData)
-       genres <- xml_text(xml_find_all(groupData, "//genre/name"))
-       return(genres)
+I processed the data in R. The House results came from a spreadsheet
+maintained by [[https://docs.google.com/spreadsheets/d/1WxDaxD5az6kdOjJncmGph37z0BPNhV1fNAH_g7IkpC0/htmlview?sle=true][David Wasserman & Ally Flinn of Cook Political Report.]] I
+also used a table from the [[https://www2.census.gov/geo/docs/reference/state.txt][U.S. Census]] to map the [[https://www.census.gov/geo/maps-data/data/cbf/cbf_cds.html][Congressional
+District shapefiles]] to the results.
+
+#+BEGIN_SRC R :session :colnames yes :exports both
+library(maps)
+
+all_content = readLines("https://docs.google.com/spreadsheets/d/1WxDaxD5az6kdOjJncmGph37z0BPNhV1fNAH_g7IkpC0/gviz/tq?tqx=out:csv&sheet=Sheet1")
+all_content = all_content[-2]
+all_content = all_content[-2]
+results <- read.csv(textConnection(all_content), header = TRUE, stringsAsFactors = FALSE)
+results$CD.[is.na(results$CD.)]<-0
+fips <- read.csv("https://www2.census.gov/geo/docs/reference/state.txt", sep="|")
+results_fips <- merge(results, fips, by.x="State", by.y="STATE_NAME")
+results_fips$GEOID <- sprintf("%02d%02d", results_fips$STATE, results_fips$CD.)
+tail(results_fips[,c("State", "CD.", "Party", "GEOID")])
+#+END_SRC
+
+#+RESULTS:
+| State     | CD. | Party | GEOID |
+|-----------+-----+-------+-------|
+| Wisconsin |   4 | D     |  5504 |
+| Wisconsin |   5 | R     |  5505 |
+| Wisconsin |   6 | R     |  5506 |
+| Wisconsin |   7 | R     |  5507 |
+| Wisconsin |   8 | R     |  5508 |
+| Wyoming   |   0 | R     |  5600 |
+
+To visualize this data, I need to use my trusty [[https://www.census.gov/geo/maps-data/data/cbf/cbf_cds.html][congressional shape
+files]] from the U.S. Census Bureau.
+
+#+BEGIN_SRC R :session :results silent :var shapefile="/home/carl/Downloads/cb_2017_us_cd115_20m.shp"
+library(cartogram)
+library(maptools)
+
+shape <- sf::st_read(shapefile)
+shape$STATEFP =  as.numeric(shape$STATEFP)
+shape_data <- merge(shape, results_fips, by="GEOID")
+shape_data <- shape_data[!is.na(shape_data$State) & shape_data$State != "Alaska" & shape_data$State != "Hawaii",]
+shape_data$GOP.Votes <- as.numeric(gsub(",", "", shape_data$GOP.Votes))
+shape_data$Dem.Votes <- as.numeric(gsub(",", "", shape_data$Dem.Votes))
+#+END_SRC
+
+Sorry, Alaska and Hawaii. Some things are easier without you.
+
+Creating the cartogram ended up being the tricky part. I tried a few
+different libraries, but ended up finding the most success with
+[[https://github.com/dreamRs/topogRam][topogRam]]. The only issue I had was getting it to work with my website.
+To do this, I ended up writing the JavaScript myself and loading it
+from a pre-saved JSON file.
+
+#+BEGIN_SRC R :session :results silent :var popfile="/home/carl/Downloads/ACS_17_1YR_S0101.csv"
+library(topogram)
+top <- topogram(shape=shape_data, value="Dem.Votes")
+hpop <- read.csv(popfile)
+hpop$GEOID <- sprintf("%04d", hpop$GEO.id2)
+data <- merge(shape_data, hpop, by="GEOID")
+d <- data[,c("STUSAB", "CD115FP", "Party", "HC01_EST_VC01", "Dem.Votes", "GOP.Votes")]
+top2 <- topogram(shape=d, value="HC01_EST_VC01")
+write(top2$x$shape, "images/test.json")
+#+END_SRC
+
+That is all there is to it. The end results look a bit strange
+(and a bit like Russia according to some observers), but I think
+they do a good job at showing where each respective party's voters
+are located.
+* DONE My 2018 in Music
+  CLOSED: [2018-12-21 Fri 09:18]
+  :PROPERTIES:
+  :EXPORT_FILE_NAME: 2018-albums
+  :EXPORT_DATE: 2018-12-09
+  :END:
+
+If your social media feed is anything like mine, you probably
+see a lot of posts like this toward the end of the year.
+
+#+CAPTION: Spotify promomotional image for "Spotify Wrapped 2018".
+[[file:images/spotify_unwrapped_2018_promo.jpg]]
+
+It can be fun to see what kind of music other people like and to share
+your own music tastes. It's also a great advertisement campaign for
+Spotify (see their nice logo in the top left of these graphics).
+
+The only problem for me is that I'm not a Spotify user, so when I try
+to open my #2018Wrapped data, I am greeted with a very nicely packaged
+empty box. Fortunately, as I wrote about in my [[/notes/2017-albums-in-2018/][last post]], I log all
+of my music streaming using a free, open-source service called
+ListenBrainz. I am going to use that data to create my own end-of-year
+music graphic similar to the ones posted by my friends who use Spotify.
+
+*** The Data
+I'm doing this project in R for a couple of reasons. First of all, I
+kind of like R. Honestly this wasn't the case a few years ago. It has
+tons of great stats tools, but a lot of things are very much designed
+for statisticians. 
+
+#+BEGIN_SRC R :session
+print("starts")
+#+END_SRC
+
+#+RESULTS:
+| x      |
+|--------|
+| starts |
+
+#+BEGIN_SRC R :session :var lb="../datasets/music-data-2018.json" :results silent
+library("jsonlite")
+library("tidyverse")
+library("xml2")
+library("RCurl")
+library("scales")
+library("purrrlyr")
+plays <- fromJSON(lb)
+#+END_SRC
+
+I'm only interested in my activity from 2018, so I will filter
+my dataset down to only the entries with a timecode in 2018.
+
+#+BEGIN_SRC R :session :colnames no
+stamp <- as.numeric(as.POSIXct("2018-01-01", format="%Y-%m-%d"))
+recentPlays <- plays[plays$timestamp >= stamp, ]
+recentPlays <- as_tibble(recentPlays[c("artist_name", "track_name", "release_name", "timestamp")])
+nrow(recentPlays)
+#+END_SRC
+
+#+RESULTS:
+: 13226
+
+That's a lot of music! How was that listening distributed over time? 
+
+#+BEGIN_SRC R :session :exports both :results value file :var fname="images/2018_music_week_distribution_hist.png" :colnames no
+  recentPlays$date <- as.Date(as.POSIXct(recentPlays$timestamp, origin="1970-01-01"))
+  plot <- ggplot(recentPlays, aes(format(recentPlays$date, "%Y-%U"))) +
+      geom_bar(stat = "count") +
+      labs(x = "Week", title="Tracks streamed per week.") +
+      theme(axis.text.x=element_text(angle = -90, hjust = 0),
+            panel.border = element_blank(),
+            legend.key = element_blank(),
+            panel.background = element_blank(),
+            plot.background = element_rect(fill = "transparent",colour = NA)
+      )
+  ggsave(file=fname, plot=plot, width=7, height=4, dpi=300, bg="transparent")
+  fname
+#+END_SRC
+
+#+CAPTION: Tracks streamed per week.
+#+RESULTS:
+[[file:images/2018_music_week_distribution_hist.png]]
+**** Top Artists
+We can use this data to answer some pretty easy questions. For
+example, who were my top artists in 2018?
+
+#+BEGIN_SRC R :session :colnames yes
+  top_artists <-recentPlays %>%
+      count(artist_name, sort=T)
+  top_artists %>% head()
+#+END_SRC
+
+#+RESULTS:
+| artist_name             |   n |
+|-------------------------+-----|
+| Charli XCX              | 870 |
+| Carly Rae Jepsen        | 427 |
+| Ariana Grande           | 311 |
+| Kacey Musgraves         | 277 |
+| Marina And The Diamonds | 223 |
+| Lady Gaga               | 215 |
+
+[[https://pitchfork.com/reviews/albums/charli-xcx-pop-2/][Critically]] [[https://music.avclub.com/carly-rae-jepsen-lands-her-romantic-80s-pop-daydream-1798184677][acclaimed]] [[https://www.thelineofbestfit.com/reviews/albums/ariana-grande-sweetener-album-review][pop]] [[https://consequenceofsound.net/2018/03/album-review-kacey-musgraves-absolutely-shines-on-golden-hour/][perfection]] [[https://www.tinymixtapes.com/music-review/sophie-oil-every-pearls-un-insides][yes]]!
+
+**** Top Songs
+
+I can also do something similar to find my top tracks for the year.
+
+#+BEGIN_SRC R
+  recentPlays %>%
+      count(artist_name, track_name, sort=T) %>%
+      head(5)
+#+END_SRC
+
+#+RESULTS:
+| artist_name | track_name                                                |  n |
+|-------------+-----------------------------------------------------------+----|
+| SOPHIE      | Immaterial                                                | 41 |
+| Charli XCX  | No Angel                                                  | 40 |
+| Charli XCX  | I Got It (feat. Brooke Candy, CupcakKe and Pabllo Vittar) | 36 |
+| Charli XCX  | Focus                                                     | 34 |
+| Charli XCX  | Lucky                                                     | 33 |
+
+I listen to a /lot/ of Charli XCX, so this list doesn't really have a
+lot of variety (though Charli is absolutely one of the most versatile
+artists in pop today). Let's filter the results to only show one song
+per artist.
+
+#+BEGIN_SRC R :session :colnames yes
+  top_songs <- recentPlays %>%
+      group_by(artist_name, track_name) %>%
+      count(sort=T) %>%
+      ungroup() %>%
+      distinct(artist_name, .keep_all=T) %>%
+      head(5)
+#+END_SRC
+
+#+RESULTS:
+| artist_name      | track_name    |  n |
+|------------------+---------------+----|
+| SOPHIE           | Immaterial    | 41 |
+| Charli XCX       | No Angel      | 40 |
+| Troye Sivan      | My My My!     | 32 |
+| Kacey Musgraves  | High Horse    | 31 |
+| Carly Rae Jepsen | Party For One | 26 |
+
+**** Top Albums
+
+ListenBrainz also logs the release name, so it's pretty easy
+to compile a list of my top albums.
+
+#+BEGIN_SRC R :session :results value
+  topAlbums <- recentPlays %>%
+      group_by(artist_name, release_name) %>%
+      count(sort=T)
+  topAlbums %>% head()
+#+END_SRC
+
+#+CAPTION: My most-streamed albums of 2018.
+#+RESULTS:
+| artist_name             | release_name     |   n |
+|-------------------------+------------------+-----|
+| Charli XCX              | Pop 2            | 296 |
+| Kacey Musgraves         | Golden Hour      | 247 |
+| Carly Rae Jepsen        | Emotion (Deluxe) | 191 |
+| Marina And The Diamonds | Electra Heart    | 179 |
+| Charli XCX              | Number 1 Angel   | 153 |
+| Ariana Grande           | Dangerous Woman  | 144 |
+
+Let's say I just want to know which albums from the last year
+I streamed.
+
+#+BEGIN_SRC R :session
+  getAlbum <- function(row) {
+      mburl <- sprintf(
+          'https://beta.musicbrainz.org/ws/2/release/?query=artist:%s+release:%s+AND+status:official+AND+format:"Digital%%20Media"&inc=release-group&limit=1',
+          curlEscape(row$artist_name),
+          curlEscape(row$release_name)
+      )
+      print(mburl)
+      Sys.sleep(0.25)
+      groupData <- read_xml(mburl)
+      xml_ns_strip(groupData)
+      release <- xml_find_first(groupData, '//release[@ns2:score=100]')
+      xml_ns_strip(release)
+      # If it is empty
+      if (class(release) == "xml_missing") {
+          release <- xml_new_document() %>% xml_add_child("")
+      }
+      # Go with the earliest release date given.
+      date <- xml_text(xml_find_first(release, "//date"))
+      artistId <- xml_text(xml_find_first(release, "//artist/@id"))
+      df <- data.frame(date, artistId, stringsAsFactors=FALSE)
+      colnames(df) <- c("date", "artistId")
+      return(df)
+  }
+#+END_SRC
+
+#+BEGIN_SRC R :session :results silent
+  recentAlbums <- topAlbums %>% filter(n > 25) %>% by_row(..f=getAlbum, .to=".out") %>% unnest()
+#+END_SRC
+
+#+BEGIN_SRC R
+recentAlbums %>%
+    filter(str_detect(date, "2018")) %>%
+    select(artist_name, release_name, n, date) %>%
+    filter(n > 75)
+#+END_SRC
+
+#+RESULTS:
+| artist_name               | release_name                    |   n |       date |
+|---------------------------+---------------------------------+-----+------------|
+| Kacey Musgraves           | Golden Hour                     | 247 | 2018-03-30 |
+| Clarence Clarity          | THINK: PEACE                    | 119 | 2018-10-04 |
+| SOPHIE                    | OIL OF EVERY PEARL'S UN-INSIDES | 119 | 2018-06-15 |
+| Amnesia Scanner           | Another Life                    | 118 | 2018-09-07 |
+| Troye Sivan               | Bloom                           | 118 | 2018-05-02 |
+| IDLES                     | Joy as an Act of Resistance.    | 103 | 2018-08-31 |
+| Ariana Grande             | Sweetener                       |  98 | 2018-08-17 |
+| A.A.L (Against All Logic) | 2012 - 2017                     |  90 | 2018-02-17 |
+| Let's Eat Grandma         | I'm All Ears                    |  87 | 2018-06-29 |
+| Beach House               | 7                               |  86 | 2018-05-11 |
+| Mitski                    | Be the Cowboy                   |  86 | 2018-08-17 |
+| Mid-Air Thief             | Crumbling 무너지기              |  78 | 2018-07-31 |
+
+**** Minutes streamed
+Initially I considered a brute-force approach to this problem;
+however, it does not seem a good use of resources to get the
+length for every single song. Instead I'll write a function
+to grab lengths for songs...
+
+#+BEGIN_SRC R
+  getLengths <- function(row) {
+ song_stripped <- trimws(sub("\\(.*\\)", "", row$track_name))
+ mburl <- sprintf(
+           'https://beta.musicbrainz.org/ws/2/recording/?query=artist:%s+AND+recording:%s&limit=2',
+           curlEscape(row$artist_name),
+           curlEscape(song_stripped)
+ )
+ # To comply with the rate limit.
+ Sys.sleep(0.5)
+ albumData <- read_xml(mburl)
+ xml_ns_strip(albumData)
+ length <- xml_integer(xml_find_first(albumData, "//length"))
+ return(length)
    }
- #+END_SRC
+#+END_SRC
 
- #+BEGIN_SRC R :results silent
-   top_artist_ids <- top_artist_ids %>%
-       by_row(..f=fetchGenres, .to="Genres") %>%
-       unnest()
- #+END_SRC
+...and sample 250 of my streams. 
 
- #+BEGIN_SRC R
-   topGenres <- top_artist_ids %>%
-       group_by(Genres) %>%
-       summarize(Sum=sum(Sum)) %>%
-       arrange(desc(Sum))
-   topGenres %>% head()
- #+END_SRC
+#+BEGIN_SRC R :results silent
+set.seed(425368203)
+len_sample <- recentPlays %>% sample_n(250) %>% by_row(..f=getLengths, .to="length") %>% unnest()
+#+END_SRC
 
- #+RESULTS:
- | Genres     |  Sum |
- |------------+------|
- | pop        | 2535 |
- | electropop | 1958 |
- | dance-pop  | 1712 |
- | electronic | 1411 |
- | pop rock   | 1145 |
- | synth-pop  |  741 |
+This gives me a reasonable mean length.
 
-*** Creating the graphic
+#+BEGIN_SRC R
+mean_len <- len_sample %>% dplyr::summarize(Mean=mean(length, na.rm=T))
+#+END_SRC
 
- #+BEGIN_SRC R :session :exports both :results value file :var fname="images/2018wrapped.png" :colnames no
-   library("ggpubr")
-   library("png")
-   library("raster")
+#+RESULTS:
+|             Mean |
+|------------------|
+| 240542.148760331 |
 
-   myTheme <- ttheme(colnames.style = colnames_style(color = "white",
-                                                     fill = "#8cc257",
-                                                     linewidth=0),
-                     tbody.style = tbody_style(color = "white", linewidth=0,
-                                               fill = "#8cc257"))
+#+BEGIN_SRC R :exports none
+lens <- lengths[!is.na(lengths)]
+ggplot() + aes(lens) + geom_histogram(binwidth=60000)
+#+END_SRC
 
-   bgTheme <- theme(
-       plot.background =
-           element_rect(fill = "#8cc257", color="#8cc257"),
-       panel.border = element_blank(),
-       )
+Which I can use to estimate the total for the population.
 
-   top_artist_names <- top_artists$artist_name %>%
-       head()
-   artistTable <- ggtexttable(top_artist_names, rows = NULL,
-                              theme = myTheme, cols=c("Top Artists")) + bgTheme
-   trackTable <- ggtexttable(top_songs$track_name, rows = NULL,
-                             theme = myTheme, cols=c("Top Songs")) + bgTheme
-   minutes <- as_ggplot(text_grob(
-       paste("Minutes Listened",
-             toString(round(mins)),
-             "",
-             "Top Genre",
-             toString(topGenres[1,1]),
-             sep="\n"),
-       color="white")) + bgTheme
-   img <- readPNG("images/albums.png")
-   im_A <- ggplot() +
-       background_image(img[1:250, 1:250, 1:3]) +
-       theme(
-           plot.margin = margin(t=.5, l=.5, r=.5, b=.5, unit = "cm"),
-       ) + bgTheme
-   p <- ggarrange(im_A, artistTable, minutes, trackTable, ncol=2, nrow=2) 
-   ggsave(file=fname, plot=p, width=4.5, height=4.5, dpi=300)
-   fname
- #+END_SRC
+#+BEGIN_SRC R
+mins <- nrow(recentPlays) * mean(as.numeric(mean_len)) / 60000
+#+END_SRC
 
- #+RESULTS:
- [[file:images/2018wrapped.png]]
+#+RESULTS:
+|                x |
+|------------------|
+| 50698.9453704167 |
 
-** DONE Albums from 2017 I'm Still Listening to in 2018
-   CLOSED: [2018-12-08 Sat 10:02]
-   :PROPERTIES:
-   :EXPORT_FILE_NAME: 2017-albums-in-2018
-   :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :image "albums.png"
-   :END:
+**** Top Genre
+Observation: the top quartile of artists make up the vast
+majority of my streams this year.
 
- I listen to a /lot/ of music. While I will listen to some albums a
- few times and move on, some stay with me. This post quantifies the
- albums from 2017 that stayed in my life in 2018.
+#+BEGIN_SRC R
+  top_artist_ids <- recentAlbums %>%
+      group_by(artistId) %>%
+      filter(!is.na(artistId)) %>%
+      summarize(Sum=sum(n)) %>%
+      arrange(desc(Sum))
+  top_artist_ids %>%
+      summarize(sum(Sum))
+#+END_SRC
 
- # more
+#+RESULTS:
+| sum(Sum) |
+|----------|
+|     6985 |
 
- Each December, I compile [[https://gist.github.com/CarlColglazier/913963cc7197fb7a024d736c96545439][a list]] of my favorite recent albums from the
- past year. People really enjoy reading lists, so pretty much every
- music publication also releases a end-of-year list around the same
- time [fn:aoty].
 
- As fun as it is to parse through yearly lists, liking an album is no
- guarantee of future streams. Sometimes there are albums like Sufjan
- Steven's /Carrie & Lowell/ which, although exceptional, are do not
- exactly make the best background music for homework. Other times
- I might really en joy an album on repeat for a period of time, but
- I eventually move on the something else. I might get a nice feeling
- of nostalgia looking back at the record and how I now associate it
- with that time period, but there would be no way to replicate that
- initial infatuation.
+Conslution: This is a good time to use a sample again.
 
- In the streaming era, my music library is sometimes a bit like a
- midnight refrigerator run: there's always plenty inside, but at the
- moment I might just be looking for something quick and easy. Thus this
- list is probably best described as my musical comfort food. There are
- the albums from 2017 I had on repeat in my head and in my ears
- throughout 2018.
+#+BEGIN_SRC R
+  fetchGenres <- function(row) {
+      mburl <- sprintf(
+          "https://beta.musicbrainz.org/ws/2/artist/%s?inc=genres",
+          row$artistId
+      )
+      print(mburl)
+      Sys.sleep(0.25)
+      groupData <- read_xml(mburl)
+      xml_ns_strip(groupData)
+      genres <- xml_text(xml_find_all(groupData, "//genre/name"))
+      return(genres)
+  }
+#+END_SRC
 
- #+BEGIN_SRC R :session
-   recentAlbums %>%
-     filter(str_detect(date, "2017")) %>%
-     select(artist_name, release_name, n) %>%
-     head(19)
- #+END_SRC
+#+BEGIN_SRC R :results silent
+  top_artist_ids <- top_artist_ids %>%
+      by_row(..f=fetchGenres, .to="Genres") %>%
+      unnest()
+#+END_SRC
 
- #+RESULTS:
- | artist_name      | release_name         |   n |
- |------------------+----------------------+-----|
- | Charli XCX       | Pop 2                | 296 |
- | Charli XCX       | Number 1 Angel       | 153 |
- | GFOTY            | GFOTYBUCKS           | 144 |
- | Lorde            | Melodrama            | 144 |
- | Carly Rae Jepsen | EMOTION SIDE B       |  86 |
- | Coma Cinema      | Loss Memory          |  85 |
- | Rina Sawayama    | RINA                 |  85 |
- | Paramore         | After Laughter       |  84 |
- | Alex Cameron     | Forced Witness       |  77 |
- | Baths            | Romaplasm            |  72 |
- | Phoebe Bridgers  | Stranger in the Alps |  61 |
- | Elliott Smith    | Either/Or            |  58 |
- | Vince Staples    | Big Fish Theory      |  57 |
- | BROCKHAMPTON     | SATURATION III       |  46 |
- | Richard Dawson   | Peasant              |  41 |
- | Sufjan Stevens   | Carrie & Lowell Live |  41 |
- | King Krule       | The OOZ              |  37 |
- | LCD Soundsystem  | american dream       |  37 |
- | Arca             | Arca                 |  36 |
- | Carly Rae Jepsen | EMOTION Side B       |  31 |
+#+BEGIN_SRC R
+  topGenres <- top_artist_ids %>%
+      group_by(Genres) %>%
+      summarize(Sum=sum(Sum)) %>%
+      arrange(desc(Sum))
+  topGenres %>% head()
+#+END_SRC
+
+#+RESULTS:
+| Genres     |  Sum |
+|------------+------|
+| pop        | 2535 |
+| electropop | 1958 |
+| dance-pop  | 1712 |
+| electronic | 1411 |
+| pop rock   | 1145 |
+| synth-pop  |  741 |
+
+** Creating the graphic
+
+#+BEGIN_SRC R :session :exports both :results value file :var fname="images/2018wrapped.png" :colnames no
+  library("ggpubr")
+  library("png")
+  library("raster")
+
+  myTheme <- ttheme(colnames.style = colnames_style(color = "white",
+                                                    fill = "#8cc257",
+                                                    linewidth=0),
+                    tbody.style = tbody_style(color = "white", linewidth=0,
+                                              fill = "#8cc257"))
+
+  bgTheme <- theme(
+      plot.background =
+          element_rect(fill = "#8cc257", color="#8cc257"),
+      panel.border = element_blank(),
+      )
+
+  top_artist_names <- top_artists$artist_name %>%
+      head()
+  artistTable <- ggtexttable(top_artist_names, rows = NULL,
+                             theme = myTheme, cols=c("Top Artists")) + bgTheme
+  trackTable <- ggtexttable(top_songs$track_name, rows = NULL,
+                            theme = myTheme, cols=c("Top Songs")) + bgTheme
+  minutes <- as_ggplot(text_grob(
+      paste("Minutes Listened",
+            toString(round(mins)),
+            "",
+            "Top Genre",
+            toString(topGenres[1,1]),
+            sep="\n"),
+      color="white")) + bgTheme
+  img <- readPNG("images/albums.png")
+  im_A <- ggplot() +
+      background_image(img[1:250, 1:250, 1:3]) +
+      theme(
+          plot.margin = margin(t=.5, l=.5, r=.5, b=.5, unit = "cm"),
+      ) + bgTheme
+  p <- ggarrange(im_A, artistTable, minutes, trackTable, ncol=2, nrow=2) 
+  ggsave(file=fname, plot=p, width=4.5, height=4.5, dpi=300)
+  fname
+#+END_SRC
+
+#+RESULTS:
+[[file:images/2018wrapped.png]]
+
+* DONE Albums from 2017 I'm Still Listening to in 2018
+  CLOSED: [2018-12-08 Sat 10:02]
+  :PROPERTIES:
+  :EXPORT_FILE_NAME: 2017-albums-in-2018
+  :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :image "albums.png"
+  :END:
+
+I listen to a /lot/ of music. While I will listen to some albums a
+few times and move on, some stay with me. This post quantifies the
+albums from 2017 that stayed in my life in 2018.
+
+# more
+
+Each December, I compile [[https://gist.github.com/CarlColglazier/913963cc7197fb7a024d736c96545439][a list]] of my favorite recent albums from the
+past year. People really enjoy reading lists, so pretty much every
+music publication also releases a end-of-year list around the same
+time [fn:aoty].
+
+As fun as it is to parse through yearly lists, liking an album is no
+guarantee of future streams. Sometimes there are albums like Sufjan
+Steven's /Carrie & Lowell/ which, although exceptional, are do not
+exactly make the best background music for homework. Other times
+I might really en joy an album on repeat for a period of time, but
+I eventually move on the something else. I might get a nice feeling
+of nostalgia looking back at the record and how I now associate it
+with that time period, but there would be no way to replicate that
+initial infatuation.
+
+In the streaming era, my music library is sometimes a bit like a
+midnight refrigerator run: there's always plenty inside, but at the
+moment I might just be looking for something quick and easy. Thus this
+list is probably best described as my musical comfort food. There are
+the albums from 2017 I had on repeat in my head and in my ears
+throughout 2018.
+
+#+BEGIN_SRC R :session
+  recentAlbums %>%
+    filter(str_detect(date, "2017")) %>%
+    select(artist_name, release_name, n) %>%
+    head(19)
+#+END_SRC
+
+#+RESULTS:
+| artist_name      | release_name         |   n |
+|------------------+----------------------+-----|
+| Charli XCX       | Pop 2                | 296 |
+| Charli XCX       | Number 1 Angel       | 153 |
+| GFOTY            | GFOTYBUCKS           | 144 |
+| Lorde            | Melodrama            | 144 |
+| Carly Rae Jepsen | EMOTION SIDE B       |  86 |
+| Coma Cinema      | Loss Memory          |  85 |
+| Rina Sawayama    | RINA                 |  85 |
+| Paramore         | After Laughter       |  84 |
+| Alex Cameron     | Forced Witness       |  77 |
+| Baths            | Romaplasm            |  72 |
+| Phoebe Bridgers  | Stranger in the Alps |  61 |
+| Elliott Smith    | Either/Or            |  58 |
+| Vince Staples    | Big Fish Theory      |  57 |
+| BROCKHAMPTON     | SATURATION III       |  46 |
+| Richard Dawson   | Peasant              |  41 |
+| Sufjan Stevens   | Carrie & Lowell Live |  41 |
+| King Krule       | The OOZ              |  37 |
+| LCD Soundsystem  | american dream       |  37 |
+| Arca             | Arca                 |  36 |
+| Carly Rae Jepsen | EMOTION Side B       |  31 |
 
 [fn:error]
 
-*** Method                                                         :noexport:
-**** Learning about each track
+** Method                                                          :noexport:
+*** Learning about each track
 
- Great, so this is everything from the year, but I want to limit the
- results to just albums from 2017. Unfortunately ListenBrainz does not
- include a lot of metadata. We need [[https://musicbrainz.org/][MusicBrainz]] to help with this.
- It's a huge database with just about every song, recording, and
- album imaginable. Plus it has an API, so it's ideal for getting
- information about each track.
-
-
- Let's see this function in action.
-
- #+BEGIN_SRC R :session :colnames no
- getAlbums("Charli XCX", "Vroom Vroom")
- #+END_SRC
-
- #+RESULTS:
- : d4cc6eea-bf86-4c79-a5d9-2da07df19e0e
-
- This result is exactly what we'd expect: it gives a unique string for
- each release group in the MusicBrainz archive.
-
- I'm going to take a shortcut here. I don't want to query every single
- song I've ever heard. Since my end goal is to compile a list of albums
- sorted by the number of songs played, it is safe to assume that albums
- where I have only streamed two or three songs will not make that list.
- To verify this, let's graph the distribution.
-
- #+BEGIN_SRC R :session :exports both :results value file :var fname="images/playcounts.png" :colnames no
-   library("plyr")
-   playCounts <- count(recentPlays, c("artist_name", "track_name"))
-   playCounts <- playCounts[order(playCounts$freq, decreasing=T), ]
-   p <- ggplot(data=playCounts, aes(playCounts$freq)) + geom_histogram(binwidth=1) +
-	scale_y_sqrt() +
-	theme(panel.border = element_blank(),
-              legend.key = element_blank(),
-              panel.background = element_blank(),
-              plot.background = element_rect(fill = "transparent",colour = NA))
-   ggsave(file=fname, plot=p, width=7, height=4, dpi=300, bg="transparent")
-   fname
- #+END_SRC
-
- #+RESULTS:
- [[file:images/playcounts.png]]
+Great, so this is everything from the year, but I want to limit the
+results to just albums from 2017. Unfortunately ListenBrainz does not
+include a lot of metadata. We need [[https://musicbrainz.org/][MusicBrainz]] to help with this.
+It's a huge database with just about every song, recording, and
+album imaginable. Plus it has an API, so it's ideal for getting
+information about each track.
 
 
+Let's see this function in action.
 
- As it turns out, I only listened to a majority of these songs only one
- time. Taking out songs with fewer than three plays removes a bulk of
- the songs from the log while likely keeping everything interesting.
- Remember, I'm trying to end up with a list of albums. Since I
- generally listen to complete albums, we can assume that each track on
- any album which would make the list would have at least two plays.
+#+BEGIN_SRC R :session :colnames no
+getAlbums("Charli XCX", "Vroom Vroom")
+#+END_SRC
 
- #+BEGIN_SRC R :session 
- mostFreqPlays <- playCounts[playCounts$freq > 2, ]
- nrow(mostFreqPlays)
- #+END_SRC
+#+RESULTS:
+: d4cc6eea-bf86-4c79-a5d9-2da07df19e0e
 
- #+RESULTS:
- |    x |
- |------|
- | 1156 |
+This result is exactly what we'd expect: it gives a unique string for
+each release group in the MusicBrainz archive.
 
- # Note "Whole New World / Pretend World" is having an issue with that
- # slash.  There may be other issues with fetching data as well. This
- # means the rankings of albums and the exact counts should be taken
- # with a grain of salt.
+I'm going to take a shortcut here. I don't want to query every single
+song I've ever heard. Since my end goal is to compile a list of albums
+sorted by the number of songs played, it is safe to assume that albums
+where I have only streamed two or three songs will not make that list.
+To verify this, let's graph the distribution.
 
- Now grab the release groups (albums) for each track from MusicBrainz.
+#+BEGIN_SRC R :session :exports both :results value file :var fname="images/playcounts.png" :colnames no
+  library("plyr")
+  playCounts <- count(recentPlays, c("artist_name", "track_name"))
+  playCounts <- playCounts[order(playCounts$freq, decreasing=T), ]
+  p <- ggplot(data=playCounts, aes(playCounts$freq)) + geom_histogram(binwidth=1) +
+ scale_y_sqrt() +
+ theme(panel.border = element_blank(),
+             legend.key = element_blank(),
+             panel.background = element_blank(),
+             plot.background = element_rect(fill = "transparent",colour = NA))
+  ggsave(file=fname, plot=p, width=7, height=4, dpi=300, bg="transparent")
+  fname
+#+END_SRC
 
- #+BEGIN_SRC R :session :results silent
- groups <- apply(mostFreqPlays, 1, function(x) getAlbums(x["artist_name"], x["track_name"]))
- #+END_SRC
+#+RESULTS:
+[[file:images/playcounts.png]]
 
- Get only the release groups with more than fifteen streams.
 
- #+BEGIN_SRC R :session :colnames no
-   library(tidyverse)
 
-   mostFreqPlays$groups <- groups
-   unnested <- mostFreqPlays %>%
-       unnest(groups) %>%
-       group_by(groups) %>%
-       summarize(freq = sum(freq)) %>%
-       arrange(desc(freq))
-   nrow(unnested[unnested$freq > 15,])
- #+END_SRC
+As it turns out, I only listened to a majority of these songs only one
+time. Taking out songs with fewer than three plays removes a bulk of
+the songs from the log while likely keeping everything interesting.
+Remember, I'm trying to end up with a list of albums. Since I
+generally listen to complete albums, we can assume that each track on
+any album which would make the list would have at least two plays.
 
- #+RESULTS:
- : 121
+#+BEGIN_SRC R :session 
+mostFreqPlays <- playCounts[playCounts$freq > 2, ]
+nrow(mostFreqPlays)
+#+END_SRC
 
- This yields 121 albums; however, we still don't know anything about
- these releases. Thankfully MusicBrainz has this information as well.
+#+RESULTS:
+|    x |
+|------|
+| 1156 |
 
- #+BEGIN_SRC R :session :results silent
-   fetchGroup <- function(mbid) {
-       mburl <- sprintf(
-           "https://beta.musicbrainz.org/ws/2/release-group/%s?inc=artist-credits",
-           mbid
-       )
-       Sys.sleep(0.25)
-       groupData <- read_xml(mburl)
-       xml_ns_strip(groupData)
-       title <- xml_text(xml_find_first(groupData, "/metadata/release-group/title"))
-       date <- as.Date(xml_text(xml_find_first(groupData, "/metadata/release-group/first-release-date")), "%Y-%m-%d")
-       artist <- xml_text(xml_find_first(groupData, "/metadata/release-group/artist-credit/name-credit/artist/name"))
-       artistId <- xml_text(xml_find_first(groupData, "/metadata/release-group/artist-credit/name-credit/artist/@id"))
-       #return(list("title" = title, "date" = date, "artist"=artist, "artistId"=artistId))
-       df <- data.frame(title, date, artist, artistId)
-       colnames(df) <- c("title", "date", "artist", "artistId")
-       return(df)
-   }
- #+END_SRC
+# Note "Whole New World / Pretend World" is having an issue with that
+# slash.  There may be other issues with fetching data as well. This
+# means the rankings of albums and the exact counts should be taken
+# with a grain of salt.
 
- Fetch metadata for each release.
+Now grab the release groups (albums) for each track from MusicBrainz.
 
- #+BEGIN_SRC R :session :results silent
-   mostGroups <- unnested[unnested$freq > 15,]
-   meta <- lapply(mostGroups$groups, fetchGroup)
-   #as_tibble(do.call(rbind, meta))
-   #
-   mostGroups <- bind_cols(mostGroups, as_tibble(do.call(rbind, meta)))
+#+BEGIN_SRC R :session :results silent
+groups <- apply(mostFreqPlays, 1, function(x) getAlbums(x["artist_name"], x["track_name"]))
+#+END_SRC
 
-   albums <- mostGroups[!is.na(mostGroups$date) & mostGroups$date >= as.Date('2017-01-01') & mostGroups$date < as.Date('2018-01-01'),]
-   aTable <- albums[,c("title", "freq", "artist")]
- #+END_SRC
+Get only the release groups with more than fifteen streams.
 
- We'll save this list for the rest of the post.
+#+BEGIN_SRC R :session :colnames no
+  library(tidyverse)
 
- The last step I'll perform is creating the thumbnail collage
- for this post.
+  mostFreqPlays$groups <- groups
+  unnested <- mostFreqPlays %>%
+      unnest(groups) %>%
+      group_by(groups) %>%
+      summarize(freq = sum(freq)) %>%
+      arrange(desc(freq))
+  nrow(unnested[unnested$freq > 15,])
+#+END_SRC
 
- #+BEGIN_SRC R :session :results silent
-   library(magick)
-   getArt <- function(group) {
-       arturl <- sprintf(
-           "https://coverartarchive.org/release-group/%s/front-250.jpg",
-           group
-       )
-       return(arturl)
-   }
-   as <- aTable[order(aTable$freq, decreasing=T), ]
-   r1 <- image_append(image_scale(image_read(getArt(rev(albums$groups)[1:4])), "250x250"))
-   r2 <- image_append(image_scale(image_read(getArt(rev(albums$groups)[5:8])), "250x250"))
-   r3 <- image_append(image_scale(image_read(getArt(rev(albums$groups)[c(9, 10, 12, 14)])), "250x250"))
-   image_write(image_append(c(r1, r2, r3), stack=TRUE), "images/albums.png", format="png")
- #+END_SRC
+#+RESULTS:
+: 121
 
-*** The Albums
+This yields 121 albums; however, we still don't know anything about
+these releases. Thankfully MusicBrainz has this information as well.
 
- Now I'll say a few words about some of the albums on this list.
+#+BEGIN_SRC R :session :results silent
+  fetchGroup <- function(mbid) {
+      mburl <- sprintf(
+          "https://beta.musicbrainz.org/ws/2/release-group/%s?inc=artist-credits",
+          mbid
+      )
+      Sys.sleep(0.25)
+      groupData <- read_xml(mburl)
+      xml_ns_strip(groupData)
+      title <- xml_text(xml_find_first(groupData, "/metadata/release-group/title"))
+      date <- as.Date(xml_text(xml_find_first(groupData, "/metadata/release-group/first-release-date")), "%Y-%m-%d")
+      artist <- xml_text(xml_find_first(groupData, "/metadata/release-group/artist-credit/name-credit/artist/name"))
+      artistId <- xml_text(xml_find_first(groupData, "/metadata/release-group/artist-credit/name-credit/artist/@id"))
+      #return(list("title" = title, "date" = date, "artist"=artist, "artistId"=artistId))
+      df <- data.frame(title, date, artist, artistId)
+      colnames(df) <- c("title", "date", "artist", "artistId")
+      return(df)
+  }
+#+END_SRC
 
- [[file:images/albums.png]]
+Fetch metadata for each release.
 
-**** Charli XCX - /Pop 2/
+#+BEGIN_SRC R :session :results silent
+  mostGroups <- unnested[unnested$freq > 15,]
+  meta <- lapply(mostGroups$groups, fetchGroup)
+  #as_tibble(do.call(rbind, meta))
+  #
+  mostGroups <- bind_cols(mostGroups, as_tibble(do.call(rbind, meta)))
 
- The prolific UK-based singer-songwriter has released a 
- masterpiece. Featuring production from the likes of A.G. Cook
- and SOPHIE, /Pop 2/ is a celebration of future-facing pop
- music with catchy hooks and hyper-glossy production.
+  albums <- mostGroups[!is.na(mostGroups$date) & mostGroups$date >= as.Date('2017-01-01') & mostGroups$date < as.Date('2018-01-01'),]
+  aTable <- albums[,c("title", "freq", "artist")]
+#+END_SRC
 
-**** Lorde - /Melodrama/
+We'll save this list for the rest of the post.
 
- I was completely blown away by this on my first listen.  Jack Antonoff
- joined Lorde as executive producer and together they crafted a record
- full of unexpected hooks and sleek arrangements. The fact that this
- album is even being compared to Kate Bush's /Hounds of Love/ is a
- testament to the songwriting chops of the young singer-songwriter.
+The last step I'll perform is creating the thumbnail collage
+for this post.
 
-**** Charli XCX - /Number 1 Angel/
+#+BEGIN_SRC R :session :results silent
+  library(magick)
+  getArt <- function(group) {
+      arturl <- sprintf(
+          "https://coverartarchive.org/release-group/%s/front-250.jpg",
+          group
+      )
+      return(arturl)
+  }
+  as <- aTable[order(aTable$freq, decreasing=T), ]
+  r1 <- image_append(image_scale(image_read(getArt(rev(albums$groups)[1:4])), "250x250"))
+  r2 <- image_append(image_scale(image_read(getArt(rev(albums$groups)[5:8])), "250x250"))
+  r3 <- image_append(image_scale(image_read(getArt(rev(albums$groups)[c(9, 10, 12, 14)])), "250x250"))
+  image_write(image_append(c(r1, r2, r3), stack=TRUE), "images/albums.png", format="png")
+#+END_SRC
 
- Honestly I really wish that XCX3 got released last year as planned,
- but these two mixtapes are possibly the greatest consolation prize
- possible. PC Music-era Charli XCX just plain works. Perhaps the
- most impressive accomplishment in these mixtapes is her ability
- to feature so many other artists while at the same time not
- being overshadowed in the slightest.
+** The Albums
 
-**** Rina Sawayama - /RINA/
+Now I'll say a few words about some of the albums on this list.
 
- I love the sound and aesthetic of pop music from the late 90's and
- early 2000's. It's hard for me to describe, but there's just a level
- of confidence to it that is difficult to reproduce. While Rina
- Sawayama by no means tries to replicate the sound, she channels
- it perfectly in this Clarence Clarity-produced EP.
+[[file:images/albums.png]]
 
-**** Paramore - /After Laughter/
+*** Charli XCX - /Pop 2/
 
- Does Hayley Williams have one of the best voices in today's music
- industry? Yes. Does Paramore keep getting better and better over time?
- Also yes.
+The prolific UK-based singer-songwriter has released a 
+masterpiece. Featuring production from the likes of A.G. Cook
+and SOPHIE, /Pop 2/ is a celebration of future-facing pop
+music with catchy hooks and hyper-glossy production.
 
-**** Coma Cinema - /Loss Memory/
+*** Lorde - /Melodrama/
 
- This was late release (early December) and it did not receive very
- much attention from the music press. Nonetheless, I found it to be
- a very enjoyable winter album with a raw yet removed approach to
- its emotional subject matter.
+I was completely blown away by this on my first listen.  Jack Antonoff
+joined Lorde as executive producer and together they crafted a record
+full of unexpected hooks and sleek arrangements. The fact that this
+album is even being compared to Kate Bush's /Hounds of Love/ is a
+testament to the songwriting chops of the young singer-songwriter.
 
-**** Alex Cameron - /Forced Witness/
+*** Charli XCX - /Number 1 Angel/
 
- Heartland synthpop drenched in irony and social commentary. Cameron 
- is simultaneously hilarious and thought-provoking.
+Honestly I really wish that XCX3 got released last year as planned,
+but these two mixtapes are possibly the greatest consolation prize
+possible. PC Music-era Charli XCX just plain works. Perhaps the
+most impressive accomplishment in these mixtapes is her ability
+to feature so many other artists while at the same time not
+being overshadowed in the slightest.
 
-**** Baths - /Romaplasm/
+*** Rina Sawayama - /RINA/
 
- Bubbly production and chippy songwriting. It's a concept album.
- I still don't quite get the concept, but that's okay.
+I love the sound and aesthetic of pop music from the late 90's and
+early 2000's. It's hard for me to describe, but there's just a level
+of confidence to it that is difficult to reproduce. While Rina
+Sawayama by no means tries to replicate the sound, she channels
+it perfectly in this Clarence Clarity-produced EP.
 
-**** Phoebe Bridgers - /Stranger in the Alps/
+*** Paramore - /After Laughter/
 
- I didn't really get into this release until late this year.
- Wow, there are some good songs in here! Another great winter
- album with a lot of sad subjects, but also some intimate
- and emotional arrangements.
+Does Hayley Williams have one of the best voices in today's music
+industry? Yes. Does Paramore keep getting better and better over time?
+Also yes.
+
+*** Coma Cinema - /Loss Memory/
+
+This was late release (early December) and it did not receive very
+much attention from the music press. Nonetheless, I found it to be
+a very enjoyable winter album with a raw yet removed approach to
+its emotional subject matter.
+
+*** Alex Cameron - /Forced Witness/
+
+Heartland synthpop drenched in irony and social commentary. Cameron 
+is simultaneously hilarious and thought-provoking.
+
+*** Baths - /Romaplasm/
+
+Bubbly production and chippy songwriting. It's a concept album.
+I still don't quite get the concept, but that's okay.
+
+*** Phoebe Bridgers - /Stranger in the Alps/
+
+I didn't really get into this release until late this year.
+Wow, there are some good songs in here! Another great winter
+album with a lot of sad subjects, but also some intimate
+and emotional arrangements.
 
 
 [fn:aoty] AOTY publishes an aggregate of over a hundred end-of-year lists annually.
@@ -1110,87 +1099,87 @@ Read their 2017 list [[https://www.albumoftheyear.org/list/summary/2017/][here]]
 [fn:error] Some albums which were remastered and released digitally in
 2017 appear on this list.
 
-** Using Org-mode and Babel with Hugo
-   :PROPERTIES:
-   :EXPORT_FILE_NAME: org-mode-babel-hugo
-   :EXPORT_DATE: 2017-04-25
-   :END:
- I have been a consistent user of Org-mode for a couple of years. I
- like it for a few reasons. It is very versatile; I can use it for
- everything from class notes to papers to writing documentation. It
- is very extendable; it can perform almost every operation I need
- in a text program. Most importantly it saves time.
+* Using Org-mode and Babel with Hugo
+  :PROPERTIES:
+  :EXPORT_FILE_NAME: org-mode-babel-hugo
+  :EXPORT_DATE: 2017-04-25
+  :END:
+I have been a consistent user of Org-mode for a couple of years. I
+like it for a few reasons. It is very versatile; I can use it for
+everything from class notes to papers to writing documentation. It
+is very extendable; it can perform almost every operation I need
+in a text program. Most importantly it saves time.
 
- My main attraction to using Org-mode with Hugo is to pursue a
- form of literate programming. [[http://orgmode.org/worg/org-contrib/babel/][Babel]] provides an excellent tool
- for literate programming such that both the source code
- and output can be included in the same document.
+My main attraction to using Org-mode with Hugo is to pursue a
+form of literate programming. [[http://orgmode.org/worg/org-contrib/babel/][Babel]] provides an excellent tool
+for literate programming such that both the source code
+and output can be included in the same document.
 
- I use this technique frequently to dynamically generate adaptable
- reports. I can write both the code and my write-up inside Org-mode
- and any changes are automatically reflected in the next export.
+I use this technique frequently to dynamically generate adaptable
+reports. I can write both the code and my write-up inside Org-mode
+and any changes are automatically reflected in the next export.
 
- For this reason, I was excited to hear that Hugo added support for
- Org mode in [[https://github.com/spf13/hugo/releases/tag/v0.19][v0.19]]. The native go parser, [[https://github.com/chaseadamsio/goorgeous][goorgeous]], does not support
- every part of the Org-mode syntax at the moment, but it is certainly
- good enough to work with for now.
+For this reason, I was excited to hear that Hugo added support for
+Org mode in [[https://github.com/spf13/hugo/releases/tag/v0.19][v0.19]]. The native go parser, [[https://github.com/chaseadamsio/goorgeous][goorgeous]], does not support
+every part of the Org-mode syntax at the moment, but it is certainly
+good enough to work with for now.
 
-*** Getting Started
+** Getting Started
 
- Hugo can generate Org-mode files in the same way it creates markdown
- files
+Hugo can generate Org-mode files in the same way it creates markdown
+files
 
- #+BEGIN_SRC sh :results output :exports both :session
- cd ../../
- rm content/notes/post.org
- hugo new notes/post.org
- #+END_SRC
+#+BEGIN_SRC sh :results output :exports both :session
+cd ../../
+rm content/notes/post.org
+hugo new notes/post.org
+#+END_SRC
 
- #+RESULTS:
- : /home/carl/programs/web/carlcolglazier.com/content/notes/post.org created
+#+RESULTS:
+: /home/carl/programs/web/carlcolglazier.com/content/notes/post.org created
 
 
- The contents of the file will look like the following:
+The contents of the file will look like the following:
 
- #+BEGIN_SRC yaml
- ---
- date: 2017-04-25T14:47:30-04:00
- draft: true
- title: post
- ---
- #+END_SRC
+#+BEGIN_SRC yaml
+---
+date: 2017-04-25T14:47:30-04:00
+draft: true
+title: post
+---
+#+END_SRC
 
- This front matter is formatted using YAML. Currently Org-mode is not
- supported as a ~metaDataFormat~, so we will not be able to have hugo
- create an Org-mode header by defualt; however, everything still works
- if we create the header manually.
+This front matter is formatted using YAML. Currently Org-mode is not
+supported as a ~metaDataFormat~, so we will not be able to have hugo
+create an Org-mode header by defualt; however, everything still works
+if we create the header manually.
 
-*** Examples
+** Examples
 
- First I created a simple "Hello, World" program written in C inside
- an Org-mode source block.
+First I created a simple "Hello, World" program written in C inside
+an Org-mode source block.
 
- #+HEADER: :exports both :results output :cache yes
- #+BEGIN_SRC C 
-   #include <stdlib.h>
-   #include <stdio.h>
+#+HEADER: :exports both :results output :cache yes
+#+BEGIN_SRC C 
+  #include <stdlib.h>
+  #include <stdio.h>
 
-   int main() {
-     printf("Hello, World!\n");
-     return 0;
-   }
- #+END_SRC
+  int main() {
+    printf("Hello, World!\n");
+    return 0;
+  }
+#+END_SRC
 
- #+RESULTS[89f50bc6df96e44b1fd5800817c76a086b3c7a87]:
- : Hello, World!
+#+RESULTS[89f50bc6df96e44b1fd5800817c76a086b3c7a87]:
+: Hello, World!
 
- I then ran the program in Babel, producing the above result.
-** Plotting the 2018 U.S. House Midterm Results in Python with Cartopy
-   :PROPERTIES:
-   :EXPORT_FILE_NAME: plotting-2018-house-midterms-cartopy
-   :EXPORT_DATE: 2018-11-10
-   :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :image "116th-congress.png"
-   :END:
+I then ran the program in Babel, producing the above result.
+* Plotting the 2018 U.S. House Midterm Results in Python with Cartopy
+  :PROPERTIES:
+  :EXPORT_FILE_NAME: plotting-2018-house-midterms-cartopy
+  :EXPORT_DATE: 2018-11-10
+  :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :image "116th-congress.png"
+  :END:
 
 On Tuesday, the United States elected its representatives for the next
 session of House of Representatives.  Some of the races are still too
@@ -1310,14 +1299,14 @@ shows how to get started with mainstream Python graphic tools.
 -----
 
 I updated this post to show the results as of December 5, 2018.
-** 2015 Goals
-:PROPERTIES:
-:EXPORT_FILE_NAME: goals
-:EXPORT_DATE: 2015-11-01
-:END:
+* 2015 Goals
+	:PROPERTIES:
+	:EXPORT_FILE_NAME: goals
+	:EXPORT_DATE: 2015-11-01
+	:END:
 The following page contains information regarding some of the aspirations which
 I am working to attain.
-*** Long-term
+** Long-term
 *Studies* - As an undergraduate student at North Carolina State
 University, I am reading in the fields of computer science and
 communication. Since both of these studies tend to go in depth on
@@ -1358,7 +1347,7 @@ these techniques on this page and in other places on this website.
 ---Brutus, *Julius Caesar* Act 4, Scene 3
 #+END_QUOTE
 
-*** Daily
+** Daily
 Habits make up a large basis of who we are. As a consequence, I use
 daily habits extensively in order to keep up with my long-term goals
 over time.
@@ -1381,11 +1370,11 @@ have no ability to keep up with all of the tasks I must complete
 throughout the day. I currently use Google Calendar in combination
 with Google Tasks to keep track of everything I have to do at a given
 time or day.
-** An Ode to the Humble Pen
-:PROPERTIES:
-:EXPORT_FILE_NAME: an-ode-to-the-humble-pen
-:EXPORT_DATE: 2015-12-07
-:END:
+* An Ode to the Humble Pen
+	:PROPERTIES:
+	:EXPORT_FILE_NAME: an-ode-to-the-humble-pen
+	:EXPORT_DATE: 2015-12-07
+	:END:
 /After Wendell Berry/
 
 Ever since this summer, I have made it a personal project of mine to
@@ -1403,11 +1392,11 @@ the humble pen:
    software necessary!
 3. Writing in a pen forces you to only transcribe what is important,
    possibly leading to better notes.
-** My Goals for the Fall Semester (2018)
-:PROPERTIES:
-:EXPORT_FILE_NAME: goals-fall-2018
-:EXPORT_DATE: 2018-08-13
-:END:
+* My Goals for the Fall Semester (2018)
+	:PROPERTIES:
+	:EXPORT_FILE_NAME: goals-fall-2018
+	:EXPORT_DATE: 2018-08-13
+	:END:
 This fall semester, I want to...
 
 Be a *good student* not just by doing the readings, but also by
@@ -1432,11 +1421,11 @@ space and grace to slip up.
 Treat others unreasonably well.
 
 [fn:pareto]: See the [[https://en.wikipedia.org/wiki/Pareto_principle][Pareto principle]].
-** An Ode to Homework in a Digital Age
-:PROPERTIES:
-:EXPORT_FILE_NAME: homework_in_a_digital_age
-:EXPORT_DATE: 2015-11-30
-:END:
+* An Ode to Homework in a Digital Age
+	:PROPERTIES:
+	:EXPORT_FILE_NAME: homework_in_a_digital_age
+	:EXPORT_DATE: 2015-11-30
+	:END:
 I am writing this post at an average speed of thirty-five miles an
 hour.  I am on the bus, heading home from another busy day on
 campus. I usually use this time to catch up on class reading, but
@@ -1464,32 +1453,32 @@ off-course.
 
 So I am taking these last few minutes on the bus to give thanks to
 technological homework. Where would we be without you?
-** Resources for Using REAPER on Linux
-:PROPERTIES:
-:EXPORT_FILE_NAME: linux-reaper-resources
-:EXPORT_DATE: 2019-03-14
-:END:
+* Resources for Using REAPER on Linux
+	:PROPERTIES:
+	:EXPORT_FILE_NAME: linux-reaper-resources
+	:EXPORT_DATE: 2019-03-14
+	:END:
 I have been a REAPER user for years and lately I've been using
 the unofficial Linux release.
 
-*** Getting Started
+** Getting Started
 Here are a few links to get started:
 
 - https://wiki.cockos.com/wiki/index.php/REAPER_for_Linux
 - https://bcacciaaudio.com/2018/10/16/reaper-using-linux-native-vsts/
 - https://distrho.sourceforge.io/
 
-*** Running LV2 and LADSPA Plugins
+** Running LV2 and LADSPA Plugins
 The best way I have found to integrate these Linux-native formats into
 my workflow has been to use [[http://kxstudio.linuxaudio.org/Applications:Carla][Carla]]. It's a program that hosts other
 plugins and can be imported as a VST or VSTi (important because REAPER
 does not directly support LV2 and LADSPA plugins).
-** Mapping MIDI Channels to Multiple Instruments in SuperCollider
-:PROPERTIES:
-:EXPORT_FILE_NAME: midi-channels-multiple-instruments-supercollider
-:EXPORT_HUGO_ALIASES: acoustics/midi-channels-multiple-instruments-supercollider
-:EXPORT_DATE: 2017-09-23
-:END:
+* Mapping MIDI Channels to Multiple Instruments in SuperCollider
+	:PROPERTIES:
+	:EXPORT_FILE_NAME: midi-channels-multiple-instruments-supercollider
+	:EXPORT_HUGO_ALIASES: acoustics/midi-channels-multiple-instruments-supercollider
+	:EXPORT_DATE: 2017-09-23
+	:END:
 Being able to [[/notes/midi-instrument-control-supercollider/][control a polyphonic instrument in MIDI]] is
 good, but being able to control multiple instruments is even
 better. SuperCollider offers a lot of flexibility when it comes to
@@ -1497,7 +1486,7 @@ timbre. For my personal workflow, I like to try out a lot of different
 sounds to see what best in the mix. Thus when thinking about how I
 want to use the MIDI controller in connection with SuperCollider, it
 makes sense to me to be able to switch between instruments fluidly.
-*** Finding some sounds
+** Finding some sounds
 If you do not want to start from scratch, there are a number of excellent
 resources for finding SuperCollider =SynthDef=s:
 
@@ -1524,7 +1513,7 @@ To start, I copied a few =SynthDefs=:
   
 I considered these sounds to be a good starting point for emulating
 many classic keyboard instruments.
-*** Switching instruments
+** Switching instruments
 To allow these different timbres to be selected, I made a few changes
 to the function defined in the [[https://carlcolglazier.com/notes/starting-supercollider/][previous post]]. First, I created a second array with sixteen elements to hold
 the names of the different `SynthDef`s.
@@ -1561,7 +1550,7 @@ is selected based on its position in the `instruments` array.
 
 Now I could select the appropriate instrument by simply changing the MIDI
 channel on my controller.
-*** A quick demo
+** A quick demo
 Putting it all together, I created a simple track to demonstrate these
 different timbers (accompanied with some mandolin):
 
@@ -1578,17 +1567,17 @@ areas that are challenging. I believe it is for this reason that I
 find SuperCollider to be such an interesting platform: it provides the
 pieces for expansive sonic possibilities, but it takes a bit of effort
 and curiosity to make the most of it.
-** Controlling Synths with MIDI in SuperCollider
-:PROPERTIES:
-:FILE_NAME: midi-instrument-control-supercollider
-:EXPORT_HUGO_ALIASES: acoustics/midi-instrument-control-supercollider
-:EXPORT_DATE: 2017-09-22
-:END:
+* Controlling Synths with MIDI in SuperCollider
+	:PROPERTIES:
+	:FILE_NAME: midi-instrument-control-supercollider
+	:EXPORT_HUGO_ALIASES: acoustics/midi-instrument-control-supercollider
+	:EXPORT_DATE: 2017-09-22
+	:END:
 I previously showed how to set up SuperCollider to communicate
 with other programs and external hardware using MIDI. Today I
 am going to use these connections to manipulate instruments.
 
-*** Controlling the tone with MIDI
+** Controlling the tone with MIDI
 
 In my [[/notes/starting-supercollider/][notes on setting up SuperCollider]],
 I created a function that generated a simple tone.
@@ -1660,7 +1649,7 @@ the frequency will be changed to match the note.
 
 To unattach the function and any other function that is triggered by
 MIDI, run =MIDIdef.freeAll=.
-*** Creating an instrument
+** Creating an instrument
 The note generator is monophonic and the note continues to play
 perpetually. To make it polyphonic, we are going to do things slightly
 differently. First we need a sound for SuperCollider to generate
@@ -1725,12 +1714,12 @@ by pressing and releasing the keys.
 The instrument now can be controlled over MIDI. In the next
 post, I will be setting up multiple instruments which can be
 selected using one of the sixteen MIDI channels.
-** Making Connections: MIDI in SuperCollider
-:PROPERTIES:
-:EXPORT_FILE_NAME: midi-in-supercollider
-:EXPORT_DATE: 2017-09-19
-:EXPORT_HUGO_ALIASES: acoustics/midi-in-supercollider
-:END:
+* Making Connections: MIDI in SuperCollider
+	:PROPERTIES:
+	:EXPORT_FILE_NAME: midi-in-supercollider
+	:EXPORT_DATE: 2017-09-19
+	:EXPORT_HUGO_ALIASES: acoustics/midi-in-supercollider
+	:END:
 The [[https://carlcolglazier.com/notes/starting-supercollider/][previous post]] demonstrated the process of setting up SuperCollider
 and generating a tone. In this next post, I will be explaining how to
 set up MIDI input in SuperCollider.
@@ -1745,7 +1734,7 @@ messages]].
 
 First, however, I needed to set up SuperCollider to accept MIDI input.
 
-*** Enabling MIDI in SuperCollider
+** Enabling MIDI in SuperCollider
 
 Start the SuperCollider server if it is not already running.
 
@@ -1783,7 +1772,7 @@ MIDIClient.init(1, 1);
 
 Now I had one input port and one output port.
 
-*** Getting input
+** Getting input
 
 [[http://doc.sccode.org/Classes/MIDIdef.htm][=MIDIdef.noteOn=]] allows us to run a function whenever a note is
 pressed. To test this out, I created a simple function that prints the
@@ -1831,13 +1820,13 @@ In this post, we have opened up SuperCollider to be able to interact
 with other programs and hardware using the MIDI standard.  In the next
 post, we will use this MIDI control to control the sound generated by
 the server.
-** The Paradox of Creativity
-:PROPERTIES:
-:EXPORT_FILE_NAME: paradox-of-creativity
-:EXPORT_HUGO_ALIASES: acoustics/paradox-of-creativity
-:EXPORT_DATE: 2017-09-15
-:END:
-*** Creativity is mythologized.
+* The Paradox of Creativity
+	:PROPERTIES:
+	:EXPORT_FILE_NAME: paradox-of-creativity
+	:EXPORT_HUGO_ALIASES: acoustics/paradox-of-creativity
+	:EXPORT_DATE: 2017-09-15
+	:END:
+** Creativity is mythologized.
 Many times we think of creativity like the ouroboros, an ancient
 symbol of a snake eating its own tail. We think of creative people as
 those who are able to come up with original ideas out of thin air and
@@ -1852,7 +1841,7 @@ don't have the natural talent. A psychologist might diagnose us with a
 harsh case of cognitive dissonance; it is easier to believe that a
 successful pursuit of creativity is beyond our grasps than to take
 action to bring it within our reach.
-*** Creativity is intimidating.
+** Creativity is intimidating.
 When engaging in a creative pursuit, we are setting ourselves up for
 failure. After all, creativity is a process of constant
 failure. Regardless of medium, it takes a tremendous amount of
@@ -1872,7 +1861,7 @@ not uncommon to experience a flurry of creative energy in the
 beginning of a project. I have an idea or a concept that I want to
 see reach its potential. Soon, however, I realize that my initial
 idea was incomplete or too fuzzy to know what to do next.
-*** Creativity is hard work.
+** Creativity is hard work.
 This summer, I worked on creating a series of folktronica songs using
 primarily my mandolin and an analogue synthesizer. The synthesizer
 itself was a new tool to my process and I really enjoyed exploring how
@@ -1897,7 +1886,7 @@ a portable audio recorder around for when I came up with something
 outside of that space. This helped me to deal with my biggest creative
 struggle: time. Creativity demands our time--the type of time that
 requires our energy.
-*** Creativity is worth it.
+** Creativity is worth it.
 Creativity does not exist in a vacuum. No person is simply a creative
 person; in contrast, we all have the ability to create, but it is not
 easy. Creativity requires that we conscientiously work to improve our
@@ -1908,12 +1897,12 @@ Instead of an ouroboros, the creative process is more like a tangled
 knot of a million snakes each pulling and intertwining on each other.
 It may not be as clean or pretty of an analogy, but the results show
 that the effort is worthwhile.
-** Simple Hugo VPS Deployment
-:PROPERTIES:
-:EXPORT_FILE_NAME: simple-hugo-vps-deployment
-:EXPORT_HUGO_ALIASES: acoustics/simple-hugo-vps-deployment
-:EXPORT_DATE: 2017-04-16
-:END:
+* Simple Hugo VPS Deployment
+	:PROPERTIES:
+	:EXPORT_FILE_NAME: simple-hugo-vps-deployment
+	:EXPORT_HUGO_ALIASES: acoustics/simple-hugo-vps-deployment
+	:EXPORT_DATE: 2017-04-16
+	:END:
 I recently moved hosting to a virtual private server and NGINX. Since
 I use git and Hugo to update my website, I wanted to be able to have
 the website build simply by pushing to the server.
@@ -1999,12 +1988,12 @@ average, the entire build process takes a little more than a second.
 
 [fn:git]: Note: This requires a git version of [at least
 2.3](https://stackoverflow.com/questions/32643065/git-receive-denycurrentbranch-updateinstead-fails).
-** Starting SuperCollider
-:PROPERTIES:
-:EXPORT_FILE_NAME: starting-supercollider
-:EXPORT_HUGO_ALIASES: acoustics/starting-supercollider
-:EXPORT_DATE: 2017-09-18
-:END:
+* Starting SuperCollider
+	:PROPERTIES:
+	:EXPORT_FILE_NAME: starting-supercollider
+	:EXPORT_HUGO_ALIASES: acoustics/starting-supercollider
+	:EXPORT_DATE: 2017-09-18
+	:END:
 Over the next few posts, I will be documenting the process of creating
 a software synthesis system which interfaces with hardware MIDI
 devices. The goal of this project is to bring together the powerful
@@ -2013,7 +2002,7 @@ interaction.
 
 This first post describes some of the software used in the project.
 
-*** Motivation
+** Motivation
 I have a MIDI controller that I would like to bring into the mix more
 (so to speak) in my music workflow. The great thing about hardware
 designed to work with software on a computer is that it offers a lot
@@ -2035,7 +2024,7 @@ The [[https://www.jstor.org/stable/42578951?seq=1][laptop as an instrument]] is 
 techniques used in digital synthesis and generative music are decades
 old. With this project, I aim to tap into and expand upon that legacy.
 
-*** Development Tools
+** Development Tools
 
 {{< figure src="images/emacs-sc.jpg" title="Emacs interfacing with SuperCollider" >}}
 
@@ -2060,7 +2049,7 @@ playback (speakers or headphones).  Using JACK allows SuperCollider to
 interact with other audio programs such as a DAW (digital audio
 workstation).
 
-*** Making Some Sounds
+** Making Some Sounds
 
 Now that I have all the tools needed to run SuperCollider set up,
 let's start making some noise. I first needed to boot up Emacs running
@@ -2104,11 +2093,11 @@ Running and then freeing the function produces the following output:
 We now have sound being generated by SuperCollider. In the next post,
 I will be setting up MIDI input.
 
-** Studying Technology and Technology for Studying
-:PROPERTIES:
-:EXPORT_FILE_NAME: studying-technology-and-technology-for-studying
-:EXPORT_DATE: 2015-12-06
-:END:
+* Studying Technology and Technology for Studying
+	:PROPERTIES:
+	:EXPORT_FILE_NAME: studying-technology-and-technology-for-studying
+	:EXPORT_DATE: 2015-12-06
+	:END:
 When I was a high school student studying Latin, I always dreaded the
 basic process of memorization. The way I studied then, learning
 vocabulary involved creating individual flashcards by hand and
@@ -2126,7 +2115,7 @@ semester at university and looking back, I can see a lot of places in
 which I have already improved and several places where I still see
 room for improvement.
 
-*** what i've learned thus far
+** what i've learned thus far
 
 I am now paying for a few of the mistakes I made earlier in the
 semester. In particular, I would like to improve my workflow to allow
@@ -2152,7 +2141,7 @@ summer to help me remember United States capital cities. I also have
 decks that I am using to commit to memory various pieces of art and
 classical music.
 
-*** practice makes perfect
+** practice makes perfect
 
 While I have learned quite a bit in all the lectures which I have
 attended, I have discovered that I learn material best by putting it
@@ -2173,11 +2162,11 @@ Graded quizzes? Flashcards.
 
 Computer-aided learning has turned an activity I previously dreaded to
 my primary means of learning. Funny how that works.
-** Technology and the Point of No Return.
-:PROPERTIES:
-:EXPORT_FILE_NAME: the_point_of_no_return
-:EXPORT_DATE: 2015-10-05
-:END:
+* Technology and the Point of No Return.
+	:PROPERTIES:
+	:EXPORT_FILE_NAME: the_point_of_no_return
+	:EXPORT_DATE: 2015-10-05
+	:END:
 At this moment I am writing using the QWERTY layout on my keyboard. My
 laptop has provided me with convenient white curves on each key to
 help me remember where I am and to help locate a character if I forget
@@ -2251,11 +2240,11 @@ computer. Even if new computer layouts are developed, it is unlikely
 that they will become adopted, further supporting the monopoly enjoyed
 by QWERTY.  As with any standard, QWERTY is arguably not the best
 option, but it is still the only option.
-** This Website Supports Dial-up.
-:PROPERTIES:
-:EXPORT_FILE_NAME: this-website-supports-dial-up
-:EXPORT_DATE: 2015-07-23
-:END:
+* This Website Supports Dial-up.
+	:PROPERTIES:
+	:EXPORT_FILE_NAME: this-website-supports-dial-up
+	:EXPORT_DATE: 2015-07-23
+	:END:
 Throughout the past decade, the internet has become much larger (in
 multiple ways). As more people have started to become active online,
 [[http://httparchive.org/trends.php?s=Top1000&minlabel=Jun+1+2011&maxlabel=Jul+1+2015#bytesTotal&reqTotal][websites themselves have grown almost as quickly as their potential audience]]. As connections speeds have become much faster
@@ -2302,11 +2291,11 @@ of those with an average connection, but also of those with a
 substandard connection.  After all, if even a reader with a slow
 connection can load the page quickly, think of how much better the
 connection will be for a reader with a fast connection!
-** What is a YouTuber?
-:PROPERTIES:
-:EXPORT_FILE_NAME: what-is-a-youtuber
-:EXPORT_DATE: 2015-05-30
-:END:
+* What is a YouTuber?
+	:PROPERTIES:
+	:EXPORT_FILE_NAME: what-is-a-youtuber
+	:EXPORT_DATE: 2015-05-30
+	:END:
 While reading a YouTube comment section recently, I happened upon a
 rather humorous comment claiming that "This is why Viners only act for
 six seconds," referring to a prominent Vine user featured in the
@@ -2343,83 +2332,3 @@ world has existed long before YouTube and will likely exist long after
 YouTube. With this in mind, calling some a "YouTuber" is a bit like
 calling a musician from the 1980's a "cassetter" or an author of the
 16th Century a "printing presser". The term simply does not fit.
-* Code Section
-:PROPERTIES:
-:EXPORT_HUGO_SECTION: code
-:END:
-** Code Projects
-:PROPERTIES:
-:EXPORT_FILE_NAME: _index
-:END:
-
-+ [[https://cheesecake.live/][Cheesecake Live]] is an evidence-based scouting and statistics approach to the /FIRST/ Robotics Competition.
-+ [[https://github.com/CarlColglazier/emojidentity][Emojidentity]] is an inquiry on the use of emoji as a messaging device for collective identity.
-+ [[https://twitter.com/pitch_bot][_Unicorn Pitch Bot_]] is a very silly Twitter bot that might be the next big thing.
-+ Kvizo was a practice and learning tool for adademic quiz bowl (2015-2017). It supported some based natural language processing to create associations between named entities.
-+ My [[https://github.com/team2059/fll-world-class-scoring][FLL /World Class/ Live Scoring System]] was used in a practice competition in Raleigh in 2014. Referees could update the completed objective and the scores were displayed in real time.
-* Research
-:PROPERTIES:
-:EXPORT_HUGO_SECTION: /
-:EXPORT_FILE_NAME: research
-:END:
-My research investigates the design of media systems and their impact on public discourse. I view mediated communication as a negotiation between multiple parties---including media, platforms, moderators, producers, and readers. Thus, I employ a combination of methods from computational social science and media studies to understand both sender and receiver perspectives.
-
-An automatic list of my publications can be found on [[https://scholar.google.com/citations?hl=en&user=18JgozoAAAAJ&view_op=list_works&sortby=pubdate][Google Scholar]].
-** Papers
-
-- [[https://dl.acm.org/citation.cfm?id=3145588]["Parallel Python for Agent-Based Modeling at a Global Scale."]] :: Nicole Blandin, *Carl Colglazier*, John O'Hare, and Paul Brenner. In /Proceedings of the 2017 International Conference of The Computational Social Science Society of the Americas/, p. 10. ACM, 2017.
-
-** Posters
-
-- [[https://crc.nd.edu/images/docs/reu/2018/posters/Poster---Carl-Colglazier.png]["Advanced Tools for Computational Social Science"]]. :: *Carl Colglazier* and Paul Brenner. 2018 Summer Undergraduate Research Symposium, University of Notre Dame.
-
-- [[https://crc.nd.edu/images/docs/reu/2017/posters/Final-Final-Poster---Carl-Colglazier.png]["Parallel Python for Global Social Simulations"]] :: *Carl Colglazier* and Paul Brenner. 2017 Summer Undergraduate Research Symposium, University of Notre Dame.
-
-** Conferences I've attended.
-
-+ [[https://www.kellogg.northwestern.edu/news-events/conference/ic2s2/2018.aspx][IC2S2 2018]]
-+ [[https://chi2018.acm.org/][CHI 2018]]
-
-* Films
-:PROPERTIES:
-:EXPORT_HUGO_SECTION: /
-:EXPORT_FILE_NAME: films
-:END:
-I have over a decade of experience with various artistic media such as
-film, music, and writing.
-
-** Filmography
-*** Documentary Films
-+ [[http://www.viddler.com/v/6805fb13][The People's House]] (2015)
-  [fn:ph]
-+ [[http://www.viddler.com/v/3e83e938][Due Process]] (2014) [fn:dp]
-+ Cary (2013) [fn:cary]
-+ Executive Powers (2013)
-+ [[https://www.youtube.com/watch?v=c_SvgFo71x0][Intellectual Property]] (2012) [fn:ip]
-+ [[https://www.c-span.org/video/?298275-27/the-great-compromise][The Great Compromise]]
-  (2011) [fn:gc]
-+ [[https://www.c-span.org/video/?292400-17/wasting-waste][Wasting  Waste]]
-  (2010) [fn:ww]
-
-***  Web Series
-- *Filmmakers' Guide* :: Ran for the course of a year from 2012 to 2013. Reached over a thousand subscribers and over a hundred thousand views.
-- *The Hitchhikers* :: Created a documentary series as marketing tool for Hitchhikers
-  Robotics Group, Inc between 2012 and 2015.  Reached over fifteen
-  thousand views.
-**** Press
-- [[https://www.newsobserver.com/news/local/community/cary-news/article22811496.html]["Cary teen wins fifth C-SPAN video award"]] :: Will Doran, The Cary News. 1 June 2015.
-- "Cary teen's documentary tops contest" :: Andrew Kenney, The Cary News. 30 March 2011.
-
-
-[fn:ph]: Honorable Mention, StudentCam 2015
-
-[fn:dp]: Honorable Mention, StudentCam 2014
-
-[fn:ip]: First Prize (High School), StudentCam 2012
-
-[fn:gc]: Grand Prize, StudentCam 2011
-
-[fn:ww]: Third Prize, StudentCam 2010
-
-[fn:cary]: Paul Green Multimedia Award recipient (North Carolina Society
-of Historians)
