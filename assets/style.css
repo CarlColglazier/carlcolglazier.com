@@ -202,6 +202,7 @@ aside.left {
 		vertical-align: top;
 }
 
+
 aside.left img {
 		width: 10rem;
 		margin: 0 auto;
@@ -218,6 +219,10 @@ ul.social {
 
 .social a {
 		text-decoration: none;
+}
+
+.hidden {
+		display: none;
 }
 
 /* Small screens */
