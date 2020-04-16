@@ -14,7 +14,7 @@ body {
 .content {
 		width: 48rem;
 		max-width: 100%;
-		margin: 10rem auto;
+		margin: 5rem auto;
 }
 
 .entry p, .entry ul, .entry dl {
@@ -180,6 +180,11 @@ table td {
 img.photo {
 		border-radius: 40%;
 		padding: 1em;
+}
+
+img.side {
+		float: right;
+		max-width: 250px;
 }
 
 /* Small screens */
