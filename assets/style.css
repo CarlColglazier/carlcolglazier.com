@@ -12,6 +12,7 @@ body {
 }
 
 .content {
+		max-width: 1080px;
 		margin: 5rem auto;
 		display: flex;
 		flex-flow: row wrap;
