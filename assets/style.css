@@ -27,7 +27,7 @@ body {
 
 .entry p, .entry ul, .entry dl {
 		width: 30rem;
-		max-width: 90%;
+		max-width: 100%;
 }
 
 h1 {
@@ -267,5 +267,10 @@ ul.social {
 		table td {
 				padding: 0;
 				border-right: none;
+		}
+
+		.entry ul {
+				width: 90%;
+				padding-left: 10%;
 		}
 }
