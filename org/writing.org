@@ -10,24 +10,26 @@
 :EXPORT_HUGO_SECTION: /
 :EXPORT_FILE_NAME: _index
 :EXPORT_TITLE: Carl Colglazier
-:END:
+:END: 
 
-I am a incoming PhD student in Technology and Social Behavior at
+I am an incoming PhD student in Technology and Social Behavior at
 Northwestern University, where I plan to study media systems and
 their impact on public discourse.  I am also interested in the
 relationship between online and offline communities and /how/ and
 /why/ people use media to spread information over networks.
 
-At North Carolina State University, I graduated in 2019 with a B.S. in Computer Science and a B.A. in Communication Media.
-I am an alumni of the [[https://caldwellfellows.ncsu.edu/][Caldwell Fellows]] and the [[https://ids.chass.ncsu.edu/dual/franklin.php][Benjamin Franklin Scholars]].
+At North Carolina State University, I graduated in 2019 with a B.S. in
+Computer Science and a B.A. in Communication Media.  I am an alumni of
+the [[https://caldwellfellows.ncsu.edu/][Caldwell Fellows]] and the [[https://ids.chass.ncsu.edu/dual/franklin.php][Benjamin Franklin Scholars]].
 
-Outside of academia, I get hands-on with media through [[/code][coding projects]], [[/films][documentary filmmaking]], bedroom music production, and vlogging.
+Outside of academia, I get hands-on with media through [[/code][coding
+projects]], [[/films][documentary filmmaking]], bedroom music production, and
+vlogging.
 
 ** Recent News
 
 + April 2020: I commited to Northwestern University.
-
-More updates on [[https://twitter.com/carlcolglazier][Twitter]].
++ December 2019: Graduated from NC State.
 
 * Code Section
 :PROPERTIES:

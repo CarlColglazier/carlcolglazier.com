@@ -12,9 +12,17 @@ body {
 }
 
 .content {
-		width: 48rem;
-		max-width: 100%;
 		margin: 5rem auto;
+		display: flex;
+		flex-flow: row wrap;
+		flex-direction: row-reverse;
+}
+
+.content article {
+		display: inline-block;
+		width: 40rem;
+		max-width: 95%;
+		margin: 0 auto;
 }
 
 .entry p, .entry ul, .entry dl {
@@ -23,17 +31,14 @@ body {
 }
 
 h1 {
-    font-weight: 700;
+		font-family: 'Futura LT', sans-serif;
+    font-weight: 100;
     font-size: 2rem;
 }
 
 h2, h3, h4, h5, h6 {
     font-weight: 600;
     padding: 0;
-}
-
-time {
-    font-size: 0.75rem;
 }
 
 figure {
@@ -178,7 +183,7 @@ table td {
 }
 
 img.photo {
-		border-radius: 40%;
+		border-radius: 50%;
 		padding: 1em;
 }
 
@@ -187,8 +192,49 @@ img.side {
 		max-width: 250px;
 }
 
+
+aside {
+		margin: 0 auto;
+}
+
+aside.left {
+		display: inline-block;
+		vertical-align: top;
+}
+
+aside.left img {
+		width: 10rem;
+		margin: 0 auto;
+}
+
+ul.social {
+		list-style-type: none;
+		padding: 0;
+}
+
+.social li {
+		margin-bottom: 1rem;
+}
+
+.social a {
+		text-decoration: none;
+}
+
 /* Small screens */
 @media only screen and (max-width: 1080px) {
+		.content {
+				margin-top: 2rem;
+		}
+
+		.content article, aside {
+				width: 48rem;
+				max-width: 90%;
+    }
+
+		aside.left div {
+				display: inline-block;
+		}
+
 		.header navigation ul {
 				float: none;
 		}
@@ -206,20 +252,20 @@ img.side {
 				margin-bottom: 0rem;
 		}
 
-		.content {
-				margin-top: 2rem;
-		}
-
-    article.content {
-				width: 30rem;
-				max-width: 90%;
-    }
-
 		.main navigation {
 				text-align: center;
 		}
 
 		.main .menu {
 				margin-top: 5rem;
+		}
+
+		table {
+				width: 90%;
+		}
+
+		table td {
+				padding: 0;
+				border-right: none;
 		}
 }

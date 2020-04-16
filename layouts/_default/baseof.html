@@ -44,7 +44,9 @@
     </style>
     {{ $style := resources.Get "style.css" }}
     {{ $syntax := resources.Get "syntax.css" }}
-    {{ $stylesheet := slice $style $syntax | resources.Concat "style.css" }}
+		{{ $fontello := resources.Get "fontello.css" }}
+		{{ $stylesheet := slice $style $syntax | resources.Concat "style.css" }}
+		{{ $stylesheet := slice $stylesheet $fontello | resources.Concat "fontello.css" }}
     {{ $stylesheet := $stylesheet | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $stylesheet.Permalink }}">
   </head>
