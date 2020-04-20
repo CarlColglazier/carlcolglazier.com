@@ -10,6 +10,11 @@ With some nice blocks of free time directly after graduation, I've poured my ene
 ## Books I completed {#books-i-completed}
 
 
+### April 2020 {#april-2020}
+
+Becker, Howard Saul. _Writing for Social Scientists: How to Start and Finish Your Thesis, Book, or Article_. 2. ed. Chicago Guides to Writing, Editing, and Publishing. Chicago: Univ. of Chicago Press, 1987.
+
+
 ### March 2020 {#march-2020}
 
 Criado Perez, Caroline. _Invisible Women: Exposing Data Bias in a World Designed for Men_. London: Chatto & Windus, 2019.
