@@ -10,6 +10,11 @@ With some nice blocks of free time directly after graduation, I've poured my ene
 ## Books I completed {#books-i-completed}
 
 
+### May 2020 {#may-2020}
+
+Acemoglu, Daron, and James A. Robinson. _Why Nations Fail: The Origins of Power, Prosperity and Poverty_. 1st ed. New York: Crown Publishers, 2012.
+
+
 ### April 2020 {#april-2020}
 
 Becker, Howard Saul. _Writing for Social Scientists: How to Start and Finish Your Thesis, Book, or Article_. 2. ed. Chicago Guides to Writing, Editing, and Publishing. Chicago: Univ. of Chicago Press, 1987.
@@ -56,6 +61,7 @@ Vaidhyanathan, Siva. _Antisocial Media: How Facebook Disconnects US and Undermin
 
 ## Books in progress {#books-in-progress}
 
+-   _Network Propaganda_
 -   _Network Science_ by Albert-László Barabási.
 -   _Statistical Rethinking_ by Richard McElreath.
 
