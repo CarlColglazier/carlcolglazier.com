@@ -14,6 +14,8 @@ With some nice blocks of free time directly after graduation, I've poured my ene
 
 Acemoglu, Daron, and James A. Robinson. _Why Nations Fail: The Origins of Power, Prosperity and Poverty_. 1st ed. New York: Crown Publishers, 2012.
 
+Benkler, Yochai, Rob Faris, and Hal Roberts. _Network Propaganda: Manipulation, Disinformation, and Radicalization in American Politics_. New York, NY: Oxford University Press, 2018.
+
 
 ### April 2020 {#april-2020}
 
