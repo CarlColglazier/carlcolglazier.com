@@ -16,6 +16,8 @@ Acemoglu, Daron, and James A. Robinson. _Why Nations Fail: The Origins of Power,
 
 Benkler, Yochai, Rob Faris, and Hal Roberts. _Network Propaganda: Manipulation, Disinformation, and Radicalization in American Politics_. New York, NY: Oxford University Press, 2018.
 
+Kaye, David. _Speech Police: The Global Struggle to Govern the Internet_. New York: Columbia Global Reports, 2019.
+
 
 ### April 2020 {#april-2020}
 
@@ -63,7 +65,6 @@ Vaidhyanathan, Siva. _Antisocial Media: How Facebook Disconnects US and Undermin
 
 ## Books in progress {#books-in-progress}
 
--   _Network Propaganda_
 -   _Network Science_ by Albert-László Barabási.
 -   _Statistical Rethinking_ by Richard McElreath.
 

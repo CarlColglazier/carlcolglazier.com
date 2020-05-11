@@ -23,6 +23,8 @@ With some nice blocks of free time directly after graduation, I've poured my ene
 Acemoglu, Daron, and James A. Robinson. /Why Nations Fail: The Origins of Power, Prosperity and Poverty/. 1st ed. New York: Crown Publishers, 2012.
 
 Benkler, Yochai, Rob Faris, and Hal Roberts. /Network Propaganda: Manipulation, Disinformation, and Radicalization in American Politics/. New York, NY: Oxford University Press, 2018.
+
+Kaye, David. /Speech Police: The Global Struggle to Govern the Internet/. New York: Columbia Global Reports, 2019.
 *** April 2020
 Becker, Howard Saul. /Writing for Social Scientists: How to Start and Finish Your Thesis, Book, or Article/. 2. ed. Chicago Guides to Writing, Editing, and Publishing. Chicago: Univ. of Chicago Press, 1987.
 *** March 2020
@@ -56,7 +58,6 @@ Silvia, Paul J. /How to Write a Lot: A Practical Guide to Productive Academic Wr
 
 Vaidhyanathan, Siva. /Antisocial Media: How Facebook Disconnects US and Undermines Democracy/. New York, NY, United States of America: Oxford University Press, 2018.
 ** Books in progress
-+ /Network Propaganda/
 + /Network Science/ by Albert-László Barabási.
 + /Statistical Rethinking/ by Richard McElreath.
 ** Books for reference
