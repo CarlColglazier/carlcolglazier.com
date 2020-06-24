@@ -39,7 +39,11 @@ vlogging.
 :PROPERTIES:
 :EXPORT_FILE_NAME: _index
 :END:
-
+*** Music Software
++ [[https://github.com/CarlColglazier/ES-5Linx][ES-5Linx]] is a VST and JACK utility to handle the Expert Sleepers ES-5 Eurorack expansion on Linux.
++ [[https://github.com/CarlColglazier/MI_Nebulae_v2][MI_Nebulae_v2]] are ports of Native Instruments code for the QuBit Electronix Nebulae v2.
++ [[https://github.com/CarlColglazier/libre-rytm-sds][libre-rytm-sds]] is a simple set of scripts to send samples to the Elektron Analog RYTM on Linux.
+*** Other 
 + [[https://cheesecake.live/][Cheesecake Live]] is an evidence-based scouting and statistics approach to the /FIRST/ Robotics Competition.
 + [[https://github.com/CarlColglazier/emojidentity][Emojidentity]] is an inquiry on the use of emoji as a messaging device for collective identity.
 + [[https://twitter.com/pitch_bot][_Unicorn Pitch Bot_]] is a very silly Twitter bot that might be the next big thing.
