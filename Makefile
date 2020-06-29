@@ -1,0 +1,2 @@
+dev:
+	hugo server -D
