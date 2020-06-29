@@ -16,9 +16,9 @@ menu:
     - name: "Research"
       url: "/research"
       weight: 1
---    - name: "Code"
---      url: "/code"
---      weight: 0
+    - name: "Code"
+      url: "/code"
+      weight: 0
 --    - name: "Films"
 --      url: "/media"
 --      weight: 0
