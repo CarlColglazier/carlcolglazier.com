@@ -40,6 +40,7 @@ vlogging.
 :EXPORT_FILE_NAME: _index
 :END:
 *** Music Software
++ [[https://github.com/CarlColglazier/Olearia][Olearia]] is a collection of applets for the Daisy Patch.
 + [[https://github.com/CarlColglazier/ES-5Linx][ES-5Linx]] is a VST and JACK utility to handle the Expert Sleepers ES-5 Eurorack expansion on Linux.
 + [[https://github.com/CarlColglazier/MI_Nebulae_v2][MI_Nebulae_v2]] are ports of Native Instruments code for the QuBit Electronix Nebulae v2.
 + [[https://github.com/CarlColglazier/libre-rytm-sds][libre-rytm-sds]] is a simple set of scripts to send samples to the Elektron Analog RYTM on Linux.
