@@ -1,13 +1,12 @@
 ---
 title: "Carl Colglazier"
+author: ["Carl Colglazier"]
 draft: false
 ---
 
-I am a first-year PhD student in Technology and Social Behavior at
-Northwestern University. I study media as sociotechnical systems and
-their impact on public discourse.  I am also interested in the
-relationship between online and offline communities and _how_ and
-_why_ people use media to spread information over networks.
+I am a PhD student in Technology and Social Behavior at
+Northwestern University. I study sociotechnical systems and
+their impact on public discourse.
 
 At North Carolina State University, I graduated in 2019 with a B.S. in
 Computer Science and a B.A. in Communication Media.  I am an alumni of
@@ -20,5 +19,7 @@ vlogging.
 
 ## Recent News {#recent-news}
 
+-   May 2022: Two papers at ICA '22 in Paris.
+-   October 2020: Served as a Student Volunteer at CSCW '20.
 -   April 2020: I commited to Northwestern University.
 -   December 2019: Graduated from NC State.
