@@ -1,0 +1,21 @@
+---
+title: "Notes"
+author: ""
+listing:
+- id: notes
+  contents:
+    - "*.qmd"
+    - "*.md"
+    - "!archive/"
+  sort: "date desc"
+  type: default
+  fields: [title, description, date, categories]
+  categories: true
+code-tools: false
+page-layout: full
+---
+
+:::{#notes}
+:::
+
+Some more notes are avilible in the [archive](/notes/archive/).

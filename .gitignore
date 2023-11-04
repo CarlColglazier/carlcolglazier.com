@@ -1,7 +1,18 @@
-public/
-node_modules/
-datasets/
-resources/
-_gen/*
-*.RData
-*.Rhistory
+# R stuff
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+# Quarto
+/.quarto/
+_site/
+_freeze/
+**/*_cache/*
+**/*_files/*
+
+# Other
+.DS_Store
+
+/.luarc.json

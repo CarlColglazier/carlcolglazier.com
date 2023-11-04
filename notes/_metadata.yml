@@ -1,0 +1,14 @@
+freeze: true
+title-block-banner: true
+toc: true
+toc-title: "Contents"
+toc-location: left
+format:
+  html:
+    code-tools: true
+    toc: true
+    df-print: kable
+
+author:
+  - name: "Carl Colglazier"
+    url: https://carlcolglazier.com/

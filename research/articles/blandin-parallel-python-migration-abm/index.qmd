@@ -1,0 +1,59 @@
+---
+title: "Parallel Python for Agent-Based Modeling at a Global Scale"
+date: 2017-10-19
+title-block-banner: true
+author:
+  - name: Nicole Blandin
+    affiliation: Saint Mary's College
+  - name: Carl Colglazier
+    affiliation: North Carolina State University
+  - name: John O’Hare
+    affiliation: University of Notre Dame
+  - name: Paul Brenner
+    affiliation: University of Notre Dame
+doi: 10.1145/3145574.3145588
+pub-info:
+  reference: >-
+    Blandin, Nicole, <strong>Carl Colglazier</strong>, John O'Hare, and Paul Brenner. "Parallel python for agent-based modeling at a global scale." In <em>Proceedings of the 2017 International Conference of The Computational Social Science Society of the Americas</em>. Association for Computing Machinery, 2017.
+  links:
+  - name: Final version
+    url: https://doi.org/10.1145/3145574.3145588
+    icon: "fa-solid fa-scroll"
+  - name: Code
+    url: https://github.com/crcresearch/GOS/tree/css2017
+    icon: "fa-brands fa-github"
+  - name: Add to Zotero
+    url: https://www.zotero.org/save?type=doi&q=10.1145/3145574.3145588
+    icon: ai ai-zotero
+---
+
+## Abstract
+
+We introduce a global scale parallel python modeling platform alongside an example global migration model. Our goals focus on improving social scientist access to computationally robust infrastructure, which enhances a scientist's capability to model more complex macro-scale global effects or larger numbers of micro-scale agents and behaviors. We built the model based on a subset of known social and economic factors to test initial computational scalability which we have kept linear with respect to agent population. The Jupyter simulation platform and Python programming language allow for a familiar developer and user interface via a standard internet browser with the computation performed remotely on high performance server hardware. We have successfully scaled to seven billion agents on a multi-core large memory server. The platform has an open license and we are working to enhance modularity for support of new global scale social models.
+
+## Citation
+
+<p class="buttons" style="text-align:center;">
+<a class="btn btn-danger" target="_blank" href="https://www.zotero.org/save?type=doi&q=10.1145/3145574.3145588">{{< ai zotero >}}&emsp;Add to Zotero {{< fa square-arrow-up-right >}}</a>
+</p>
+
+```bibtex
+@inproceedings{blandin2017parallel,
+author = {Blandin, Nicole and Colglazier, Carl and O'Hare, John and Brenner, Paul},
+title = {Parallel Python for Agent-Based Modeling at a Global Scale},
+year = {2017},
+isbn = {9781450352697},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3145574.3145588},
+doi = {10.1145/3145574.3145588},
+abstract = {We introduce a global scale parallel python modeling platform alongside an example global migration model. Our goals focus on improving social scientist access to computationally robust infrastructure, which enhances a scientist's capability to model more complex macro-scale global effects or larger numbers of micro-scale agents and behaviors. We built the model based on a subset of known social and economic factors to test initial computational scalability which we have kept linear with respect to agent population. The Jupyter simulation platform and Python programming language allow for a familiar developer and user interface via a standard internet browser with the computation performed remotely on high performance server hardware. We have successfully scaled to seven billion agents on a multi-core large memory server. The platform has an open license and we are working to enhance modularity for support of new global scale social models.},
+booktitle = {Proceedings of the 2017 International Conference of The Computational Social Science Society of the Americas},
+articleno = {10},
+numpages = {7},
+keywords = {human migration, computational social science, Python, Jupyter, parallel computing, agent-based modelling, global open simulator},
+location = {Santa Fe, NM, USA},
+series = {CSS 2017}
+}
+
+```

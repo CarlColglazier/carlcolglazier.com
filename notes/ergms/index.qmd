@@ -1,0 +1,13 @@
+---
+title: "Exponential Random Graph Models from Scratch"
+description: "Network anlysis by example with Julia"
+draft: true
+categories:
+  - networks
+  - julia
+---
+
+
+$$
+P(Y=y|\theta )={\frac {\exp(\theta ^{T}s(y))}{c(\theta)}},\quad \forall y \in {\mathcal{Y}}
+$$

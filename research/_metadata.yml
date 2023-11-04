@@ -1,0 +1,19 @@
+# Date format
+date-format: "MMMM YYYY"
+
+# Enable banner style title blocks
+title-block-banner: true
+
+# Default for table of contents
+toc: true
+toc-title: Contents
+toc-location: left
+include-back-link: true
+format:
+  html:
+    template-partials:
+      - ../html/research/title-block.html
+execute:
+  echo: false
+  message: false
+  warning: false

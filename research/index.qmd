@@ -1,0 +1,29 @@
+---
+title: "Research"
+listing:
+  - id: articles
+    contents: "articles/*/index.qmd"
+    sort: "date desc"
+    template: "../html/research/listing.ejs"
+  - id: conferences
+    contents:
+    - "conferences.yml"
+    sort: "date desc"
+    template: "../html/research/listing.ejs"
+page-layout: full
+include-back-link: false
+toc-location: right
+toc: true
+---
+
+## Peer Reviewed Publications
+
+### Archival
+
+:::{#articles}
+:::
+
+### Non-Archival
+
+:::{#conferences}
+:::

@@ -1,0 +1,335 @@
+/*-- scss:defaults --*/
+$white:    #ffffff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #373a3c !default;
+$gray-900: #212529 !default;
+$black:    #000000 !default;
+
+$blue:    #0d6efd !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #d63384 !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #198754 !default;
+$teal:    #20c997 !default;
+$cyan:    #0dcaf0 !default;
+
+$red-200: tint-color($red, 60%) !default;
+$red-700: shade-color($red, 40%) !default;
+
+$purple-200: tint-color($purple, 60%) !default;
+$purple-700: shade-color($purple, 40%) !default;
+$purple-800: shade-color($purple, 60%) !default;
+$purple-900: shade-color($purple, 80%) !default;
+
+$pink-200: tint-color($pink, 60%) !default;
+$pink-700: shade-color($pink, 40%) !default;
+$pink-800: shade-color($pink, 60%) !default;
+$pink-900: shade-color($pink, 80%) !default;
+
+/*
+$blue:    #2780e3 !default;
+$indigo:  #6610f2 !default;
+$purple:  #170C3A !default;
+$pink:    #A52C60 !default;
+$red:     #CF4446 !default;
+$orange:  #EE6A24 !default;
+$light-orange:  #FB9E07 !default;
+$yellow:  #F6D645 !default;
+$green:   #118230 !default;
+$teal:    #20c997 !default;
+$cyan:    #3093CF !default;
+*/
+
+$primary:   $purple !default;
+$secondary: $gray-700 !default;
+$success:   $green !default;
+$info:      $cyan !default;
+$warning:   $orange !default;
+$danger:    $red !default;
+$light:     $gray-400 !default;
+$dark:      $black !default;
+
+// Body
+$body-color: $gray-900 !default;
+
+// Links
+$link-color: $purple !default;
+$link-decoration: none !default;
+$link-hover-color: $red !default;
+$link-hover-decoration: underline !default;
+
+// Inline code
+$code-bg: $gray-200 !default;
+$code-color: $gray-900 !default;
+
+// Code copy
+$btn-code-copy-color-active: $orange !default;
+
+// TOC
+$toc-color: $pink-700;
+$toc-font-size: 1em;
+
+// Navbar
+$navbar-bg: $purple-800 !default;
+$navbar-fg: $white !default;
+$navbar-hl: $pink-200 !default;
+
+// Footer
+$footer-bg: $gray-900 !default;
+$footer-fg: $gray-300 !default;
+
+$font-size-base: 1.1rem !default; 
+
+$font-family-sans-serif: "EB Garamond" !default;
+$headings-font-family: "Jost" !default;
+$headings-font-weight: 600 !default;
+$navbar-font-family: "Jost" !default;
+$navbar-font-weight: 400 !default;
+$toc-font-family: "Jost" !default;
+$footer-font-family: "Jost" !default;
+
+$grid-sidebar-width: 350px !default;
+
+/*-- scss:rules --*/
+
+$jost-font-path: "https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=EB+Garamond&display=swap" !default;
+// $jost-font-path: "https://fonts.googleapis.com/css2?family=EB+Garamond" !default;
+
+
+@if $jost-font-path {
+    @import url($jost-font-path);
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+}
+
+// TODO: This is a temp fix.
+@media (max-width: map-get($grid-breakpoints, md)) {
+.panel-grid .g-col-24 {
+    grid-column: auto/span 20;
+}
+}
+
+#TOC {
+    font-family: $toc-font-family;
+    padding-bottom: 0.1em;
+    font-weight: $font-weight-light;
+
+    .active {
+        font-weight: $font-weight-normal;
+    }
+
+    #toc-title {
+        font-weight: $font-weight-semibold;
+    }
+}
+
+.navbar {
+    font-family: $navbar-font-family;
+    font-weight: $navbar-font-weight;
+
+    .navbar-title {
+        font-weight: $font-weight-medium;
+    }
+}
+
+.thumbnail {
+    img {
+        width: 100%;
+        object-fit: cover;
+        max-height: 120px;
+    }
+}
+
+// Research
+.quarto-title-block {
+    .quarto-title .quarto-categories {
+        padding-bottom: 0;
+        flex-wrap: wrap;
+        row-gap: 0.4em;
+    }
+
+    .project-details {
+        background-color: rgba($purple, 0.1);
+        padding: 0.75em;
+        margin: 1em 0;
+    }
+
+    .quarto-title-meta-heading.manual {
+        margin-top: 2em !important;
+    }
+
+    .project-links {
+        padding: 0;
+        margin-bottom: 0;
+    }
+
+    .project-link {
+        display: inline-block;
+        white-space: nowrap;
+        padding: 0 1em 0 0;
+        font-weight: bold;
+    }
+
+}
+
+.research {
+    .back-nav a {
+        color: shift-color($purple, -50%);
+    }
+    
+    .quarto-title .quarto-categories .quarto-category {
+        background-color: shift-color($purple, -75%);
+        color: $purple;
+        font-size: 0.65em;
+        opacity: 1;
+    }
+
+    .project-categories {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0.35em 0 0.35em;
+        padding-top: 0.35em;
+        padding-left: 0.5em;
+        padding-bottom: 0;
+        row-gap: 0.4em;
+        column-gap: 0.4em;
+        font-family: $headings-font-family;
+
+        .project-category {
+            padding: 0.25em 0.75em 0.25em 0em;
+            font-size: 0.7em;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.project-list {
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 2em;
+
+        li.project {
+            margin-bottom: 2.5em;
+            border-left: 6px solid shift-color($purple, -90%);
+
+            p {
+                margin: 0;
+            }
+        }
+    }
+
+    .project-content {
+        padding-left: 0.5em;
+
+        .status {
+            font-size: 1rem;
+            font-weight: 250;
+            padding: 0.2em;
+            margin-right: 0.5em;
+        }
+    }
+
+    ul.project-links {
+        margin-bottom: 0;
+    }
+
+    .project-details-listing {
+        margin-top: 0.8em;
+        background-color: shift-color($purple, -90%);
+        font-size: 0.9rem;
+
+        @media (max-width: map-get($grid-breakpoints, md)) {
+            font-size: 0.95rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            white-space: nowrap;
+            padding: 0.5em 0.5em 0.5em 1em;
+        }
+
+        .details {
+            background-color: $purple;
+            padding-right: 1.5em;
+
+            a {
+                color: #FFFFFF;
+            }
+        }
+    }
+}
+
+.nav-footer {
+    align-items: flex-start;  // Align all flex items to the top
+    flex-wrap: wrap;
+    border: 0 !important;
+    min-height: 3em;
+    font-family: $footer-font-family;
+
+    a {
+        color: $purple-200;
+    }
+
+    .faux-block {
+        display: block;
+        padding-bottom: 0.4em;
+    }
+
+    // In the default Quarto template, .nav-footer-center has position: absolute 
+    // turned on, which makes the div not be a flex item
+    // This changes that so that it *is* a flex item
+    .nav-footer-center {
+        text-align: center;
+        position: inherit;
+        margin-top: 0;
+
+        @media (max-width: map-get($grid-breakpoints, md)) {
+            margin-top: 0.5em;
+            margin-bottom: 1.5em;
+        }
+    }
+
+    // When the screen is medium or smaller, make each footer chunk be 100% width 
+    // and centered; otherwise make them be 33% width and left/right/centerd
+    .nav-footer-left,
+    .nav-footer-right,
+    .nav-footer-center {
+        text-align: center;
+        width: 100%;
+        min-height: 2em;
+        flex: 1 1 auto;
+    }
+
+    @media (min-width: map-get($grid-breakpoints, md)) {
+        .nav-footer-left {
+            text-align: left;
+        }
+
+        .nav-footer-right {
+            text-align: right;
+        }
+
+        .nav-footer-left,
+        .nav-footer-right,
+        .nav-footer-center {
+            flex: 1 1 33%;
+        }
+    }
+}
+
+// Shrink blocks of code
+pre.text, pre.sourceCode, .cell-output pre {
+    font-size: 0.6em;
+}

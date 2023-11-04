@@ -1,0 +1,5 @@
+---
+title: Page not found
+---
+
+Try using the search button {{< fa magnifying-glass >}} at the top of the page.
