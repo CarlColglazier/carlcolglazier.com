@@ -1,0 +1,371 @@
+---
+title: "A Bayesian Model for the 2023 NCAA Field Hockey Championships"
+description: "Approximating skill and predicting outcomes with the Poisson distribution"
+date: 2023-11-08
+categories:
+  - R
+  - Stan
+  - brms
+execute:
+  echo: false
+  warning: false
+  cache: true
+---
+
+```{r, setup, include=FALSE}
+```
+
+```{r libraries-data, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(arrow)
+library(brms)
+library(tidybayes)
+library(cfbplotR)
+library(ggtext)
+library(glue)
+library(grid)
+
+load_matches_year <- function(year) {
+    read_feather(glue::glue("data/matches_{year}.feather")) %>%
+    mutate(
+        minutes = as.integer(stringr::str_extract(time, "\\d+(?=:)")),
+        seconds = as.integer(stringr::str_extract(time, "(?<=:)\\d+"))
+    ) %>% mutate(quarters = (minutes + seconds/60.0) / 15.0) %>% 
+    mutate(match_time = quarters/4.0)
+}
+# TODO: Some of these are missing times?
+matches_2024 <- load_matches_year(2024)
+matches_2023 <- load_matches_year(2023)
+matches_2022 <- load_matches_year(2022)
+teams <- matches_2024 %>% dplyr::select(team_id, name) %>% distinct() %>%
+    mutate(team_id = as.integer(team_id))
+```
+
+# The Simple Poisson Model
+
+The Poisson distribution represents the probability of a number of events occurring over a fixed period of time. In this case, we are interested in goals during the course of a game, which varies based on team ability. We consider the rate of scoring as a function of both a team's offensive skill and the defensive skill of their opponent.
+
+$$
+\text{goals}_{ij} \sim \text{Poisson}(\alpha + \text{offense}_i + \text{defense}_j)
+$$
+
+where:
+
+-   $\text{goals}_{ij}$ is the number of goals scored by team $i$ against team $j$
+-   $\alpha$ is the average number of goals scored by an average team
+-   $\text{offense}_i$ is the offensive skill of team $i$
+-   $\text{defense}_j$ is the defensive skill of team $j$
+
+To get the model to converge, we add the additional zero-sum constraints
+
+$$
+\sum_{i=1}^{n} \text{offense}_i = 0
+$$
+
+$$
+\sum_{i=1}^{n} \text{defense}_j = 0
+$$
+
+In `brms`, this model is specified as
+
+```{r}
+#| label: model-formula
+#| echo: true
+model_formula <- bf(
+    gf ~ 1 + offset(log(match_time)) + (1 | team_id) + (1 | opponent),
+    center=TRUE
+)
+```
+
+```{r, poisson-model}
+build_model <- function(matches) {
+    brm(
+        model_formula,
+        data = matches,
+        family = poisson(),
+        #chains = 4,
+        cores = 4,
+        iter = 5000,
+        warmup = 4000,
+        #control = list(adapt_delta = 0.99)
+    )
+}
+
+model_2024 <- build_model(matches_2024)
+model_2023 <- build_model(matches_2023)
+model_2022 <- build_model(matches_2022)
+```
+
+## Metrics and Visualization
+
+```{r}
+#| label: plot-offense-defense
+offense_defense <- function(model) {
+    offense <- model %>%
+        spread_draws(r_team_id[team_id,]) %>%
+        group_by(team_id) %>%
+        summarize(
+            mean = mean(r_team_id),
+            lower = quantile(r_team_id, 0.025),
+            upper = quantile(r_team_id, 0.975)
+        ) %>%
+        arrange(desc(mean)) %>%
+        left_join(teams, by = "team_id")
+
+    defense <- model %>%
+        spread_draws(r_opponent[opponent,]) %>%
+        group_by(opponent) %>%
+        summarize(
+            mean = mean(r_opponent),
+            lower = quantile(r_opponent, 0.025),
+            upper = quantile(r_opponent, 0.975)
+        ) %>%
+        arrange(mean) %>%
+        rename(team_id = opponent) %>%
+        left_join(teams, by = "team_id")
+
+    team_rename <- c(
+        "UAlbany"="Albany",
+        "App State"="Appalachian State"
+    )
+
+    plot_data <- inner_join(
+        (offense %>% dplyr::select(team_id, mean, name) %>% rename(offense=mean)),
+        (defense %>% dplyr::select(team_id, mean) %>% rename(defense=mean)),
+        by="team_id") %>%
+        mutate(name = coalesce(team_rename[name], name)) %>%
+        mutate(has_image = (name %in% valid_team_names())) %>%
+        mutate(defense=-defense)
+
+    return(plot_data)
+}
+
+plot_offense_defense <- function(plot_data) {
+    plot <- plot_data %>%
+        filter(has_image) %>%
+        ggplot(aes(y=defense, x=offense, label=name, team=name)) +
+        #geom_richtext(angle=-45) +
+        geom_cfb_logos(width = 0.05, angle=-45) +
+        coord_fixed(ratio=1, xlim=c(-1.5, 1.5), ylim=c(-1.5, 1.5)) +
+        labs(
+            #title="2023-2024 NCAA Field Hockey Efficiency",
+            x="Offense",
+            y="Defense"
+        ) + theme_bw() +
+        theme(
+            axis.title.x = element_text(angle = -45, hjust = 0.5, vjust = 0.5),
+            axis.title.y = element_text(angle = -45, hjust = 0.5, vjust = 0.5),
+            axis.text.x = element_blank(),
+            axis.ticks.x = element_blank(),
+            axis.text.y = element_blank(),
+            axis.ticks.y = element_blank()
+        )
+
+
+    grid::grid.newpage()
+    vp <- grid::viewport(name = "rotate", y=0.4, angle = 45, width = 0.75, height = 0.75)
+
+    grid::pushViewport(vp)
+    print(plot, vp="rotate", newpage = FALSE)
+
+    #return(plot_data)
+}
+```
+
+::: panel-tabset
+### 2023
+
+```{r}
+#| label: offense-defense-2024
+#| fig-width: 6
+#| fig-height: 6
+
+od_2024 <- offense_defense(model_2024)
+plot_offense_defense(od_2024)
+```
+
+### 2022
+
+```{r}
+#| label: offense-defense-2023
+#| fig-width: 6
+#| fig-height: 6
+
+od_2023 <- offense_defense(model_2023)
+plot_offense_defense(od_2023)
+```
+
+### 2021
+
+```{r}
+#| label: offense-defense-2022
+#| fig-width: 6
+#| fig-height: 6
+
+od_2022 <- offense_defense(model_2022)
+plot_offense_defense(od_2022)
+```
+:::
+
+## Simulations
+
+```{r}
+draws <- model_2024 %>%
+    spread_draws(b_Intercept, r_team_id[team_id,], r_opponent[opponent,])
+```
+
+```{r}
+simulate_goals <- function(draws, t1, t2) {
+    draws %>%
+        filter(team_id == t1) %>%
+        filter(opponent == t2) %>%
+        mutate(rate =exp(b_Intercept + r_team_id + r_opponent)) %>%
+        rowwise() %>%
+        mutate(
+            goals = list(rpois(25, rate)),
+            time = list(rexp(25, rate=rate))
+        ) %>%
+        select(goals, time) %>%
+        unnest(cols = c(goals, time))
+}
+```
+
+```{r}
+tournament_teams_list <- c(
+    "North Carolina",
+    "Northwestern",
+    "Duke",
+    "Maryland",
+    "Virginia",
+    "Liberty",
+    "Iowa",
+    "Rutgers",
+    "Harvard",
+    "Louisville",
+    "Syracuse",
+    "Saint Joseph's",
+    "Old Dominion",
+    "American",
+    "Miami (OH)",
+    "William & Mary"
+)
+
+tournament_teams <- data.frame(name=tournament_teams_list) %>%
+    inner_join(teams, by="name") %>%
+    mutate(seed=seq_along(name))
+```
+
+```{r}
+teams_win_percentage <- function(draws, t1, t2) {
+    sim_1 <- simulate_goals(draws, t1, t2)
+    sim_2 <- simulate_goals(draws, t2, t1)
+    goal_diff <- sim_1$goals - sim_2$goals
+    first_rate <- sim_1$time < sim_2$time
+    overtime_win <- (first_rate & (goal_diff == 0) & (pmin(sim_1$time, sim_2$time) < (1/3)))
+    # TODO: Assume random for now
+    shootouts <- sum((goal_diff == 0) & (pmin(sim_1$time, sim_2$time) >= (1/3)))
+    shootout_win <- runif(shootouts) < 0.5
+    # TODO: Ignores shootout for now.
+    # Could factor in when the rate is lower than 20
+    return((sum(goal_diff > 0) + sum(overtime_win) + sum(shootout_win)) / length(goal_diff))
+}
+```
+
+```{r, eval=FALSE}
+teams_win_percentage(draws, 509, 457)
+```
+
+```{r}
+tournament_draws <- draws %>% filter(team_id %in% tournament_teams$team_id) %>% filter(opponent %in% tournament_teams$team_id)
+
+m <- matrix(0, nrow=nrow(tournament_teams), ncol=nrow(tournament_teams))
+
+for (i in 1:(nrow(tournament_teams) - 1)) {
+    for (j in (i + 1):nrow(tournament_teams)) {
+        win_percentage <- teams_win_percentage(tournament_draws, tournament_teams$team_id[i], tournament_teams$team_id[j])
+        m[i, j] <- win_percentage
+        m[j, i] <- 1 - win_percentage
+    }
+}
+```
+
+```{r}
+#| label: tournament-simulation
+#| echo: true
+#| code-fold: true
+#| code-summary: "Recursive tournament simulation function"
+tournament_round <- function(mat, teams) {
+    if (length(teams) == 1) {
+        return(teams[1])
+    }
+    if (length(teams) == 2) {
+        t1 <- teams[1]
+        t2 <- teams[2]
+        return(ifelse(runif(1) < mat[t1, t2], t1, t2))
+    }
+    half_length <- length(teams) %/% 2
+    first_half_winner <- tournament_round(mat, teams[1:half_length])
+    second_half_winner <- tournament_round(mat, teams[(half_length + 1):length(teams)])
+    return(tournament_round(mat, c(first_half_winner, second_half_winner)))
+}
+```
+
+```{r}
+y <- replicate(10000, tournament_round(
+    m,
+    seq(1, 16, 1)
+)) %>%
+    table() %>%
+    prop.table() %>%
+    as.data.frame() %>%
+    setNames(c("s", "wins")) %>%
+    mutate(seed = as.integer(s)) %>%
+    inner_join(tournament_teams, by="seed") %>%
+    arrange(desc(wins))
+
+y %>% 
+    mutate(winsp = wins*100) %>%
+    dplyr::select(name, seed, winsp) %>%
+    knitr::kable(digits=2, col.names=c("Team", "Seed", "Champs %"))
+```
+
+## Too simple?
+
+```{r}
+#| label: fig-goal-correlation
+#| column: margin
+#| fig-width: 3
+#| fig-height: 2.5
+matches_2024 %>%
+    ggplot(aes(x=ga, y=gf)) +
+    geom_point(alpha=0.05) +
+    geom_smooth(method = "glm", method.args = list(family = "poisson"), se = FALSE, color = "red") +
+    labs(x="Goals Allowed", y="Goals For")
+```
+
+The simple model above assumes that the goals scored by each team are independent. This assumption, however, misses something we can see in our data: the number of goals scored by one team is *negatively correlated* with the number of goals scored by the other team (@fig-goal-correlation). In fact, the probability of a shutout *increases* as a team scores more goals (or rather, teams that score more goals are more likely to get shutouts proportionally).
+
+```{r, eval=FALSE}
+#| label: fig-scores-histogram
+# create histograms for ga on gf in [0-5] using facets
+matches_2024 %>%
+    filter(gf <= 5) %>%
+    mutate(ga = ifelse(ga >= 5, 5, ga)) %>%
+    ggplot(aes(x=ga)) +
+    geom_histogram(binwidth = 1) +
+    #geom_histogram(bins=max(matches_2024$ga)) +
+    #scale_y_continuous(labels = scales::percent) +
+    facet_wrap(~ gf, ncol=3, scales = "free_y") +
+    scale_x_continuous(breaks = c(0:4, 5), labels = c("0", "1", "2", "3", "4", "5+")) +
+    theme_minimal() +
+    labs(
+        x="Goals allowed",
+        y="Count"
+    )
+```
+
+```{=html}
+<!--
+We can model this correlation by using a bivariate Poisson distribution.
+-->
+```
