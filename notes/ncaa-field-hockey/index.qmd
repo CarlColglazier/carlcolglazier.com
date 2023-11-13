@@ -1,7 +1,8 @@
 ---
-title: "A Bayesian Model for the 2023 NCAA Field Hockey Championships"
-description: "Approximating skill and predicting outcomes with the Poisson distribution"
+title: "A Bayesian Model for NCAA Field Hockey"
+description: "Approximating skill and predicting outcomes with the negative binomial distribution"
 date: 2023-11-08
+bibliography: references.bib
 categories:
   - R
   - Stan
@@ -12,8 +13,11 @@ execute:
   cache: true
 ---
 
+
 ```{r, setup, include=FALSE}
 ```
+
+My lab at Northwestern sits in a building near Lakeside Field, home to the school field hockey team. The team is quite sucessful: they won the national championship in 2021 and were runners-up in 2022. The team is once again in the hunt for the national championship in 2023, and I thought it would be fun to try to predict the outcome of the tournament (or at least quantify their odds).
 
 ```{r libraries-data, warning=FALSE, message=FALSE}
 library(tidyverse)
@@ -31,39 +35,58 @@ load_matches_year <- function(year) {
         minutes = as.integer(stringr::str_extract(time, "\\d+(?=:)")),
         seconds = as.integer(stringr::str_extract(time, "(?<=:)\\d+"))
     ) %>% mutate(quarters = (minutes + seconds/60.0) / 15.0) %>% 
-    mutate(match_time = quarters/4.0)
+    mutate(match_time = quarters/4.0) %>%
+    mutate(season=year)
 }
 # TODO: Some of these are missing times?
-matches_2024 <- load_matches_year(2024)
-matches_2023 <- load_matches_year(2023)
-matches_2022 <- load_matches_year(2022)
-teams <- matches_2024 %>% dplyr::select(team_id, name) %>% distinct() %>%
+matches <- c(2022, 2023, 2024) %>% map(load_matches_year) %>% bind_rows() %>%
+    arrange(desc(home), date) %>%
+    mutate(home_team = (home == 1))
+
+teams <- matches %>% dplyr::select(team_id, name) %>% distinct() %>%
     mutate(team_id = as.integer(team_id))
 ```
 
-# The Simple Poisson Model
+```{r}
+#| label: fig-poisson
+#| column: margin
+#| fig-width: 3
+#| fig-height: 2.5
+matches %>%
+    group_by(team_id, season) %>%
+    summarize(
+        mean = mean(gf),
+        var = var(gf)
+    ) %>%
+    ggplot(aes(x=mean, y=var)) +
+    geom_point() +
+    geom_abline(slope=1, intercept=0, color="red") +
+    labs(x="Mean", y="Variance")
+```
 
-The Poisson distribution represents the probability of a number of events occurring over a fixed period of time. In this case, we are interested in goals during the course of a game, which varies based on team ability. We consider the rate of scoring as a function of both a team's offensive skill and the defensive skill of their opponent.
+To do so, I build on some existing models built over the last half-century. To start, I create a model similar to @maher1982modelling, who uses the Poisson distribution to model the number of goals scored by each team. However, because the data are overdispursed (@fig-poisson), I use the negative binomial distribution instead.
+
+
+# The Model
+
+The Poisson distribution represents the probability of a number of events occurring over a fixed period of time. In this case, we are interested in goals during the course of a game, which varies based on team ability. The Poisson distribution can be considered a special case of the negative binomial distribution when the mean is equal to the variance. Since this is not the case with the field hockey goals data, we use the negative binomial distribution instead. We consider the amount of scoring as a function of both a team's offensive skill and the defensive skill of their opponent and additionally consider home field advantage.
 
 $$
-\text{goals}_{ij} \sim \text{Poisson}(\alpha + \text{offense}_i + \text{defense}_j)
+\text{goals}_{ij} \sim \text{NegBinom}(\alpha + \text{offense}_i + \text{defense}_j + \text{home})
 $$
 
 where:
 
 -   $\text{goals}_{ij}$ is the number of goals scored by team $i$ against team $j$
--   $\alpha$ is the average number of goals scored by an average team
+-   $\alpha$ is an intercept term
 -   $\text{offense}_i$ is the offensive skill of team $i$
 -   $\text{defense}_j$ is the defensive skill of team $j$
+-   $\text{home}$ is the home field advantage
 
 To get the model to converge, we add the additional zero-sum constraints
 
 $$
-\sum_{i=1}^{n} \text{offense}_i = 0
-$$
-
-$$
-\sum_{i=1}^{n} \text{defense}_j = 0
+\sum_{i=1}^{n} \text{offense}_i = \sum_{i=1}^{n} \text{defense}_j = 0
 $$
 
 In `brms`, this model is specified as
@@ -72,7 +95,11 @@ In `brms`, this model is specified as
 #| label: model-formula
 #| echo: true
 model_formula <- bf(
-    gf ~ 1 + offset(log(match_time)) + (1 | team_id) + (1 | opponent),
+    gf ~ 1 +                    # intercept
+        home +                  # home field advantage
+        (1 | team_id) +         # offense
+        (1 | opponent) +        # defense
+        offset(log(match_time)),# overtime adjustment
     center=TRUE
 )
 ```
@@ -82,18 +109,16 @@ build_model <- function(matches) {
     brm(
         model_formula,
         data = matches,
-        family = poisson(),
-        #chains = 4,
+        family = negbinomial(),
         cores = 4,
-        iter = 5000,
-        warmup = 4000,
-        #control = list(adapt_delta = 0.99)
+        iter = 2500,
+        warmup = 1500,
     )
 }
 
-model_2024 <- build_model(matches_2024)
-model_2023 <- build_model(matches_2023)
-model_2022 <- build_model(matches_2022)
+model_2024 <- build_model((matches %>% filter(season == 2024) %>% filter(date < "11/08/2023")))
+model_2023 <- build_model((matches %>% filter(season == 2023)))
+model_2022 <- build_model((matches %>% filter(season == 2022)))
 ```
 
 ## Metrics and Visualization
@@ -126,7 +151,18 @@ offense_defense <- function(model) {
 
     team_rename <- c(
         "UAlbany"="Albany",
-        "App State"="Appalachian State"
+        "App State"="Appalachian State",
+        "American"="American University",
+        "Boston U."="Boston University",
+        "Ohio St."="Ohio State",
+        "Penn St."="Penn State",
+        "Penn"="Pennsylvania",
+        "Massachusetts"="UMass",
+        "Ball St."="Ball State",
+        "Central Mich."="Central Michigan",
+        "Michigan St."="Michigan State",
+        "LIU"="Long Island University",
+        "Kent St."="Kent State"
     )
 
     plot_data <- inner_join(
@@ -167,8 +203,6 @@ plot_offense_defense <- function(plot_data) {
 
     grid::pushViewport(vp)
     print(plot, vp="rotate", newpage = FALSE)
-
-    #return(plot_data)
 }
 ```
 
@@ -179,6 +213,7 @@ plot_offense_defense <- function(plot_data) {
 #| label: offense-defense-2024
 #| fig-width: 6
 #| fig-height: 6
+#| classes: preview-image
 
 od_2024 <- offense_defense(model_2024)
 plot_offense_defense(od_2024)
@@ -211,19 +246,21 @@ plot_offense_defense(od_2022)
 
 ```{r}
 draws <- model_2024 %>%
-    spread_draws(b_Intercept, r_team_id[team_id,], r_opponent[opponent,])
+    spread_draws(b_Intercept, shape, b_home, r_team_id[team_id,], r_opponent[opponent,])
 ```
 
 ```{r}
-simulate_goals <- function(draws, t1, t2) {
+#| label: simulate-goals
+simulate_goals <- function(draws, is_home, t1, t2) {
     draws %>%
         filter(team_id == t1) %>%
         filter(opponent == t2) %>%
-        mutate(rate =exp(b_Intercept + r_team_id + r_opponent)) %>%
+        mutate(mu = exp(b_Intercept + r_team_id + r_opponent + b_home*is_home)) %>%
         rowwise() %>%
         mutate(
-            goals = list(rpois(25, rate)),
-            time = list(rexp(25, rate=rate))
+            goals = list(rnbinom(100, size=shape, mu=mu)),
+            # TODO: how to do this with negative binomial?
+            time = list(rgeom(100, 1 - shape/(shape+mu)) / shape)
         ) %>%
         select(goals, time) %>%
         unnest(cols = c(goals, time))
@@ -250,15 +287,20 @@ tournament_teams_list <- c(
     "William & Mary"
 )
 
-tournament_teams <- data.frame(name=tournament_teams_list) %>%
+home_advantage <- c(1, 5, 5, 5, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17)
+
+tournament_teams <- data.frame(
+        name=tournament_teams_list,
+        home=home_advantage
+    ) %>%
     inner_join(teams, by="name") %>%
     mutate(seed=seq_along(name))
 ```
 
 ```{r}
-teams_win_percentage <- function(draws, t1, t2) {
-    sim_1 <- simulate_goals(draws, t1, t2)
-    sim_2 <- simulate_goals(draws, t2, t1)
+teams_win_percentage <- function(draws, home, t1, t2) {
+    sim_1 <- simulate_goals(draws, home, t1, t2)
+    sim_2 <- simulate_goals(draws, -home, t2, t1)
     goal_diff <- sim_1$goals - sim_2$goals
     first_rate <- sim_1$time < sim_2$time
     overtime_win <- (first_rate & (goal_diff == 0) & (pmin(sim_1$time, sim_2$time) < (1/3)))
@@ -272,7 +314,7 @@ teams_win_percentage <- function(draws, t1, t2) {
 ```
 
 ```{r, eval=FALSE}
-teams_win_percentage(draws, 509, 457)
+teams_win_percentage(draws, -1, 457, 509)
 ```
 
 ```{r}
@@ -282,7 +324,13 @@ m <- matrix(0, nrow=nrow(tournament_teams), ncol=nrow(tournament_teams))
 
 for (i in 1:(nrow(tournament_teams) - 1)) {
     for (j in (i + 1):nrow(tournament_teams)) {
-        win_percentage <- teams_win_percentage(tournament_draws, tournament_teams$team_id[i], tournament_teams$team_id[j])
+        has_home_advantage <- tournament_teams$home[i] <= j
+        win_percentage <- teams_win_percentage(
+            tournament_draws,
+            as.integer(has_home_advantage),
+            tournament_teams$team_id[i],
+            tournament_teams$team_id[j]
+        )
         m[i, j] <- win_percentage
         m[j, i] <- 1 - win_percentage
     }
@@ -291,9 +339,6 @@ for (i in 1:(nrow(tournament_teams) - 1)) {
 
 ```{r}
 #| label: tournament-simulation
-#| echo: true
-#| code-fold: true
-#| code-summary: "Recursive tournament simulation function"
 tournament_round <- function(mat, teams) {
     if (length(teams) == 1) {
         return(teams[1])
@@ -311,9 +356,9 @@ tournament_round <- function(mat, teams) {
 ```
 
 ```{r}
-y <- replicate(10000, tournament_round(
+y <- replicate(100000, tournament_round(
     m,
-    seq(1, 16, 1)
+    seq(1, nrow(tournament_teams), 1)
 )) %>%
     table() %>%
     prop.table() %>%
@@ -323,7 +368,7 @@ y <- replicate(10000, tournament_round(
     inner_join(tournament_teams, by="seed") %>%
     arrange(desc(wins))
 
-y %>% 
+y %>%
     mutate(winsp = wins*100) %>%
     dplyr::select(name, seed, winsp) %>%
     knitr::kable(digits=2, col.names=c("Team", "Seed", "Champs %"))
@@ -336,7 +381,7 @@ y %>%
 #| column: margin
 #| fig-width: 3
 #| fig-height: 2.5
-matches_2024 %>%
+matches %>%
     ggplot(aes(x=ga, y=gf)) +
     geom_point(alpha=0.05) +
     geom_smooth(method = "glm", method.args = list(family = "poisson"), se = FALSE, color = "red") +
@@ -346,26 +391,52 @@ matches_2024 %>%
 The simple model above assumes that the goals scored by each team are independent. This assumption, however, misses something we can see in our data: the number of goals scored by one team is *negatively correlated* with the number of goals scored by the other team (@fig-goal-correlation). In fact, the probability of a shutout *increases* as a team scores more goals (or rather, teams that score more goals are more likely to get shutouts proportionally).
 
 ```{r, eval=FALSE}
-#| label: fig-scores-histogram
-# create histograms for ga on gf in [0-5] using facets
-matches_2024 %>%
-    filter(gf <= 5) %>%
-    mutate(ga = ifelse(ga >= 5, 5, ga)) %>%
-    ggplot(aes(x=ga)) +
-    geom_histogram(binwidth = 1) +
-    #geom_histogram(bins=max(matches_2024$ga)) +
-    #scale_y_continuous(labels = scales::percent) +
-    facet_wrap(~ gf, ncol=3, scales = "free_y") +
-    scale_x_continuous(breaks = c(0:4, 5), labels = c("0", "1", "2", "3", "4", "5+")) +
-    theme_minimal() +
-    labs(
-        x="Goals allowed",
-        y="Count"
-    )
+model_2024 <- build_model((matches %>% filter(season == 2024)))
+
+draws <- model_2024 %>%
+    spread_draws(b_Intercept, shape, b_home, r_team_id[team_id,], r_opponent[opponent,])
+
+tournament_teams_list <- c(
+    "North Carolina",
+    "Northwestern",
+    "Duke",
+    "Virginia"
+)
+
+home_advantage <- c(1, 5, 5, 5)
+
+tournament_teams <- data.frame(
+        name=tournament_teams_list,
+        home=home_advantage
+    ) %>%
+    inner_join(teams, by="name") %>%
+    mutate(seed=seq_along(name))
 ```
 
-```{=html}
-<!--
-We can model this correlation by using a bivariate Poisson distribution.
--->
+```{r, bivariate-model, eval=FALSE}
+teams <- matches_2023 %>% dplyr::select(team_id, name) %>% distinct() %>%
+    mutate(team_id = as.integer(team_id))
+
+data <- matches_2023 %>%
+    # TODO: At the moment, matches are counted twice...    
+    #mutate(i = paste(date, pmin(team_id, opponent), pmax(team_id, opponent))) %>% 
+    #distinct(i, .keep_all=T) %>%
+    arrange(date) %>%
+    drop_na() %>%
+    mutate(season=2022) %>% 
+    dplyr::select(season, team_id, opponent, gf, ga) %>%
+    mutate(team_id = as.integer(team_id)) %>%
+    inner_join(teams, by=c("team_id"="team_id")) %>%
+    rename(team_id="team_id", home="name") %>%
+    mutate(opponent = as.integer(opponent)) %>%
+    inner_join(teams, by=c("opponent"="team_id")) %>%
+    rename(opponent="opponent", away="name") %>%
+    select(season, home, away, gf, ga)
+
+sf <- stan_foot(
+    data=data,
+    model="double_pois",
+    ind_home="FALSE",
+    predict=2
+)
 ```
