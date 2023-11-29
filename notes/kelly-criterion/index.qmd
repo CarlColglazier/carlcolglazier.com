@@ -40,7 +40,9 @@ theme_set(plot_theme)
 
 In an experiment, participants got a bankroll of \$25 and a coin, weighted such that it landed on heads 60% of the time [@haghani2017]. Over the course of the next 30 minutes, they could bet up to their entire bankroll on coin flips.
 
-Despite the odds being heavily on their side, most participants lost their initial bankroll. How?
+Despite the odds being heavily on their side, more than a quarter of participants lost their initial bankroll and more than a third lost money. How? Most players ended playing very bad strategies. Many even bet their entire bankroll on a single flip!
+
+You can try out this senario in the interactive below. The slider controls the percentage of your bankroll you bet on each flip.
 
 ```{ojs}
 function prob_to_odds(p) {
