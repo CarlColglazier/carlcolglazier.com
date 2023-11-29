@@ -16,6 +16,7 @@ author-meta: "Carl Colglazier"
 website:
   title: "Carl Colglazier"
   open-graph: true
+  site-url: "https://carlcolglazier.com"
   favicon: "assets/favicon.ico"
   navbar:
     pinned: false
