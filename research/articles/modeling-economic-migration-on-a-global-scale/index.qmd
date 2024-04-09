@@ -1,0 +1,53 @@
+---
+title: "Parallel Python for Agent-Based Modeling at a Global Scale"
+date: 2023-10
+title-block-banner: true
+author:
+  - name: Eva Dziadula
+    affiliation: University of Notre Dame
+  - name: John O’Hare
+    affiliation: University of Notre Dame
+  - name: Carl Colglazier
+    affiliation: Northwestern University
+  - name: Marie C. Clay
+    affiliation: University of Notre Dame
+  - name: Paul Brenner
+    affiliation: University of Notre Dame
+doi: 10.1007/s42001-023-00226-7
+pub-info:
+  reference: >-
+    Dziadula, Eva, John O’Hare, <strong>Carl Colglazier</strong>, Marie C. Clay, and Paul Brenner. "Modeling economic migration on a global scale." <em>Journal of Computational Social Science</em> 6, no. 2 (2023): 1125-1145.
+  links:
+  - name: Final version
+    url: https://doi.org/10.1007/s42001-023-00226-7
+    icon: "fa-solid fa-scroll"
+  - name: Code
+    url: https://github.com/crcresearch/gos
+    icon: "fa-brands fa-github"
+  - name: Add to Zotero
+    url: https://www.zotero.org/save?type=doi&q=10.1007/s42001-023-00226-7
+    icon: ai ai-zotero
+---
+
+## Abstract
+
+We introduce a global-scale migration model centered on neoclassical economic migration theory and leveraging Python and Jupyter as the base modeling platform. Our goals focus on improving social scientists’ understanding of migration and their access to visually and computationally robust infrastructure. This will enhance a scientist’s capability to model complex macro-scale global effects and lay the groundwork for multi-scale models where countries, regions and individuals interact at differing timescales and per differing governing equations. Economic theory describes an agent’s migration decision as utility maximizing. The agent weighs the expected increase in utility associated with migration against the costs of moving to that destination. These costs include not only the explicit monetary costs of travel and visas, but also the implicit costs such as leaving family behind, political barriers to entry, the difficulty in learning a new language, and the unfamiliarity of a new culture, among others. In our model, any destination country in which an agent would have greater earnings (minus migration costs) than in the origin country is considered and agents maximize their expected earnings. Multiple public data sets from United Nations, International Monetary Fund, and World Bank are used to provide suitable initialization values for the model. Our Global Open Simulation (GOS) software has an open license and the data analyzed during the current study are available in the GOS public Github repository (https://github.com/crcresearch/GOS).
+
+## Citation
+
+<p class="buttons" style="text-align:center;">
+<a class="btn btn-danger" target="_blank" href="https://www.zotero.org/save?type=doi&q=10.1145/3145574.3145588">{{< ai zotero >}}&emsp;Add to Zotero {{< fa square-arrow-up-right >}}</a>
+</p>
+
+```bibtex
+@article{dziadula2023modeling,
+  title={Modeling economic migration on a global scale},
+  author={Dziadula, Eva and O’Hare, John and Colglazier, Carl and Clay, Marie C and Brenner, Paul},
+  journal={Journal of Computational Social Science},
+  volume={6},
+  number={2},
+  pages={1125--1145},
+  year={2023},
+  publisher={Springer}
+}
+```

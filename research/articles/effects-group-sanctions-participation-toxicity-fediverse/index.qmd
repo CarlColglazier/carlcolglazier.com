@@ -1,0 +1,19 @@
+---
+title: "The Effects of Group Sanctions on Participation and Toxicity: Quasi-experimental Evidence from the Fediverse"
+date: 2024-06
+title-block-banner: true
+author:
+  - name: Carl Colglazier
+    affiliation: Northwestern University
+  - name: Nathan TeBlunthuis
+    affiliation: University of Michigan
+  - name: Aaron Shaw
+    affiliation: Northwestern University
+pub-info:
+  reference: >-
+    <strong>Colglazier, Carl</strong>, TeBlunthuis, Nathan, & Shaw, Aaron. "The Effects of Group Sanctions on Participation and Toxicity: Quasi-experimental Evidence from the Fediverse." In <em>Proceedings of the Sixteenth International AAAI Conference on Web and Social Media</em> 18. 2024.
+---
+
+# Abstract
+
+Online communities often overlap and coexist, despite incongruent norms and approaches to content moderation. When communities diverge, decentralized and federated communities may pursue group-level sanctions, including defederation (disconnection) to block communication between members of specific communities. We investigate the effects of defederation in the context of the Fediverse, a set of decentralized, interconnected social networks with independent governance. Mastodon and Pleroma, the most popular software powering the Fediverse, allow administrators on one server to defederate from another. We use a difference-in-differences approach and matched controls to estimate the effects of defederation events on participation and message toxicity among affected members of the blocked and blocking servers. We find that defederation causes a drop in activity for accounts on the blocked servers, but not on the blocking servers. Also, we find no evidence of an effect of defederation on message toxicity.
