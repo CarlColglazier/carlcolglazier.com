@@ -36,6 +36,7 @@ website:
     right: |
       <span class="faux-block">Made with [Quarto](https://quarto.org/)</span>
       <span class="faux-block">[View the source at {{< fa brands github >}} GitHub](https://github.com/carlcolglazier/carlcolglazier.com)</span>
+      <span class="hidden">{{< ai arxiv >}}</span>
     left:
     - text: "{{< iconify bi globe size=1.1em title='Website' >}}"
       href: "https://carlcolglazier.com"

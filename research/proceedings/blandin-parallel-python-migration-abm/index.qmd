@@ -24,7 +24,7 @@ pub-info:
     icon: "fa-brands fa-github"
   - name: Add to Zotero
     url: https://www.zotero.org/save?type=doi&q=10.1145/3145574.3145588
-    icon: ai ai-zotero
+    icon: "ai ai-zotero"
 ---
 
 ## Abstract

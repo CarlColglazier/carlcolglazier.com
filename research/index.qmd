@@ -1,8 +1,12 @@
 ---
 title: "Research"
 listing:
-  - id: articles
-    contents: "articles/*/index.qmd"
+  - id: proceedings
+    contents: "proceedings/*/index.qmd"
+    sort: "date desc"
+    template: "../html/research/listing.ejs"
+  - id: journals
+    contents: "journals/*/index.qmd"
     sort: "date desc"
     template: "../html/research/listing.ejs"
   - id: conferences
@@ -20,7 +24,14 @@ toc: true
 
 ### Archival
 
-:::{#articles}
+#### Proceedings
+
+:::{#proceedings}
+:::
+
+#### Journals
+
+:::{#journals}
 :::
 
 ### Non-Archival
