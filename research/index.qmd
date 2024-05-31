@@ -20,21 +20,17 @@ toc-location: right
 toc: true
 ---
 
-## Peer Reviewed Publications
-
-### Archival
-
-#### Proceedings
+## Proceedings
 
 :::{#proceedings}
 :::
 
-#### Journals
+## Journals
 
 :::{#journals}
 :::
 
-### Non-Archival
+## Peer-reviewed Non-Archival Conference Submissions
 
 :::{#conferences}
 :::

@@ -11,7 +11,7 @@ author:
     affiliation: Northwestern University
 pub-info:
   reference: >-
-    <strong>Colglazier, Carl</strong>, TeBlunthuis, Nathan, & Shaw, Aaron. "The Effects of Group Sanctions on Participation and Toxicity: Quasi-experimental Evidence from the Fediverse." In <em>Proceedings of the Sixteenth International AAAI Conference on Web and Social Media</em> 18. 2024.
+    <strong>Colglazier, Carl</strong>, TeBlunthuis, Nathan, & Shaw, Aaron. "The Effects of Group Sanctions on Participation and Toxicity: Quasi-experimental Evidence from the Fediverse." In <em>Proceedings of the Eighteenth International AAAI Conference on Web and Social Media</em> 18. 2024.
   links:
     - name: Preprint
       url: https://arxiv.org/abs/2404.02109

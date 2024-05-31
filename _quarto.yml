@@ -1,12 +1,13 @@
 project:
   type: website
-  #execute-dir: file
+  execute-dir: project
   preview:
     port: 3456
   render:
     - "*.qmd"
     - "*.md"
     - "!etc/"
+    #- "!documents/"
   resources:
     - "files/**"
 

@@ -14,7 +14,7 @@ author:
 doi: 10.1145/3145574.3145588
 pub-info:
   reference: >-
-    Blandin, Nicole, <strong>Carl Colglazier</strong>, John O'Hare, and Paul Brenner. "Parallel python for agent-based modeling at a global scale." In <em>Proceedings of the 2017 International Conference of The Computational Social Science Society of the Americas</em>. Association for Computing Machinery, 2017.
+    Blandin, Nicole, <strong>Carl Colglazier</strong>, John O'Hare, and Paul Brenner. "Parallel Python for Agent-based Modeling at a Global Scale." In <em>Proceedings of the 2017 International Conference of The Computational Social Science Society of the Americas</em>. Association for Computing Machinery, 2017.
   links:
   - name: Final version
     url: https://doi.org/10.1145/3145574.3145588
@@ -55,5 +55,4 @@ keywords = {human migration, computational social science, Python, Jupyter, para
 location = {Santa Fe, NM, USA},
 series = {CSS 2017}
 }
-
 ```

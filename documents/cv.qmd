@@ -1,0 +1,276 @@
+---
+title: "Carl Colglazier"
+suppress-bibliography: true
+link-citations: false
+format:
+  ccxcv-typst:
+    keep-typ: true
+    papersize: us-letter
+    #margin:
+    #  x: 1in
+    #  y: 1in
+    columns: 1
+    toc: false
+    # text size
+    fontsize: 11pt
+    mainfont: "Garamond"
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+# Education
+
+```{=typst}
+#resume-entry(
+  title: "Northwestern University",
+  location: "Evanston, IL",
+  date: "September 2020 - June 2025 (Expected)",
+  description: "Ph.D. in Technology and Social Behavior",
+)
+
+#resume-entry(
+  title: "North Carolina State University",
+  location: "Raleigh, NC",
+  date: "August 2015 - December 2019",
+  description: "B.S. in Computer Science; B.A. in Communication-Media",
+)
+
+#resume-item[
+Phi Beta Kappa, Caldwell Fellow, Benjamin Franklin Scholar, Honors, _Summa Cum Laude_
+]
+```
+
+# Research Experience
+
+```{=typst}
+#resume-entry(
+  title: "Community Data Science Collective",
+  location: "Northwestern University",
+  date: "May 2020 - Present",
+  description: "Researcher",
+)
+
+#resume-entry(
+  title: "Department of Computer Science",
+  location: "North Carolina State University",
+  date: "August 2019 – December 2019",
+  description: "Research Assistant",
+)
+
+#resume-entry(
+  title: "Center for Research Computing",
+  location: "University of Notre Dame",
+  date: "May 2017 - May 2019",
+  description: "Undergraduate Researcher",
+)
+
+#resume-entry(
+  title: "Game2Learn Lab",
+  location: "North Carolina State University",
+  date: "January 2019 – May 2019",
+  description: "Research Assistant",
+)
+
+#resume-entry(
+  title: "Department of History",
+  location: "North Carolina State University",
+  date: "Jan 2017 - May 2018",
+  description: "Research Assistant",
+)
+```
+
+# Professional Experience
+
+```{=typst}
+#resume-entry(
+  title: "IBM",
+  location: "Durham, NC",
+  date: "June 2019 - August 2019",
+  description: "Full Stack Software Engineer Intern",
+)
+```
+
+# Research Publications
+
+```{r}
+library(rmarkdown)
+library(here)
+library(glue)
+library(htmltools)
+library(markdown)
+library(yaml)
+
+
+format_citation <- function(citation) {
+  # replace <strong> and </strong> with **
+  citation <- gsub("<strong>", "**", citation)
+  citation <- gsub("</strong>", "**", citation)
+  # replace <em> and </em> with _
+  citation <- gsub("<em>", "_", citation)
+  citation <- gsub("</em>", "_", citation)
+  st <- paste(citation, sep = "\n", collapse = '')
+  return(st)
+}
+
+format_yaml_section <- function(file) {
+  fm <- read_yaml(file)
+  # Get x$`pub-info`$reference for each x in fm
+  citations <- lapply(fm, function(x) format_citation(x$`pub-info`$reference))
+  return(citations)
+}
+
+format_section <- function(file) {
+  fm <- yaml_front_matter(file)
+  citation <- fm$`pub-info`$reference
+  return(format_citation(citation))
+}
+```
+
+## Proceedings
+
+::: {.block}
+
+```{=typst} 
+#set par(
+ justify: true,
+ first-line-indent: 0em,
+ hanging-indent: 2em,
+)
+```
+
+```{r, echo=FALSE, output='asis'}
+files <- Sys.glob(here("research/proceedings/*/index.qmd"))
+
+sts <- lapply(files, format_section)
+x <- paste(sts, sep="\n\n", collapse = NULL)
+cat(x, sep="\n\n")
+```
+
+:::
+
+## Journals
+
+::: {.block}
+
+```{=typst} 
+#set par(
+ justify: true,
+ first-line-indent: 0em,
+ hanging-indent: 2em,
+)
+```
+
+```{r, echo=FALSE, output='asis'}
+files <- Sys.glob(here("research/journals/*/index.qmd"))
+
+sts <- lapply(files, format_section)
+x <- paste(sts, sep="\n", collapse = NULL)
+cat(x, sep="\n")
+```
+
+:::
+
+## Workshops
+
+
+::: {.block}
+
+```{=typst} 
+#set par(
+ justify: true,
+ first-line-indent: 0em,
+ hanging-indent: 2em,
+)
+```
+
+```{r, echo=FALSE, output='asis'}
+conference_yaml <- here("research/workshops.yml")
+c <- format_yaml_section(conference_yaml)
+x <- paste(c, sep="\n", collapse = NULL)
+cat(x, sep="\n\n")
+```
+
+:::
+
+## Conferences
+
+::: {.block}
+
+```{=typst} 
+#set par(
+ justify: true,
+ first-line-indent: 0em,
+ hanging-indent: 2em,
+)
+```
+
+```{r, echo=FALSE, output='asis'}
+conference_yaml <- here("research/conferences.yml")
+c <- format_yaml_section(conference_yaml)
+x <- paste(c, sep="\n", collapse = NULL)
+cat(x, sep="\n\n")
+```
+
+:::
+
+# Teaching
+
+```{=typst}
+#resume-entry(
+  title: "Introduction to Law and Digital Technology",
+  location: "Northwestern University",
+  date: "Spring 2024",
+  description: "Discussion Section Instructor",
+)
+
+#resume-entry(
+  title: "Introduction to Law and Digital Technology",
+  location: "Northwestern University",
+  date: "Spring 2023",
+  description: "Teaching Assistant",
+)
+
+#resume-entry(
+  title: "Introduction to Computing - Java",
+  location: "North Carolina State University",
+  date: "Spring 2016",
+  description: "Teaching Assistant",
+)
+```
+
+
+# Service
+
+### Reviewer
+
+CSCW 2024, ICWSM 2024, IC2S2 2024, ICA 2023, ICA 2022
+
+### Student volunteer
+
+CSCW 2020
+
+# Awards
+
+
+```{=typst}
+#resume-entry(
+  title: "National Science Foundation",
+  description: "GRFP Honorable Mention",
+  date: "March 2021"
+)
+
+#resume-entry(
+  title: "Department of Communication",
+  location: "North Carolina State University",
+  description: "Outstanding Graduate",
+  date: "December 2019"
+)
+
+#resume-entry(
+  title: "North Carolina Society of Historians",
+  date: "April 2015",
+  description: "Paul Green Multimedia Award",
+)
+```
