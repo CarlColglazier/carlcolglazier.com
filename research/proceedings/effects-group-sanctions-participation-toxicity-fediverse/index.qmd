@@ -11,8 +11,12 @@ author:
     affiliation: Northwestern University
 pub-info:
   reference: >-
-    <strong>Colglazier, Carl</strong>, TeBlunthuis, Nathan, & Shaw, Aaron. "The Effects of Group Sanctions on Participation and Toxicity: Quasi-experimental Evidence from the Fediverse." In <em>Proceedings of the Eighteenth International AAAI Conference on Web and Social Media</em> 18. 2024.
+    <strong>Colglazier, Carl</strong>, Nathan TeBlunthuis, and Aaron Shaw. 2024. “The Effects of Group Sanctions on Participation and Toxicity: Quasi-Experimental Evidence from the Fediverse”. <em>Proceedings of the International AAAI Conference on Web and Social Media</em> 18 (1):315-28. https://doi.org/10.1609/icwsm.v18i1.31316.
+
   links:
+    - name: Final version
+      url: https://doi.org/10.1609/icwsm.v18i1.31316
+      icon: "fa-solid fa-scroll"
     - name: Preprint
       url: https://arxiv.org/abs/2404.02109
       icon: "ai ai-arxiv"
@@ -21,3 +25,28 @@ pub-info:
 # Abstract
 
 Online communities often overlap and coexist, despite incongruent norms and approaches to content moderation. When communities diverge, decentralized and federated communities may pursue group-level sanctions, including defederation (disconnection) to block communication between members of specific communities. We investigate the effects of defederation in the context of the Fediverse, a set of decentralized, interconnected social networks with independent governance. Mastodon and Pleroma, the most popular software powering the Fediverse, allow administrators on one server to defederate from another. We use a difference-in-differences approach and matched controls to estimate the effects of defederation events on participation and message toxicity among affected members of the blocked and blocking servers. We find that defederation causes a drop in activity for accounts on the blocked servers, but not on the blocking servers. Also, we find no evidence of an effect of defederation on message toxicity.
+
+
+## Citation
+
+<p class="buttons" style="text-align:center;">
+<a class="btn btn-danger" target="_blank" href="https://www.zotero.org/save?type=doi&q=10.1145/3145574.3145588">{{< ai zotero >}}&emsp;Add to Zotero {{< fa square-arrow-up-right >}}</a>
+</p>
+
+```bibtex
+@article{colglazierEffectsGroupSanctions2024a,
+  title = {The {{Effects}} of {{Group Sanctions}} on {{Participation}} and {{Toxicity}}: {{Quasi-experimental Evidence}} from the {{Fediverse}}},
+  shorttitle = {The {{Effects}} of {{Group Sanctions}} on {{Participation}} and {{Toxicity}}},
+  author = {Colglazier, Carl and TeBlunthuis, Nathan and Shaw, Aaron},
+  year = {2024},
+  month = may,
+  journal = {Proceedings of the International AAAI Conference on Web and Social Media},
+  volume = {18},
+  pages = {315--328},
+  issn = {2334-0770},
+  doi = {10.1609/icwsm.v18i1.31316},
+  abstract = {Online communities often overlap and coexist, despite incongruent norms and approaches to content moderation. When communities diverge, decentralized and federated communities may pursue group-level sanctions, including defederation (disconnection) to block communication between members of specific communities. We investigate the effects of defederation in the context of the Fediverse, a set of decentralized, interconnected social networks with independent governance. Mastodon and Pleroma, the most popular software powering the Fediverse, allow administrators on one server to defederate from another. We use a difference-in-differences approach and matched controls to estimate the effects of defederation events on participation and message toxicity among affected members of the blocked and blocking servers. We find that defederation causes a drop in activity for accounts on the blocked servers, but not on the blocking servers. Also, we find no evidence of an effect of defederation on message toxicity.},
+  copyright = {Copyright (c) 2024 Association for the Advancement of Artificial Intelligence},
+  langid = {english}
+}
+```
