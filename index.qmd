@@ -19,7 +19,7 @@ format:
 
 ## Welcome to my home on the information superhighway
 
-I am a PhD student in [Technology and Social Behavior](https://tsb.northwestern.edu/) at Northwestern University where I am affiliated with the [Community Data Science Collective](https://communitydata.science/).
+I am a PhD candidate in [Technology and Social Behavior](https://tsb.northwestern.edu/) at Northwestern University where I am affiliated with the [Community Data Science Collective](https://communitydata.science/).
 
 My research focuses on decentralized social networks like the [Fediverse](https://en.wikipedia.org/wiki/Fediverse) and their role as sociotechnical systems. I like to use [computational social science](https://en.wikipedia.org/wiki/Computational_social_science).
 
