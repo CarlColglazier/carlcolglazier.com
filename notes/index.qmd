@@ -18,4 +18,4 @@ page-layout: full
 :::{#notes}
 :::
 
-Some more notes are avilible in the [archive](/notes/archive/).
+Some more notes are in the [archive](/notes/archive/).
