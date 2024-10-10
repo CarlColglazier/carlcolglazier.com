@@ -19,6 +19,7 @@ website:
   open-graph: true
   site-url: "https://carlcolglazier.com"
   favicon: "assets/favicon.ico"
+
   navbar:
     pinned: false
     right:
@@ -71,3 +72,9 @@ format:
     fig-cap-location: margin
     reference-location: margin
     footnotes-hover: true
+    include-in-header:
+      - text: |
+              <meta name="fediverse:creator" content="@carl@hci.social" />
+
+execute:
+  freeze: auto
