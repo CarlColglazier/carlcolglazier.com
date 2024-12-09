@@ -36,7 +36,7 @@ website:
       <span class="faux-block">{{< fa brands creative-commons >}} Carl Colglazier</span>
       <span class="faux-block">All content licensed under<br>[{{< fa brands creative-commons >}} {{< fa brands creative-commons-by >}} {{< fa brands creative-commons-nc >}} Creative Commons CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)</span>
     right: |
-      <span class="faux-block">Made with [Quarto](https://quarto.org/)</span>
+      <span class="faux-block">Made with [{{< iconify simple-icons:quarto >}} Quarto](https://quarto.org/)</span>
       <span class="faux-block">[View the source at {{< fa brands github >}} GitHub](https://github.com/carlcolglazier/carlcolglazier.com)</span>
       <span class="hidden">{{< ai arxiv >}}</span>
     left:
@@ -48,6 +48,9 @@ website:
       href: "mailto:carlcolglazier+website@u.northwestern.edu"
     - text: "{{< iconify bi mastodon size=1.1em title='Mastodon' >}}"
       href: "https://hci.social/@carl"
+      rel: "me"
+    - text: "{{< iconify simple-icons:bluesky size=1.1em title='Bluesky' >}}"
+      href: "https://bsky.app/profile/carl.cx"
       rel: "me"
     - text: "{{< iconify bi twitter size=1.1em title='Twitter' >}}"
       href: "https://twitter.com/carlcolglazier"
