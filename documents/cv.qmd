@@ -13,7 +13,7 @@ format:
     toc: false
     # text size
     fontsize: 11pt
-    mainfont: "Garamond"
+    mainfont: "Sabon Next LT"
 execute:
   echo: false
   warning: false
@@ -92,7 +92,7 @@ Phi Beta Kappa, Caldwell Fellow, Benjamin Franklin Scholar, Honors, _Summa Cum L
 )
 ```
 
-# Research Publications
+# Publications
 
 ```{r}
 library(rmarkdown)
@@ -114,6 +114,17 @@ format_citation <- function(citation) {
   return(st)
 }
 
+merge_yaml <- function(files) {
+  library(yaml)
+  content_list <- lapply(files, read_yaml)
+  Reduce(c, content_list, init = list())
+}
+
+to_citations <- function(yml) {
+  citations <- lapply(yml, function(x) format_citation(x$`pub-info`$reference))
+  return(citations)
+}
+
 format_yaml_section <- function(file) {
   fm <- read_yaml(file)
   # Get x$`pub-info`$reference for each x in fm
@@ -128,7 +139,7 @@ format_section <- function(file) {
 }
 ```
 
-## Proceedings
+**Articles in Peer Reviewed Journals and Conference Proceedings**
 
 ::: {.block}
 
@@ -141,7 +152,10 @@ format_section <- function(file) {
 ```
 
 ```{r, echo=FALSE, output='asis'}
-files <- Sys.glob(here("research/proceedings/*/index.qmd"))
+proceeding_files <- Sys.glob(here("research/proceedings/*/index.qmd"))
+journal_files <- Sys.glob(here("research/journals/*/index.qmd"))
+# merge
+files <- c(proceeding_files, journal_files)
 
 sts <- lapply(files, format_section)
 x <- paste(sts, sep="\n\n", collapse = NULL)
@@ -150,29 +164,13 @@ cat(x, sep="\n\n")
 
 :::
 
-## Journals
-
-::: {.block}
-
-```{=typst} 
-#set par(
- justify: true,
- first-line-indent: 0em,
- hanging-indent: 2em,
-)
+```{=typst}
+#pagebreak()
 ```
 
-```{r, echo=FALSE, output='asis'}
-files <- Sys.glob(here("research/journals/*/index.qmd"))
+# Presentations
 
-sts <- lapply(files, format_section)
-x <- paste(sts, sep="\n", collapse = NULL)
-cat(x, sep="\n")
-```
-
-:::
-
-## Workshops
+**Conferences and Workshops (Non-Archival)**
 
 
 ::: {.block}
@@ -186,32 +184,31 @@ cat(x, sep="\n")
 ```
 
 ```{r, echo=FALSE, output='asis'}
-conference_yaml <- here("research/workshops.yml")
-c <- format_yaml_section(conference_yaml)
-x <- paste(c, sep="\n", collapse = NULL)
-cat(x, sep="\n\n")
-```
-
-:::
-
-## Conferences
-
-::: {.block}
-
-```{=typst} 
-#set par(
- justify: true,
- first-line-indent: 0em,
- hanging-indent: 2em,
-)
-```
-
-```{r, echo=FALSE, output='asis'}
+workshop_yaml <- here("research/workshops.yml")
 conference_yaml <- here("research/conferences.yml")
-c <- format_yaml_section(conference_yaml)
+all_yaml <- to_citations(merge_yaml(c(workshop_yaml, conference_yaml)))
+# sort by date
+#c <- format_yaml_section(conference_yaml)
+c <- all_yaml
 x <- paste(c, sep="\n", collapse = NULL)
 cat(x, sep="\n\n")
 ```
+
+:::
+
+**Invited Talks**
+
+::: {.block}
+
+```{=typst} 
+#set par(
+ justify: true,
+ first-line-indent: 0em,
+ hanging-indent: 2em,
+)
+```
+
+**Colglazier, Carl**. "Federating the Social Web." Frontiers in Online Community Research, Purdue University, September 13, 2024.
 
 :::
 
@@ -245,7 +242,7 @@ cat(x, sep="\n\n")
 
 ### Reviewer
 
-CSCW 2024, ICWSM 2024, IC2S2 2024, ICA 2023, ICA 2022
+ICWSM 2025, CSCW 2024, ICWSM 2024, IC2S2 2024, ICA 2023, ICA 2022
 
 ### Student volunteer
 
@@ -256,21 +253,21 @@ CSCW 2020
 
 ```{=typst}
 #resume-entry(
-  title: "National Science Foundation",
-  description: "GRFP Honorable Mention",
+  title: "GRFP Honorable Mention",
+  location: "National Science Foundation",
   date: "March 2021"
 )
 
 #resume-entry(
-  title: "Department of Communication",
+  title: "Outstanding Graduate",
   location: "North Carolina State University",
-  description: "Outstanding Graduate",
+  description: "Department of Communication",
   date: "December 2019"
 )
 
 #resume-entry(
-  title: "North Carolina Society of Historians",
+  title: "Paul Green Multimedia Award",
   date: "April 2015",
-  description: "Paul Green Multimedia Award",
+  location: "North Carolina Society of Historians",
 )
 ```

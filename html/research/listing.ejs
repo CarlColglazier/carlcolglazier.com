@@ -16,14 +16,16 @@
                     <% } %>
             </div>
             <% } %>
-            <% if(item.path) { %>
+            <% if(item.path || item['pub-info']['links']) { %>
                 <div class="project-details-listing">
                     <ul class="project-links">
+                        <% if (item.path) { %>
                         <li class="project-link details">
                             <a href="<%- item.path %>" class="listing-name">
                                 <i class="fa-solid fa-circle-info"></i> Full details »
                             </a>
                         </li>
+                        <% } %>
                         <% if (item['pub-info'].links) { %>
                             <% for (const link of item['pub-info'].links) { %>
                         <li class="project-link">
