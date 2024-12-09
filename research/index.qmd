@@ -1,17 +1,12 @@
 ---
 title: "Research"
 listing:
-  - id: proceedings
-    contents: "proceedings/*/index.qmd"
+  - id: proceedings-journals
+    contents: ["proceedings/*/index.qmd", "journals/*/index.qmd"]
     sort: "date desc"
     template: "../html/research/listing.ejs"
-  - id: journals
-    contents: "journals/*/index.qmd"
-    sort: "date desc"
-    template: "../html/research/listing.ejs"
-  - id: conferences
-    contents:
-    - "conferences.yml"
+  - id: presentations
+    contents: ["workshops.yml", "presentations.yml"]
     sort: "date desc"
     template: "../html/research/listing.ejs"
 page-layout: full
@@ -20,17 +15,12 @@ toc-location: right
 toc: true
 ---
 
-## Proceedings
+## Proceedings & Journals
 
-:::{#proceedings}
+:::{#proceedings-journals}
 :::
 
-## Journals
+## Presentations
 
-:::{#journals}
-:::
-
-## Peer-reviewed Non-Archival Conference Submissions
-
-:::{#conferences}
+:::{#presentations}
 :::

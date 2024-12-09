@@ -4,6 +4,12 @@
     - name: Carl Colglazier
       affiliation: Northwestern University
   pub-info:
-    type: conference
+    type: workshop
     reference: >-
       <strong>Colglazier, Carl</strong>. "Do Servers Matter on Mastodon? Data-driven Design for Decentralized Social Media." <em>1st International Workshop on Decentralizing the Web</em>, Buffalo, 2024.
+    links:
+    - name: Workshop paper
+      url: https://doi.org/10.36190/2024.43
+      icon: "fa-solid fa-scroll"
+    - name: Demo
+      url: https://carlcolglazier.com/demos/deweb2024/
