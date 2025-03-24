@@ -101,6 +101,7 @@ $grid-sidebar-width: 350px !default;
 
 /*-- scss:rules --*/
 
+/*
 $jost-font-path: "https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=EB+Garamond&display=swap" !default;
 // $jost-font-path: "https://fonts.googleapis.com/css2?family=EB+Garamond" !default;
 
@@ -108,6 +109,7 @@ $jost-font-path: "https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100.
 @if $jost-font-path {
     @import url($jost-font-path);
 }
+*/
 
 body {
     -webkit-font-smoothing: antialiased;
@@ -120,6 +122,7 @@ body {
 }
 }
 
+/*
 #TOC {
     font-family: $toc-font-family;
     padding-bottom: 0.1em;
@@ -333,3 +336,4 @@ body {
 pre.text, pre.sourceCode, .cell-output pre {
     font-size: 0.6em;
 }
+*/

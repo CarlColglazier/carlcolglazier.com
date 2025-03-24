@@ -1,0 +1,210 @@
+/*-- scss:defaults --*/
+$dark-bg: #212529;
+$navbar-bg: $dark-bg;
+$navbar-fg: #FFFFFF;
+$footer-bg: $dark-bg;
+
+$toc-font-family: "Josefin Sans", sans-serif !default;
+
+/*-- scss:rules --*/
+#quarto-header, .footer {
+  font-family: $headings-font-family;
+}
+
+.back-nav {
+  margin-bottom: 1.5em;
+}
+
+/*
+#TOC {
+  font-family: $toc-font-family;
+}
+*/
+
+.thumbnail {
+  img {
+    width: 100%;
+    object-fit: cover;
+    max-height: 120px;
+  }
+}
+
+// Research
+.quarto-title-block {
+  .quarto-title .quarto-categories {
+    padding-bottom: 0;
+    flex-wrap: wrap;
+    row-gap: 0.4em;
+  }
+
+  .project-details {
+    background-color: rgba($purple, 0.1);
+    padding: 0.75em;
+    margin: 1em 0;
+  }
+
+  .quarto-title-meta-heading.manual {
+    margin-top: 2em !important;
+  }
+
+  .project-links {
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .project-link {
+    display: inline-block;
+    white-space: nowrap;
+    padding: 0 1em 0 0;
+    font-weight: bold;
+  }
+}
+
+.project-link a, .footer a {
+  text-decoration: none;
+}
+
+.research {
+  .back-nav a {
+    color: shift-color($purple, -50%);
+  }
+
+  .quarto-title .quarto-categories .quarto-category {
+    background-color: shift-color($purple, -75%);
+    color: $purple;
+    font-size: 0.65em;
+    opacity: 1;
+  }
+
+  .project-categories {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0.35em 0 0.35em;
+    padding-top: 0.35em;
+    padding-left: 0.5em;
+    padding-bottom: 0;
+    row-gap: 0.4em;
+    column-gap: 0.4em;
+    font-family: $headings-font-family;
+
+    .project-category {
+      padding: 0.25em 0.75em 0.25em 0em;
+      font-size: 0.7em;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.project-list {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2em;
+
+    li.project {
+      margin-bottom: 2.5em;
+      border-left: 6px solid shift-color($purple, -90%);
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  .project-content {
+    padding-left: 0.5em;
+
+    .status {
+      font-size: 1rem;
+      font-weight: 250;
+      padding: 0.2em;
+      margin-right: 0.5em;
+    }
+  }
+
+  ul.project-links {
+    margin-bottom: 0;
+  }
+
+  .project-details-listing {
+    margin-top: 0.8em;
+    background-color: shift-color($purple, -90%);
+    font-size: 0.9rem;
+
+    @media (max-width: map-get($grid-breakpoints, md)) {
+      font-size: 0.95rem;
+    }
+
+    .project-link {
+      display: inline-block;
+      white-space: nowrap;
+      padding: 0.5em 0.5em 0.5em 1em;
+    }
+
+    .details {
+      background-color: $purple;
+      padding-right: 1.5em;
+
+      a {
+        color: #FFFFFF;
+      }
+    }
+  }
+}
+
+.nav-footer {
+  align-items: flex-start; // Align all flex items to the top
+  flex-wrap: wrap;
+  border: 0 !important;
+  min-height: 3em;
+
+  a {
+    color: $purple-200;
+  }
+
+  .faux-block {
+    display: block;
+    padding-bottom: 0.4em;
+  }
+
+  // In the default Quarto template, .nav-footer-center has position: absolute 
+  // turned on, which makes the div not be a flex item
+  // This changes that so that it *is* a flex item
+  .nav-footer-center {
+    text-align: center;
+    position: inherit;
+    margin-top: 0;
+
+    @media (max-width: map-get($grid-breakpoints, md)) {
+      margin-top: 0.5em;
+      margin-bottom: 1.5em;
+    }
+  }
+
+  // When the screen is medium or smaller, make each footer chunk be 100% width 
+  // and centered; otherwise make them be 33% width and left/right/centerd
+  .nav-footer-left,
+  .nav-footer-right,
+  .nav-footer-center {
+    text-align: center;
+    width: 100%;
+    min-height: 2em;
+    flex: 1 1 auto;
+  }
+
+  @media (min-width: map-get($grid-breakpoints, md)) {
+    .nav-footer-left {
+      text-align: left;
+    }
+
+    .nav-footer-right {
+      text-align: right;
+    }
+
+    .nav-footer-left,
+    .nav-footer-right,
+    .nav-footer-center {
+      flex: 1 1 33%;
+    }
+  }
+}

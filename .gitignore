@@ -12,6 +12,7 @@ _freeze/
 **/*_cache/*
 **/*_files/*
 site_libs
+drafts/
 
 # Other
 .DS_Store

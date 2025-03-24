@@ -7,13 +7,14 @@ project:
     - "*.qmd"
     - "*.md"
     - "!etc/"
+    - "!drafts/"
     #- "!documents/"
   resources:
     - "files/**"
 
-freeze: true
 pagetitle: "{{< meta title >}} | Carl Colglazier"
 author-meta: "Carl Colglazier"
+brand: _brand.yml
 website:
   title: "Carl Colglazier"
   open-graph: true
@@ -25,6 +26,8 @@ website:
     right:
       - text: "About"
         href: "index.qmd"
+      - text: "Now"
+        href: "now.qmd"
       - text: "Notes"
         file: "notes/index.qmd"
       - text: "Research"
@@ -64,11 +67,11 @@ website:
 
 format:
   html:
-    theme: html/cc.scss
-    grid:
-      margin-width: 250px
-      body-width: 650px
-      sidebar-width: 350px
+    theme: [brand, html/theme.scss]
+    #grid:
+    #  margin-width: 250px
+    #  body-width: 650px
+    #  sidebar-width: 350px
     fig-width: 6
     toc: false
     code-link: true

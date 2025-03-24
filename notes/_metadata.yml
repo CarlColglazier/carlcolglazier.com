@@ -7,8 +7,12 @@ format:
   html:
     code-tools: true
     toc: true
-    df-print: kable
+    #df-print: kable
 
 author:
   - name: "Carl Colglazier"
     url: https://carlcolglazier.com/
+
+execute:
+  message: false
+  warn: false

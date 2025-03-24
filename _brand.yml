@@ -1,0 +1,16 @@
+color:
+  palette:
+    purple: "#6f42c1"
+    gray: "#495057"
+    dark: "#212529"
+  primary: purple
+  secondary: gray
+  dark: purple
+typography:
+  fonts:
+    - family: Josefin Sans
+      source: bunny
+    - family: Lato
+      source: bunny
+  base: Lato
+  headings: Josefin Sans
