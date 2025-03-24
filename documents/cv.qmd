@@ -2,6 +2,7 @@
 title: "Carl Colglazier"
 suppress-bibliography: true
 link-citations: false
+brand: false
 format:
   ccxcv-typst:
     keep-typ: true
@@ -11,9 +12,8 @@ format:
     #  y: 1in
     columns: 1
     toc: false
-    # text size
     fontsize: 11pt
-    mainfont: "Sabon Next LT"
+    mainfont: "Libertinus Serif" #"Sabon Next LT"
 execute:
   echo: false
   warning: false
@@ -26,7 +26,7 @@ execute:
 #resume-entry(
   title: "Northwestern University",
   location: "Evanston, IL",
-  date: "September 2020 - June 2025 (Expected)",
+  date: "September 2020 - July 2025 (Expected)",
   description: "Ph.D. in Technology and Social Behavior",
 )
 
@@ -102,7 +102,6 @@ library(htmltools)
 library(markdown)
 library(yaml)
 
-
 format_citation <- function(citation) {
   # replace <strong> and </strong> with **
   citation <- gsub("<strong>", "**", citation)
@@ -137,6 +136,11 @@ format_section <- function(file) {
   citation <- fm$`pub-info`$reference
   return(format_citation(citation))
 }
+
+get_yaml_date <- function(file) {
+  fm <- yaml_front_matter(file)
+  return(fm$date)
+}
 ```
 
 **Articles in Peer Reviewed Journals and Conference Proceedings**
@@ -152,10 +156,13 @@ format_section <- function(file) {
 ```
 
 ```{r, echo=FALSE, output='asis'}
+#| label: journals-proceedings
 proceeding_files <- Sys.glob(here("research/proceedings/*/index.qmd"))
 journal_files <- Sys.glob(here("research/journals/*/index.qmd"))
 # merge
 files <- c(proceeding_files, journal_files)
+
+files <- files[order(sapply(files, get_yaml_date), decreasing=TRUE)]
 
 sts <- lapply(files, format_section)
 x <- paste(sts, sep="\n\n", collapse = NULL)
@@ -216,6 +223,13 @@ cat(x, sep="\n\n")
 
 ```{=typst}
 #resume-entry(
+  title: "Introduction to Computer Programming",
+  location: "Northwestern University",
+  date: "Spring 2025",
+  description: "Teaching Assistant",
+)
+
+#resume-entry(
   title: "Introduction to Law and Digital Technology",
   location: "Northwestern University",
   date: "Spring 2024",
@@ -248,8 +262,11 @@ ICWSM 2025, CSCW 2024, ICWSM 2024, IC2S2 2024, ICA 2023, ICA 2022
 
 CSCW 2020
 
-# Awards
+```{=typst}
+#block(breakable: false)[
+```
 
+# Awards
 
 ```{=typst}
 #resume-entry(
@@ -270,4 +287,8 @@ CSCW 2020
   date: "April 2015",
   location: "North Carolina Society of Historians",
 )
+```
+
+```{=typst}
+]
 ```

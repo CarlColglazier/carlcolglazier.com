@@ -6,7 +6,7 @@ listing:
     sort: "date desc"
     template: "../html/research/listing.ejs"
   - id: presentations
-    contents: ["workshops.yml", "presentations.yml"]
+    contents: ["workshops.yml", "conferences.yml", "presentations.yml"]
     sort: "date desc"
     template: "../html/research/listing.ejs"
 page-layout: full

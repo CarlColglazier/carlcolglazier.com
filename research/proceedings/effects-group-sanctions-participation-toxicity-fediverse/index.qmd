@@ -20,6 +20,9 @@ pub-info:
     - name: Preprint
       url: https://arxiv.org/abs/2404.02109
       icon: "ai ai-arxiv"
+    - name: Add to Zotero
+      url: https://www.zotero.org/save?type=doi&q=10.1609/icwsm.v18i1.31316
+      icon: "ai ai-zotero"
 ---
 
 # Abstract
