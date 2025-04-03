@@ -6,7 +6,6 @@ date: 2023-11-03
 bibliography: "references.bib"
 categories:
   - information theory
-#freeze: false
 fig-width: 6
 fig-height: 4.5
 fig-dpi: 92
@@ -42,7 +41,7 @@ In an experiment, participants got a bankroll of \$25 and a coin, weighted such 
 
 Despite the odds being heavily on their side, more than a quarter of participants lost their initial bankroll and more than a third lost money. How? Most players ended playing very bad strategies. Many even bet their entire bankroll on a single flip!
 
-You can try out this senario in the interactive below. The slider controls the percentage of your bankroll you bet on each flip.
+You can try out this scenario in the interactive below. The slider controls the percentage of your bankroll you bet on each flip.
 
 ```{ojs}
 function prob_to_odds(p) {
@@ -153,13 +152,13 @@ where
 -   $p$ is the expected probability the event occurs (and $1 - p$ is the probability it does not occur), and
 -   $b$ is odds, or the proportion gained from the bet.
 
-The Kelly criteron tells us to bet when $b > \frac{1-p}{p}$, or when the payout is greater than the odds the event occurs.
+The Kelly criterion tells us to bet when $b > \frac{1-p}{p}$, or when the payout is greater than the odds the event occurs.
 
 ## Origins
 
 @kelly1956new describes his criterion through the lens of information theory. In his original paper, he presents an example of a gambler with a private wire which gives them insight into the results of a series of baseball games between evenly matched teams. The wire is noisy, and the gambler can only correctly predict the outcome of a game with probability $p$. If the wire was perfect, the gambler could simply bet their entire bankroll each time and grow their bankroll with $N$ bets to $2^N$ times the original bankroll; however, because the wire is noisy, the gambler must bet less than their entire bankroll to avoid going bust [@kelly1956new, 918-919]. How much should they bet?
 
-Kelly suggests that we maximize the expected value of the logorithm of wealth. We can express this as the growth rate $r$ using the same notation:
+Kelly suggests that we maximize the expected value of the logarithm of wealth. We can express this as the growth rate $r$ using the same notation:
 
 $$r = (1 + fb)^p \cdot (1 - fb)^{(1-p)}$$
 
@@ -211,7 +210,7 @@ To optimize $r$, it is easiest to take the derivative, but first we can get rid 
 
 $$\log(r) = p\log(1 + fb) + (1-p)\log(1 - fb)$$
 
-When the derivative of this expression is zero, we have found the maximum logarithm of the growth rate.[^1] The use of the logirthm as the value function is somewhat arbitrary and likely has a lot to do with the criterion's origins in information theory. @kelly1956new himself notes: "The reason has nothing to do with the value function which he attached to his money, but merely with the fact that it is the logarithm which is additive in repeated bets and to which the law of large numbers applies" [@kelly1956new, 925-926]. Kelly describes how a gambler should deviate their strategy from his criterion: if they have a different value function, they could use a different strategy.
+When the derivative of this expression is zero, we have found the maximum logarithm of the growth rate.[^1] The use of the logarithm as the value function is somewhat arbitrary and likely has a lot to do with the criterion's origins in information theory. @kelly1956new himself notes: "The reason has nothing to do with the value function which he attached to his money, but merely with the fact that it is the logarithm which is additive in repeated bets and to which the law of large numbers applies" [@kelly1956new, 925-926]. Kelly describes how a gambler should deviate their strategy from his criterion: if they have a different value function, they could use a different strategy.
 
 [^1]: See the [Wikipedia page on the Kelly criterion](https://en.wikipedia.org/wiki/Kelly_criterion) for the full proof.
 
@@ -286,7 +285,7 @@ tibble(betsize=0.2, p=seq(0.3, 0.9, 0.1),) %>%
 
 A typical gambler may not only want to maximize bankroll size, but also minimize the chance of losing all their money by going bust. Here, the relationship between probability and the size of bets remains important.
 
-Let us say we know we have a consistent, unwaiving 2% edge on a repeated set of bets. @tbl-betsizes shows the bet sizes for a set of gamblers each betting with this edge at different odds. Note that the bet size increases with the probability of the bets winning.
+Let us say we know we have a consistent, unwavering 2% edge on a repeated set of bets. @tbl-betsizes shows the bet sizes for a set of gamblers each betting with this edge at different odds. Note that the bet size increases with the probability of the bets winning.
 
 ```{r}
 ev_amount <- 0.02
@@ -380,15 +379,15 @@ df <- sim_df %>%
 
 We can simulate the scenario for each of the   bettors in @tbl-betsizes. As seen in @fig-losses-1, given the same edge, the   bettors with higher odds of winning can potentially lose their money the fastest. This is because they are betting more of their bankroll each time.
 
-While, the worst-case scenaio is within the bounds of the possible, it's not exactly likely. To give an idea for the range of outcomes, we can simulate how the   bettors in @tbl-betsizes might fare. To reduce the effects of random chance, we can aggregate over 1,000 simulations. Here, the same pattern emerges where the bets on higher probability events can lose money quickest, but the worst-case simulated events rarely approach the worst-case over time (losing 2000 bets is unlikely even if you only have a 10% of each bet winning).
+While, the worst-case scenario is within the bounds of the possible, it's not exactly likely. To give an idea for the range of outcomes, we can simulate how the   bettors in @tbl-betsizes might fare. To reduce the effects of random chance, we can aggregate over 1,000 simulations. Here, the same pattern emerges where the bets on higher probability events can lose money quickest, but the worst-case simulated events rarely approach the worst-case over time (losing 2000 bets is unlikely even if you only have a 10% of each bet winning).
 
 ```{r}
+#| label: fig-losses
 #| layout-ncol: 2
 #| fig-width: 6
 #| fig-height: 3
 #| column: page
 #| fig-cap-location: bottom
-#| label: fig-losses
 n_bets_tibble <- tibble(n_bets=seq(0,25,1))
 expand(  bettors, nesting(payout, betsize), n_bets_tibble) %>%
   mutate(worst_case=(1-betsize)^n_bets) %>%
@@ -424,6 +423,7 @@ df %>%
 #| fig-width: 2
 #| fig-height: 2
 #| fig-cap: "On average, bets with higher odds make more money given the same percentage of expected value"
+#| classes: preview-image
 
 df %>%
   ggplot(aes(x=time, y=median, color=odds, label=odds)) +
@@ -437,11 +437,12 @@ df %>%
   scale_color_discrete_divergingx(palette="Roma")
 ```
 
-If there is so much risk involved with betting big bankrolls on higher probability events, why does Kelly tell us to do it? As it turns out, it is very profitable. @fig-median-bankroll shows that the big bets by far return the highest profit over time. I had to change the scale to $\log10$ becasue the difference is so dramatic.
+If there is so much risk involved with betting big bankrolls on higher probability events, why does Kelly tell us to do it? As it turns out, it is very profitable. @fig-median-bankroll shows that the big bets by far return the highest profit over time. I had to change the scale to $\log10$ because the difference is so dramatic.
 
-And it's not just the median. Over the same number of bets, those betting on higher probability events are more likely to make a profit. It pays to bet big! And over time, many of the unlukcy   bettors get less unlucky and end up making a profit.
+And it's not just the median. Over the same number of bets, those betting on higher probability events are more likely to make a profit. It pays to bet big! And over time, many of the unlucky bettors get less unlucky and end up making a profit.
 
 ```{r}
+#| label: fig-profitable
 #| layout-ncol: 2
 #| fig-width: 6
 #| fig-height: 3
@@ -475,12 +476,12 @@ There are two things going on in these simulations:
 2.  Higher probability bets create higher variance in their outcomes, so when they lose, they lose a lot.
 
 ```{r}
+#| label: fig-animation
 #| column: page-right
-#| fig-show: animate
 #| fig-cap: "The variance of bankrolls increases with the number of bets"
 #| cache: true
 #| animation-hook: ffmpeg
-#| ffmpeg-format: gif
+
 animation <- sim_df %>%
     filter(time <= 500) %>%
     filter(time %% 10 == 0) %>%
@@ -493,7 +494,9 @@ animation <- sim_df %>%
     labs(title = 'Number of bets: {frame_time}', x="Bankroll") +
     transition_time(time)
 
-animate(animation, fps = 24, duration = 5)
+an <- animate(animation, fps = 24, duration = 5, renderer=ffmpeg_renderer())#, fps = 24, duration = 5)
+
+video_file(an)
 ```
 
 

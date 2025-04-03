@@ -17,7 +17,7 @@ execute:
 ```{r, setup, include=FALSE}
 ```
 
-My lab at Northwestern sits in a building near Lakeside Field, home to the school field hockey team. The team is quite sucessful: they won the national championship in 2021 and were runners-up in 2022. The team is once again in the hunt for the national championship in 2023, and I thought it would be fun to try to predict the outcome of the tournament (or at least quantify their odds).
+My lab at Northwestern sits in a building near Lakeside Field, home to the school field hockey team. The team is quite successful: they won the national championship in 2021 and were runners-up in 2022. The team is once again in the hunt for the national championship in 2023, and I thought it would be fun to try to predict the outcome of the tournament (or at least quantify their odds).
 
 ```{r libraries-data, warning=FALSE, message=FALSE}
 library(tidyverse)
@@ -64,7 +64,7 @@ matches %>%
     labs(x="Mean", y="Variance")
 ```
 
-To do so, I build on some existing models built over the last half-century. To start, I create a model similar to @maher1982modelling, who uses the Poisson distribution to model the number of goals scored by each team. However, because the data are overdispursed (@fig-poisson), I use the negative binomial distribution instead.
+To do so, I build on some existing models built over the last half-century. To start, I create a model similar to @maher1982modelling, who uses the Poisson distribution to model the number of goals scored by each team. However, because the data are overdispersed (@fig-poisson), I use the negative binomial distribution instead.
 
 
 # The Model
