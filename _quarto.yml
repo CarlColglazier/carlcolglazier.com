@@ -27,7 +27,7 @@ website:
       - text: "About"
         href: "index.qmd"
       - text: "Now"
-        href: "now.qmd"
+        href: "now/index.qmd"
       - text: "Notes"
         file: "notes/index.qmd"
       - text: "Research"
