@@ -4,9 +4,17 @@ $navbar-bg: $dark-bg;
 $navbar-fg: #FFFFFF;
 $footer-bg: $dark-bg;
 
-$toc-font-family: "Josefin Sans", sans-serif !default;
+//$toc-font-family: "Josefin Sans", sans-serif !default;
 
 /*-- scss:rules --*/
+h1.title {
+  font-weight: 600!important;
+}
+
+.quarto-appendix-heading {
+  font-weight: 100!important;
+}
+
 #quarto-header, .footer {
   font-family: $headings-font-family;
 }
@@ -15,18 +23,16 @@ $toc-font-family: "Josefin Sans", sans-serif !default;
   margin-bottom: 1.5em;
 }
 
-/*
-#TOC {
-  font-family: $toc-font-family;
-}
-*/
-
 .thumbnail {
   img {
     width: 100%;
     object-fit: cover;
     max-height: 120px;
   }
+}
+
+.quarto-title-banner a {
+  color: $dark-bg!important;
 }
 
 // Research

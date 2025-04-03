@@ -9,7 +9,7 @@ listing:
     - "!archive/"
   sort: "date desc"
   type: default
-  fields: [title, description, date, categories]
+  fields: [title, description, date, categories, image]
   categories: true
 code-tools: false
 page-layout: full

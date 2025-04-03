@@ -10,7 +10,12 @@ typography:
   fonts:
     - family: Josefin Sans
       source: bunny
+      weight: [300, 400, 600]
     - family: Lato
       source: bunny
-  base: Lato
-  headings: Josefin Sans
+  base:
+    family: Lato
+    weight: 400
+  headings:
+    family: Josefin Sans
+    weight: 300
