@@ -680,3 +680,9 @@ team_odds |> filter(regional_number == "4") |> format_regional_table()
 ```
 
 :::
+
+## Putting the Model into Practice
+
+I used this model to help me create my bracket, ranking in the top 0.01% out of millions of submissions on ESPN. My bracket correctly predicted the national champion, the finals matchup, all four teams in the Final Four, 7/8 teams in the Elite Eight, and 15/16 teams in the Sweet Sixteen. The big things I got wrong: TCU over Notre Dame and Kansas State over Kentucky.
+
+![My final point total and rank on ESPN's Tournament Challenge](./images/bracket_results.png)
