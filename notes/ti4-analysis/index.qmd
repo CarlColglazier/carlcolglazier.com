@@ -1,0 +1,484 @@
+---
+title: Overthinking Twilight Imperium, 4th Edition
+description: What are the strongest factions? Who has the best heroes?
+date: 2025-04-21
+categories:
+  - Twilight Imperium
+  - Stan
+format:
+  html:
+    code-tools: true
+    toc: true
+execute:
+  echo: false
+  output: true
+  warning: false
+  error: false
+  freeze: auto
+---
+
+_Twilight Imperium_ is a space opera strategy board game by Fantasy Flight Games. The modern board game enthusiasts at Board Game Geek [rank it in their top ten](https://boardgamegeek.com/browse/boardgame?sort=rank&sortdir=asc), but it is also a very complicated game: there are dozens of factions, an expansive technology tree, and almost 50 pages of rules in the [living rules reference](https://images-cdn.fantasyflightgames.com/filer_public/51/55/51552c7f-c05c-445b-84bf-4b073456d008/ti10_pok_living_rules_reference_20_web.pdf).
+
+
+I found a [data set from thousands of games played online asynchronously](https://lookerstudio.google.com/u/0/reporting/3b435bf2-2100-488c-a424-130f1d22ebb0/page/pE58B) and will use this as a starting point to answer my personal questions about faction and hero strength.
+
+::: {.callout-tip}
+_Twilight Imperium_ is a complex strategy game that is, at its heart, about diplomacy and playing the table --- that is, it's a social game (though having the right plastic on the table helps too). Winning the game isn't as simple as just picking the right faction or technology tree.
+
+I do not think data analysis will tell you how to win the game at your table, but I think it is fun to do these kinds of analysis and think the results are an interesting statement on the current "meta" in this version of the game.
+:::
+
+## Faction Strength
+
+_Twilight Imperium_ has two dozen different factions, each with their own abilities and flavor of play. I tend to actually really enjoy playing as factions many consider weak, including the Arborec and Mentak Coalition. 
+
+
+::: {.callout-note collapse="true"}
+### Model Math
+
+For each event **E**, we have **P** players (6 in this case) who are playing one of 1-P factions. Each game has one winner drawn from the [categorical distribution](https://mc-stan.org/docs/functions-reference/bounded_discrete_distributions.html#categorical-distribution) based on the factions' abilities.
+
+Here is the code in Stan:
+
+```stan
+data {
+  int<lower=1> E;                      // number of events
+  int<lower=1> P;                      // total number of players
+  int<lower=1, upper=P> players[E, 6]; // player IDs per event
+  int<lower=1, upper=6> winner[E];     // winner index (1-6)
+}
+parameters {
+  vector[P] ability;                   // faction strength
+}
+model {
+  ability ~ normal(0, 1);             // priors
+
+  for (e in 1:E) {
+    vector[6] logit_p;
+    for (k in 1:6) {
+      logit_p[k] = ability[players[e, k]];
+    }
+    winner[e] ~ categorical_logit(logit_p);
+  }
+}
+```
+
+:::
+
+
+```{r}
+#| label: setup
+library(tidyverse)
+library(rstan)
+library(reactable)
+library(htmltools)
+library(htmlwidgets)
+library(gt)
+library(ggrepel)
+library(glmnet)
+
+source(here::here("code/common.R"))
+
+load_or_run_stan_model <- function(
+  model_path,
+  data,
+  file_path,
+  ...
+) {
+  if (file.exists(file_path)) {
+    fitted_model <- readRDS(file_path)
+    return(fitted_model)
+  }
+  fitted_model <- rstan::stan(
+    file = model_path,
+    data = data,
+    ...
+  )
+  saveRDS(fitted_model, file = file_path)
+  return(fitted_model)
+}
+```
+
+```{r}
+#| label: load-data
+
+# Load data, selecting 6 player PoK games
+# and only taking their final state.
+data <- readr::read_delim(
+  here::here("drafts/ti4-analysis/data/async_data.csv")
+) |>
+  select(-`isPOK...13`) |>
+  rename(isPOK = `isPOK...6`) |>
+  filter(isPOK) |>
+  filter(`Player Count` == 6) |>
+  filter(factionNameWinner != "Incomplete Match") |>
+  filter(!isHomebrewMatch) |>
+  filter(roundPlusFinal == "final") |>
+  filter(Timestamp >= 1682398800) |>
+  mutate(game_id = as.character(setupTimestamp)) |>
+  group_by(game_id) |>
+  filter(max(score, na.rm = TRUE) == 10) |>
+  ungroup()
+```
+
+```{r}
+#| label: prepare-stan-data-factions
+df <- data |>
+  mutate(faction_id = as.integer(factor(factionName)))
+
+n_games <- nrow(distinct(df, game_id))
+
+game_positions <- df |>
+  distinct(game_id, factionsInGame) |>
+  mutate(factionName = str_split(factionsInGame, ", ")) |>
+  select(game_id, factionName) |>
+  unnest(factionName) |>
+  group_by(game_id) |>
+  mutate(seat = row_number()) |>
+  ungroup()
+
+stan_ready <- df |>
+  left_join(game_positions, by = c("game_id", "factionName")) |>
+  mutate(win = `Winning Faction` == factionName) |>
+  group_by(game_id) |>
+  filter(n() == 6) |>
+  arrange(game_id, seat) |>
+  reframe(
+    players = list(faction_id),
+    winner = which(win)
+  ) |>
+  head(n_games)
+
+stan_data <- list(
+  E = nrow(stan_ready),
+  P = max(df$faction_id),
+  players = do.call(rbind, stan_ready$players),
+  winner = stan_ready$winner
+)
+```
+
+```{r}
+#| label: fit-faction-model
+#| cache: true
+fit_base <- load_or_run_stan_model(
+  here::here("drafts/ti4-analysis/ti4_20250414.stan"),
+  data = stan_data,
+  file_path = here::here("drafts/ti4-analysis/data/faction_model.rds"),
+  iter = 5000,
+  chains = 4,
+  cores = 4,
+  open_progress = FALSE,
+)
+```
+
+```{r}
+#| label: simulate-factions
+#| cache: true
+posterior <- rstan::extract(fit_base)
+draws <- posterior$ability
+
+n_draws <- nrow(posterior$ability)
+n_sim_games <- 1000
+faction_levels <- levels(factor(df$factionName))
+F <- length(faction_levels)
+
+draw_ids <- sample(1:nrow(draws), n_draws)
+posterior_subset <- draws[draw_ids, ]
+
+# Store marginal win prob per draw × faction
+marginal_matrix <- matrix(NA_real_, nrow = n_draws, ncol = F)
+
+for (d in 1:n_draws) {
+  win_total <- numeric(F)
+  appearances <- integer(F)
+
+  for (g in 1:n_sim_games) {
+    participants <- sample(1:F, 6)  # 6 unique factions
+
+    scores <- posterior_subset[d, participants]
+    probs <- exp(scores) / sum(exp(scores))
+
+    win_total[participants] <- win_total[participants] + probs
+    appearances[participants] <- appearances[participants] + 1
+  }
+
+  marginal_matrix[d, ] <- win_total / appearances
+}
+```
+
+```{r}
+faction_strength <- tibble(
+  faction = faction_levels,
+  mean = colMeans(marginal_matrix),
+  lower = apply(marginal_matrix, 2, quantile, 0.025),
+  upper = apply(marginal_matrix, 2, quantile, 0.975)
+)
+
+ggplot(faction_strength, aes(x = reorder(faction, mean), y = mean)) +
+  geom_point() +
+  geom_errorbar(aes(ymin = lower, ymax = upper), width = 0.2) +
+  geom_hline(yintercept = 1/6, linetype = "dashed") +
+  coord_flip() +
+  labs(x = "Faction", y = "Estimated win probability", 
+       title = "Marginal Win Probabilities with 95% Credible Intervals")
+```
+
+Potential ways to improve this analysis:
+
++ Account for speaker position and slice strength.
+
+## Faction Combos
+
+The presence of another faction in the game can have a large effect on a faction's strength. For instance, the Yssaril benefit from other factions like the Naalu that have powerful agents they can copy.
+
+```{r}
+df <- data |>
+  mutate(faction_id = as.integer(factor(factionName)))
+
+n_games <- nrow(distinct(df, game_id))
+
+game_positions <- df |>
+  distinct(game_id, factionsInGame) |>
+  mutate(factionName = str_split(factionsInGame, ", ")) |>
+  select(game_id, factionName) |>
+  unnest(factionName) |>
+  group_by(game_id) |>
+  mutate(seat = row_number()) |>
+  ungroup()
+
+stan_ready <- df |>
+  left_join(game_positions, by = c("game_id", "factionName")) |>
+  mutate(win = `Winning Faction` == factionName) |>
+  group_by(game_id) |>
+  filter(n() == 6) |>
+  arrange(game_id, seat) |>
+  reframe(
+    players = list(faction_id),
+    winner = which(win),
+  ) |>
+  head(n_games)
+
+stan_data <- list(
+  E = nrow(stan_ready),        # Number of games
+  P = max(df$faction_id),      # Number of faction types
+  players = do.call(rbind, stan_ready$players), # Player ids, PxE
+  winner = stan_ready$winner  # Winner index
+)
+```
+
+```{r}
+#| label: fit-pairwise-model
+#| cache: true
+fit <- load_or_run_stan_model(
+  here::here("drafts/ti4-analysis/ti4_pairs.stan"),
+  data = stan_data,
+  file_path = here::here("drafts/ti4-analysis/data/faction_pairs.rds"),
+  iter = 5000,
+  chains = 4,
+  cores = 4,
+  open_progress = FALSE,
+)
+```
+
+```{r}
+#| label: sample-posterior-faction-combos
+posterior <- rstan::extract(fit)
+interact_draws <- posterior$interact  # This has shape [iterations, P, P]
+faction_levels <- levels(factor(df$factionName))
+P <- length(faction_levels)
+interaction_table <- map_dfr(1:P, function(i) {
+  map_dfr(1:P, function(j) {
+    tibble(
+      from = faction_levels[j],
+      to = faction_levels[i],
+      effect = interact_draws[, i, j]
+    )
+  })
+})
+interaction_summary <- interaction_table %>%
+  group_by(from, to) %>%
+  summarize(
+    mean = mean(effect),
+    lower = quantile(effect, 0.025),
+    upper = quantile(effect, 0.975),
+    .groups = "drop"
+  ) %>%
+  arrange(desc(mean))
+```
+
+
+```{r}
+#| label: tbl-faction-combos
+#| column: page-right
+#interaction_filtered <- interaction_summary #%>% select(from, to, mean, lower, upper)
+
+faction_names <- unique(sort(interaction_summary$to))
+tbl <- reactable(
+  interaction_summary,
+  filterable = FALSE,
+  searchable = FALSE,
+  columns = list(
+    to = colDef(name = "Target Faction"),
+    from = colDef(name = "With Faction"),
+    mean = colDef(name = "Effect", format = colFormat(digits = 3)),
+    lower = colDef(name = "Lower Bound", format = colFormat(digits = 3)),
+    upper = colDef(name = "Upper Bound", format = colFormat(digits = 3))
+  ),
+  elementId = "faction-interaction-table"
+)
+
+# UI + JS Filtering Hook
+browsable(
+  tagList(
+    tags$label("Select Target Faction:"),
+    tags$select(
+      id = "faction-selector",
+      onchange = "filterTable()",
+      lapply(faction_names, function(name) tags$option(name))
+    ),
+    tags$script(HTML(
+      "
+      function filterTable() {
+        var selected = document.getElementById('faction-selector').value;
+        var table = Reactable.getInstance('faction-interaction-table');
+        if (!table) return;
+        table.setFilter('to', selected);
+      }
+      "
+    )),
+    onRender(tbl, "
+      function(el, x) {
+        // Set initial filter to the first option
+        var table = Reactable.getInstance('faction-interaction-table');
+        if (table) {
+          table.setFilter('to', document.getElementById('faction-selector').value);
+        }
+      }
+    ")
+  )
+)
+```
+
+## Heroes
+
+### Most Played Heroes
+
+One of my pet theories is that good heroes are ones that you can play consistently.
+
+```{r}
+#| label: tbl-leader-use
+#| column: page-right
+#| layout-ncol: 2
+#| classes: plain
+leaders <- data |>
+  select(game_id, factionName, leaders) |>
+  mutate(leaders = map(leaders, ~ jsonlite::fromJSON(.x))) %>%
+  unnest_wider(leaders) |>
+  mutate(
+    hero_purged = hero == "purged",
+    hero_unlocked = hero != "locked"
+  )
+leaders |>
+  group_by(factionName) |>
+  summarize(purged = sum(hero_purged)/n()) |>
+  arrange(desc(purged)) |>
+  gt() |>
+  cols_label(
+    factionName = "Faction",
+    purged = "Hero Purged %"
+  ) |>
+  fmt_percent(
+    columns = c(purged)
+  ) |>
+  tab_options(
+    table.font.name = "inherit",
+    column_labels.font.weight = "bold",
+    table.margin.right = px(20),
+    table.margin.left = px(20)
+  ) |>
+  gt_split(row_every_n = 14)
+```
+
+
+Here we can see which factions have the most _usable_ heroes [^xxcha]. The Titans hero gives a nice planet upgrade in the home system and gets used in almost every single game. On the other hand, the Barony hero is much more situational.
+
+[^xxcha]: Note that as of Codex III, the Xxcha hero is the only one that _cannot_ be purged.
+
+### Hero Importance
+
+To determine hero strength, we might ask: for each faction, to what extent does playing the hero help them win?
+
+```{r}
+#| label: prepare-stan-data-leaders
+
+cannot_purge <- c(
+  "Xxcha Kingdom"
+)
+stan_ready <- df |>
+  left_join(game_positions, by = c("game_id", "factionName")) |>
+  left_join(leaders, by = c("game_id", "factionName")) |>
+  mutate(win = `Winning Faction` == factionName) |>
+  mutate(can_purge = !(factionName %in% cannot_purge)) |>
+  group_by(game_id) |>
+  filter(n() == 6) |>
+  arrange(game_id, seat) |>
+  reframe(
+    players = list(faction_id),
+    winner = which(win),
+    hero_purged = list(hero_purged),
+    hero_unlocked = list(hero_unlocked),
+    can_purge = list(can_purge)
+  ) |>
+  head(n_games)
+
+stan_data <- list(
+  E = nrow(stan_ready),
+  P = max(df$faction_id),
+  players = do.call(rbind, stan_ready$players),
+  hero_purged = do.call(rbind, stan_ready$hero_purged),
+  hero_unlocked = do.call(rbind, stan_ready$hero_unlocked),
+  can_purge = do.call(rbind, stan_ready$can_purge),
+  winner = stan_ready$winner
+)
+```
+
+```{r}
+#| label: fit-hero-model
+
+fit <- load_or_run_stan_model(
+  here::here("notes/ti4-analysis/ti4_hero.stan"),
+  data = stan_data,
+  file_path = here::here("notes/ti4-analysis/data/hero_fit.rds"),
+  iter = 1000,
+  chains = 4,
+  cores = 4,
+  open_progress = FALSE,
+)
+```
+
+```{r}
+#| label: fig-hero-effects
+#| fig-cap: Estimated effect of purging each faction’s hero on win probability in Twilight Imperium. Points show posterior means; error bars show 95% credible intervals. Values above zero indicate factions that tend to perform better when their hero is purged.
+posterior <- rstan::extract(fit)
+draws_hero <- posterior$hero_effect
+
+hero_effect <- tibble(
+  faction = faction_levels,
+  mean = colMeans(draws_hero),
+  lower = apply(draws_hero, 2, quantile, 0.025),
+  upper = apply(draws_hero, 2, quantile, 0.975)
+)
+
+ggplot(hero_effect, aes(x = reorder(faction, mean), y = mean)) +
+  geom_point() +
+  geom_errorbar(aes(ymin = lower, ymax = upper), width = 0.2) +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  coord_flip() +
+  labs(
+    x = "Faction",
+    y = "Hero Effect on Win Log-Odds",
+    title = "Importance of Hero by Faction",
+  )
+```
+
+Unsurprisingly, the Winnu game seems most dependent on their ability to use their hero, which can let them play the primary ability imperial strategy card at any point. 

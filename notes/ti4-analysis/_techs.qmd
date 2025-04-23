@@ -1,0 +1,387 @@
+## Technologies
+
+```{r}
+player_techs <- tibble(
+  game_id = data$game_id,
+  factionName = data$factionName,
+  techs = map(data$technologies, jsonlite::fromJSON)
+) |>
+  mutate(
+    techs = map(techs, ~ .x %||% character()), # fallback to empty char vector
+    techs = map(techs, ~ as.character(unlist(.x))),
+    techs = map(techs, ~ str_replace_all(.x, c(
+    "Omega$"                             = "Ω",
+    "(?<![A-Z])2$"                       = "II",
+    "Spatial Conduit Cylinders?"         = "Spacial Conduit Cylinder"
+    ))),
+    techs = map(techs, ~ discard(.x, is.na))
+  ) |>
+  arrange(game_id, factionName)
+
+tech_matrix <- player_techs |>
+  mutate(row_id = paste(game_id, factionName, sep = "_")) |>
+  unnest(techs, keep_empty = TRUE) |>
+  mutate(value = 1) |>
+  distinct(game_id, factionName, techs, .keep_all = TRUE) |>
+  pivot_wider(
+    id_cols = c(game_id, factionName),
+    names_from = techs,
+    values_from = value,
+    values_fill = 0
+  )
+
+faction_levels <- player_techs |> pull(factionName) |> unique() |> sort()
+
+tech_levels <- player_techs |> pull(techs) |> unlist() |> unique() |> sort()
+#    c(
+#  "Gravity Drive", "Carrier II", "Cruiser II",
+#  "Destroyer II", "Dreadnought II",
+#  "Fighter II", "Infantry II", "PDS II",
+#  "Space Dock II"
+#) #unique_techs
+
+player_data <- player_techs |>
+  mutate(
+    faction_id = as.integer(factor(factionName, levels = faction_levels)),
+    techs = map(techs, ~ match(.x, tech_levels))
+  ) |>
+    inner_join(
+      (data |> 
+        select(game_id, factionName, `Winning Faction`) |>
+        mutate(win = `Winning Faction` == factionName) |>
+        select(-`Winning Faction`)
+      ),
+      by = c("game_id", "factionName")
+    )
+```
+
+
+```{r}
+faction_tech_list <- tribble(
+  ~factionName,                  ~tech,                        ~eligible,
+  "Arborec",                 "Bioplasmosis",              TRUE,
+  "Argent Flight",           "Aerie Hololattice",         TRUE,
+  "Barony of Letnev",        "L4 Disruptors",             TRUE,
+  "Barony of Letnev",        "Non-Euclidean Shielding",   TRUE,
+  "Clan of Saar",            "Chaos Mapping",             TRUE,
+  "Keleres ~ Argent",        "I.I.H.Q. Modernization",    TRUE,
+  "Keleres ~ Argent",        "Agency Supply Network",     TRUE,
+  "Keleres ~ Mentak",        "I.I.H.Q. Modernization",    TRUE,
+  "Keleres ~ Mentak",        "Agency Supply Network",     TRUE,
+  "Keleres ~ Xxcha",         "I.I.H.Q. Modernization",    TRUE,
+  "Keleres ~ Xxcha",         "Agency Supply Network",     TRUE,
+  "Embers of Muaat",         "Magmus Reactor",            TRUE,
+  "Embers of Muaat",         "Magmus Reactor Ω",          TRUE,
+  "Emirates of Hacan",       "Production Biomes",         TRUE,
+  "Emirates of Hacan",       "Quantum Datahub Node",      TRUE,
+  "Empyrean",                "Aetherstream",              TRUE,
+  "Empyrean",                "Voidwatch",                 TRUE,
+  "Ghosts of Creuss",        "Wormhole Generator",        TRUE,
+  "Ghosts of Creuss",        "Wormhole Generator Ω",      TRUE,
+  "Ghosts of Creuss",        "Dimensional Splicer",       TRUE,
+  "L1Z1X Mindnet",           "Inheritance Systems",       TRUE,
+  "Mahact Gene-Sorcerers",   "Genetic Recombination",     TRUE,
+  "Mentak Coalition",        "Salvage Operations",        TRUE,
+  "Mentak Coalition",        "Mirror Computing",          TRUE,
+  "Naalu Collective",        "Neuroglaive",               TRUE,
+  "Naaz-Rokha Alliance",     "Supercharge",               TRUE,
+  "Naaz-Rokha Alliance",     "Pre-Fab Arcologies",        TRUE,
+  "Nomad",                   "Temporal Command Suite",    TRUE,
+  "Sardakk N'orr",           "Valkyrie Particle Weave",   TRUE,
+  "Universities of Jol-Nar", "E-Res Siphons",             TRUE,
+  "Universities of Jol-Nar", "Spacial Conduit Cylinder",  TRUE,
+  "Vuil'raith Cabal",        "Vortex",                    TRUE,
+  "Winnu",                   "Lazax Gate Folding",        TRUE,
+  "Winnu",                   "Hegemonic Trade Policy",    TRUE,
+  "Xxcha Kingdom",           "Nullification Field",       TRUE,
+  "Xxcha Kingdom",           "Instinct Training",         TRUE,
+  "Yin Brotherhood",         "Impulse Core",              TRUE,
+  "Yin Brotherhood",         "Yin Spinner",               TRUE,
+  "Yin Brotherhood",         "Yin Spinner Ω",             TRUE,
+  "Yssaril Tribes",          "Transparasteel Plating",    TRUE,
+  "Yssaril Tribes",          "Mageon Implants",           TRUE,
+  "Nekro Virus",             "Valefar Assimilator X",     TRUE,
+  "Nekro Virus",             "Valefar Assimilator Y",     TRUE
+)
+
+faction_unit_upgrades <- tribble(
+  ~factionName,               ~tech,
+  "Federation of Sol",    "Advanced Carrier II",
+  "Federation of Sol",    "Spec Ops II",
+  "Arborec",              "Letani Warrior II",
+  "Argent Flight",        "Strike Wing Alpha II",
+  "L1Z1X Mindnet",        "Super Dreadnought II",
+  "Sardakk N'orr",            "Exotrireme II",
+  "Mahact Gene-Sorcerers","Crimson Legionnaire II",
+  "Naalu Collective",     "Hybrid Crystal Fighter II",
+  "Titans of Ul",         "Saturn Engine II",
+  "Titans of Ul",         "Hel-Titan II",
+  "Clan of Saar",         "Floating Factory II",
+  "Vuil'raith Cabal",     "Dimensional Tear II",
+  "Embers of Muaat",      "Prototype War Sun II",
+  "Nomad",                "Memoria II"
+) |>
+  mutate(eligible = TRUE)
+
+generic_upgrades <- c(
+  "Carrier II", "Cruiser II", "Destroyer II", "Dreadnought II",
+  "Fighter II", "Infantry II", "PDS II", "Space Dock II", "War Sun"
+)
+
+# Factions who should not take generic versions (they have a custom one)
+unit_upgrade_exclusions <- tribble(
+  ~factionName,              ~tech,
+  "Federation of Sol",   "Carrier II",
+  "Federation of Sol",   "Infantry II",
+  "Titans of Ul",        "Cruiser II",
+  "Arborec",             "Infantry II",
+  "Argent Flight",       "Destroyer II",
+  "L1Z1X Mindnet",       "Dreadnought II",
+  "Sardakk N'orr",           "Dreadnought II",
+  "Mahact Gene-Sorcerers", "Infantry II",
+  "Naalu Collective",    "Fighter II",
+  "Clan of Saar",        "Space Dock II",
+  "Vuil'raith Cabal",    "Space Dock II",
+  "Embers of Muaat",     "War Sun",
+  "Nomad",               "Memoria II",
+)
+
+# Add exclusions to eligibility matrix
+unit_upgrade_eligibility <- expand_grid(
+  factionName = faction_levels,
+  tech = generic_upgrades
+) |>
+  anti_join(unit_upgrade_exclusions, by = c("factionName", "tech")) |>
+  mutate(eligible = TRUE)
+
+general_techs <- setdiff(tech_levels, generic_upgrades)
+
+general_tech_eligibility <- expand_grid(
+  factionName = faction_levels,
+  tech = general_techs
+) |>
+  mutate(eligible = TRUE)
+
+faction_tech_eligibility <- bind_rows(
+  faction_tech_list,
+  faction_unit_upgrades,
+  general_tech_eligibility,
+  unit_upgrade_eligibility
+) |>
+  distinct(factionName, tech, .keep_all = TRUE) |>
+  complete(
+    factionName = faction_levels,
+    tech = union(tech_levels, c(generic_upgrades, faction_unit_upgrades$tech)),
+    fill = list(eligible = FALSE)
+  ) |>
+  mutate(
+    eligible = if_else(factionName == "Nekro Virus", TRUE, eligible)
+  )
+
+faction_tech_eligibility <- faction_tech_eligibility |>
+  mutate(
+    eligible = if_else(factionName == "Nekro Virus", TRUE, eligible)
+  )
+```
+
+```{r}
+eligibility_matrix <- faction_tech_eligibility |>
+  filter(eligible) |>
+  pivot_wider(
+    names_from = tech, values_from = eligible,
+    values_fill = 0
+  )
+
+# Join and zero out ineligible techs
+tech_matrix_masked <- tech_matrix |>
+  left_join(eligibility_matrix, by = "factionName", suffix = c("", "_eligible")) |>
+  mutate(across(all_of(tech_levels), ~ if_else(get(paste0(cur_column(), "_eligible")) == 1, ., 0))) |>
+  select(game_id, factionName, all_of(tech_levels))
+
+ml_data <- tech_matrix_masked |>
+  left_join(player_data |> select(game_id, factionName, win, faction_id), 
+            by = c("game_id", "factionName")) |>
+  mutate(win = as.integer(win)) |> # glmnet requires numeric response
+  mutate(total_techs = log(rowSums(across(all_of(tech_levels)))))
+ml_data$faction_id <- factor(ml_data$faction_id)
+x <- model.matrix(win ~ . - game_id - factionName - win, data = ml_data)[, -1]
+y <- ml_data$win
+
+set.seed(15693)
+cv_fit <- cv.glmnet(x, y, family = "binomial", alpha = 1) # Lasso
+```
+
+```{r}
+#| layout-ncol: 3
+#| column: page-right
+library(gt)
+
+tech_colors <- tribble(
+  ~tech, ~color,
+  "Gravity Drive",        "blue",
+  "Antimass Deflectors",  "blue",
+  "Fleet Logistics",      "blue",
+  "Dark Energy Tap",      "blue",
+  "Sling Relay",          "blue",
+  "Light/Wave Deflector", "blue",
+
+  "AI Development Algorithm", "red",
+  "Plasma Scoring",           "red",
+  "Magen Defense Grid",       "red",
+  "Magen Defense Grid Ω",     "red",
+  "Assault Cannon",           "red",
+  "Self-Assembly Routines",   "red",
+  "Duranium Armor",           "red",
+
+  "Neural Motivator",        "green",
+  "Psychoarchaeology",       "green",
+  "Hyper Metabolism",        "green",
+  "Dacxive Animators",       "green",
+  "Bio-Stims",               "green",
+  "X-89 Bacterial Weapon Ω", "green",
+  
+  "Sarween Tools",           "yellow",
+  "Graviton Laser System",   "yellow",
+  "Predictive Intelligence", "yellow",
+  "Scanlink Drone Network",  "yellow",
+  "Transit Diodes",          "yellow",
+  "Integrated Economy",      "yellow"
+)
+
+results <- coef(cv_fit, s = "lambda.min") |>
+  as.matrix() |>
+  as.data.frame() |>
+  rownames_to_column("feature") |>
+  #filter(s1 != 0) |> # lasso
+  rename(coef = s1) |>
+  mutate(
+    feature = str_remove_all(feature, "`"),  # 🔧 remove backticks
+    type = case_when(
+      str_detect(feature, "^faction_id") ~ "Faction",
+      TRUE ~ "Tech"
+    ),
+    name = case_when(
+      type == "Faction" ~ str_remove(feature, "faction_id"),
+      TRUE ~ feature
+    )
+  )
+
+# Combine all faction-specific techs (unit upgrades + regular faction techs)
+faction_specific_techs <- union(
+  faction_unit_upgrades$tech,
+  faction_tech_list$tech)
+
+tech_effects_clean <- results |>
+  filter(type == "Tech", !(name %in% faction_specific_techs)) |>
+  mutate(Technology = name) |>
+  left_join(tech_colors, by = c("Technology" = "tech")) |>
+  replace_na(list(color = "gray")) |>
+  arrange(desc(coef))
+
+# Display with gt
+format_tech_table <- function(df) {
+  return (df |>
+    mutate(c = " ") |>
+    select(c, Technology, coef, color) |>
+    gt() |>
+    fmt_number(columns = coef, decimals = 3) |>
+    cols_label(
+      c = "",
+      Technology = "Technology",
+      coef = "Log-Odds Effect",
+      color = "Tech Type"
+    ) |>
+    tab_style(
+      style = list(cell_fill(color = from_column(column = "color"))),
+      locations = cells_body(columns = c)
+    ) |>
+    tab_options(
+      table.font.name = "inherit",
+      column_labels.font.weight = "bold",
+      table.margin.right = px(20),
+      table.margin.left = px(20)
+    ) |>
+    cols_hide(columns = c(color))
+    )
+}
+tech_effects_clean |>
+  filter(coef > 0) |>
+  format_tech_table()
+tech_effects_clean |>
+  filter(coef == 0) |>
+  format_tech_table()
+tech_effects_clean |>
+  filter(coef < 0) |>
+  format_tech_table()
+```
+
+
+
+```{r}
+#| label: 20250422-124227
+posterior <- rstan::extract(fit_base)
+ability_means <- colMeans(posterior$ability)
+
+all_techs <- union(
+  faction_unit_upgrades$tech,
+  faction_tech_list$tech
+)
+
+stan_data <- list(
+  E = nrow(stan_ready),
+  P = max(as.integer(levels(ml_data$faction_id))),
+  T = length(tech_levels), # Number of techs
+  players = do.call(rbind, stan_ready$players),
+  winner = stan_ready$winner,
+  tech_matrix = x[, str_replace_all(colnames(x), "\`", "") %in% tech_levels],
+  lasso_scale = 0.5,         # tweak this for more/less shrinkage
+  prior_ability = ability_means,  # use from previous model
+  ability_sd = 0.25            # tighter if you trust prior more
+)
+```
+
+```{r}
+#| label: fit-tech-model
+fit <- stan(
+  here::here("notes/ti4-analysis/ti4_tech2.stan"),
+  data = stan_data,
+  #file_path = here::here("notes/ti4-analysis/data/hero_fit.rds"),
+  iter = 2000,
+  chains = 4,
+  cores = 4,
+  open_progress = FALSE,
+)
+```
+
+
+```{r}
+#| label: 20250422-132417
+
+posterior <- rstan::extract(fit)  # your new model
+# Extract tech effect draws
+tech_draws <- posterior$tech_effect  # dim: iterations x T
+
+# Summarize posterior for each tech
+tech_summary <- tibble(
+  tech = tech_levels,
+  mean = colMeans(tech_draws),
+  lower = apply(tech_draws, 2, quantile, 0.025),
+  upper = apply(tech_draws, 2, quantile, 0.975)
+)
+
+# Optional: sort by effect size
+tech_summary <- tech_summary |> arrange(desc(mean))
+
+# Display with gt
+library(gt)
+tech_summary |>
+  gt() |>
+  cols_label(
+    tech = "Technology",
+    mean = "Effect (log-odds)",
+    lower = "Lower 95%",
+    upper = "Upper 95%"
+  ) |>
+  fmt_number(columns = c(mean, lower, upper), decimals = 3) |>
+  tab_header(title = "Estimated Technology Effects on Win Probability")
+```
