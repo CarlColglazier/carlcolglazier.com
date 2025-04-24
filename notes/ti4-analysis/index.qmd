@@ -104,8 +104,8 @@ load_or_run_stan_model <- function(
 
 # Load data, selecting 6 player PoK games
 # and only taking their final state.
-data <- readr::read_delim(
-  here::here("drafts/ti4-analysis/data/async_data.csv")
+ti_data <- readr::read_delim(
+  here::here("notes/ti4-analysis/data/async_data.csv")
 ) |>
   select(-`isPOK...13`) |>
   rename(isPOK = `isPOK...6`) |>
@@ -123,7 +123,7 @@ data <- readr::read_delim(
 
 ```{r}
 #| label: prepare-stan-data-factions
-df <- data |>
+df <- ti_data |>
   mutate(faction_id = as.integer(factor(factionName)))
 
 n_games <- nrow(distinct(df, game_id))
@@ -161,9 +161,9 @@ stan_data <- list(
 #| label: fit-faction-model
 #| cache: true
 fit_base <- load_or_run_stan_model(
-  here::here("drafts/ti4-analysis/ti4_20250414.stan"),
+  here::here("notes/ti4-analysis/ti4_20250414.stan"),
   data = stan_data,
-  file_path = here::here("drafts/ti4-analysis/data/faction_model.rds"),
+  file_path = here::here("notes/ti4-analysis/data/faction_model.rds"),
   iter = 5000,
   chains = 4,
   cores = 4,
@@ -232,7 +232,7 @@ Potential ways to improve this analysis:
 The presence of another faction in the game can have a large effect on a faction's strength. For instance, the Yssaril benefit from other factions like the Naalu that have powerful agents they can copy.
 
 ```{r}
-df <- data |>
+df <- ti_data |>
   mutate(faction_id = as.integer(factor(factionName)))
 
 n_games <- nrow(distinct(df, game_id))
@@ -270,9 +270,9 @@ stan_data <- list(
 #| label: fit-pairwise-model
 #| cache: true
 fit <- load_or_run_stan_model(
-  here::here("drafts/ti4-analysis/ti4_pairs.stan"),
+  here::here("notes/ti4-analysis/ti4_pairs.stan"),
   data = stan_data,
-  file_path = here::here("drafts/ti4-analysis/data/faction_pairs.rds"),
+  file_path = here::here("notes/ti4-analysis/data/faction_pairs.rds"),
   iter = 5000,
   chains = 4,
   cores = 4,
@@ -370,7 +370,7 @@ One of my pet theories is that good heroes are ones that you can play consistent
 #| column: page-right
 #| layout-ncol: 2
 #| classes: plain
-leaders <- data |>
+leaders <- ti_data |>
   select(game_id, factionName, leaders) |>
   mutate(leaders = map(leaders, ~ jsonlite::fromJSON(.x))) %>%
   unnest_wider(leaders) |>
@@ -482,3 +482,165 @@ ggplot(hero_effect, aes(x = reorder(faction, mean), y = mean)) +
 ```
 
 Unsurprisingly, the Winnu game seems most dependent on their ability to use their hero, which can let them play the primary ability imperial strategy card at any point. 
+
+## Mecatol Rex
+
+Is it worth it to take Mecatol Rex?
+
+```{r}
+#| label: 20250424-093538
+df <- ti_data |>
+  mutate(faction_id = as.integer(factor(factionName)))
+
+n_games <- nrow(distinct(df, game_id))
+
+mr_data <- ti_data |>
+  mutate(objectives = map(objectives, ~ jsonlite::fromJSON(.x))) |>
+  select(game_id, factionName, objectives) |>
+  mutate(objectives = map(objectives, function(x) {
+    # If it's already a list, return it as is
+    if (is.list(x)) {
+      return(x)
+    } 
+    # Otherwise, treat it as a character vector
+    else if (is.character(x)) {
+      return(as.list(x))
+    }
+    # Fallback case
+    else {
+      return(list(as.character(x)))
+    }
+  })) |>
+  tidyr::unnest_longer(objectives) |>
+  filter(objectives == "Custodian/Imperial") |>
+  mutate(took_mr = 1) |>
+  select(-objectives)
+
+stan_ready <- df |>
+  left_join(mr_data, by = c("game_id", "factionName")) |>
+  replace_na(list(took_mr = 0)) |>
+  mutate(win = `Winning Faction` == factionName) |>
+  group_by(game_id) |>
+  filter(n() == 6) |>
+  arrange(game_id) |>
+  reframe(
+    players = list(faction_id),
+    winner = which(win),
+    took_mr = list(took_mr)
+  ) |>
+  head(n_games)
+posterior <- rstan::extract(fit_base)
+ability_means <- colMeans(posterior$ability)
+stan_data <- list(
+  E = nrow(stan_ready),                          # Number of games
+  P = max(df$faction_id),                        # Number of faction types
+  players = do.call(rbind, stan_ready$players),  # Player ids, PxE
+  took_mr = do.call(rbind, stan_ready$took_mr),  # Scored Mecatol Rex?
+  winner = stan_ready$winner,                    # Winner index
+  prior_ability = ability_means,                 # use from previous model
+  ability_sd = 0.25
+)
+```
+
+```{r}
+#| label: tbl-mecatol-raw
+df |>
+  left_join(mr_data, by = c("game_id", "factionName")) |>
+  replace_na(list(took_mr = 0)) |>
+  mutate(win = `Winning Faction` == factionName) |>
+  select(win, took_mr) |>
+  count(took_mr, win) |>
+  mutate(took_mr = if_else(took_mr == 1, "Yes", "No")) |>
+  arrange(took_mr, win) |>
+  group_by(took_mr) |>
+  summarize(
+    games_played = sum(n),
+    win_rate = sum(n[win == TRUE]) / sum(n),
+    .groups = "drop"
+  ) |>
+  arrange(desc(took_mr)) |>
+  gt() |>
+  cols_label(
+    took_mr = "Scored Mecatol?",
+    win_rate = "Win Rate",
+    games_played = "Games"
+  ) |>
+  fmt_percent(
+    columns = c("win_rate")
+  ) |>
+  tab_options(
+    table.font.name = "inherit",
+    column_labels.font.weight = "bold",
+  )
+```
+
+
+```{r}
+#| label: fit-mr-model
+#| include: false
+#| output: false
+fit_mr <- load_or_run_stan_model(
+  here::here("notes/ti4-analysis/ti4_mr.stan"),
+  data = stan_data,
+  file_path = here::here("notes/ti4-analysis/data/ti4_mr.rds"),
+  iter = 2500,
+  chains = 4,
+  cores = 4,
+  open_progress = FALSE,
+)
+```
+
+```{r}
+#| label: draws-mecatol
+#| include: false
+#| output: false
+posterior <- rstan::extract(fit_mr)
+draws_mr <- posterior$mecatol
+```
+
+```{r}
+#| label: 20250424-110009
+#| cache: true
+n_sim_games <- 1000
+n_draws <- length(draws_mr)
+faction_levels <- levels(factor(df$factionName))
+F <- length(faction_levels)
+mr_effects <- numeric(n_draws)
+for (d in 1:n_draws) {
+  win_diff <- numeric(n_sim_games)
+  for (g in 1:n_sim_games) {
+    participants <- sample(1:F, 6)
+    ability_draw <- posterior$ability[d, participants]
+    # Without MR
+    score_no_mr <- ability_draw
+    prob_no_mr <- exp(score_no_mr) / sum(exp(score_no_mr))
+    # With MR for player 1
+    score_with_mr <- ability_draw
+    score_with_mr[1] <- score_with_mr[1] + draws_mr[d]
+    prob_with_mr <- exp(score_with_mr) / sum(exp(score_with_mr))
+    # Difference in win prob for player 1
+    win_diff[g] <- prob_with_mr[1] - prob_no_mr[1]
+  }
+
+  mr_effects[d] <- mean(win_diff)
+}
+```
+
+::: {#fig-mec-effect}
+
+```{r}
+#| label: mec-effect
+tibble(effect = mr_effects) |>
+  ggplot(aes(x = effect)) +
+  geom_histogram(fill = "black") +
+  #geom_vline(aes(xintercept = mean(effect)), linetype = "dashed") +
+  labs(
+    title = "Effect of Scoring from Mecatol Rex",
+    x = "Change in Win Probability",
+    y = "Posterior Draw Count"
+  )
+```
+
+Histogram of simulated changes in win probability from scoring at least one point from Mecatol Rex. The minimum result from the simulation is an increase of `{r} round(min(mr_effects)*100, 1)` pp.
+
+:::
