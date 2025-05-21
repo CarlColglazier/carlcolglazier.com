@@ -26,7 +26,7 @@ execute:
 #resume-entry(
   title: "Northwestern University",
   location: "Evanston, IL",
-  date: "September 2020 - July 2025 (Expected)",
+  date: "September 2020 - August 2025 (Expected)",
   description: "Ph.D. in Technology and Social Behavior",
 )
 
@@ -34,7 +34,7 @@ execute:
   title: "North Carolina State University",
   location: "Raleigh, NC",
   date: "August 2015 - December 2019",
-  description: "B.S. in Computer Science; B.A. in Communication-Media",
+  description: "B.S. in Computer Science; B.A. in Communication - Media",
 )
 
 #resume-item[
@@ -141,6 +141,10 @@ get_yaml_date <- function(file) {
   fm <- yaml_front_matter(file)
   return(fm$date)
 }
+
+get_yaml_date_from_yaml <- function(data) {
+  return(data$data)
+}
 ```
 
 **Articles in Peer Reviewed Journals and Conference Proceedings**
@@ -193,10 +197,11 @@ cat(x, sep="\n\n")
 ```{r, echo=FALSE, output='asis'}
 workshop_yaml <- here("research/workshops.yml")
 conference_yaml <- here("research/conferences.yml")
-all_yaml <- to_citations(merge_yaml(c(workshop_yaml, conference_yaml)))
+all_yaml <- merge_yaml(c(workshop_yaml, conference_yaml))
+all_yaml <- all_yaml[order(purrr::map_chr(all_yaml, "date"), decreasing=TRUE)]
 # sort by date
 #c <- format_yaml_section(conference_yaml)
-c <- all_yaml
+c <- to_citations(all_yaml)
 x <- paste(c, sep="\n", collapse = NULL)
 cat(x, sep="\n\n")
 ```
