@@ -1,0 +1,21 @@
+---
+title: Tools
+date: 2025-03-29
+published-title: Last updated
+---
+
+These get the job done for me. Your own needs and preferences might vary from mine.
+
+## Writing
+
++ [Quarto](https://quarto.org/) - Publishing system for literate programming and more.
++ [Positron](https://positron.posit.co/) - IDE with first-class support for Quarto and R from the creators of RStudio.
++ [VS Code](https://code.visualstudio.com/) - All-around good text editor.
++ [Emacs](https://www.gnu.org/software/emacs/) - Most powerful ~~operating system~~ text editor on Earth.
++ [Obsidian](https://obsidian.md/) - Note system for hyperlink enthusiasts.
++ [Zotero](https://www.zotero.org/) - Citation management system; never hand-write a bibliography again.
+
+
+## Hardware
+
+These days I'm using an M1 MacBook Air and an iPhone SE (3rd generation).
