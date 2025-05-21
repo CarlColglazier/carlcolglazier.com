@@ -1,0 +1,121 @@
+---
+title: How I'm Writing My Dissertation in Quarto
+date: 2025-05-12
+---
+
+## Why Quarto
+
+I use [Quarto](https://quarto.org/) for most of my academic and personal writing. It is flexible, well-documented, and supported by open source and some great developers at Posit.
+
+A lot goes into a dissertation and famously the documents themselves don't tend to get a lot of attention.
+
+Quarto has several advantages for these kinds of projects:
+
+1. **Markdown**: Markdown is essentially an easy-to-read variant of HTML, which means it supports the most important features that power the Web (linking) while supporting better readability for humans. Markdown also supports just using HTML if needed. It is widely supported. You can just copy Markdown and use it on Reddit, GitHub, or StackOverflow without any need for modifications. And for places where Markdown isn't supported, it can export to almost anything through Pandoc, whose own version of the Markdown format is great. You can even do some basic conversions [online](https://pandoc.org/try/) (this is particularly for formats like MediaWiki that I use occasionally enough that I need to write in it but not often enough that I need to commit the format to memory)!
+2. **Portability**: I can export my dissertation as a PDF _and_ also as a much more accessible HTML website without significant overhead. And I can reuse the same data and computations for presentations and smaller submissions.
+3. **Flexibility**: Quarto supports many kinds of workflows and can adapt to the project's needs. It has support for a lot of the things I need to do to complete my defense: namely writing, data visualization, and presentations.
+
+## Formatting the Project
+
+Key structural setup: I have an independent subfolder for the actual dissertation deliverable, and this is essentially a separate project from my main Quarto folder.
+
+I first stumbled across this structure looking at some of [Andrew Heiss'](https://www.andrewheiss.com/) projects. He tends to have a manuscript directory that is its own Quarto project and then embed the output from that project within a webpage for the main project.
+
+```
+main/
+  _quarto.yml
+  Makefile
+  code/
+  data/
+  dissertation/
+  dissertation/_quarto.yml
+  dissertation/_quarto-nu.yml
+  images/
+  notebooks/
+```
+
+I can do the same thing for sub-projects. For example, I have my own project for my prospectus and also the slides I used when presenting my prospectus. I can do all the main computations in one step and then access the results using the [`{here}`](https://here.r-lib.org/) package to automatically detect the base directory for my project.
+
+### The Makefile
+
+[GNU Make](https://www.gnu.org/software/make/) is generally used by programmers to compile complex programs with dependencies, but it can also be adapted to handle complex data pipelines. Because my dissertation is composed of three different sub-projects, I outsource some of the more complicated data work to the repositories for those individual subprojects (and then put the relevant results into the data directory). I currently have things configured into individual notebooks for things like building plots and then save the results by assigning it to a variable and running `saveRDS`.
+
+::: .column-body-outset-right
+```make
+render:
+	quarto render notebooks
+	quarto render dissertation --output-dir output
+	quarto render dissertation --profile nu --to northwestern-thesis-pdf --output-dir output_nu
+	quarto render
+```
+:::
+
+### Common Folders
+
+The `code` directory has shared functions such as my `{ggplot2}` theme. I can import these files using `source(here::here("code", "file.R"))`. This can be helpful, for example, when creating reusable functions to create complex plots that I want to use in both the dissertation and in a presentation.
+
+I keep all my data inside a `data/` directory. Inside this directory, I have folders for each major project and also an `external/` directory for data I didn't collect myself.
+
+### Quarto Config Files
+
+The main project file renders to a website:
+
+
+```yaml
+project:
+  type: website
+  title: "Federating the Social Web"
+  render:
+    # Notebooks first
+    - notebooks/
+    # Render quarto documents
+    - "**/*.qmd"
+    - "!dissertation/"
+  resources:
+    - "dissertation/output"
+    - "dissertation/output_nu"
+website:
+  <navbar_config>
+brand: "_brand.yml"
+bibliography: "references.bib"
+metadata-files:
+  - "_shared.yml"
+```
+
+And this is my dissertation project configuration (`_quarto.yml`): 
+
+
+```yaml
+project:
+  type: book
+  output-dir: output
+
+book:
+  <book config>
+```
+
+I have another config file that builds on the previous config for the [Northwestern Thesis Format](#northwestern-thesis-format):
+
+```yaml
+format:
+  northwestern-thesis-pdf:
+    output-file: northwestern-thesis.pdf
+    fig-width: 7.5
+```
+
+Shared configurations I want to affect multiple outputs go into `_shared.yml`.
+
+## Northwestern Thesis Format
+
+The Graduate School at Northwestern has [detailed formatting criteria](https://www.tgs.northwestern.edu/academic-policies-procedures/dissertation-publication/dissertation-formatting-requirements/) they require for dissertations, yet no official LaTeX template.
+
+I created a [template](https://github.com/CarlColglazier/northwestern-thesis-quarto) as an extension that provides:
+
++ A LaTeX template compliant with the TGS formatting requirements
+
++ An experimental Typst template. 
+
+:::: {.callout-warning}
+The Typst format in Quarto is probably not useful yet for an entire dissertation because [Quarto does not support book-like structures for Typst documents](https://github.com/quarto-dev/quarto-cli/discussions/6979).
+:::
+
