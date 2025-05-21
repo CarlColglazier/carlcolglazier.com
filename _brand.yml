@@ -1,21 +1,22 @@
 color:
   palette:
-    purple: "#6f42c1"
     gray: "#495057"
     dark: "#212529"
-  primary: purple
+  primary: black
   secondary: gray
-  dark: purple
 typography:
   fonts:
     - family: Josefin Sans
       source: bunny
-      weight: [300, 400, 600]
-    - family: Lato
+    - family: Public Sans
+      source: bunny
+    - family: Libre Baskerville
+      source: bunny
+    - family: JetBrains Mono
       source: bunny
   base:
-    family: Lato
-    weight: 400
+    family: Public Sans
   headings:
-    family: Josefin Sans
-    weight: 300
+    family: Libre Baskerville
+  monospace:
+    family: JetBrains Mono

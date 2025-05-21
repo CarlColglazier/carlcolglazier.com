@@ -2,26 +2,35 @@
 title: "Carl Colglazier"
 image: "assets/profile.jpg"
 about:
+  id: hero-heading
   template: trestles
   image: "assets/profile.jpg"
   image-shape: round
   image-width: 15em
-  #links:
-  #  - icon: scroll
-  #    text: resume
-  #    href: "#"
+  links:
+    - icon: scroll
+      text: CV
+      href: "documents/cv.pdf"
+#listing:
+#  contents: notes/**/*.qmd
+#  fields: [title]
 format:
   html:
+    pagetitle: "About Me"
     page-layout: full
     quarto-template-params:
       banner-header-class: "home"
 ---
 
-## Welcome to my home on the information superhighway
+:::{#hero-heading}
 
-I am a PhD candidate in [Technology and Social Behavior](https://tsb.northwestern.edu/) at Northwestern University where I am affiliated with the [Community Data Science Collective](https://communitydata.science/).
+<!--## Welcome to my home on the information superhighway-->
+
+I am a PhD candidate in [Technology and Social Behavior](https://tsb.northwestern.edu/) (a dual degree in computer science & communication studies) at Northwestern University where I am affiliated with the [Community Data Science Collective](https://communitydata.science/).
 
 My research focuses on decentralized social networks like the [Fediverse](https://en.wikipedia.org/wiki/Fediverse) and their role as sociotechnical systems. I like to use [computational social science](https://en.wikipedia.org/wiki/Computational_social_science).
 
 At North Carolina State University, I graduated in 2019 with a B.S. in
 Computer Science and a B.A. in Communication Media. Previously, I worked as intern in full stack software engineering at IBM and as an undergraduate researcher at the Center for Research Computing at the University of Notre Dame.
+
+:::

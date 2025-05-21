@@ -1,22 +1,55 @@
 /*-- scss:defaults --*/
 $dark-bg: #212529;
-$navbar-bg: $dark-bg;
 $navbar-fg: #FFFFFF;
+$navbar-bg: $dark-bg;
 $footer-bg: $dark-bg;
 
-//$toc-font-family: "Josefin Sans", sans-serif !default;
-
 /*-- scss:rules --*/
-h1.title {
+html {
+  background-color: $dark-bg;
+}
+
+a {
+  font-weight: inherit!important; // Blend links into the text.
+}
+
+#quarto-content {
+  a {
+  text-underline-offset: .25rem;
+  text-decoration-thickness: 0.2rem;
+  text-decoration-skip-ink: all;
+  text-decoration-color: #939aa2;
+  }
+  a:hover {
+    text-decoration-color: black;
+  }
+}
+
+.navbar-title {
+  font-weight: 400;
+  font-family: "Josefin Sans", $font-family-monospace, Arial, Helvetica, sans-serif;
+}
+
+.footer, #quarto-code-tools-source {
+  font-family: $font-family-monospace;
+}
+
+#quarto-header {
   font-weight: 600!important;
 }
 
-.quarto-appendix-heading {
-  font-weight: 100!important;
+#title-block-header:before {
+  content: "";
+  width: 100vw;
+  height: 100px;
+  margin-top: -100px;
+  background-color: $dark-bg;
+
 }
 
-#quarto-header, .footer {
-  font-family: $headings-font-family;
+.listing-title {
+  padding-top: 1rem;
+  padding-bottom: 0.2rem;
 }
 
 .back-nav {
@@ -45,7 +78,7 @@ a.dropdown-item {
   }
 
   .project-details {
-    background-color: rgba($purple, 0.1);
+    background-color: rgba($dark-bg, 0.1);
     padding: 0.75em;
     margin: 1em 0;
   }
@@ -67,18 +100,23 @@ a.dropdown-item {
   }
 }
 
-.project-link a, .footer a {
+.project-link a {
   text-decoration: none;
+}
+
+i[class^="icon-"]:before {
+	display: inline-block;
+	text-decoration: none;
 }
 
 .research {
   .back-nav a {
-    color: shift-color($purple, -50%);
+    color: shift-color($dark-bg, -50%);
   }
 
   .quarto-title .quarto-categories .quarto-category {
-    background-color: shift-color($purple, -75%);
-    color: $purple;
+    background-color: shift-color($dark-bg, -75%);
+    color: $dark-bg;
     font-size: 0.65em;
     opacity: 1;
   }
@@ -110,7 +148,7 @@ a.dropdown-item {
 
     li.project {
       margin-bottom: 2.5em;
-      border-left: 6px solid shift-color($purple, -90%);
+      border-left: 6px solid shift-color($dark-bg, -90%);
 
       p {
         margin: 0;
@@ -135,7 +173,7 @@ a.dropdown-item {
 
   .project-details-listing {
     margin-top: 0.8em;
-    background-color: shift-color($purple, -90%);
+    background-color: shift-color($dark-bg, -90%);
     font-size: 0.9rem;
 
     @media (max-width: map-get($grid-breakpoints, md)) {
@@ -149,7 +187,7 @@ a.dropdown-item {
     }
 
     .details {
-      background-color: $purple;
+      background-color: $dark-bg;
       padding-right: 1.5em;
 
       a {
@@ -165,8 +203,8 @@ a.dropdown-item {
   border: 0 !important;
   min-height: 3em;
 
-  a {
-    color: $purple-200;
+  a:hover {
+    color: white;
   }
 
   .faux-block {

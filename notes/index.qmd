@@ -3,13 +3,17 @@ title: "Notes"
 author: ""
 listing:
 - id: notes
+  feed:
+    title: "Carl Colglazier's Notes"
   contents:
     - "*.qmd"
     - "*.md"
     - "!archive/"
   sort: "date desc"
-  type: default
-  fields: [title, description, date, categories, image]
+  type: grid
+  fields: [title, description, date]
+  grid-columns: 2
+  grid-item-border: true
   categories: true
 code-tools: false
 page-layout: full

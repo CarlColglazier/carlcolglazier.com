@@ -1,5 +1,6 @@
 freeze: true
 title-block-banner: true
+title-block-banner-color: "#FFFFFF"
 toc: true
 toc-title: "Contents"
 toc-location: left
@@ -7,12 +8,10 @@ format:
   html:
     code-tools: true
     toc: true
-    #df-print: kable
-
 author:
   - name: "Carl Colglazier"
     url: https://carlcolglazier.com/
-
 execute:
-  message: false
-  warn: false
+  echo: false
+  output: true
+  warning: false

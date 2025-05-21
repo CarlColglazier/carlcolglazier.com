@@ -12,7 +12,7 @@ project:
   resources:
     - "files/**"
 
-pagetitle: "{{< meta title >}} | Carl Colglazier"
+pagetitle: "{{< meta title >}}"
 author-meta: "Carl Colglazier"
 brand: _brand.yml
 website:
@@ -20,7 +20,6 @@ website:
   open-graph: true
   site-url: "https://carlcolglazier.com"
   favicon: "assets/favicon.ico"
-
   navbar:
     pinned: false
     right:
@@ -32,15 +31,15 @@ website:
         file: "notes/index.qmd"
       - text: "Research"
         file: "research/index.qmd"
-      - text: "Code"
-        file: "code/index.qmd"
+      #- text: "Code"
+      #  file: "code/index.qmd"
   page-footer:
     center: |
       <span class="faux-block">{{< fa brands creative-commons >}} Carl Colglazier</span>
-      <span class="faux-block">All content licensed under<br>[{{< fa brands creative-commons >}} {{< fa brands creative-commons-by >}} {{< fa brands creative-commons-nc >}} Creative Commons CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)</span>
+      <span class="faux-block">All content licensed under<br>[{{< fa brands creative-commons >}}{{< fa brands creative-commons-by >}}{{< fa brands creative-commons-nc >}}Creative Commons CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)</span>
     right: |
-      <span class="faux-block">Made with [{{< iconify simple-icons:quarto >}} Quarto](https://quarto.org/)</span>
-      <span class="faux-block">[View the source at {{< fa brands github >}} GitHub](https://github.com/carlcolglazier/carlcolglazier.com)</span>
+      <span class="faux-block">Made with [Quarto{{< iconify simple-icons:quarto >}}](https://quarto.org/)</span>
+      <span class="faux-block">View the source on [GitHub{{< fa brands github >}}](https://github.com/carlcolglazier/carlcolglazier.com)</span>
       <span class="hidden">{{< ai arxiv >}}</span>
     left:
     - text: "{{< iconify bi globe size=1.1em title='Website' >}}"
@@ -67,7 +66,7 @@ website:
 
 format:
   html:
-    theme: [brand, html/theme.scss]
+    theme: [html/theme.scss, brand]
     #grid:
     #  margin-width: 250px
     #  body-width: 650px
