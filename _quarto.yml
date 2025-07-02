@@ -8,6 +8,7 @@ project:
     - "*.md"
     - "!etc/"
     - "!drafts/"
+    - "!rv/"
     #- "!documents/"
   resources:
     - "files/**"

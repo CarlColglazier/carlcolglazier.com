@@ -11,9 +11,15 @@ about:
     - icon: scroll
       text: CV
       href: "documents/cv.pdf"
-#listing:
-#  contents: notes/**/*.qmd
-#  fields: [title]
+listing:
+  id: latest-notes
+  contents:
+    - notes/**/*.qmd
+    - "!notes/index.qmd"
+  max-items: 5
+  fields: [title, date]
+  sort: "date desc"
+  template: html/simplelist.ejs
 format:
   html:
     pagetitle: "About Me"
@@ -28,9 +34,45 @@ format:
 
 I am a PhD candidate in [Technology and Social Behavior](https://tsb.northwestern.edu/) (a dual degree in computer science & communication studies) at Northwestern University where I am affiliated with the [Community Data Science Collective](https://communitydata.science/).
 
-My research focuses on decentralized social networks like the [Fediverse](https://en.wikipedia.org/wiki/Fediverse) and their role as sociotechnical systems. I like to use [computational social science](https://en.wikipedia.org/wiki/Computational_social_science).
+My [research](/research/) focuses on decentralized social networks like the [Fediverse](https://en.wikipedia.org/wiki/Fediverse) and their role as sociotechnical systems. My research often uses [computational social science](https://carlcolglazier.github.io/css-syllabus/syllabus.html) to investigate how these systems handle "tricky problems" like content moderation and discovery.
 
+<!--
 At North Carolina State University, I graduated in 2019 with a B.S. in
 Computer Science and a B.A. in Communication Media. Previously, I worked as intern in full stack software engineering at IBM and as an undergraduate researcher at the Center for Research Computing at the University of Notre Dame.
+-->
+
+These days, I am most active on [Bluesky](https://bsky.app/profile/carl.cx) and likely [writing notes in Obsidian, programs in some VS Code variant, and everything else in Emacs](/tools/).
+
+:::
+
+::: {.columns}
+
+::: {.column}
+### Latest Notes
+
+::: {#latest-notes}
+:::
+::: 
+<!--First column-->
+
+::: {.column}
+
+### My Most Recent Post ($N = 1$) on Bluesky
+
+<script src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" async></script>
+
+<bsky-embed
+  username="carl.cx"
+  limit="1"
+  disable-images="true"
+  disable-videos="true"
+  disable-autoplay="true"
+  custom-styles="img { filter: brightness(0); content: none !important; }"
+>
+</bsky-embed>
+
+
+::: 
+<!--Second column-->
 
 :::
