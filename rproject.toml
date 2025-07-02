@@ -1,0 +1,40 @@
+[project]
+name = "carlcolglazier.com"
+r_version = "4.5"
+
+# A list of repositories to fetch packages from. Order matters: we will try to get a package from each repository in order.
+# The alias is only used in this file if you want to specifically require a dependency to come from a certain repository.
+# Example: { alias = "PPM", url = "https://packagemanager.posit.co/cran/latest" },
+repositories = [
+    #{alias = "CRAN", url = "https://cloud.r-project.org/"},
+    {alias = "posit", url = "https://packagemanager.posit.co/cran/2025-07-01/"}
+]
+
+# A list of packages to install and any additional configuration
+# Examples:
+    # "dplyr",
+    # {name = "dplyr", repository = "CRAN"},
+    # {name = "dplyr", git = "https://github.com/tidyverse/dplyr.git", tag = "v1.1.4"},
+dependencies = [
+    "tidyverse",
+    "rmarkdown",
+    "glue",
+    "htmltools",
+    "showtext",
+    "gt",
+    "brms",
+    "tidybayes",
+    "furrr",
+    "arrow",
+    "knitr",
+    "scales",
+    "ggrepel",
+    "geomtextpath",
+    "tidyquant",
+    "gganimate",
+    "colorspace",
+    "grid",
+    {name = "cfbplotR", git = "https://github.com/sportsdataverse/cfbplotR", commit = "4b95f1b9691c93e71c393ef1a621152a9dfdf57d"},
+    "downlit",
+    "xml2",
+]
