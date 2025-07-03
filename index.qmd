@@ -45,9 +45,9 @@ These days, I am most active on [Bluesky](https://bsky.app/profile/carl.cx) and 
 
 :::
 
-::: {.columns}
+::: {.grid}
 
-::: {.column}
+::: {.g-col-lg-6 .g-col-12}
 ### Latest Notes
 
 ::: {#latest-notes}
@@ -55,7 +55,7 @@ These days, I am most active on [Bluesky](https://bsky.app/profile/carl.cx) and 
 ::: 
 <!--First column-->
 
-::: {.column}
+::: {.g-col-lg-6 .g-col-12}
 
 ### My Most Recent Post ($N = 1$) on Bluesky
 
@@ -64,10 +64,12 @@ These days, I am most active on [Bluesky](https://bsky.app/profile/carl.cx) and 
 <bsky-embed
   username="carl.cx"
   limit="1"
+  link-image="false"
+  disable-styles="true"
   disable-images="true"
   disable-videos="true"
   disable-autoplay="true"
-  custom-styles="img { filter: brightness(0); content: none !important; }"
+  custom-styles="img { filter: brightness(0); content: none !important; display: none; } * {font-size: 0.9rem; }"
 >
 </bsky-embed>
 
