@@ -57,21 +57,74 @@ These days, I am most active on [Bluesky](https://bsky.app/profile/carl.cx) and 
 
 ::: {.g-col-lg-6 .g-col-12}
 
-### My Most Recent Post ($N = 1$) on Bluesky
+### A Sample ($N = 1$) from My Bluesky Timeline
 
-<script src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" async></script>
+::: {#bsky-container}
+:::
 
-<bsky-embed
-  username="carl.cx"
-  limit="1"
-  link-image="false"
-  disable-styles="true"
-  disable-images="true"
-  disable-videos="true"
-  disable-autoplay="true"
-  custom-styles="img { filter: brightness(0); content: none !important; display: none; } * {font-size: 0.9rem; }"
->
-</bsky-embed>
+<script>
+// Fetch and render Bluesky sampler data
+async function fetchAndRenderBskyData() {
+  try {
+    const response = await fetch('https://carlcolglazier.com/bsky-sampler.json');
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    const container = document.createElement('div');
+    container.className = 'bsky-post';
+    container.style.cssText = `
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 16px 0;
+    `;
+    const timestamp = new Date(data.timestamp);
+    const formattedTime = timestamp.toLocaleString();
+    const post_link = `https://bsky.app/profile/carl.cx/post/${data.uri.split('/').at(-1)}`;
+    container.innerHTML = `
+      <div class="post-text" style="margin-bottom: 12px; font-size: 16px; line-height: 1.4;">
+        ${escapeHtml(data.text)}
+      </div>
+      <div class="post-meta" style="color: #666; font-size: 14px; display: flex; justify-content: space-between; align-items: center;">
+        <span class="timestamp">${formattedTime}</span>
+        <a href="${escapeHtml(post_link)}" target="_blank">
+          View Post
+        </a>
+      </div>
+    `;
+    const targetContainer = document.getElementById('bsky-container') || document.body;
+    targetContainer.appendChild(container);
+  } catch (error) {
+    console.error('Error fetching Bluesky data:', error);
+    const errorDiv = document.createElement('div');
+    errorDiv.style.cssText = `
+      color: #d32f2f;
+      background-color: #ffebee;
+      border: 1px solid #f44336;
+      border-radius: 4px;
+      padding: 12px;
+      margin: 16px 0;
+      max-width: 600px;
+    `;
+    errorDiv.textContent = `Failed to load Bluesky data: ${error.message}`;
+    const targetContainer = document.getElementById('bsky-container') || document.body;
+    targetContainer.appendChild(errorDiv);
+  }
+}
+
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', fetchAndRenderBskyData);
+} else {
+  fetchAndRenderBskyData();
+}
+</script>
 
 
 ::: 
