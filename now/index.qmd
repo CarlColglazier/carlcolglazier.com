@@ -1,11 +1,19 @@
 ---
 title: Now
-date: 2025-03-24
+date: 2025-07-07
 published-title: Last updated
 ---
 
-**Completing my [dissertation](https://ftsw.carl.cx/dissertation.html) work.**
+## The latest and greatest
+
+**Completing my [dissertation](https://ftsw.carl.cx/dissertation.html) work.** I am a doctoral candidate and "all but dissertation" (ABD).
 
 **Planning my wedding** in September.
 
 **On the job market.** If you are in the Chicago area, feel free to reach out!
+
+## I am currently hacking on
+
+- [My website](https://github.com/carlcolglazier/carlcolglazier.com), which hosts a few data science projects under [`notes/`](https://carlcolglazier.com/notes/)
+- [`bsky-sampler`](https://github.com/CarlColglazier/bsky-sampler), an esoteric API that returns the text from $n = 1$ of my recent Bluesky posts.
+- [`Olearia`](https://github.com/CarlColglazier/Olearia), a custom firmware for the ElectroSmith Daisy Patch Eurorack module.
